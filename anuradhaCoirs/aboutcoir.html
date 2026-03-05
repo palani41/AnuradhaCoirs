@@ -1,252 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuradha</title>
-      <!-- bootstarp CDN link  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Coir | Anuradha Coirs &amp; Fibers</title>
+  <meta name="description" content="Learn about coir — its formation, types, applications and fascinating facts. Anuradha Coirs & Fibers, Tamilnadu, India.">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Anuradha Coirs</title>
-    <style>
-        .VIpgJd-ZVi9od-l4eHX-hSRGPd{
-            display: none;
-        }
-        .goog-te-combo{
-            width: 100%;
-            border-radius: 5px;
-            border: 2px solid rgb(3, 47, 47);
-            margin: 9px 0px !important; 
-        }
-    </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <style>
+    /* ══════════════════════════════════════════
+       ROOT VARIABLES
+    ══════════════════════════════════════════ */
+    :root {
+      --forest:     #032f2f;
+      --gold:       #b8975a;
+      --gold-lt:    #d4b87a;
+      --cream:      #f8f5ef;
+      --off-white:  #fafaf8;
+      --light-bg:   #f2f4f2;
+      --text-dark:  #1a1a1a;
+      --text-mid:   #444;
+      --text-muted: #777;
+      --border:     #e0e0d8;
+      --font-head:  'Playfair Display', Georgia, serif;
+      --font-body:  'DM Sans', system-ui, sans-serif;
+      --font-acc:   'Cormorant Garamond', Georgia, serif;
+      --radius:     10px;
+      --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
+      --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
+      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    /* ══════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+    body { font-family: var(--font-body); color: var(--text-dark); background: #fff; -webkit-font-smoothing: antialiased; top: 0 !important; overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
+    p { font-family: var(--font-body); line-height: 1.75; color: var(--text-mid); }
+    a { transition: var(--transition); }
+    img { max-width: 100%; }
+    .section    { padding: 96px 0; }
+    .section-sm { padding: 64px 0; }
+
+    .eyebrow {
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); display: block; margin-bottom: 12px;
+    }
+    .heading-line {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+      border-radius: 2px; margin: 16px 0 24px;
+    }
+    .heading-line.center { margin: 16px auto 24px; }
+
+    /* ══════════════════════════════════════════
+       BUTTON
+    ══════════════════════════════════════════ */
+    .btn-primary-coir {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      padding: 13px 30px; border-radius: 3px;
+      background: var(--forest); color: #fff;
+      text-decoration: none; border: 2px solid var(--forest);
+      transition: var(--transition); cursor: pointer;
+    }
+    .btn-primary-coir:hover {
+      background: var(--gold); border-color: var(--gold); color: #fff;
+      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35);
+    }
+
+    /* ══════════════════════════════════════════
+       GOOGLE TRANSLATE
+    ══════════════════════════════════════════ */
+    .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
+    body > .skiptranslate { display: none !important; }
+    #google_translate_element { display: none !important; }
+    .goog-te-combo { display: none !important; }
+
+    .translate-wrap {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 6px; padding: 5px 10px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .translate-wrap:hover, .translate-wrap:focus-within {
+      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,151,90,0.12);
+    }
+    .tw-icon { font-size: 0.9rem; color: var(--gold); flex-shrink: 0; line-height: 1; }
+    .tw-label {
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      color: var(--text-muted); white-space: nowrap;
+    }
+    #translate-select {
+      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
+      color: var(--text-dark); background: transparent;
+      border: none; outline: none;
+      padding: 2px 20px 2px 0; cursor: pointer;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 2px center;
+      min-width: 100px; max-width: 130px;
+    }
+    #translate-select:focus { outline: none; box-shadow: none; }
+
+    /* ══════════════════════════════════════════
+       TOP BAR
+    ══════════════════════════════════════════ */
+    .topbar {
+      background: var(--forest); padding: 8px 0;
+      font-family: var(--font-body); font-size: 0.78rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .topbar a:hover { color: var(--gold-lt); }
+    .topbar-sep { margin: 0 12px; opacity: 0.35; }
+
+    /* ══════════════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════════════ */
+    .main-nav {
+      background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .main-nav .navbar { padding: 0; }
+    .main-nav .navbar-brand img { height: 80px; transition: var(--transition); }
+    .main-nav .navbar-brand:hover img { opacity: 0.85; }
+    .main-nav .nav-link {
+      font-family: var(--font-body); font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.5px;
+      color: var(--text-dark) !important;
+      padding: 30px 14px !important;
+      position: relative; transition: color 0.25s;
+    }
+    .main-nav .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 14px;
+      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
+    }
+    .main-nav .nav-link:hover { color: var(--gold) !important; }
+    .main-nav .nav-link:hover::after,
+    .main-nav .nav-link.active::after { width: calc(100% - 28px); }
+    .main-nav .nav-link.active { color: var(--forest) !important; font-weight: 600; }
+
+    /* ══════════════════════════════════════════
+       PAGE HERO
+    ══════════════════════════════════════════ */
+    .page-hero {
+      position: relative; height: 380px;
+      background: url(assets/images/head/about-head.jpg) center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(3,47,47,0.82) 0%, rgba(3,47,47,0.5) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 1; text-align: center; padding: 0 20px; }
+    .page-hero-content .eyebrow { color: var(--gold-lt); }
+    .page-hero-content h1 {
+      font-family: var(--font-head); font-size: clamp(2.2rem,5vw,3.6rem);
+      font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 12px;
+    }
+    .page-hero-content h1 em { font-style: italic; color: var(--gold-lt); }
+    .page-hero-content p { font-family: var(--font-acc); font-size: 1.1rem; color: rgba(255,255,255,0.82); }
+    @media (max-width: 576px) { .page-hero { height: 260px; } }
+
+    /* ══════════════════════════════════════════
+       BREADCRUMB
+    ══════════════════════════════════════════ */
+    .breadcrumb-bar {
+      background: var(--cream); border-bottom: 1px solid var(--border); padding: 12px 0;
+    }
+    .breadcrumb-bar ol {
+      margin: 0; padding: 0; list-style: none;
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 0.8rem;
+    }
+    .breadcrumb-bar ol li a { color: var(--forest); text-decoration: none; font-weight: 500; }
+    .breadcrumb-bar ol li a:hover { color: var(--gold); }
+    .breadcrumb-bar ol li.sep { color: var(--text-muted); font-size: 0.7rem; }
+    .breadcrumb-bar ol li.current { color: var(--text-muted); }
+
+    /* ══════════════════════════════════════════
+       INTRO SECTION
+    ══════════════════════════════════════════ */
+    .intro-section { background: #fff; }
+    .intro-section h2 {
+      font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem);
+      color: var(--forest); font-weight: 600;
+    }
+    .intro-section p {
+      font-family: var(--font-acc); font-size: 1.05rem;
+      line-height: 1.85; color: var(--text-mid); text-align: justify;
+    }
+    .intro-img {
+      width: 100%; height: 420px; object-fit: cover;
+      border-radius: var(--radius); box-shadow: var(--shadow-md);
+    }
+
+    /* ══════════════════════════════════════════
+       CONTENT SECTIONS (alternating)
+    ══════════════════════════════════════════ */
+    .content-section { padding: 80px 0; }
+    .content-section:nth-child(even) { background: var(--light-bg); }
+    .content-section:nth-child(odd)  { background: #fff; }
+
+    .content-section h2 {
+      font-family: var(--font-head); font-size: clamp(1.6rem,3vw,2.2rem);
+      color: var(--forest); font-weight: 600; margin-bottom: 0;
+    }
+    .content-section p {
+      font-family: var(--font-acc); font-size: 1.05rem;
+      line-height: 1.85; color: var(--text-mid); text-align: justify;
+    }
+
+    /* Uses list inside content sections */
+    .uses-block {
+      background: var(--cream); border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px; margin-top: 24px;
+    }
+    .uses-block h4 {
+      font-family: var(--font-head); font-size: 1rem;
+      color: var(--forest); margin-bottom: 14px;
+    }
+    .uses-block ul { list-style: none; padding: 0; margin: 0; }
+    .uses-block ul li {
+      font-family: var(--font-acc); font-size: 1rem;
+      color: var(--text-mid); padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .uses-block ul li:last-child { border-bottom: none; }
+    .uses-block ul li i { color: var(--gold); font-size: 0.9rem; margin-top: 4px; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       APPLICATIONS GRID
+    ══════════════════════════════════════════ */
+    .applications-section { background: var(--forest); padding: 96px 0; }
+    .applications-section .eyebrow { color: var(--gold-lt); }
+    .applications-section h2 {
+      font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem);
+      color: #fff; font-weight: 600;
+    }
+    .app-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius); padding: 24px 20px;
+      transition: var(--transition);
+    }
+    .app-card:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .app-card i {
+      font-size: 1.6rem; color: var(--gold-lt);
+      display: block; margin-bottom: 12px;
+    }
+    .app-card p {
+      font-family: var(--font-body); font-size: 0.88rem;
+      color: rgba(255,255,255,0.78); margin: 0; line-height: 1.6;
+    }
+
+    /* ══════════════════════════════════════════
+       FACTS BAND
+    ══════════════════════════════════════════ */
+    .facts-section { background: var(--cream); padding: 96px 0; }
+    .fact-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px; border-radius: var(--radius);
+      background: #fff; border: 1px solid var(--border);
+      transition: var(--transition); height: 100%;
+    }
+    .fact-item:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+    .fact-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--forest); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem;
+    }
+    .fact-item p { font-family: var(--font-body); font-size: 0.9rem; line-height: 1.65; margin: 0; }
+
+    /* ══════════════════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════════════════ */
+    .wa-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 56px; height: 56px; background: #25D366; color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 26px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition);
+    }
+    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    @media (max-width: 576px) { .wa-btn { width: 48px; height: 48px; font-size: 22px; bottom: 16px; right: 16px; } }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .site-footer { background: var(--forest); padding-top: 64px; }
+    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 240px; }
+    .footer-col-heading {
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold-lt); margin-bottom: 20px; display: block;
+    }
+    .footer-info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
+    .footer-info-item span,
+    .footer-info-item a {
+      font-family: var(--font-body); font-size: 0.87rem;
+      color: rgba(255,255,255,0.6); text-decoration: none; line-height: 1.55; transition: color 0.2s;
+    }
+    .footer-info-item a:hover { color: var(--gold-lt); }
+    .footer-link {
+      font-family: var(--font-body); font-size: 0.87rem;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 0; transition: color 0.25s, padding-left 0.25s;
+    }
+    .footer-link i { font-size: 0.7rem; color: var(--gold-lt); }
+    .footer-link:hover { color: #fff; padding-left: 4px; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0; }
+    .footer-bottom {
+      padding: 18px 0; display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .footer-bottom p { font-family: var(--font-body); font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; }
+    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold-lt); }
+    .social-links { display: flex; gap: 10px; }
+    .social-link {
+      width: 36px; height: 36px; background: rgba(255,255,255,0.08);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: var(--transition);
+    }
+    .social-link:hover { background: var(--gold); }
+    .social-link i { font-size: 1rem; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+    .social-link:hover i { color: #fff; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE — MOBILE FIXES
+    ══════════════════════════════════════════ */
+    @media (max-width: 991px) {
+      .main-nav .nav-link { padding: 12px 16px !important; }
+      .main-nav .nav-link::after { display: none; }
+      .translate-wrap { margin: 8px 16px 12px; }
+    }
+    @media (max-width: 767px) {
+      .section    { padding: 52px 0; }
+      .section-sm { padding: 40px 0; }
+      .page-hero  { height: 230px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .wa-btn { width: 46px; height: 46px; font-size: 20px; bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 575px) {
+      .section { padding: 44px 0; }
+      .page-hero { height: 200px; }
+      .page-hero-content h1 { font-size: 1.75rem; }
+      .page-hero-content p  { font-size: 0.88rem; }
+      .cinfo-card { padding: 24px 18px; }
+      .contact-form-card { padding: 24px 16px; }
+      .form-row-2 { flex-direction: column; gap: 0; }
+      .contact-info-panel { padding: 28px 20px; }
+      .map-wrap iframe { height: 280px; }
+      .fact-item { flex-direction: column; gap: 10px; }
+      .intro-img { height: 260px; }
+      .uses-block { padding: 18px 16px; }
+      .site-footer .col-6.col-md-2,
+      .site-footer .col-6.col-md-3 { width: 100%; }
+      .footer-bottom p { font-size: 0.75rem; }
+      .wa-btn { width: 44px; height: 44px; font-size: 19px; bottom: 14px; right: 14px; }
+    }
+    @media (max-width: 380px) {
+      .page-hero { height: 175px; }
+      .page-hero-content h1 { font-size: 1.5rem; }
+      .page-hero-content p  { display: none; }
+      .btn-primary-coir { padding: 11px 20px; font-size: 0.78rem; }
+      .wa-btn { bottom: 12px; right: 12px; width: 42px; height: 42px; font-size: 18px; }
+    }
+  </style>
 </head>
-<body class="bg-white">
+<body>
 
-    <!-- Nav Bar start -->
-    <div class="container-fluid bg-white sticky-top p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-            <div class="container-fluid poetsenfont">
-                <a class="navbar-brand p-0" href="#"><img src="newlogo.png" alt="" height="100px"  class="img-fluid p-0"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fontgreencolor" href="aboutcoir.html">About Coir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="process.html">Process</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <div id="google_translate_element" style="width: 50% !important;"></div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- ════════════ TOP BAR ════════════ -->
+<div class="topbar d-none d-md-block">
+  <div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <i class="bi bi-telephone-fill me-1" style="color:var(--gold);"></i>
+        <a href="tel:+919944859177">+91 99448 59177</a>
+        <span class="topbar-sep">|</span>
+        <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+        <a href="/cdn-cgi/l/email-protection#4821262e270829263d3a292c20292b27213a3b2e212a3a2d3b662b2725"><span class="__cf_email__" data-cfemail="751c1b131a35141b000714111d14161a1c0706131c170710065b161a18">[email&#160;protected]</span></a>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="https://facebook.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-youtube"></i></a>
+      </div>
     </div>
-    <!-- Nav Bar End -->
+  </div>
+</div>
 
-    <div class="container-fluid position-relative m-0">
-        <div style="height: 80vh;max-width: 100%;background-image: url(assets/images/head/about-head.jpg);background-size: cover;"></div>
-        <!-- <img src="assets/images/head/about-head.jpg" alt="" width="100%" > -->
-        <img src="assets/Wave.svg" alt="" class="position-absolute" style="bottom: 0;left: 0;width: 100%;height: auto;margin-bottom: -1px;">
+<!-- ════════════ NAVBAR ════════════ -->
+<div class="main-nav">
+  <div class="container-fluid px-4">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
+      </a>
+      <button class="navbar-toggler border-0" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="aboutcoir.html">About Coir</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item ms-lg-3">
+            <div id="google_translate_element"></div>
+            <div class="translate-wrap">
+              <i class="bi bi-translate tw-icon"></i>
+              <span class="tw-label">Lang</span>
+              <select id="translate-select" title="Select language">
+                <option value="">English</option>
+                <option value="ar">Arabic</option>
+                <option value="zh-CN">Chinese</option>
+                <option value="nl">Dutch</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="hi">Hindi</option>
+                <option value="id">Indonesian</option>
+                <option value="it">Italian</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="ms">Malay</option>
+                <option value="pt">Portuguese</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="th">Thai</option>
+                <option value="tr">Turkish</option>
+                <option value="vi">Vietnamese</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- ════════════ PAGE HERO ════════════ -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="eyebrow">Nature's Wonder Fibre</span>
+    <h1>About <em>Coir</em></h1>
+    <p>Discover the story behind the world's most sustainable natural fibre</p>
+  </div>
+</div>
+
+<!-- ════════════ BREADCRUMB ════════════ -->
+<div class="breadcrumb-bar">
+  <div class="container-fluid px-4">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li class="sep"><i class="bi bi-chevron-right"></i></li>
+      <li class="current">About Coir</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ════════════ INTRO — IMPORTANCE OF COIR ════════════ -->
+<section class="intro-section section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-6">
+        <span class="eyebrow">Why Coir Matters</span>
+        <h2>Importance of Coir</h2>
+        <div class="heading-line"></div>
+        <p class="mb-3">Coir, obtained from coconut husks, is a versatile material commonly used for erosion control, particularly in blankets, mats, logs, and wattles. It is an environmentally benign alternative to peat moss in agriculture, providing excellent water retention and aeration for plant roots in potting mixes and nursery pots.</p>
+        <p>Its applications include landscaping, civil engineering projects, animal bedding, crafts, and aquaculture, where it serves as a natural filtration media in aquariums to improve water quality. Coir's natural texture and durability make it a popular choice for eco-friendly applications — its biodegradability and adaptability are perfectly compatible with sustainable projects worldwide.</p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img src="assets/images/head/silder-first.jpg" alt="Coir fibre" class="intro-img">
+      </div>
     </div>
-    <div class="container-fluid mt-2">
-        <div>
-            <a href="index.html" class="breadcrumbstyle">Home</a><span class="breadcrumbsecondstyle">About Coir</span>
-        </div>
-        <div>
-            <p class="text-center poetsenfont fontgreencolor fw-bold display-5 ">About Coir</p>
-        </div>
+  </div>
+</section>
+
+<!-- ════════════ FORMATION OF COIR FIBRES ════════════ -->
+<section class="content-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-12">
+        <span class="eyebrow">Science &amp; Structure</span>
+        <h2>Formation of Coir Fibres</h2>
+        <div class="heading-line"></div>
+        <p>The structure of coir fibre is characterised by long, strong, and waterproof fibres extracted from the tough husk surrounding the coconut. These fibres have a complex arrangement of cellulose fibrils embedded in a matrix of lignin and hemicellulose, providing both strength and flexibility. The microscopic structure reveals densely packed bundles, contributing to their durability and resistance to abrasion.</p>
+        <p class="mt-3">These fibres exhibit a high degree of lignification, making them highly resistant to degradation by water and microbial activity. The unique composition and arrangement of coir fibres make them suitable for a wide range of applications, from ropes and mats to upholstery and soil conditioning.</p>
+      </div>
     </div>
-    <!-- <div class="container-fluid mb-3">
-        <p class="text-center poetsenfont fontgreencolor fw-bold display-5 ">About Coir</p>
-    </div> -->
+  </div>
+</section>
 
-    <div class="container-fluid" >
-        <!-- style="margin-top: 200px;" -->
-        <div class="container">
-            <div class="row mt-3">
-                <div class="col-12 col-sm-6">
-                  <h1 class="poetsenfont fontgreencolor">Importance of Coir</h1>
-                  <p class="cormorant-garamond-regular fs-5 textjustify">Coir, obtained from coconut husks, is a versatile material commonly used for erosion control, particularly in blankets, mats, logs, and wattles. Furthermore, it is an environmentally benign alternative to peat moss in agriculture, providing excellent water retention and aeration for plant roots in potting mixes and nursery pots. Its applications include landscaping, civil engineering projects, animal bedding, crafts, and aquaculture, where it serves as a natural filtration media in aquariums to improve water quality. 
-                  </p>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <img src="assets/images/head/silder-first.jpg" alt="" class="img-fluid rounded">
-                </div>
-                <div class="col-12">
-                    <p class="cormorant-garamond-regular fs-5 textjustify"> Coir, known for its toughness, moisture-absorbing capabilities, and sustainability, is widely used in a variety of sectors.Coir's natural texture and durability make it a popular choice for eco-friendly applications. Its biodegradability and adaptability are compatible with sustainable projects. Whether stabilizing soil, encouraging plant growth, improving landscapes, or giving</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="poetsenfont fontgreencolor">Formation of Coir Fibers</h1>
-                    <p class="cormorant-garamond-regular fs-5 textjustify">The structure of coir fiber is characterized by long, strong, and waterproof fibers extracted from the tough husk surrounding the coconut. These fibers have a complex arrangement of cellulose fibrils embedded in a matrix of lignin and hemicellulose, providing both strength and flexibility. Furthermore, the microscopic structure of coir fibers reveals densely packed bundles, which contribute to their durability and resistance to abrasion. These fibers exhibit a high degree of lignification, making them highly resistant to degradation by water and microbial activity. The unique composition and arrangement of coir fibers make them suitable for a wide range of applications, from ropes and mats to upholstery and soil conditioning.</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="poetsenfont fontgreencolor">Brown Coir</h1>
-                    <p class="cormorant-garamond-regular fs-5 textjustify">Brown coir is derived from mature coconuts, and it features thicker and stronger fibers compared to white coir. The structure of brown coir is composed of densely packed lignin, making it highly resilient and durable. This type of coir is commonly used in applications where robustness is required.</p>
-                    <div class="p-3 pt-0 ps-md-5">
-                        <h4 class="poetsenfont">Examples of uses</h4>
-                        <ul class="cormorant-garamond-regular fs-5 textjustify">
-                            <li>Ropes and cordage: Brown coir is extensively used in the production of ropes due to its strength and resistance to water.</li>
-                            <li>Mats and doormats: Its durability makes brown coir ideal for manufacturing mats used in high-traffic areas.</li>
-                            <li>Brushes and brooms: The stiff fibers of brown coir are suitable for making brushes and brooms for various cleaning applications.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="poetsenfont fontgreencolor">White Coir</h1>
-                    <p class="cormorant-garamond-regular fs-5 textjustify">White coir is obtained from immature green coconuts, and it features finer and softer fibers compared to brown coir. This type of coir is more flexible and suitable for applications where a softer touch is desired.</p>
-                    <div class="p-3 pt-0 ps-md-5">
-                        <h4 class="poetsenfont">Examples of uses</h4>
-                        <ul class="cormorant-garamond-regular fs-5 textjustify">
-                            <li>Upholstery: White coir fibers are commonly used as stuffing material in cushions and mattresses due to their softness and resilience.</li>
-                            <li>Plant liners: The fine texture of white coir makes it suitable for lining hanging baskets and planters, providing support and moisture retention for plants.</li>
-                            <li>Crafts and textiles: White coir fibers can be spun into yarn and woven into textiles, such as rugs and carpets, adding a natural and eco-friendly touch to home decor.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="poetsenfont fontgreencolor">Application & Uses</h1>
-                    <p class="cormorant-garamond-regular fs-5 textjustify">Coir fiber finds diverse applications across agriculture, industry, home decor, and crafts. In agriculture, it serves as a growing medium and soil conditioner, promoting healthy plant growth and preventing soil erosion. Industries utilize coir's strength and water resistance in maritime applications like ropes and erosion control mats. In homes, coir is woven into carpets, rugs, and upholstery for its durability and natural appeal. Crafters and artisans use coir fiber for products ranging from baskets to textiles, providing a sustainable alternative with a rustic charm. These varied applications highlight coir's versatility and eco-friendly nature, making it a valuable resource in multiple sectors.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="poetsenfont fontgreencolor"> Fascinating Facts</h1>
-                    <p class="cormorant-garamond-regular fs-5 textjustify">Beyond its practical applications, coir fiber harbors several fascinating facts. Firstly, it is entirely biodegradable, posing minimal harm to the environment compared to synthetic alternatives. Secondly, coir exhibits remarkable resistance to saltwater, making it ideal for marine applications and coastal erosion control projects. Furthermore, coir is free from toxins and allergens, ensuring its safety for use in various industries and consumer products. Additionally, coir fibers have been used historically for insulation and packaging due to their natural buoyancy and cushioning properties.</p>
-                </div>
-            </div>
+<!-- ════════════ BROWN COIR ════════════ -->
+<section class="content-section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-12 col-lg-7">
+        <span class="eyebrow">Mature Coconuts</span>
+        <h2>Brown Coir</h2>
+        <div class="heading-line"></div>
+        <p>Brown coir is derived from mature coconuts and features thicker and stronger fibres compared to white coir. Its structure is composed of densely packed lignin, making it highly resilient and durable — commonly used in applications where robustness is required.</p>
+        <div class="uses-block">
+          <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i>Ropes and cordage — Brown coir is extensively used in production of ropes due to its strength and resistance to water.</li>
+            <li><i class="bi bi-check-circle-fill"></i>Mats and doormats — Its durability makes brown coir ideal for manufacturing mats used in high-traffic areas.</li>
+            <li><i class="bi bi-check-circle-fill"></i>Brushes and brooms — The stiff fibres of brown coir are suitable for making brushes and brooms for various cleaning applications.</li>
+          </ul>
         </div>
+      </div>
+      <div class="col-12 col-lg-5 d-flex align-items-center">
+        <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Brown Coir"
+             style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ WHITE COIR ════════════ -->
+<section class="content-section">
+  <div class="container">
+    <div class="row g-5 flex-lg-row-reverse">
+      <div class="col-12 col-lg-7">
+        <span class="eyebrow">Immature Coconuts</span>
+        <h2>White Coir</h2>
+        <div class="heading-line"></div>
+        <p>White coir is obtained from immature green coconuts and features finer and softer fibres compared to brown coir. This type of coir is more flexible and suitable for applications where a softer touch is desired.</p>
+        <div class="uses-block">
+          <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i>Upholstery — White coir fibres are commonly used as stuffing material in cushions and mattresses due to their softness and resilience.</li>
+            <li><i class="bi bi-check-circle-fill"></i>Plant liners — The fine texture makes it suitable for lining hanging baskets and planters, providing support and moisture retention.</li>
+            <li><i class="bi bi-check-circle-fill"></i>Crafts and textiles — White coir fibres can be spun into yarn and woven into textiles such as rugs and carpets, adding a natural touch to home decor.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 d-flex align-items-center">
+        <img src="assets/images/head/product.jpg" alt="White Coir"
+             style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ APPLICATIONS GRID ════════════ -->
+<section class="applications-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eyebrow">Versatility</span>
+      <h2>Application &amp; Uses of Coir Fibre</h2>
+      <div class="heading-line center" style="background:linear-gradient(90deg,var(--gold),var(--gold-lt));"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-flower1"></i>
+          <p>Moisture absorption — ideal for growing media and potting mixes</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-house-fill"></i>
+          <p>Used for mats, carpets, and insulation in homes and industries</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-droplet-fill"></i>
+          <p>Coir serves as a growing medium and soil conditioner for healthy roots</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-anchor"></i>
+          <p>Maritime industries use coir for ropes, cords, and erosion control mats</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-recycle"></i>
+          <p>Eco-friendly and biodegradable — a sustainable alternative to synthetics</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-tree-fill"></i>
+          <p>Derived from coconut husks — supports environmentally conscious choices</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-palette-fill"></i>
+          <p>Finding applications in agriculture, industry, crafts, and home decor</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-shield-fill-check"></i>
+          <p>High tensile strength and resistance to water, saltwater, and abrasion</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FASCINATING FACTS ════════════ -->
+<section class="facts-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eyebrow">Did You Know?</span>
+      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">Fascinating Facts About Coir</h2>
+      <div class="heading-line center"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="fact-item">
+          <div class="fact-icon"><i class="bi bi-recycle"></i></div>
+          <p>Coir is entirely biodegradable, posing minimal harm to the environment compared to synthetic alternatives.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="fact-item">
+          <div class="fact-icon"><i class="bi bi-water"></i></div>
+          <p>Coir exhibits remarkable resistance to saltwater, making it ideal for marine applications and coastal erosion control.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="fact-item">
+          <div class="fact-icon"><i class="bi bi-shield-check"></i></div>
+          <p>Coir is free from toxins and allergens, ensuring safety for use in various industries and consumer products.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="fact-item">
+          <div class="fact-icon"><i class="bi bi-box-seam"></i></div>
+          <p>Coir fibres have been used historically for insulation and packaging due to their natural buoyancy and cushioning properties.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="container-fluid mt-3 mt-md-5">
-        <div class="container">
-            <h1 class="text-center display-5 poetsenfont">Application of Coir Fiber</h1>
-            <div class="row mt-3">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled cormorant-garamond-regular fs-5 beautyFiber">
-                        <li><i class="bi bi-heart-arrow me-2"></i>Moisture absorption qualities</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Used for mats, carpets, and insulation</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir fiber has a natural golden color</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>It is valued for its versatility and wide range of applications</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir serves as a growing medium and soil conditioner</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir is utilized in maritime industries for ropes, cords, and erosion control mats due to its strength.</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir's eco-friendly properties and diverse applications contribute</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled cormorant-garamond-regular fs-5 beautyFiber">
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir fiber is remarkably versatile</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Finding applications in agriculture, industry and crafts</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Derived from coconut husks</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir fiber is eco-friendly and biodegradable</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Making it a sustainable alternative to synthetic materials</li>
-                        <li><i class="bi bi-heart-arrow me-2"></i>Coir fiber exhibits high tensile strength and resistance to water, saltwater, and abrasion, making it ideal for various demanding applications.</li>           
-                        <li><i class="bi bi-heart-arrow me-2"></i>support environmentally conscious choices</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <a href="product.html" class="btn-primary-coir">Explore Our Products <i class="bi bi-arrow-right"></i></a>
     </div>
+  </div>
+</section>
 
+<!-- ════════════ WHATSAPP FLOAT ════════════ -->
+<a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+   target="_blank" class="wa-btn" title="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
 
-    <!-- Footer Start -->
-    <div class="container-fluid  bg-gradient wow fadeInUp " data-wow-delay="0.1s" style="background-color: rgba(3, 47, 47, 0.97);height: auto;">
-        <!-- background-color: rgb(3, 47, 47); -->
-        <div class="container pb-md-4 pb-3 pt-md-5 pt-3 mb-md-3">
-            <div class="row pt-md-3 pb-md-4">
-                <div class="col-12 col-sm-6 col-md-3 mt-3">
-                    <h4 class=" cormorant-garamond-regular text-white fw-bold h2">Our Office</h4>
-                    <div class="d-flex footertext">
-                        <i class="bi bi-geo-alt-fill text-danger me-1"></i><p class="m-0">212/6B Krishnapuram Main Road, Nilakkottai,<br> Dindigul, Tamilnadu,<br> india - 624219</p>
-                    </div>
-                    <p class="footertext m-0"><i class="bi bi-telephone-fill text-success me-1"></i>+91 8940787924</p>
-                    <p class="footertext m-0"><img src="assets/images/icons/email.png" alt="" width="19px" height="19px"> info@anuradhacoirsfibres.com</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3 mt-3">
-                   <h4 class=" cormorant-garamond-regular text-white fw-bold h2">Location</h4>
-                   <div class="embed-responsive embed-responsive-1by1">
-                    <iframe class="w-100 rounded embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.7569362798754!2d-79.9232254250235!3d37.253474042019235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d0d8061e91821%3A0xe6d0f8bde5fb4ae6!2s1101%20Service%20Ave%20SE%2C%20Roanoke%2C%20VA%2024013%2C%20USA!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin" frameborder="0" style="height: 90%; min-height: 100px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                   </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3 mt-3">
-                    <h4 class=" cormorant-garamond-regular text-white fw-bold h2">US Office</h4>
-                    <div class="ms-1">
-                        <div class="d-flex footertext">
-                            <i class="bi bi-geo-alt-fill text-danger me-1"></i><p class="m-0">MR. Dave wertz,<br> 1101 Service Ave SE, <br> Roanoke VA - 24013.</p>
-                        </div>
-                        <p class="footertext m-0"><i class="bi bi-telephone-fill text-success me-1"></i>206 391 9622</p>
-                        <p class="footertext m-0 d-flex" style="overflow: auto;"><i class="bi bi-envelope-paper-fill text-danger me-1"></i>info@anuradhacoirsfibres.com</p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3 mt-3">
-                    <h4 class=" cormorant-garamond-regular text-white fw-bold h2">Quick Links</h4>
-                    <div class="ms-3">
-                        <p class="m-0"><a href="index.html" class="text-decoration-none footertext"><i class="bi bi-chevron-right"></i>Home</a></p>
-                        <p class="m-0"><a href="contact.html" class="text-decoration-none footertext"><i class="bi bi-chevron-right"></i>Contact Us</a></p>
-                        <p class="m-0"><a href="product.html" class="text-decoration-none footertext"><i class="bi bi-chevron-right"></i>Products</a></p>
-                        <p class="m-0"><a href="gallery.html" class="text-decoration-none footertext"><i class="bi bi-chevron-right"></i>Gallery</a></p>
-                        <p class="m-0"><a href="" class="text-decoration-none footertext"><i class="bi bi-chevron-right"></i>Terms & Condition</a></p>
-                    </div>
-                </div>
-            </div>
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-12 col-md-4 footer-brand">
+        <img src="newlogo.png" alt="Anuradha Coirs" height="70"
+             style="filter:brightness(10);margin-bottom:16px;display:block;">
+        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients across 50+ countries.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <span class="footer-col-heading">Navigation</span>
+        <a href="index.html"     class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+        <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+        <a href="product.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+        <a href="process.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+        <a href="gallery.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+        <a href="contact.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <span class="footer-col-heading">India Office</span>
+        <div class="footer-info-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
         </div>
-        <div class="row  pt-3" style="background-color:rgb(3, 47, 47);">
-            <div class="col-md-7 text-start text-md-start text-white cormorant-garamond-regular mb-md-0">
-                &copy; <a class="fw-medium" href="#">Anuradha Coirs & Fibers</a>, All Right Reserved.
-            </div>
-            <div class="col-md-3 d-flex justify-content-end text-end">
-                <p class="poetsenfont text-white me-2">Follow&nbsp;Us</p>
-                <div class="d-flex">
-                    <a href="" class="me-2"><img src="assets/images/icons/facebook.png" alt="" width="30px" height="30px"></a>
-                    <a href="" class="me-2"><img src="assets/images/icons/instagram.png" alt="" width="30px" height="30px"></a>
-                    <a href="" class="me-2"><img src="assets/images/icons/youtube.png" alt="" width="30px" height="30px"></a>
-                    <a href="mailto:info@anuradhacoirsfibres.com"><img src="assets/images/icons/email.png" alt="" width="30px" height="30px"></a>
-                </div>               
-            </div>
+        <div class="footer-info-item">
+          <i class="bi bi-telephone-fill"></i>
+          <a href="tel:+919944859177">+91 99448 59177</a>
         </div>
+        <div class="footer-info-item">
+          <i class="bi bi-envelope-fill"></i>
+          <a href="/cdn-cgi/l/email-protection#4a23242c250a2b243f382b2e222b29252338392c2328382f3964292527"><span class="__cf_email__" data-cfemail="b0d9ded6dff0d1dec5c2d1d4d8d1d3dfd9c2c3d6d9d2c2d5c39ed3dfdd">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <span class="footer-col-heading">US Office</span>
+        <div class="footer-info-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+        </div>
+        <div class="footer-info-item">
+          <i class="bi bi-telephone-fill"></i>
+          <a href="tel:2063919622">+1 206 391 9622</a>
+        </div>
+        <div class="footer-info-item">
+          <i class="bi bi-envelope-fill"></i>
+          <a href="/cdn-cgi/l/email-protection#2e474048416e4f405b5c4f4a464f4d41475c5d48474c5c4b5d004d4143"><span class="__cf_email__" data-cfemail="7e171018113e1f100b0c1f1a161f1d11170c0d18171c0c1b0d501d1113">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
     </div>
-    <!-- Footer End -->
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All Rights Reserved. | <a href="#">Terms &amp; Conditions</a></p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="/cdn-cgi/l/email-protection#6c05020a032c0d02191e0d08040d0f03051e1f0a050e1e091f420f0301" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="assets/lib/wow/wow.min.js"></script>
-    <script src="assets/lib/easing/easing.min.js"></script>
-    <script src="assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="script.js"></script>
+<!-- ════════════ SCRIPTS ════════════ -->
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  document.getElementById('translate-select').addEventListener('change', function () {
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) { combo.value = this.value; combo.dispatchEvent(new Event('change')); }
+  });
+</script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
