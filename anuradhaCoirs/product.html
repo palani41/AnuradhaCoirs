@@ -1,504 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Products | Anuradha Coirs &amp; Fibers</title>
-  <meta name="description" content="Explore Anuradha Coirs & Fibers' premium range — Coconut Fibre, Coco Peat Coins, and Grow Bags. Trusted by 500+ clients across 50+ countries.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Products | Anuradha Coirs &amp; Fibers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+:root{
+  --forest:#032f2f;--forest2:#054a4a;
+  --gold:#b8975a;--gold-lt:#d4b87a;--gold-pale:#fdf6ec;
+  --page-bg:#f1f3f0;
+  --text-dark:#1a1a1a;--text-mid:#444;--text-muted:#777;--text-light:#999;
+  --border:#e3e6e3;--border-lt:#eef0ee;--red:#e53935;
+  --fh:'Playfair Display',Georgia,serif;
+  --fb:'DM Sans',system-ui,sans-serif;
+  --fa:'Cormorant Garamond',Georgia,serif;
+  --tr:all .25s cubic-bezier(.25,.46,.45,.94);
+  --nav-h:88px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--fb);background:var(--page-bg);color:var(--text-dark);-webkit-font-smoothing:antialiased;top:0!important}
+a{text-decoration:none;color:inherit;transition:var(--tr)}
+img{display:block;max-width:100%}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+/* TRANSLATE */
+.VIpgJd-ZVi9od-l4eHX-hSRGPd{display:none!important}
+body>.skiptranslate{display:none!important}
+#google_translate_element{display:none!important}
+.goog-te-combo{display:none!important}
+.translate-wrap{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:5px 10px;transition:border-color .25s,box-shadow .25s}
+.translate-wrap:hover,.translate-wrap:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,151,90,.12)}
+.tw-icon{font-size:.9rem;color:var(--gold);flex-shrink:0}
+.tw-label{font-family:var(--fb);font-size:.72rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+#translate-select{font-family:var(--fb);font-size:.82rem;font-weight:500;color:var(--text-dark);background:transparent;border:none;outline:none;padding:2px 20px 2px 0;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;min-width:100px;max-width:130px}
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+/* TOPBAR */
+.topbar{background:var(--forest);padding:8px 0;font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.75)}
+.topbar a{color:rgba(255,255,255,.75);text-decoration:none}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-sep{margin:0 12px;opacity:.35}
 
-  <style>
-    /* ══════════════════════════════════════════
-       ROOT VARIABLES
-    ══════════════════════════════════════════ */
-    :root {
-      --forest:     #032f2f;
-      --forest2:    #054a4a;
-      --gold:       #b8975a;
-      --gold-lt:    #d4b87a;
-      --cream:      #f8f5ef;
-      --off-white:  #fafaf8;
-      --light-bg:   #f2f4f2;
-      --text-dark:  #1a1a1a;
-      --text-mid:   #444;
-      --text-muted: #777;
-      --border:     #e0e0d8;
-      --font-head:  'Playfair Display', Georgia, serif;
-      --font-body:  'DM Sans', system-ui, sans-serif;
-      --font-acc:   'Cormorant Garamond', Georgia, serif;
-      --radius:     10px;
-      --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
-      --shadow-md:  0 8px 32px rgba(0,0,0,0.12);
-      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
+/* NAVBAR - original white */
+.main-nav{background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;height:var(--nav-h)}
+.main-nav .navbar{padding:0;height:var(--nav-h)}
+.main-nav .navbar-brand img{height:80px;transition:var(--tr)}
+.main-nav .nav-link{font-family:var(--fb);font-size:.82rem;font-weight:500;letter-spacing:.5px;color:var(--text-dark)!important;padding:30px 14px!important;position:relative;transition:color .25s}
+.main-nav .nav-link::after{content:'';position:absolute;bottom:0;left:14px;width:0;height:2px;background:var(--gold);transition:width .3s}
+.main-nav .nav-link:hover{color:var(--gold)!important}
+.main-nav .nav-link:hover::after,.main-nav .nav-link.active::after{width:calc(100% - 28px)}
+.main-nav .nav-link.active{color:var(--forest)!important;font-weight:600}
 
-    /* ══════════════════════════════════════════
-       RESET & BASE
-    ══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
-    body { font-family: var(--font-body); color: var(--text-dark); background: #fff;
-           -webkit-font-smoothing: antialiased; top: 0 !important; overflow-x: hidden; }
-    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
-    p { font-family: var(--font-body); line-height: 1.75; color: var(--text-mid); }
-    a { transition: var(--transition); }
-    img { max-width: 100%; height: auto; display: block; }
-    .section    { padding: 96px 0; }
-    .section-sm { padding: 64px 0; }
+/* PAGE HERO - original */
+.page-hero{position:relative;height:320px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.page-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,47,47,.82) 0%,rgba(3,47,47,.3) 100%)}
+.page-hero-content{position:relative;z-index:2;text-align:center;padding:0 20px}
+.eyebrow{font-family:var(--fb);font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:12px}
+.page-hero-content h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.4rem);font-weight:600;color:#fff;line-height:1.1;margin-bottom:12px}
+.page-hero-content h1 em{font-style:italic;color:var(--gold-lt)}
+.page-hero-content p{font-family:var(--fa);font-size:1.05rem;color:rgba(255,255,255,.8);margin:0}
 
-    .eyebrow {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 12px;
-    }
-    .heading-line {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-      border-radius: 2px; margin: 16px 0 24px;
-    }
-    .heading-line.center { margin: 16px auto 24px; }
+/* BREADCRUMB */
+.breadcrumb-bar{background:var(--gold-pale);padding:11px 0;border-bottom:1px solid rgba(184,151,90,.18)}
+.breadcrumb-bar .breadcrumb{margin:0;font-family:var(--fb);font-size:.8rem}
+.breadcrumb-item a{color:var(--forest);text-decoration:none}
+.breadcrumb-item a:hover{color:var(--gold)}
+.breadcrumb-item.active{color:var(--text-muted)}
+.breadcrumb-item+.breadcrumb-item::before{color:var(--text-muted)}
 
-    /* ══════════════════════════════════════════
-       BUTTONS
-    ══════════════════════════════════════════ */
-    .btn-primary-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 13px 30px; border-radius: 3px;
-      background: var(--forest); color: #fff;
-      text-decoration: none; border: 2px solid var(--forest);
-      transition: var(--transition); cursor: pointer;
-    }
-    .btn-primary-coir:hover {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35);
-    }
-    .btn-ghost-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 11px 28px; border-radius: 3px;
-      background: transparent; color: var(--forest);
-      text-decoration: none; border: 2px solid var(--forest);
-      transition: var(--transition);
-    }
-    .btn-ghost-coir:hover { background: var(--forest); color: #fff; }
+/* SHOP LAYOUT */
+.shop-wrap{display:flex;align-items:flex-start;background:var(--page-bg);min-height:60vh}
+.sb-placeholder{width:260px;flex-shrink:0;align-self:stretch}
 
-    /* ══════════════════════════════════════════
-       GOOGLE TRANSLATE
-    ══════════════════════════════════════════ */
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
-    body > .skiptranslate { display: none !important; }
-    #google_translate_element { display: none !important; }
-    .goog-te-combo { display: none !important; }
+/* FIXED SIDEBAR - shown only inside shop section via JS */
+.sidebar{width:260px;background:#fff;border-right:1px solid var(--border);position:fixed;top:var(--nav-h);left:0;bottom:0;z-index:200;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--border) transparent;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s}
+.sidebar.sb-on{visibility:visible;opacity:1;pointer-events:auto}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.sb-head{background:var(--forest);padding:14px 16px;position:sticky;top:0;z-index:2}
+.sb-head-title{font-family:var(--fb);font-size:.76rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.sb-head-count{font-family:var(--fb);font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px}
+.sb-search{padding:10px 12px;background:#f8f9f8;border-bottom:1px solid var(--border-lt)}
+.sb-search-box{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:6px 10px;transition:border-color .2s,box-shadow .2s}
+.sb-search-box:focus-within{border-color:var(--forest);box-shadow:0 0 0 3px rgba(3,47,47,.07)}
+.sb-search-box i{color:var(--text-light);font-size:.82rem;flex-shrink:0}
+.sb-search-box input{border:none;outline:none;font-family:var(--fb);font-size:.82rem;color:var(--text-dark);background:transparent;width:100%}
+.sb-search-box input::placeholder{color:var(--text-light)}
+.sb-all{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border-lt);cursor:pointer;transition:background .15s;text-decoration:none;border-left:3px solid transparent}
+.sb-all:hover{background:#f5f7f5}
+.sb-all.on{background:var(--gold-pale);border-left-color:var(--gold)}
+.sb-all-ico{width:28px;height:28px;border-radius:6px;background:var(--page-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-all-ico i{font-size:.82rem;color:var(--text-muted)}
+.sb-all.on .sb-all-ico{background:var(--gold)}
+.sb-all.on .sb-all-ico i{color:#fff}
+.sb-all-lbl{font-family:var(--fb);font-size:.84rem;font-weight:600;color:var(--text-mid);flex:1}
+.sb-all.on .sb-all-lbl{color:var(--forest);font-weight:700}
+.sb-all-cnt{font-size:.7rem;font-weight:700;background:var(--page-bg);color:var(--text-muted);padding:2px 7px;border-radius:20px;border:1px solid var(--border);flex-shrink:0}
+.sb-all.on .sb-all-cnt{background:var(--gold);color:#fff;border-color:var(--gold)}
+.sb-sec-lbl{font-family:var(--fb);font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);padding:11px 14px 4px;display:block;background:#f8f9f8;border-bottom:1px solid var(--border-lt)}
+.sb-cat-row{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--border-lt);cursor:pointer;transition:background .15s;text-decoration:none;border-left:3px solid transparent}
+.sb-cat-row:hover{background:#f5f7f5;border-left-color:var(--border)}
+.sb-cat-row.on{background:var(--gold-pale);border-left-color:var(--gold)}
+.sb-cat-ico{width:30px;height:30px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.sb-cat-ico i{font-size:.85rem}
+.sb-cat-info{flex:1;min-width:0}
+.sb-cat-name{font-family:var(--fb);font-size:.82rem;font-weight:600;color:var(--text-mid);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-cat-row.on .sb-cat-name{color:var(--forest);font-weight:700}
+.sb-cat-desc{font-family:var(--fb);font-size:.67rem;color:var(--text-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.sb-cat-cnt{font-size:.68rem;font-weight:700;min-width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:20px;padding:0 5px;flex-shrink:0;background:var(--page-bg);color:var(--text-light);border:1px solid var(--border)}
+.sb-cat-row.on .sb-cat-cnt{background:var(--forest);color:#fff;border-color:var(--forest)}
+.sb-cta{margin:14px 12px 20px;background:var(--forest);border-radius:8px;padding:14px}
+.sb-cta-txt{font-family:var(--fa);font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:10px}
+.sb-cta-btn{display:block;text-align:center;font-family:var(--fb);font-size:.73rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:8px 12px;border-radius:5px;background:var(--gold);color:#fff;transition:var(--tr)}
+.sb-cta-btn:hover{background:var(--gold-lt);color:#fff}
 
-    .translate-wrap {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #fff; border: 1.5px solid var(--border);
-      border-radius: 6px; padding: 5px 10px;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .translate-wrap:hover, .translate-wrap:focus-within {
-      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,151,90,0.12);
-    }
-    .tw-icon { font-size: 0.9rem; color: var(--gold); flex-shrink: 0; }
-    .tw-label {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      color: var(--text-muted); white-space: nowrap;
-    }
-    #translate-select {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
-      color: var(--text-dark); background: transparent;
-      border: none; outline: none; padding: 2px 20px 2px 0; cursor: pointer;
-      appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 2px center;
-      min-width: 100px; max-width: 130px;
-    }
-    #translate-select:focus { outline: none; box-shadow: none; }
+/* SHOP MAIN */
+.shop-main{flex:1;min-width:0;padding:0}
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:sticky;top:var(--nav-h);z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.filter-bar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mob-filter-btn{display:none;align-items:center;gap:6px;font-family:var(--fb);font-size:.8rem;font-weight:600;padding:7px 14px;border-radius:6px;background:var(--forest);color:#fff;border:none;cursor:pointer}
+.fb-title{font-family:var(--fh);font-size:1rem;font-weight:600;color:var(--forest)}
+.fb-count{font-size:.78rem;color:var(--text-muted)}
+.fb-count strong{color:var(--forest)}
+.filter-bar-right{display:flex;align-items:center;gap:8px}
+.sort-sel{font-family:var(--fb);font-size:.8rem;color:var(--text-mid);border:1.5px solid var(--border);border-radius:6px;padding:6px 28px 6px 10px;background:#fff;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+.sort-sel:focus{border-color:var(--forest)}
+.view-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.84rem;color:var(--text-muted);transition:var(--tr)}
+.view-btn.active,.view-btn:hover{border-color:var(--forest);background:var(--forest);color:#fff}
+.cat-section{padding:24px 20px 0}
+.cat-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--border-lt);position:relative}
+.cat-hdr::after{content:'';position:absolute;bottom:-2px;left:0;width:48px;height:2px;background:var(--gold)}
+.cat-hdr-ico{width:42px;height:42px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.cat-hdr-ico i{font-size:1.15rem}
+.cat-hdr-info h3{font-family:var(--fh);font-size:1.15rem;color:var(--forest);margin:0 0 1px}
+.cat-hdr-info p{font-family:var(--fb);font-size:.76rem;color:var(--text-muted);margin:0}
+.shop-main-inner{padding-bottom:40px}
 
-    /* ══════════════════════════════════════════
-       TOP BAR
-    ══════════════════════════════════════════ */
-    .topbar {
-      background: var(--forest); padding: 8px 0;
-      font-family: var(--font-body); font-size: 0.78rem;
-      color: rgba(255,255,255,0.75);
-    }
-    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
-    .topbar a:hover { color: var(--gold-lt); }
-    .topbar-sep { margin: 0 12px; opacity: 0.35; }
+/* PRODUCT GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px}
+.prod-grid.g2{grid-template-columns:repeat(2,1fr)}
+.prod-grid.g4{grid-template-columns:repeat(4,1fr)}
+.prod-grid.gl{grid-template-columns:1fr;gap:10px}
 
-    /* ══════════════════════════════════════════
-       NAVBAR
-    ══════════════════════════════════════════ */
-    .main-nav {
-      background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 1000;
-    }
-    .main-nav .navbar { padding: 0; }
-    .main-nav .navbar-brand img { height: 80px; transition: var(--transition); }
-    .main-nav .navbar-brand:hover img { opacity: 0.85; }
-    .main-nav .nav-link {
-      font-family: var(--font-body); font-size: 0.82rem;
-      font-weight: 500; letter-spacing: 0.5px;
-      color: var(--text-dark) !important;
-      padding: 30px 14px !important;
-      position: relative; transition: color 0.25s;
-    }
-    .main-nav .nav-link::after {
-      content: ''; position: absolute; bottom: 0; left: 14px;
-      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
-    }
-    .main-nav .nav-link:hover { color: var(--gold) !important; }
-    .main-nav .nav-link:hover::after,
-    .main-nav .nav-link.active::after { width: calc(100% - 28px); }
-    .main-nav .nav-link.active { color: var(--forest) !important; font-weight: 600; }
+/* PRODUCT CARD */
+.prod-card{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow .22s,transform .22s,border-color .22s;display:flex;flex-direction:column;cursor:pointer;position:relative}
+.prod-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.12);transform:translateY(-4px);border-color:rgba(184,151,90,.45)}
+.pc-img-wrap{position:relative;overflow:hidden;background:#f5f7f5;flex-shrink:0}
+.pc-img{width:100%;height:195px;object-fit:cover;transition:transform .45s ease;display:block}
+.prod-card:hover .pc-img{transform:scale(1.06)}
+.pc-overlay{position:absolute;inset:0;background:rgba(3,47,47,0);transition:background .25s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px}
+.prod-card:hover .pc-overlay{background:rgba(3,47,47,.32)}
+.pc-qv{opacity:0;transform:translateY(8px);transition:var(--tr);font-family:var(--fb);font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:7px 18px;border-radius:20px;background:#fff;color:var(--forest);border:none;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.prod-card:hover .pc-qv{opacity:1;transform:translateY(0)}
+.pc-qv:hover{background:var(--gold);color:#fff}
+.pc-badge{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--fb);font-size:.58rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.pcb-new{background:var(--gold);color:#fff}
+.pcb-cat{background:rgba(3,47,47,.82);color:#fff;backdrop-filter:blur(4px)}
+.pc-wish{position:absolute;top:10px;right:10px;z-index:2;width:28px;height:28px;border-radius:50%;background:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.12);transition:var(--tr);opacity:0;pointer-events:none}
+.prod-card:hover .pc-wish{opacity:1;pointer-events:auto}
+.pc-wish:hover{background:var(--red)}
+.pc-wish i{font-size:.78rem;color:var(--text-muted)}
+.pc-wish:hover i{color:#fff}
+.pc-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column}
+.pc-cat-tag{font-family:var(--fb);font-size:.59rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:block}
+.pc-name{font-family:var(--fb);font-size:.9rem;font-weight:700;color:var(--text-dark);line-height:1.35;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc-stars{display:flex;align-items:center;gap:3px;margin-bottom:7px}
+.pc-stars i{font-size:.62rem;color:#f5a623}
+.pc-stars span{font-size:.68rem;color:var(--text-light);margin-left:2px}
+.pc-desc{font-size:.76rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.pc-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.pc-pill{font-size:.59rem;font-weight:600;background:#f0f4f0;color:var(--forest);padding:2px 7px;border-radius:3px;border:1px solid #dde8dd}
+.pc-actions{display:flex;gap:6px;margin-top:auto;padding-top:2px}
+.btn-details{flex:1;font-family:var(--fb);font-size:.73rem;font-weight:700;padding:8px 10px;border-radius:5px;background:var(--forest);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:var(--tr)}
+.btn-details:hover{background:var(--forest2)}
+.btn-quote-sm{font-family:var(--fb);font-size:.73rem;font-weight:700;padding:8px 10px;border-radius:5px;background:#fff;color:var(--gold);border:1.5px solid var(--gold);cursor:pointer;display:flex;align-items:center;gap:5px;transition:var(--tr);text-decoration:none;white-space:nowrap}
+.btn-quote-sm:hover{background:var(--gold);color:#fff}
 
-    /* ══════════════════════════════════════════
-       PAGE HERO BANNER
-    ══════════════════════════════════════════ */
-    .page-hero {
-      position: relative; height: 340px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .page-hero-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; filter: brightness(0.45);
-    }
-    .page-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(3,47,47,0.75) 0%, rgba(3,47,47,0.35) 100%);
-    }
-    .page-hero-content {
-      position: relative; z-index: 2; text-align: center; padding: 0 20px;
-    }
-    .page-hero-content .eyebrow { color: var(--gold-lt); margin-bottom: 10px; }
-    .page-hero-content h1 {
-      font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 12px;
-    }
-    .page-hero-content h1 em { font-style: italic; color: var(--gold-lt); }
-    .page-hero-content p {
-      font-family: var(--font-acc); font-size: 1.1rem;
-      color: rgba(255,255,255,0.82); margin: 0;
-    }
+/* LIST VIEW */
+.prod-grid.gl .prod-card{flex-direction:row}
+.prod-grid.gl .pc-img-wrap{width:200px;flex-shrink:0}
+.prod-grid.gl .pc-img{height:100%;min-height:165px}
+.prod-grid.gl .pc-body{padding:16px 18px}
+.prod-grid.gl .pc-name{font-size:.95rem}
+.prod-grid.gl .pc-desc{-webkit-line-clamp:3}
 
-    /* Breadcrumb */
-    .breadcrumb-bar { background: var(--cream); padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .breadcrumb-bar .breadcrumb { margin: 0; font-family: var(--font-body); font-size: 0.8rem; }
-    .breadcrumb-item a { color: var(--forest); text-decoration: none; }
-    .breadcrumb-item a:hover { color: var(--gold); }
-    .breadcrumb-item.active { color: var(--text-muted); }
-    .breadcrumb-item + .breadcrumb-item::before { color: var(--text-muted); }
+/* EMPTY */
+.empty-wrap{padding:80px 20px;text-align:center}
+.empty-wrap i{font-size:3rem;color:var(--border);display:block;margin-bottom:14px}
+.empty-wrap h4{font-family:var(--fh);font-size:1.2rem;color:var(--text-mid);margin-bottom:6px}
+.empty-wrap p{font-size:.86rem;color:var(--text-muted)}
+.btn-clear{margin-top:16px;font-family:var(--fb);font-size:.8rem;font-weight:600;padding:9px 22px;border-radius:6px;background:var(--forest);color:#fff;border:none;cursor:pointer}
+.btn-clear:hover{background:var(--gold)}
 
-    /* ══════════════════════════════════════════
-       PRODUCT NAV TABS
-    ══════════════════════════════════════════ */
-    .prod-nav-section { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 88px; z-index: 100; }
-    .prod-nav-inner {
-      display: flex; gap: 0; overflow-x: auto;
-      scrollbar-width: none; -webkit-overflow-scrolling: touch;
-    }
-    .prod-nav-inner::-webkit-scrollbar { display: none; }
-    .prod-nav-btn {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
-      letter-spacing: 0.5px; color: var(--text-muted);
-      background: none; border: none; border-bottom: 3px solid transparent;
-      padding: 20px 28px; cursor: pointer; transition: var(--transition);
-      white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: 8px;
-    }
-    .prod-nav-btn i { font-size: 1rem; }
-    .prod-nav-btn:hover { color: var(--forest); }
-    .prod-nav-btn.active { color: var(--forest); border-bottom-color: var(--gold); }
+/* DETAIL MODAL */
+.det-modal .modal-content{border:none;border-radius:10px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.2)}
+.det-modal .modal-header{background:var(--forest);border:none;padding:18px 24px}
+.det-modal .modal-title{font-family:var(--fh);color:#fff;font-size:1.1rem}
+.det-modal .btn-close{filter:invert(1);opacity:.7}
+.det-modal .modal-body{padding:0;background:#fff}
+.dm-layout{display:flex}
+.dm-img-col{width:42%;flex-shrink:0;background:#f5f7f5;display:flex;align-items:center;justify-content:center;padding:24px}
+.dm-img-col img{width:100%;max-height:320px;object-fit:contain;border-radius:6px}
+.dm-info-col{flex:1;padding:24px 28px;overflow-y:auto;max-height:520px}
+.dm-cat-tag{font-family:var(--fb);font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.dm-name{font-family:var(--fh);font-size:1.3rem;color:var(--forest);margin-bottom:10px}
+.dm-stars{display:flex;align-items:center;gap:3px;margin-bottom:12px}
+.dm-stars i{font-size:.72rem;color:#f5a623}
+.dm-desc{font-size:.88rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border-lt)}
+.dm-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.dm-pill{font-size:.68rem;font-weight:600;background:#f0f4f0;color:var(--forest);padding:3px 10px;border-radius:3px;border:1px solid #dde8dd}
+.dm-spec-title{font-family:var(--fb);font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.dm-spec-tbl{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:.82rem}
+.dm-spec-tbl tr{border-bottom:1px solid var(--border-lt)}
+.dm-spec-tbl tr:last-child{border-bottom:none}
+.dm-spec-tbl td{padding:7px 10px;vertical-align:top}
+.dm-spec-tbl td:first-child{font-weight:600;color:var(--text-mid);background:#f8f9f8;width:40%;border-radius:3px}
+.dm-actions{display:flex;gap:8px;flex-wrap:wrap}
+.dm-btn-q{flex:1;font-family:var(--fb);font-size:.8rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;border-radius:5px;background:var(--gold);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:var(--tr);text-decoration:none;min-width:150px}
+.dm-btn-q:hover{background:var(--gold-lt);color:#fff}
+.dm-btn-back{font-family:var(--fb);font-size:.8rem;font-weight:600;padding:11px 16px;border-radius:5px;background:#fff;color:var(--forest);border:1.5px solid var(--border);cursor:pointer;display:flex;align-items:center;gap:6px;transition:var(--tr)}
+.dm-btn-back:hover{border-color:var(--forest);background:var(--page-bg)}
 
-    /* ══════════════════════════════════════════
-       PRODUCT SECTIONS
-    ══════════════════════════════════════════ */
-    .product-section { scroll-margin-top: 140px; }
-    .product-section:nth-child(odd) { background: #fff; }
-    .product-section:nth-child(even) { background: var(--light-bg); }
+/* MOBILE OFFCANVAS */
+.mob-sidebar .offcanvas-header{background:var(--forest);padding:16px 18px}
+.mob-sidebar .offcanvas-title{font-family:var(--fb);color:#fff;font-size:.95rem;font-weight:700}
+.mob-sidebar .btn-close{filter:invert(1);opacity:.8}
+.mob-sidebar .offcanvas-body{padding:0}
 
-    /* Hero product image */
-    .prod-hero-img {
-      width: 100%; height: 480px; object-fit: cover;
-      border-radius: var(--radius); box-shadow: var(--shadow-md);
-    }
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--forest) 0%,var(--forest2) 100%);padding:80px 0;text-align:center}
+.cta-band h2{font-family:var(--fh);font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:12px}
+.cta-band h2 em{font-style:italic;color:var(--gold-lt)}
+.cta-band p{font-family:var(--fa);font-size:1.05rem;color:rgba(255,255,255,.7);margin-bottom:30px}
+.btn-cta{display:inline-flex;align-items:center;gap:7px;font-family:var(--fb);font-size:.83rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:12px 30px;border-radius:4px;margin:5px;transition:var(--tr)}
+.btn-cta.gold{background:var(--gold);color:#fff;border:2px solid var(--gold)}
+.btn-cta.gold:hover{background:var(--gold-lt);border-color:var(--gold-lt);color:#fff;transform:translateY(-2px)}
+.btn-cta.outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-cta.outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
-    /* Product badge */
-    .prod-number {
-      font-family: var(--font-head); font-size: 5rem; font-weight: 700;
-      color: var(--gold); opacity: 0.15; line-height: 1;
-      position: absolute; top: -10px; left: -10px; pointer-events: none;
-    }
+/* WHATSAPP */
+.wa-btn{position:fixed;bottom:26px;right:26px;z-index:9999;width:52px;height:52px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.45);transition:var(--tr)}
+.wa-btn:hover{transform:scale(1.1);color:#fff}
 
-    /* Spec table */
-    .spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-    .spec-table tr { border-bottom: 1px solid var(--border); }
-    .spec-table tr:last-child { border-bottom: none; }
-    .spec-table td {
-      font-family: var(--font-body); font-size: 0.88rem;
-      padding: 10px 12px; vertical-align: top;
-    }
-    .spec-table td:first-child {
-      font-weight: 600; color: var(--forest); width: 42%;
-      background: var(--cream); border-radius: 4px;
-    }
-    .spec-table td:last-child { color: var(--text-mid); }
+/* FOOTER */
+.site-footer{background:var(--forest);padding-top:60px}
+.footer-brand p{font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:240px}
+.footer-col-heading{font-family:var(--fb);font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:18px;display:block}
+.footer-info-item{display:flex;align-items:flex-start;gap:9px;margin-bottom:11px}
+.footer-info-item i{color:var(--gold-lt);font-size:.88rem;margin-top:3px;flex-shrink:0}
+.footer-info-item span,.footer-info-item a{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.55;transition:color .2s;word-break:break-word;text-decoration:none}
+.footer-info-item a:hover{color:var(--gold-lt)}
+.footer-link{font-size:.85rem;color:rgba(255,255,255,.6);text-decoration:none;display:flex;align-items:center;gap:6px;padding:4px 0;transition:color .25s,padding-left .25s}
+.footer-link i{font-size:.65rem;color:var(--gold-lt)}
+.footer-link:hover{color:#fff;padding-left:4px}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:36px 0 0}
+.footer-bottom{padding:16px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.4);margin:0}
+.footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none}
+.footer-bottom a:hover{color:var(--gold-lt)}
+.social-links{display:flex;gap:8px}
+.social-link{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:7px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:var(--tr)}
+.social-link:hover{background:var(--gold)}
+.social-link i{font-size:.9rem;color:rgba(255,255,255,.75)}
+.social-link:hover i{color:#fff}
 
-    /* Feature pills */
-    .feature-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
-    .feature-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
-      background: var(--cream); color: var(--forest);
-      padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
-    }
-    .feature-pill i { color: var(--gold); font-size: 0.85rem; }
-
-    /* Use-case cards */
-    .use-card {
-      background: #fff; border-radius: var(--radius);
-      border: 1px solid var(--border); padding: 20px 18px;
-      transition: var(--transition); height: 100%;
-    }
-    .use-card:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
-    .use-card i { font-size: 1.6rem; color: var(--gold); margin-bottom: 12px; display: block; }
-    .use-card h5 { font-family: var(--font-head); font-size: 0.98rem; color: var(--forest); margin-bottom: 6px; }
-    .use-card p { font-size: 0.82rem; line-height: 1.6; margin: 0; }
-
-    /* Section divider */
-    .prod-divider {
-      height: 4px; border: none;
-      background: linear-gradient(90deg, var(--forest), var(--gold), transparent);
-      opacity: 0.2; margin: 0;
-    }
-
-    /* ══════════════════════════════════════════
-       PRODUCT IMAGE GALLERY
-    ══════════════════════════════════════════ */
-    .prod-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
-    .prod-gallery-item { overflow: hidden; border-radius: 8px; cursor: pointer; }
-    .prod-gallery-item img {
-      width: 100%; height: 110px; object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .prod-gallery-item:hover img { transform: scale(1.08); }
-
-    /* ══════════════════════════════════════════
-       COMPARE TABLE
-    ══════════════════════════════════════════ */
-    .compare-section { background: var(--forest); }
-    .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); }
-    .compare-table {
-      width: 100%; border-collapse: collapse; min-width: 560px;
-    }
-    .compare-table thead th {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      padding: 20px 24px; text-align: center; background: rgba(255,255,255,0.06);
-      color: var(--gold-lt); border-bottom: 2px solid rgba(255,255,255,0.1);
-    }
-    .compare-table thead th:first-child { text-align: left; }
-    .compare-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.07); transition: background 0.2s; }
-    .compare-table tbody tr:last-child { border-bottom: none; }
-    .compare-table tbody tr:hover { background: rgba(255,255,255,0.04); }
-    .compare-table tbody td {
-      font-family: var(--font-body); font-size: 0.88rem;
-      padding: 16px 24px; text-align: center; color: rgba(255,255,255,0.7);
-    }
-    .compare-table tbody td:first-child {
-      text-align: left; font-weight: 600; color: rgba(255,255,255,0.9);
-    }
-    .compare-table .check { color: #4ade80; font-size: 1.1rem; }
-    .compare-table .dash  { color: rgba(255,255,255,0.25); font-size: 1.1rem; }
-
-    /* ══════════════════════════════════════════
-       CTA BAND
-    ══════════════════════════════════════════ */
-    .cta-band {
-      background: linear-gradient(135deg, var(--forest) 0%, var(--forest2) 100%);
-      padding: 80px 0; text-align: center;
-    }
-    .cta-band h2 {
-      font-family: var(--font-head); font-size: clamp(1.8rem, 3vw, 2.8rem);
-      color: #fff; margin-bottom: 16px;
-    }
-    .cta-band h2 em { font-style: italic; color: var(--gold-lt); }
-    .cta-band p {
-      font-family: var(--font-acc); font-size: 1.1rem;
-      color: rgba(255,255,255,0.72); margin-bottom: 36px;
-    }
-    .cta-band .btn-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--font-body); font-size: 0.88rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-      padding: 15px 36px; border-radius: 3px;
-      background: var(--gold); color: #fff;
-      text-decoration: none; border: 2px solid var(--gold);
-      transition: var(--transition); margin: 6px;
-    }
-    .cta-band .btn-cta:hover {
-      background: #fff; border-color: #fff; color: var(--forest);
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,255,255,0.2);
-    }
-    .cta-band .btn-cta-outline {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--font-body); font-size: 0.88rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-      padding: 13px 34px; border-radius: 3px;
-      background: transparent; color: #fff;
-      text-decoration: none; border: 2px solid rgba(255,255,255,0.5);
-      transition: var(--transition); margin: 6px;
-    }
-    .cta-band .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
-
-    /* ══════════════════════════════════════════
-       WHATSAPP FLOAT
-    ══════════════════════════════════════════ */
-    .wa-btn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      width: 56px; height: 56px; background: #25D366; color: #fff;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition);
-    }
-    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
-
-    /* ══════════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════════ */
-    .site-footer { background: var(--forest); padding-top: 64px; }
-    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 240px; }
-    .footer-col-heading {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-lt); margin-bottom: 20px; display: block;
-    }
-    .footer-info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
-    .footer-info-item span,
-    .footer-info-item a {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      line-height: 1.55; transition: color 0.2s; word-break: break-word;
-    }
-    .footer-info-item a:hover { color: var(--gold-lt); }
-    .footer-link {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      display: flex; align-items: center; gap: 6px;
-      padding: 5px 0; transition: color 0.25s, padding-left 0.25s;
-    }
-    .footer-link i { font-size: 0.7rem; color: var(--gold-lt); }
-    .footer-link:hover { color: #fff; padding-left: 4px; }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0; }
-    .footer-bottom {
-      padding: 18px 0; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 12px;
-    }
-    .footer-bottom p { font-family: var(--font-body); font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; }
-    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--gold-lt); }
-    .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .social-link {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.08);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      text-decoration: none; transition: var(--transition);
-    }
-    .social-link:hover { background: var(--gold); }
-    .social-link i { font-size: 1rem; color: rgba(255,255,255,0.8); }
-    .social-link:hover i { color: #fff; }
-
-    /* ══════════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════════ */
-    @media (max-width: 991px) {
-      .main-nav .nav-link { padding: 12px 16px !important; }
-      .main-nav .nav-link::after { display: none; }
-      .translate-wrap { margin: 8px 16px 12px; }
-      .prod-nav-section { top: 70px; }
-      .prod-hero-img { height: 380px; }
-    }
-    @media (max-width: 768px) {
-      .section    { padding: 64px 0; }
-      .section-sm { padding: 48px 0; }
-      .page-hero  { height: 260px; }
-      .prod-hero-img { height: 300px; }
-      .prod-gallery { grid-template-columns: repeat(3, 1fr); }
-      .prod-gallery-item img { height: 90px; }
-      .spec-table td:first-child { width: 46%; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .wa-btn { width: 48px; height: 48px; font-size: 22px; bottom: 18px; right: 18px; }
-      .prod-nav-btn { padding: 16px 18px; font-size: 0.78rem; }
-    }
-    @media (max-width: 575px) {
-      .section    { padding: 48px 0; }
-      .page-hero  { height: 220px; }
-      .page-hero-content h1 { font-size: 1.8rem; }
-      .prod-hero-img { height: 240px; }
-      .prod-gallery { grid-template-columns: repeat(3, 1fr); }
-      .prod-gallery-item img { height: 80px; }
-      .site-footer .col-6.col-md-2,
-      .site-footer .col-6.col-md-3 { width: 100%; }
-      .footer-brand p { max-width: 100%; }
-      .footer-bottom p { font-size: 0.75rem; }
-      .wa-btn { width: 46px; height: 46px; font-size: 20px; bottom: 16px; right: 16px; }
-      .compare-table tbody td,
-      .compare-table thead th { padding: 12px 14px; font-size: 0.8rem; }
-      .cta-band { padding: 56px 0; }
-    }
-    @media (max-width: 380px) {
-      .wa-btn { width: 42px; height: 42px; font-size: 18px; bottom: 12px; right: 12px; }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .sb-placeholder{width:240px}.sidebar{width:240px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}.prod-grid.g4{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:991px){
+  .sb-placeholder,.sidebar{display:none!important}.mob-filter-btn{display:flex}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}.prod-grid.g4{grid-template-columns:repeat(2,1fr)}
+  .main-nav .nav-link{padding:12px 12px!important}.main-nav .nav-link::after{display:none}
+  .translate-wrap{margin:8px 16px 12px}
+}
+@media(max-width:767px){
+  .page-hero{height:260px}.dm-layout{flex-direction:column}
+  .dm-img-col{width:100%;max-height:220px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .wa-btn{width:46px;height:46px;font-size:22px;bottom:18px;right:18px}
+}
+@media(max-width:575px){
+  .page-hero{height:220px}.page-hero-content h1{font-size:1.9rem}
+  .prod-grid,.prod-grid.g2,.prod-grid.g4{grid-template-columns:1fr}
+  .filter-bar{flex-direction:column;align-items:flex-start}
+  .filter-bar-right{width:100%;justify-content:space-between}
+  .site-footer .col-6{width:100%}
+}
+</style>
 </head>
 <body>
 
-<!-- ════════════ TOP BAR ════════════ -->
+<!-- TOPBAR -->
 <div class="topbar d-none d-md-block">
   <div class="container-fluid px-4">
     <div class="d-flex justify-content-between align-items-center">
       <div>
-        <i class="bi bi-telephone-fill me-1" style="color:var(--gold);"></i>
+        <i class="bi bi-telephone-fill me-1" style="color:var(--gold-lt)"></i>
         <a href="tel:+919944859177">+91 99448 59177</a>
         <span class="topbar-sep">|</span>
-        <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+        <i class="bi bi-envelope-fill me-1" style="color:var(--gold-lt)"></i>
         <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a>
       </div>
       <div class="d-flex align-items-center gap-3">
-        <a href="https://facebook.com"  target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com"   target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-youtube"></i></a>
+        <a href="https://facebook.com" target="_blank" style="color:rgba(255,255,255,.75)"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,.75)"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,.75)"><i class="bi bi-youtube"></i></a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════ NAVBAR ════════════ -->
+<!-- NAVBAR - original white style -->
 <div class="main-nav">
   <div class="container-fluid px-4">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
-      </a>
-      <button class="navbar-toggler border-0" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navMain"
-        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html"><img src="newlogo.png" alt="Anuradha Coirs"></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMain">
@@ -516,24 +342,15 @@
               <span class="tw-label">Lang</span>
               <select id="translate-select" title="Select language">
                 <option value="">English</option>
-                <option value="ar">Arabic</option>
-                <option value="zh-CN">Chinese</option>
-                <option value="nl">Dutch</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="hi">Hindi</option>
-                <option value="id">Indonesian</option>
-                <option value="it">Italian</option>
-                <option value="ja">Japanese</option>
-                <option value="ko">Korean</option>
-                <option value="ms">Malay</option>
-                <option value="pt">Portuguese</option>
-                <option value="ru">Russian</option>
-                <option value="es">Spanish</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
-                <option value="th">Thai</option>
-                <option value="tr">Turkish</option>
+                <option value="ar">Arabic</option><option value="zh-CN">Chinese</option>
+                <option value="nl">Dutch</option><option value="fr">French</option>
+                <option value="de">German</option><option value="hi">Hindi</option>
+                <option value="id">Indonesian</option><option value="it">Italian</option>
+                <option value="ja">Japanese</option><option value="ko">Korean</option>
+                <option value="ms">Malay</option><option value="pt">Portuguese</option>
+                <option value="ru">Russian</option><option value="es">Spanish</option>
+                <option value="ta">Tamil</option><option value="te">Telugu</option>
+                <option value="th">Thai</option><option value="tr">Turkish</option>
                 <option value="vi">Vietnamese</option>
               </select>
             </div>
@@ -544,9 +361,9 @@
   </div>
 </div>
 
-<!-- ════════════ PAGE HERO ════════════ -->
+<!-- PAGE HERO - original style -->
 <div class="page-hero">
-  <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Our Products" class="page-hero-img">
+  <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Products" class="page-hero-img">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <span class="eyebrow">What We Offer</span>
@@ -555,9 +372,9 @@
   </div>
 </div>
 
-<!-- ════════════ BREADCRUMB ════════════ -->
+<!-- BREADCRUMB -->
 <div class="breadcrumb-bar">
-  <div class="container">
+  <div class="container-fluid px-4">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
@@ -567,646 +384,285 @@
   </div>
 </div>
 
-<!-- ════════════ STICKY PRODUCT NAV ════════════ -->
-<div class="prod-nav-section">
-  <div class="container">
-    <div class="prod-nav-inner">
-      <button class="prod-nav-btn active" onclick="scrollToProduct('fibre')">
-        <i class="bi bi-tree-fill"></i> Coconut Fibre
-      </button>
-      <button class="prod-nav-btn" onclick="scrollToProduct('peat')">
-        <i class="bi bi-circle-fill" style="font-size:0.6rem;"></i> Coco Peat Coin
-      </button>
-      <button class="prod-nav-btn" onclick="scrollToProduct('growbag')">
-        <i class="bi bi-bag-fill"></i> Grow Bag
-      </button>
+<!-- SHOP LAYOUT -->
+<div class="shop-wrap" id="shopWrap">
+  <div class="sb-placeholder" id="sbPlaceholder"></div>
+  <aside class="sidebar" id="desktopSidebar"></aside>
+  <div class="shop-main">
+    <div class="filter-bar">
+      <div class="filter-bar-left">
+        <button class="mob-filter-btn" data-bs-toggle="offcanvas" data-bs-target="#mobSidebar">
+          <i class="bi bi-funnel-fill"></i> Filter
+        </button>
+        <div>
+          <div class="fb-title" id="fbTitle">All Products</div>
+          <div class="fb-count" id="fbCount"></div>
+        </div>
+      </div>
+      <div class="filter-bar-right">
+        <select class="sort-sel" id="sortSel">
+          <option value="default">Sort: Default</option>
+          <option value="az">Name: A to Z</option>
+          <option value="za">Name: Z to A</option>
+          <option value="new">New Arrivals First</option>
+        </select>
+        <button class="view-btn active" id="vG3" title="3 columns"><i class="bi bi-grid-3x3-gap-fill"></i></button>
+        <button class="view-btn" id="vG2" title="2 columns"><i class="bi bi-grid-fill"></i></button>
+        <button class="view-btn d-none d-xl-flex" id="vG4" title="4 columns"><i class="bi bi-grid"></i></button>
+        <button class="view-btn" id="vLst" title="List view"><i class="bi bi-list-ul"></i></button>
+      </div>
     </div>
+    <div class="shop-main-inner" id="shopInner"></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     PRODUCT 1 — COCONUT FIBRE
-════════════════════════════════════════ -->
-<section class="product-section section" id="fibre">
+<!-- MOBILE OFFCANVAS -->
+<div class="offcanvas offcanvas-start mob-sidebar" tabindex="-1" id="mobSidebar">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-funnel-fill me-2"></i>Browse Categories</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body" id="mobSidebarBody"></div>
+</div>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="ctaBand">
   <div class="container">
-
-    <!-- Intro header -->
-    <div class="text-center mb-5">
-      <span class="eyebrow">Product 01</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">Coconut Fibre</h2>
-      <div class="heading-line center"></div>
-      <p class="mx-auto" style="max-width:620px;font-size:0.97rem;">
-        Extracted from the fibrous husk of the coconut, our coir fibre is processed, graded, and prepared for a wide range of industrial and horticultural uses worldwide.
-      </p>
-    </div>
-
-    <div class="row align-items-center g-5">
-
-      <!-- Image -->
-      <div class="col-12 col-lg-5">
-        <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Coconut Fibre" class="prod-hero-img">
-        <!-- Thumbnail gallery -->
-        <div class="prod-gallery mt-3">
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Coconut Fibre 1">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/rawMaterial.jpg" alt="Raw Material">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/Coir Fibre.jpg" alt="Coir Fibre">
-          </div>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="col-12 col-lg-7">
-        <div style="position:relative;">
-          <span class="prod-number">01</span>
-          <span class="eyebrow" style="position:relative;z-index:1;">Coconut Fibre</span>
-          <h3 style="font-family:var(--font-head);font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--forest);margin-bottom:12px;position:relative;z-index:1;">
-            Strong, Sustainable &amp; Versatile
-          </h3>
-          <div class="heading-line"></div>
-        </div>
-
-        <p class="mb-3">
-          Coconut fibre (coir) is extracted from the outer husk of mature coconuts. Our fibres are carefully processed through defibring, cleaning, grading, and drying to meet international export standards. Available in both <strong>Brown Coir</strong> (from mature husks) and <strong>White Coir</strong> (from green husks), each type serves distinct markets.
-        </p>
-        <p class="mb-4">
-          With exceptional tensile strength, natural resistance to saltwater, and outstanding durability, coir fibre is a preferred raw material for rope-making, geotextiles, floor coverings, brushes, and growing media across the globe.
-        </p>
-
-        <!-- Spec table -->
-        <table class="spec-table mb-4">
-          <tr><td>Fibre Type</td><td>Brown Coir &amp; White Coir</td></tr>
-          <tr><td>Moisture Content</td><td>≤ 18%</td></tr>
-          <tr><td>Fibre Length</td><td>10 cm – 30 cm</td></tr>
-          <tr><td>Tensile Strength</td><td>High — 100–175 MPa</td></tr>
-          <tr><td>Packaging</td><td>Bales (25–30 kg), Custom</td></tr>
-          <tr><td>Certification</td><td>ISO / Phytosanitary Available</td></tr>
-        </table>
-
-        <!-- Feature pills -->
-        <div class="feature-pills mb-4">
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> High Tensile Strength</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> pH Neutral</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Saltwater Resistant</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> 100% Natural</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Biodegradable</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Export Certified</span>
-        </div>
-
-        <a href="contact.html" class="btn-primary-coir">Request a Quote <i class="bi bi-arrow-right"></i></a>
-        <a href="process.html" class="btn-ghost-coir ms-2">Our Process <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <!-- Use cases -->
-    <div class="mt-5 pt-3">
-      <h4 style="font-family:var(--font-head);color:var(--forest);margin-bottom:24px;">Applications &amp; Uses</h4>
-      <div class="row g-3">
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-rope"></i>
-            <h5>Rope &amp; Twine</h5>
-            <p>Maritime, agricultural, and industrial roping</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-grid-3x3"></i>
-            <h5>Mats &amp; Carpets</h5>
-            <p>Door mats, floor coverings, rugs</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-flower1"></i>
-            <h5>Horticulture</h5>
-            <p>Growing pots, logs, and basket liners</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-building"></i>
-            <h5>Geotextiles</h5>
-            <p>Erosion control and slope stabilisation</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-brush"></i>
-            <h5>Brushes</h5>
-            <p>Industrial and household brushware</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-car-front"></i>
-            <h5>Automotive</h5>
-            <p>Seat padding and interior insulation</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <h2>Need a <em>Custom Order?</em></h2>
+    <p>Tell us your specifications - we handle everything from production to worldwide delivery.</p>
+    <a href="contact.html" class="btn-cta gold"><i class="bi bi-send-fill"></i> Request a Quote</a>
+    <a href="process.html" class="btn-cta outline"><i class="bi bi-play-circle-fill"></i> See Our Process</a>
   </div>
 </section>
 
-<hr class="prod-divider">
-
-<!-- ════════════════════════════════════════
-     PRODUCT 2 — COCO PEAT COIN
-════════════════════════════════════════ -->
-<section class="product-section section" id="peat">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <span class="eyebrow">Product 02</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">Coco Peat Coin</h2>
-      <div class="heading-line center"></div>
-      <p class="mx-auto" style="max-width:620px;font-size:0.97rem;">
-        Compact, lightweight, and incredibly powerful — our coco peat coins expand up to 7× their original size when hydrated, making them the ideal growing medium for modern growers.
-      </p>
-    </div>
-
-    <div class="row align-items-center g-5 flex-lg-row-reverse">
-
-      <!-- Image -->
-      <div class="col-12 col-lg-5">
-        <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Peat Coin" class="prod-hero-img">
-        <div class="prod-gallery mt-3">
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Peat Coin">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/screening.jpg" alt="Screening Process">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/Quality.jpg" alt="Quality Check">
-          </div>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="col-12 col-lg-7">
-        <div style="position:relative;">
-          <span class="prod-number">02</span>
-          <span class="eyebrow" style="position:relative;z-index:1;">Coco Peat Coin</span>
-          <h3 style="font-family:var(--font-head);font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--forest);margin-bottom:12px;position:relative;z-index:1;">
-            Just Add Water — Watch it Grow
-          </h3>
-          <div class="heading-line"></div>
-        </div>
-
-        <p class="mb-3">
-          Our coco peat coins are compressed discs manufactured from washed, low-EC coco peat. Lightweight and easy to store, each coin expands <strong>5–7× its original volume</strong> when water is added, providing a ready-to-use, sterile growing medium in seconds.
-        </p>
-        <p class="mb-4">
-          Widely used in home gardening kits, seed starting trays, nurseries, and hydroponic setups, our coins are pH-balanced, have excellent air porosity, and retain moisture efficiently — giving seeds the perfect environment to germinate and thrive.
-        </p>
-
-        <!-- How to use steps -->
-        <div class="mb-4" style="background:var(--cream);border-radius:var(--radius);padding:20px 24px;">
-          <h6 style="font-family:var(--font-head);color:var(--forest);margin-bottom:14px;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;">How to Use</h6>
-          <div class="d-flex gap-3 flex-wrap">
-            <div style="text-align:center;flex:1;min-width:80px;">
-              <div style="width:44px;height:44px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">
-                <i class="bi bi-1-circle-fill" style="color:var(--gold-lt);font-size:1.1rem;"></i>
-              </div>
-              <p style="font-size:0.75rem;margin:0;color:var(--text-mid);">Place coin in tray</p>
-            </div>
-            <div style="text-align:center;flex:1;min-width:80px;">
-              <div style="width:44px;height:44px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">
-                <i class="bi bi-droplet-fill" style="color:var(--gold-lt);font-size:1.1rem;"></i>
-              </div>
-              <p style="font-size:0.75rem;margin:0;color:var(--text-mid);">Add warm water</p>
-            </div>
-            <div style="text-align:center;flex:1;min-width:80px;">
-              <div style="width:44px;height:44px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">
-                <i class="bi bi-clock-fill" style="color:var(--gold-lt);font-size:1.1rem;"></i>
-              </div>
-              <p style="font-size:0.75rem;margin:0;color:var(--text-mid);">Wait 5 minutes</p>
-            </div>
-            <div style="text-align:center;flex:1;min-width:80px;">
-              <div style="width:44px;height:44px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">
-                <i class="bi bi-flower2" style="color:var(--gold-lt);font-size:1.1rem;"></i>
-              </div>
-              <p style="font-size:0.75rem;margin:0;color:var(--text-mid);">Plant your seeds</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spec table -->
-        <table class="spec-table mb-4">
-          <tr><td>Coin Sizes</td><td>38 mm, 50 mm, 70 mm (custom available)</td></tr>
-          <tr><td>Expansion Ratio</td><td>5× – 7× original volume</td></tr>
-          <tr><td>EC Level</td><td>&lt; 0.5 mS/cm (washed)</td></tr>
-          <tr><td>pH Range</td><td>5.5 – 6.5</td></tr>
-          <tr><td>Moisture Retention</td><td>Excellent (up to 8–9× dry weight)</td></tr>
-          <tr><td>Packaging</td><td>Bags of 50 / 100 / 500 coins; bulk</td></tr>
-        </table>
-
-        <div class="feature-pills mb-4">
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> 5–7× Expansion</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Sterile Medium</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> pH Balanced</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Low EC</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Biodegradable</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Easy to Ship</span>
-        </div>
-
-        <a href="contact.html" class="btn-primary-coir">Request a Quote <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <!-- Use cases -->
-    <div class="mt-5 pt-3">
-      <h4 style="font-family:var(--font-head);color:var(--forest);margin-bottom:24px;">Applications &amp; Uses</h4>
-      <div class="row g-3">
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-house-heart"></i>
-            <h5>Home Gardening</h5>
-            <p>Indoor kits, windowsill planters</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-seedling"></i>
-            <h5>Seed Starting</h5>
-            <p>Plug trays, germination chambers</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-flower1"></i>
-            <h5>Nurseries</h5>
-            <p>Commercial plant propagation</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-water"></i>
-            <h5>Hydroponics</h5>
-            <p>Soilless growing systems</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-gift"></i>
-            <h5>Gift Kits</h5>
-            <p>DIY gardening kits &amp; retail packaging</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-building-up"></i>
-            <h5>Rooftop Gardens</h5>
-            <p>Lightweight medium for urban farms</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="prod-divider">
-
-<!-- ════════════════════════════════════════
-     PRODUCT 3 — GROW BAG
-════════════════════════════════════════ -->
-<section class="product-section section" id="growbag">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <span class="eyebrow">Product 03</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">Coir Grow Bag</h2>
-      <div class="heading-line center"></div>
-      <p class="mx-auto" style="max-width:620px;font-size:0.97rem;">
-        The professional grower's choice — our coir grow bags deliver superior drainage, root aeration, and reusability for high-value crop production in greenhouses and open fields worldwide.
-      </p>
-    </div>
-
-    <div class="row align-items-center g-5">
-
-      <!-- Image -->
-      <div class="col-12 col-lg-5">
-        <img src="assets/images/productimages/growBags.jpg" alt="Coir Grow Bag" class="prod-hero-img">
-        <div class="prod-gallery mt-3">
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/growBags.jpg" alt="Grow Bag">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/packing.jpg" alt="Packing">
-          </div>
-          <div class="prod-gallery-item">
-            <img src="assets/images/productimages/Quality.jpg" alt="Quality">
-          </div>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="col-12 col-lg-7">
-        <div style="position:relative;">
-          <span class="prod-number">03</span>
-          <span class="eyebrow" style="position:relative;z-index:1;">Coir Grow Bag</span>
-          <h3 style="font-family:var(--font-head);font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--forest);margin-bottom:12px;position:relative;z-index:1;">
-            The Professional Grower's Choice
-          </h3>
-          <div class="heading-line"></div>
-        </div>
-
-        <p class="mb-3">
-          Our coir grow bags are manufactured from high-quality buffered coco peat, blended with the ideal ratio of coir chips and fibre to achieve optimum air-to-water balance. Delivered pre-moistened and wrapped in UV-treated polyethylene film, they are ready to plant right out of the box.
-        </p>
-        <p class="mb-4">
-          Compatible with drip-irrigation systems, our grow bags are used extensively for cultivating <strong>tomatoes, cucumbers, peppers, strawberries, herbs</strong>, and other high-value crops. Each bag can be reused for <strong>2–3 growing cycles</strong>, significantly reducing input costs.
-        </p>
-
-        <!-- Spec table -->
-        <table class="spec-table mb-4">
-          <tr><td>Standard Sizes</td><td>100×15×10 cm, 100×20×15 cm (custom)</td></tr>
-          <tr><td>Volume</td><td>15 L / 20 L / 25 L (customisable)</td></tr>
-          <tr><td>EC Level</td><td>&lt; 1.0 mS/cm (buffered)</td></tr>
-          <tr><td>pH Range</td><td>5.5 – 6.8</td></tr>
-          <tr><td>Reusability</td><td>2–3 growing cycles</td></tr>
-          <tr><td>Film</td><td>UV-treated white/black polyethylene</td></tr>
-          <tr><td>Irrigation</td><td>Drip irrigation compatible</td></tr>
-          <tr><td>Packaging</td><td>Shrink-wrapped pallets, custom labelling</td></tr>
-        </table>
-
-        <div class="feature-pills mb-4">
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Superior Drainage</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Root Aeration</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Drip Ready</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Reusable 2–3×</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> 100% Biodegradable</span>
-          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Custom Sizes</span>
-        </div>
-
-        <a href="contact.html" class="btn-primary-coir">Request a Quote <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <!-- Use cases -->
-    <div class="mt-5 pt-3">
-      <h4 style="font-family:var(--font-head);color:var(--forest);margin-bottom:24px;">Applications &amp; Uses</h4>
-      <div class="row g-3">
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-brightness-high"></i>
-            <h5>Tomatoes</h5>
-            <p>Greenhouse &amp; open-field cultivation</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-capsule"></i>
-            <h5>Peppers</h5>
-            <p>Bell peppers, chillies &amp; paprika</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-grid-fill"></i>
-            <h5>Cucumbers</h5>
-            <p>Vertical growing systems</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-heart-fill"></i>
-            <h5>Strawberries</h5>
-            <p>Elevated row growing &amp; tunnels</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-leaf"></i>
-            <h5>Herbs</h5>
-            <p>Basil, mint, coriander, medicinal</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="use-card text-center">
-            <i class="bi bi-building"></i>
-            <h5>Commercial Farms</h5>
-            <p>Large-scale hydroponic operations</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════ COMPARISON TABLE ════════════ -->
-<section class="compare-section section-sm">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow" style="color:var(--gold-lt);">Side by Side</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;">Product Comparison</h2>
-      <div class="heading-line center"></div>
-    </div>
-    <div class="compare-table-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Coconut Fibre</th>
-            <th>Coco Peat Coin</th>
-            <th>Grow Bag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Primary Use</td>
-            <td>Industrial &amp; horticultural raw material</td>
-            <td>Home growing &amp; seed starting</td>
-            <td>Commercial crop production</td>
-          </tr>
-          <tr>
-            <td>Form</td>
-            <td>Loose bales</td>
-            <td>Compressed disc</td>
-            <td>Ready-to-plant bag</td>
-          </tr>
-          <tr>
-            <td>Water Retention</td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-          </tr>
-          <tr>
-            <td>Drip Irrigation Ready</td>
-            <td><i class="bi bi-dash dash"></i></td>
-            <td><i class="bi bi-dash dash"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-          </tr>
-          <tr>
-            <td>Reusable</td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-dash dash"></i></td>
-            <td><i class="bi bi-check2 check"></i> 2–3 cycles</td>
-          </tr>
-          <tr>
-            <td>Biodegradable</td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-          </tr>
-          <tr>
-            <td>Export Certified</td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-          </tr>
-          <tr>
-            <td>Custom Sizes</td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-            <td><i class="bi bi-check2 check"></i></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ CTA BAND ════════════ -->
-<section class="cta-band">
-  <div class="container">
-    <span class="eyebrow" style="color:var(--gold-lt);justify-content:center;display:flex;">Ready to Order?</span>
-    <h2>Let's Build Your <em>Custom Order</em></h2>
-    <p>Tell us your specifications — we'll handle the rest, from production to delivery at your door.</p>
-    <div>
-      <a href="contact.html" class="btn-cta"><i class="bi bi-send-fill"></i> Get a Quote</a>
-      <a href="process.html" class="btn-cta-outline"><i class="bi bi-play-circle"></i> See Our Process</a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ WHATSAPP FLOAT ════════════ -->
-<a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
-   target="_blank" class="wa-btn" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+<!-- WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=919944859177&text=Hello!%20I%20want%20to%20enquire%20about%20your%20coir%20products." target="_blank" class="wa-btn" aria-label="WhatsApp">
   <i class="bi bi-whatsapp"></i>
 </a>
 
-<!-- ════════════ FOOTER ════════════ -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
     <div class="row g-5">
-
       <div class="col-12 col-md-4 footer-brand">
-        <img src="newlogo.png" alt="Anuradha Coirs" height="70"
-             style="filter:brightness(10);margin-bottom:16px;">
-        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients across 50+ countries.</p>
+        <img src="newlogo.png" alt="Anuradha Coirs" height="70" style="filter:brightness(10);margin-bottom:16px;">
+        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamil Nadu, India. Trusted by 500+ clients across 50+ countries.</p>
       </div>
-
       <div class="col-6 col-md-2">
         <span class="footer-col-heading">Navigation</span>
-        <a href="index.html"     class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+        <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
         <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
-        <a href="product.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
-        <a href="process.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
-        <a href="gallery.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
-        <a href="contact.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+        <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+        <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+        <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+        <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
       </div>
-
       <div class="col-6 col-md-3">
         <span class="footer-col-heading">India Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:+919944859177">+91 99448 59177</a>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a>
-        </div>
+        <div class="footer-info-item"><i class="bi bi-geo-alt-fill"></i>
+          <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN - 624219</span></div>
+        <div class="footer-info-item"><i class="bi bi-telephone-fill"></i>
+          <a href="tel:+919944859177">+91 99448 59177</a></div>
+        <div class="footer-info-item"><i class="bi bi-envelope-fill"></i>
+          <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a></div>
       </div>
-
       <div class="col-12 col-md-3">
         <span class="footer-col-heading">US Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:+12063919622">+1 206 391 9622</a>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a>
-        </div>
+        <div class="footer-info-item"><i class="bi bi-geo-alt-fill"></i>
+          <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA - 24013</span></div>
+        <div class="footer-info-item"><i class="bi bi-telephone-fill"></i>
+          <a href="tel:+12063919622">+1 206 391 9622</a></div>
+        <div class="footer-info-item"><i class="bi bi-envelope-fill"></i>
+          <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a></div>
       </div>
-
     </div>
     <hr class="footer-divider">
     <div class="footer-bottom">
-      <p>&copy; <span id="footer-year"></span>
-        <a href="index.html">Anuradha Coirs &amp; Fibers</a>.
-        All Rights Reserved. | <a href="#">Terms &amp; Conditions</a>
-      </p>
+      <p>&copy; <span id="fyear"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All rights reserved.</p>
       <div class="social-links">
-        <a href="https://facebook.com"  target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com"   target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
-        <a href="mailto:info@anuradhacoirsfibres.com" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://facebook.com" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" class="social-link"><i class="bi bi-youtube"></i></a>
+        <a href="mailto:info@anuradhacoirsfibres.com" class="social-link"><i class="bi bi-envelope-fill"></i></a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ════════════ SCRIPTS ════════════ -->
+<!-- DETAIL MODAL -->
+<div class="modal fade det-modal" id="detModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detTitle">Product Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0" id="detBody"></div>
+    </div>
+  </div>
+</div>
+
 <script>
-  /* Footer year */
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
+const STORE_KEY='ac_products';
+const SEED=[
+  {id:'p001',name:'Coconut Fibre (Brown Coir)',category:'Coconut Fibre',image:'assets/images/productimages/Coconut-Fibre.jpg',description:'Extracted from mature coconut husks, processed to international standards. Ideal for rope-making, geotextiles, growing media, and industrial use worldwide.',pills:['High Tensile Strength','pH Neutral','Saltwater Resistant','Biodegradable','Export Certified'],specs:[['Type','Brown Coir'],['Moisture','less than 18%'],['Fibre Length','10-30 cm'],['Packaging','Bales 25-30 kg']],isNew:false,rating:4.8,reviews:124},
+  {id:'p002',name:'White Coir Fibre',category:'Coconut Fibre',image:'assets/images/productimages/Coir Fibre.jpg',description:'Processed from green coconut husks by water retting. Softer and finer - ideal for brushes, fine twines, and delicate horticultural applications.',pills:['Soft & Fine','Water Retted','Premium Grade','100% Natural'],specs:[['Type','White Coir'],['Process','Water Retted'],['Colour','Off-White'],['Packaging','Bales, Custom']],isNew:false,rating:4.7,reviews:89},
+  {id:'p003',name:'Coco Peat Coin (38mm)',category:'Coco Peat',image:'assets/images/productimages/coco-peat-coin.jpg',description:'Compact 38mm coins expanding 5-7x when hydrated. Perfect for home gardening kits, seed trays, and retail packaging.',pills:['5-7x Expansion','Sterile','pH Balanced','Low EC','Biodegradable'],specs:[['Size','38 mm'],['Expansion','5-7x volume'],['EC','less than 0.5 mS/cm'],['pH','5.5-6.5']],isNew:false,rating:4.9,reviews:203},
+  {id:'p004',name:'Coco Peat Coin (50mm)',category:'Coco Peat',image:'assets/images/productimages/coco-peat-coin.jpg',description:'Popular 50mm coin for nurseries and hydroponic grow kits. Expands to a full propagation cube with warm water.',pills:['5-7x Expansion','Nursery Grade','Easy Storage','Biodegradable'],specs:[['Size','50 mm'],['Expansion','5-7x volume'],['EC','less than 0.5 mS/cm'],['pH','5.5-6.5']],isNew:true,rating:4.9,reviews:178},
+  {id:'p005',name:'Coco Peat Coin (70mm)',category:'Coco Peat',image:'assets/images/productimages/coco-peat-coin.jpg',description:'Large 70mm coin for bigger transplants and rooftop garden applications.',pills:['Large Format','High Volume','Urban Gardening','Biodegradable'],specs:[['Size','70 mm'],['Expansion','6-7x volume'],['EC','less than 0.5 mS/cm'],['pH','5.5-6.5']],isNew:false,rating:4.7,reviews:95},
+  {id:'p006',name:'Coir Grow Bag (15L)',category:'Grow Bags',image:'assets/images/productimages/growBags.jpg',description:'Standard 15L grow bag for tomatoes, peppers, and herbs. UV-treated film, drip-irrigation slits pre-cut.',pills:['Drip Ready','Superior Drainage','Reusable 2-3x','Biodegradable'],specs:[['Size','100x15x10 cm'],['Volume','15 L'],['EC','less than 1.0 mS/cm'],['Reuse','2-3 cycles']],isNew:false,rating:4.8,reviews:156},
+  {id:'p007',name:'Coir Grow Bag (20L)',category:'Grow Bags',image:'assets/images/productimages/growBags.jpg',description:'Heavy-duty 20L bag for commercial greenhouse operations. Deeper root zone and extended reusability.',pills:['Commercial Grade','Root Aeration','Drip Ready','Custom Sizes'],specs:[['Size','100x20x15 cm'],['Volume','20 L'],['EC','less than 1.0 mS/cm'],['Reuse','2-3 cycles']],isNew:true,rating:4.9,reviews:211},
+  {id:'p008',name:'Coir Fibre Rope',category:'Other Products',image:'assets/images/Products/pt.jpeg',description:'Hand-twisted or machine-spun coir rope for maritime, agricultural, and decorative applications.',pills:['Saltwater Resistant','Rot Proof','Natural','Various Gauges'],specs:[['Material','Brown Coir Fibre'],['Type','Twisted / Braided'],['Diameter','6-25 mm']],isNew:false,rating:4.6,reviews:72}
+];
+const CAT_META={
+  'Coconut Fibre':{icon:'bi-tree-fill',color:'#2e7d32',bg:'#e8f5e9',desc:'Raw & processed fibres'},
+  'Coco Peat':{icon:'bi-circle-fill',color:'#f57c00',bg:'#fff3e0',desc:'Compressed growing media'},
+  'Grow Bags':{icon:'bi-bag-fill',color:'#1565c0',bg:'#e3f2fd',desc:'Professional crop bags'},
+  'Other Products':{icon:'bi-box-fill',color:'#6a1b9a',bg:'#f3e5f5',desc:'Specialised coir products'}
+};
+function cm(c){return CAT_META[c]||{icon:'bi-box-fill',color:'#444',bg:'#f4f6f4',desc:''}}
+function getProds(){try{const s=localStorage.getItem(STORE_KEY);if(s)return JSON.parse(s);}catch(e){}localStorage.setItem(STORE_KEY,JSON.stringify(SEED));return JSON.parse(JSON.stringify(SEED));}
+function slug(s){return String(s).toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function stars(r){let h='';for(let i=1;i<=5;i++){h+=r>=i?'<i class="bi bi-star-fill"></i>':r>=i-.5?'<i class="bi bi-star-half"></i>':'<i class="bi bi-star"></i>';}return h;}
 
-  /* Sticky product nav highlight on scroll */
-  const sections = ['fibre', 'peat', 'growbag'];
-  const navBtns  = document.querySelectorAll('.prod-nav-btn');
+let activeCat=null,searchQ='',viewMode='g3',sortMode='default';
 
-  function updateActiveNav() {
-    let current = sections[0];
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 200) current = id;
-    });
-    navBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('onclick').includes(current));
-    });
-  }
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
-
-  /* Smooth scroll to product */
-  function scrollToProduct(id) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  /* Google Translate */
-  document.getElementById('translate-select').addEventListener('change', function () {
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) { combo.value = this.value; combo.dispatchEvent(new Event('change')); }
+function buildSB(prods,target){
+  const cats=[...new Set(prods.map(p=>p.category))];
+  let h='<div class="sb-head"><div class="sb-head-title">Filter by Category</div><div class="sb-head-count">'+cats.length+' categories &bull; '+prods.length+' products</div></div>';
+  h+='<div class="sb-search"><div class="sb-search-box"><i class="bi bi-search"></i><input type="text" class="sb-input" placeholder="Search products..." autocomplete="off"></div></div>';
+  h+='<a class="sb-all '+(activeCat===null?'on':'')+'" data-cat="all" href="#"><div class="sb-all-ico"><i class="bi bi-grid-fill"></i></div><span class="sb-all-lbl">All Products</span><span class="sb-all-cnt">'+prods.length+'</span></a>';
+  h+='<span class="sb-sec-lbl">Categories</span>';
+  cats.forEach(function(cat){
+    var m=cm(cat),n=prods.filter(function(p){return p.category===cat;}).length;
+    h+='<a class="sb-cat-row '+(activeCat===cat?'on':'')+'" data-cat="'+esc(cat)+'" href="#"><div class="sb-cat-ico" style="background:'+m.bg+'"><i class="bi '+m.icon+'" style="color:'+m.color+'"></i></div><div class="sb-cat-info"><div class="sb-cat-name">'+esc(cat)+'</div><div class="sb-cat-desc">'+esc(m.desc)+'</div></div><span class="sb-cat-cnt">'+n+'</span></a>';
   });
+  h+='<div class="sb-cta"><div class="sb-cta-txt">Need bulk pricing or custom specifications?</div><a href="contact.html" class="sb-cta-btn"><i class="bi bi-send-fill me-1"></i>Request Quote</a></div>';
+  $(target).html(h);
+  $(target).find('.sb-input').val(searchQ);
+}
+
+function cardHTML(p){
+  var isList=viewMode==='gl';
+  var img=p.image||'assets/images/productimages/Coconut-Fibre.jpg';
+  var pills=(p.pills||[]).slice(0,isList?6:3).map(function(t){return '<span class="pc-pill">'+esc(t)+'</span>';}).join('');
+  var badge=p.isNew?'<span class="pc-badge pcb-new">New</span>':'<span class="pc-badge pcb-cat">'+esc(p.category)+'</span>';
+  return '<div class="prod-card" data-id="'+esc(p.id)+'"><div class="pc-img-wrap"><img src="'+esc(img)+'" alt="'+esc(p.name)+'" class="pc-img" onerror="this.src=\'assets/images/productimages/Coconut-Fibre.jpg\'"><div class="pc-overlay"><button class="pc-qv btn-qv" data-id="'+esc(p.id)+'"><i class="bi bi-eye me-1"></i>Quick View</button></div>'+badge+'<button class="pc-wish"><i class="bi bi-heart"></i></button></div><div class="pc-body"><span class="pc-cat-tag">'+esc(p.category)+'</span><div class="pc-name">'+esc(p.name)+'</div><div class="pc-stars">'+stars(p.rating||4.8)+'<span>('+( p.reviews||0)+')</span></div><div class="pc-desc">'+esc(p.description)+'</div><div class="pc-pills">'+pills+'</div><div class="pc-actions"><button class="btn-details btn-qv" data-id="'+esc(p.id)+'"><i class="bi bi-eye-fill"></i> View Details</button><a href="contact.html?product='+encodeURIComponent(p.name)+'" class="btn-quote-sm" onclick="event.stopPropagation()"><i class="bi bi-send-fill"></i> Quote</a></div></div></div>';
+}
+
+function sortList(list){
+  var a=list.slice();
+  if(sortMode==='az') return a.sort(function(x,y){return x.name.localeCompare(y.name);});
+  if(sortMode==='za') return a.sort(function(x,y){return y.name.localeCompare(x.name);});
+  if(sortMode==='new') return a.sort(function(x,y){return (y.isNew?1:0)-(x.isNew?1:0);});
+  return a;
+}
+
+function render(){
+  var all=getProds();
+  var cats=[...new Set(all.map(function(p){return p.category;}))];
+  var list=all;
+  if(activeCat) list=list.filter(function(p){return p.category===activeCat;});
+  if(searchQ){var q=searchQ.toLowerCase();list=list.filter(function(p){return (p.name||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q)||(p.description||'').toLowerCase().includes(q);});}
+  list=sortList(list);
+  buildSB(all,'#desktopSidebar');
+  buildSB(all,'#mobSidebarBody');
+  $('#fbTitle').text(activeCat||(searchQ?'"'+searchQ+'"':'All Products'));
+  $('#fbCount').html('<strong>'+list.length+'</strong> product'+(list.length!==1?'s':'')+' found');
+  if(!list.length){$('#shopInner').html('<div class="empty-wrap"><i class="bi bi-search"></i><h4>No products found</h4><p>Try a different keyword or clear the filter.</p><button class="btn-clear" onclick="clearAll()">Clear Filter</button></div>');return;}
+  var gc=viewMode==='gl'?'gl':viewMode==='g2'?'g2':viewMode==='g4'?'g4':'';
+  var html='';
+  if(activeCat){
+    var m=cm(activeCat);
+    html='<div class="cat-section"><div class="cat-hdr"><div class="cat-hdr-ico" style="background:'+m.bg+'"><i class="bi '+m.icon+'" style="color:'+m.color+'"></i></div><div class="cat-hdr-info"><h3>'+esc(activeCat)+'</h3><p>'+esc(m.desc)+' &bull; '+list.length+' product'+(list.length!==1?'s':'')+'</p></div></div><div class="prod-grid '+gc+'">'+list.map(cardHTML).join('')+'</div></div>';
+  } else {
+    cats.forEach(function(cat){
+      var prods=list.filter(function(p){return p.category===cat;});
+      if(!prods.length) return;
+      var m=cm(cat);
+      html+='<div class="cat-section" id="sec-'+slug(cat)+'"><div class="cat-hdr"><div class="cat-hdr-ico" style="background:'+m.bg+'"><i class="bi '+m.icon+'" style="color:'+m.color+'"></i></div><div class="cat-hdr-info"><h3>'+esc(cat)+'</h3><p>'+esc(m.desc)+' &bull; '+prods.length+' product'+(prods.length!==1?'s':'')+'</p></div></div><div class="prod-grid '+gc+'">'+prods.map(cardHTML).join('')+'</div></div>';
+    });
+  }
+  $('#shopInner').html(html);
+}
+function clearAll(){activeCat=null;searchQ='';render();checkSB();}
+
+/* SIDEBAR VISIBILITY - show only inside #shopWrap, clamp bottom to #ctaBand */
+function checkSB(){
+  var sb=document.getElementById('desktopSidebar');
+  if(!sb) return;
+  if(window.innerWidth<=991){sb.classList.remove('sb-on');return;}
+  var wrap=document.getElementById('shopWrap');
+  var cta=document.getElementById('ctaBand');
+  if(!wrap||!cta){sb.classList.remove('sb-on');return;}
+  var navH=88;
+  var wRect=wrap.getBoundingClientRect();
+  var cRect=cta.getBoundingClientRect();
+  var started=wRect.top<=navH;
+  var ended=cRect.top<=navH;
+  if(started&&!ended){
+    sb.classList.add('sb-on');
+    // Clamp sidebar bottom to CTA top so it never overlaps footer
+    var ctaFromBottom=window.innerHeight-cRect.top;
+    sb.style.bottom=(ctaFromBottom>0?ctaFromBottom:0)+'px';
+  } else {
+    sb.classList.remove('sb-on');
+    sb.style.bottom='0px';
+  }
+}
+$(window).on('scroll resize',checkSB);
+
+/* SCROLL SPY */
+$(window).on('scroll.spy',function(){
+  if(activeCat||searchQ) return;
+  var cur='';
+  $('.cat-section[id]').each(function(){if($(window).scrollTop()>=$(this).offset().top-160)cur=this.id;});
+  var cat=cur?cur.replace('sec-',''):'';
+  $('.sb-cat-row').each(function(){$(this).toggleClass('on',!!cat&&slug($(this).data('cat')||'')===cat);});
+  $('.sb-all').toggleClass('on',!cat);
+});
+
+/* EVENTS */
+$(document).on('click','.sb-all,.sb-cat-row',function(e){
+  e.preventDefault();
+  var cat=$(this).data('cat');
+  searchQ='';activeCat=(cat==='all')?null:String(cat);
+  render();
+  $('html,body').animate({scrollTop:$('#shopWrap').offset().top-80},260);
+  var oc=bootstrap.Offcanvas.getInstance(document.getElementById('mobSidebar'));
+  if(oc) oc.hide();
+  checkSB();
+});
+$(document).on('input','.sb-input',function(){searchQ=$(this).val().trim();activeCat=null;render();$(this).focus();});
+function setView(mode,btn){viewMode=mode;$('.view-btn').removeClass('active');$(btn).addClass('active');render();}
+$('#vG3').on('click',function(){setView('g3',this)});
+$('#vG2').on('click',function(){setView('g2',this)});
+$('#vG4').on('click',function(){setView('g4',this)});
+$('#vLst').on('click',function(){setView('gl',this)});
+$('#sortSel').on('change',function(){sortMode=$(this).val();render();});
+$(document).on('click','.btn-qv',function(e){e.stopPropagation();openDetail($(this).data('id'));});
+$(document).on('click','.prod-card',function(){openDetail($(this).data('id'));});
+
+function openDetail(id){
+  var p=getProds().find(function(x){return x.id===id;});if(!p)return;
+  var specs=(p.specs||[]).map(function(r){return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>';}).join('');
+  var pills=(p.pills||[]).map(function(t){return '<span class="dm-pill">'+esc(t)+'</span>';}).join('');
+  $('#detTitle').text(p.name);
+  $('#detBody').html('<div class="dm-layout"><div class="dm-img-col"><img src="'+esc(p.image||'assets/images/productimages/Coconut-Fibre.jpg')+'" alt="'+esc(p.name)+'" onerror="this.src=\'assets/images/productimages/Coconut-Fibre.jpg\'"></div><div class="dm-info-col"><span class="dm-cat-tag">'+esc(p.category)+'</span><h4 class="dm-name">'+esc(p.name)+'</h4><div class="dm-stars">'+stars(p.rating||4.8)+'<span style="font-size:.76rem;color:#aaa;margin-left:6px">'+( p.rating||4.8)+' &bull; '+(p.reviews||0)+' reviews</span></div><p class="dm-desc">'+esc(p.description)+'</p><div class="dm-pills">'+pills+'</div>'+(specs?'<div class="dm-spec-title">Specifications</div><table class="dm-spec-tbl"><tbody>'+specs+'</tbody></table>':'')+'<div class="dm-actions"><a href="contact.html?product='+encodeURIComponent(p.name)+'" class="dm-btn-q"><i class="bi bi-send-fill"></i> Request a Quote</a><button class="dm-btn-back" data-bs-dismiss="modal"><i class="bi bi-arrow-left"></i> Back</button></div></div></div>');
+  new bootstrap.Modal(document.getElementById('detModal')).show();
+}
+
+$('#translate-select').on('change',function(){var c=document.querySelector('.goog-te-combo');if(c){c.value=this.value;c.dispatchEvent(new Event('change'));}});
+$('#fyear').text(new Date().getFullYear());
+render();
+checkSB();
 </script>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
+}
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
