@@ -88,37 +88,36 @@
     /* ══════════════════════════════════════════
        GOOGLE TRANSLATE
     ══════════════════════════════════════════ */
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
-    body > .skiptranslate { display: none !important; }
-    #google_translate_element { display: none !important; }
-    .goog-te-combo { display: none !important; }
-
-    .translate-wrap {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #fff; border: 1.5px solid var(--border);
-      border-radius: 6px; padding: 5px 10px;
-      transition: border-color 0.25s, box-shadow 0.25s;
+    .language-item{
+        min-width:180px;
+        display:flex;
+        align-items:center;
     }
-    .translate-wrap:hover, .translate-wrap:focus-within {
-      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,151,90,0.12);
+    #google_translate_element{
+        width:100%;
     }
-    .tw-icon { font-size: 0.9rem; color: var(--gold); flex-shrink: 0; line-height: 1; }
-    .tw-label {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      color: var(--text-muted); white-space: nowrap;
+    .goog-te-gadget{
+        font-size:0 !important;
     }
-    #translate-select {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
-      color: var(--text-dark); background: transparent;
-      border: none; outline: none;
-      padding: 2px 20px 2px 0; cursor: pointer;
-      appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 2px center;
-      min-width: 100px; max-width: 130px;
+    .goog-te-combo{
+        width:100%;
+        height:42px;
+        border:1px solid #d9d9d9;
+        border-radius:8px;
+        padding:0 10px;
+        font-size:14px !important;
+        background:#fff;
     }
-    #translate-select:focus { outline: none; box-shadow: none; }
+    .goog-logo-link,
+    .goog-te-gadget span{
+        display:none !important;
+    }
+    body{
+        top:0 !important;
+    }
+    .goog-te-banner-frame{
+        display:none !important;
+    }
 
     /* ══════════════════════════════════════════
        TOP BAR
@@ -438,34 +437,8 @@
           <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item ms-lg-3">
-            <div id="google_translate_element"></div>
-            <div class="translate-wrap">
-              <i class="bi bi-translate tw-icon"></i>
-              <span class="tw-label">Lang</span>
-              <select id="translate-select" title="Select language">
-                <option value="">English</option>
-                <option value="ar">Arabic</option>
-                <option value="zh-CN">Chinese</option>
-                <option value="nl">Dutch</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="hi">Hindi</option>
-                <option value="id">Indonesian</option>
-                <option value="it">Italian</option>
-                <option value="ja">Japanese</option>
-                <option value="ko">Korean</option>
-                <option value="ms">Malay</option>
-                <option value="pt">Portuguese</option>
-                <option value="ru">Russian</option>
-                <option value="es">Spanish</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
-                <option value="th">Thai</option>
-                <option value="tr">Turkish</option>
-                <option value="vi">Vietnamese</option>
-              </select>
-            </div>
+          <li class="nav-item language-item">
+              <div id="google_translate_element"></div>
           </li>
         </ul>
       </div>
@@ -476,9 +449,9 @@
 <!-- ════════════ PAGE HERO ════════════ -->
 <div class="page-hero">
   <div class="page-hero-content">
-    <span class="eyebrow">Nature's Wonder Fibre</span>
+    <span class="eyebrow">Premium Manufacturer & Exporter</span>
     <h1>About <em>Coir</em></h1>
-    <p>Discover the story behind the world's most sustainable natural fibre</p>
+    <p>Trusted supplier of premium coconut and coir products from India to global markets</p>
   </div>
 </div>
 
@@ -501,8 +474,13 @@
         <span class="eyebrow">Why Coir Matters</span>
         <h2>Importance of Coir</h2>
         <div class="heading-line"></div>
-        <p class="mb-3">Coir, obtained from coconut husks, is a versatile material commonly used for erosion control, particularly in blankets, mats, logs, and wattles. It is an environmentally benign alternative to peat moss in agriculture, providing excellent water retention and aeration for plant roots in potting mixes and nursery pots.</p>
-        <p>Its applications include landscaping, civil engineering projects, animal bedding, crafts, and aquaculture, where it serves as a natural filtration media in aquariums to improve water quality. Coir's natural texture and durability make it a popular choice for eco-friendly applications — its biodegradability and adaptability are perfectly compatible with sustainable projects worldwide.</p>
+        <p class="mb-3">
+        Coir is a natural fibre extracted from the outer husk of coconuts and is one of the most versatile eco-friendly materials used across various industries worldwide. Known for its durability, strength, and biodegradability, coir has become an important sustainable alternative to synthetic materials in agriculture, horticulture, industrial manufacturing, and erosion control applications.
+        </p>
+
+        <p>
+        Anuradha Coirs specializes in processing and exporting high-quality coir products manufactured from carefully selected coconut husks sourced from the fertile coconut-growing regions of South India.
+        </p>
       </div>
       <div class="col-12 col-lg-6">
         <img src="assets/images/head/silder-first.jpg" alt="Coir fibre" class="intro-img">
@@ -519,8 +497,13 @@
         <span class="eyebrow">Science &amp; Structure</span>
         <h2>Formation of Coir Fibres</h2>
         <div class="heading-line"></div>
-        <p>The structure of coir fibre is characterised by long, strong, and waterproof fibres extracted from the tough husk surrounding the coconut. These fibres have a complex arrangement of cellulose fibrils embedded in a matrix of lignin and hemicellulose, providing both strength and flexibility. The microscopic structure reveals densely packed bundles, contributing to their durability and resistance to abrasion.</p>
-        <p class="mt-3">These fibres exhibit a high degree of lignification, making them highly resistant to degradation by water and microbial activity. The unique composition and arrangement of coir fibres make them suitable for a wide range of applications, from ropes and mats to upholstery and soil conditioning.</p>
+        <p>
+        Coir fibre is mainly categorized into two types: Brown Coir Fibre and White Coir Fibre. Each type is extracted from different stages of coconut maturity and serves specific industrial, agricultural, and commercial applications.
+        </p>
+
+        <p class="mt-3">
+        Coir products are recognized worldwide for their eco-friendly nature, durability, water retention capability, and suitability for horticulture, hydroponics, landscaping, erosion control, and manufacturing industries.
+        </p>
       </div>
     </div>
   </div>
@@ -534,14 +517,19 @@
         <span class="eyebrow">Mature Coconuts</span>
         <h2>Brown Coir</h2>
         <div class="heading-line"></div>
-        <p>Brown coir is derived from mature coconuts and features thicker and stronger fibres compared to white coir. Its structure is composed of densely packed lignin, making it highly resilient and durable — commonly used in applications where robustness is required.</p>
+        <p>
+        Brown coir fibre is extracted from matured coconuts and is strong, durable, and highly resistant to saltwater. It is widely used in multiple industrial and commercial applications due to its excellent strength and long-lasting performance.
+        </p>
         <div class="uses-block">
           <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
           <ul>
-            <li><i class="bi bi-check-circle-fill"></i>Ropes and cordage — Brown coir is extensively used in production of ropes due to its strength and resistance to water.</li>
-            <li><i class="bi bi-check-circle-fill"></i>Mats and doormats — Its durability makes brown coir ideal for manufacturing mats used in high-traffic areas.</li>
-            <li><i class="bi bi-check-circle-fill"></i>Brushes and brooms — The stiff fibres of brown coir are suitable for making brushes and brooms for various cleaning applications.</li>
+            <li><i class="bi bi-check-circle-fill"></i>Mattresses and upholstery products</li>
+            <li><i class="bi bi-check-circle-fill"></i>Brushes and ropes</li>
+            <li><i class="bi bi-check-circle-fill"></i>Geo textiles and erosion control mats</li>
+            <li><i class="bi bi-check-circle-fill"></i>Rubberized coir products</li>
+            <li><i class="bi bi-check-circle-fill"></i>Door mats and floor coverings</li>
           </ul>
+
         </div>
       </div>
       <div class="col-12 col-lg-5 d-flex align-items-center">
@@ -560,13 +548,16 @@
         <span class="eyebrow">Immature Coconuts</span>
         <h2>White Coir</h2>
         <div class="heading-line"></div>
-        <p>White coir is obtained from immature green coconuts and features finer and softer fibres compared to brown coir. This type of coir is more flexible and suitable for applications where a softer touch is desired.</p>
+        <p>
+        White coir fibre is extracted from immature green coconuts and is finer and softer in texture. It is mainly used where flexibility and softness are required.
+        </p>
         <div class="uses-block">
           <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
           <ul>
-            <li><i class="bi bi-check-circle-fill"></i>Upholstery — White coir fibres are commonly used as stuffing material in cushions and mattresses due to their softness and resilience.</li>
-            <li><i class="bi bi-check-circle-fill"></i>Plant liners — The fine texture makes it suitable for lining hanging baskets and planters, providing support and moisture retention.</li>
-            <li><i class="bi bi-check-circle-fill"></i>Crafts and textiles — White coir fibres can be spun into yarn and woven into textiles such as rugs and carpets, adding a natural touch to home decor.</li>
+          <li><i class="bi bi-check-circle-fill"></i>Rope making</li>
+          <li><i class="bi bi-check-circle-fill"></i>Fishing nets</li>
+          <li><i class="bi bi-check-circle-fill"></i>Handicrafts</li>
+          <li><i class="bi bi-check-circle-fill"></i>Brushes and twines</li>
           </ul>
         </div>
       </div>
@@ -590,49 +581,55 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-flower1"></i>
-          <p>Moisture absorption — ideal for growing media and potting mixes</p>
+          <p>Horticulture & Hydroponics</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-house-fill"></i>
-          <p>Used for mats, carpets, and insulation in homes and industries</p>
+          <p>Greenhouse Farming</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-droplet-fill"></i>
-          <p>Coir serves as a growing medium and soil conditioner for healthy roots</p>
+          <p>Nursery Plantations</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
-          <i class="bi bi-anchor"></i>
-          <p>Maritime industries use coir for ropes, cords, and erosion control mats</p>
+          <i class="bi bi-arrow-repeat"></i>
+          <p>Soil Conditionings</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-recycle"></i>
-          <p>Eco-friendly and biodegradable — a sustainable alternative to synthetics</p>
+          <p>Geo Textile Industry</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-tree-fill"></i>
-          <p>Derived from coconut husks — supports environmentally conscious choices</p>
+          <p>Mattress Manufacturing</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-palette-fill"></i>
-          <p>Finding applications in agriculture, industry, crafts, and home decor</p>
+          <p>Rope & Twine Industry</p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="app-card">
           <i class="bi bi-shield-fill-check"></i>
-          <p>High tensile strength and resistance to water, saltwater, and abrasion</p>
+          <p>Erosion Control Systems</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="app-card">
+          <i class="bi bi-file-earmark-fill"></i>
+          <p>Landscaping Applications</p>
         </div>
       </div>
     </div>
@@ -651,26 +648,34 @@
       <div class="col-12 col-md-6 col-lg-3">
         <div class="fact-item">
           <div class="fact-icon"><i class="bi bi-recycle"></i></div>
-          <p>Coir is entirely biodegradable, posing minimal harm to the environment compared to synthetic alternatives.</p>
+          <p>
+            Coir is a 100% natural, biodegradable, and renewable resource that supports environmentally responsible farming and manufacturing practices.
+          </p>
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="fact-item">
           <div class="fact-icon"><i class="bi bi-water"></i></div>
-          <p>Coir exhibits remarkable resistance to saltwater, making it ideal for marine applications and coastal erosion control.</p>
+          <p>
+          Coco peat and coir-based growing media can absorb and retain large amounts of water, making them highly suitable for horticulture and hydroponic cultivation.
+          </p>
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="fact-item">
           <div class="fact-icon"><i class="bi bi-shield-check"></i></div>
-          <p>Coir is free from toxins and allergens, ensuring safety for use in various industries and consumer products.</p>
+          <p>
+          Coir products provide excellent aeration to plant roots, promoting healthier and faster plant growth.
+          </p>
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="fact-item">
           <div class="fact-icon"><i class="bi bi-box-seam"></i></div>
-          <p>Coir fibres have been used historically for insulation and packaging due to their natural buoyancy and cushioning properties.</p>
-        </div>
+          <p>
+          Coir fibre is naturally strong and resistant to moisture, fungal growth, and saltwater damage.
+          </p>
+        </div>s
       </div>
     </div>
 
@@ -757,21 +762,18 @@
 <!-- ════════════ SCRIPTS ════════════ -->
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-  document.getElementById('translate-select').addEventListener('change', function () {
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) { combo.value = this.value; combo.dispatchEvent(new Event('change')); }
-  });
 </script>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anuradha Coirs &amp; Fibers | Premium Coir Products</title>
-  <meta name="description" content="Anuradha Coirs & Fibers — Premium manufacturer and exporter of coconut fibre, coco peat, and grow bags from Tamilnadu, India.">
+  <title>Anuradha Coirs &amp; Fibers | Premium Coir &amp; Coconut Products</title>
+  <meta name="description" content="Anuradha Coirs & Fibers — Trusted manufacturer and exporter of coco peat blocks, coir fibre, grow bags, husk chips, coconuts and more from South India.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +24,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
 
   <style>
-    /* ══════════════════════════════════════════
-       ROOT VARIABLES
-    ══════════════════════════════════════════ */
     :root {
       --forest:     #032f2f;
       --forest2:    #054a4a;
@@ -47,547 +44,362 @@
       --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
       --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
     }
-
-    /* ══════════════════════════════════════════
-       RESET & BASE
-    ══════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
-    body {
-      font-family: var(--font-body); color: var(--text-dark);
-      background: #fff; -webkit-font-smoothing: antialiased;
-      top: 0 !important; overflow-x: hidden;
-    }
+    body { font-family: var(--font-body); color: var(--text-dark); background: #fff; -webkit-font-smoothing: antialiased; top: 0 !important; overflow-x: hidden; }
     h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
     p { font-family: var(--font-body); line-height: 1.75; color: var(--text-mid); }
-    a { transition: var(--transition); }
+    a { transition: var(--transition); text-decoration: none; }
+    a:not([class]) { color: var(--gold); }
+    a:not([class]):hover { color: var(--forest); font-weight: 500; }
     img { max-width: 100%; height: auto; display: block; }
     .section    { padding: 96px 0; }
     .section-sm { padding: 64px 0; }
-
-    .eyebrow {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 12px;
-    }
-    .heading-line {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-      border-radius: 2px; margin: 16px 0 24px;
-    }
+    .eyebrow { font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px; }
+    .heading-line { width: 48px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); border-radius: 2px; margin: 16px 0 24px; }
     .heading-line.center { margin: 16px auto 24px; }
 
-    /* ══════════════════════════════════════════
-       BUTTONS
-    ══════════════════════════════════════════ */
-    .btn-primary-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 13px 30px; border-radius: 3px;
-      background: var(--forest); color: #fff;
-      text-decoration: none; border: 2px solid var(--forest);
-      transition: var(--transition); cursor: pointer;
+    /* BUTTONS */
+    .btn-primary-coir { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 13px 30px; border-radius: 3px; background: var(--forest); color: #fff; text-decoration: none; border: 2px solid var(--forest); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+    .btn-primary-coir::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
     }
-    .btn-primary-coir:hover {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35);
+    .btn-primary-coir:hover::before {
+      left: 100%;
     }
-    .btn-ghost-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 11px 28px; border-radius: 3px;
-      background: transparent; color: #fff;
-      text-decoration: none; border: 2px solid rgba(255,255,255,0.7);
-      transition: var(--transition); position: relative; z-index: 1;
-    }
+    .btn-primary-coir:hover { background: var(--gold); border-color: var(--gold); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35); }
+    .btn-ghost-coir { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 11px 28px; border-radius: 3px; background: transparent; color: #fff; text-decoration: none; border: 2px solid rgba(255,255,255,0.7); transition: var(--transition); position: relative; z-index: 1; }
     .btn-ghost-coir:hover { background: #fff; border-color: #fff; color: var(--forest); }
-    .btn-primary-coir::before, .btn-primary-coir::after,
-    .btn-ghost-coir::before,   .btn-ghost-coir::after { display: none !important; }
+    .btn-primary-coir::before, .btn-primary-coir::after, .btn-ghost-coir::before, .btn-ghost-coir::after { display: none !important; }
 
-    /* ══════════════════════════════════════════
-       GOOGLE TRANSLATE
-    ══════════════════════════════════════════ */
-    .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
-    body > .skiptranslate { display: none !important; }
-    #google_translate_element { display: none !important; }
-    .goog-te-combo { display: none !important; }
-
-    .translate-wrap {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #fff; border: 1.5px solid var(--border);
-      border-radius: 6px; padding: 5px 10px;
-      transition: border-color 0.25s, box-shadow 0.25s;
+    /* GOOGLE TRANSLATE */
+    .language-item{
+        min-width:180px;
+        display:flex;
+        align-items:center;
     }
-    .translate-wrap:hover, .translate-wrap:focus-within {
-      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,151,90,0.12);
+    #google_translate_element{
+        width:100%;
     }
-    .tw-icon { font-size: 0.9rem; color: var(--gold); flex-shrink: 0; line-height: 1; }
-    .tw-label {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      color: var(--text-muted); white-space: nowrap;
+    .goog-te-gadget{
+        font-size:0 !important;
     }
-    #translate-select {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
-      color: var(--text-dark); background: transparent;
-      border: none; outline: none; padding: 2px 20px 2px 0; cursor: pointer;
-      appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 2px center;
-      min-width: 100px; max-width: 130px;
+    .goog-te-combo{
+        width:100%;
+        height:42px;
+        border:1px solid #d9d9d9;
+        border-radius:8px;
+        padding:0 10px;
+        font-size:14px !important;
+        background:#fff;
     }
-    #translate-select:focus { outline: none; box-shadow: none; }
-
-    /* ══════════════════════════════════════════
-       TOP BAR
-    ══════════════════════════════════════════ */
-    .topbar {
-      background: var(--forest); padding: 8px 0;
-      font-family: var(--font-body); font-size: 0.78rem;
-      color: rgba(255,255,255,0.75);
+    .goog-logo-link,
+    .goog-te-gadget span{
+        display:none !important;
     }
+    body{
+        top:0 !important;
+    }
+    .goog-te-banner-frame{
+        display:none !important;
+    }
+    /* TOP BAR */
+    .topbar { background: var(--forest); padding: 8px 0; font-family: var(--font-body); font-size: 0.78rem; color: rgba(255,255,255,0.75); }
     .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
     .topbar a:hover { color: var(--gold-lt); }
     .topbar-sep { margin: 0 12px; opacity: 0.35; }
 
-    /* ══════════════════════════════════════════
-       NAVBAR
-    ══════════════════════════════════════════ */
-    .main-nav {
-      background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 1000;
-    }
+    /* NAVBAR */
+    .main-nav { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
     .main-nav .navbar { padding: 0; }
     .main-nav .navbar-brand img { height: 80px; transition: var(--transition); }
     .main-nav .navbar-brand:hover img { opacity: 0.85; }
-    .main-nav .nav-link {
-      font-family: var(--font-body); font-size: 0.82rem;
-      font-weight: 500; letter-spacing: 0.5px;
-      color: var(--text-dark) !important;
-      padding: 30px 14px !important;
-      position: relative; transition: color 0.25s;
-    }
-    .main-nav .nav-link::after {
-      content: ''; position: absolute; bottom: 0; left: 14px;
-      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
-    }
+    .main-nav .nav-link { font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.5px; color: var(--text-dark) !important; padding: 30px 14px !important; position: relative; transition: color 0.25s; }
+    .main-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 14px; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
     .main-nav .nav-link:hover { color: var(--gold) !important; }
-    .main-nav .nav-link:hover::after,
-    .main-nav .nav-link.active::after { width: calc(100% - 28px); }
+    .main-nav .nav-link:hover::after, .main-nav .nav-link.active::after { width: calc(100% - 28px); }
     .main-nav .nav-link.active { color: var(--forest) !important; font-weight: 600; }
 
-    /* ══════════════════════════════════════════
-       1. HERO CAROUSEL
-    ══════════════════════════════════════════ */
+    /* HERO */
     #heroCarousel { height: 88vh; min-height: 520px; }
     .carousel-item { height: 88vh; min-height: 520px; position: relative; }
-    .carousel-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(0.62); display: block;
-    }
-    .carousel-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(3,47,47,0.55) 0%, rgba(3,47,47,0.1) 70%);
-    }
-    .hero-content {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      text-align: center; width: 90%; max-width: 780px; padding: 0 20px;
-    }
-    .hero-eyebrow {
-      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 4px; text-transform: uppercase;
-      color: var(--gold-lt); display: block; margin-bottom: 16px;
-      opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
-    }
-    .hero-title {
-      font-family: var(--font-head); font-size: clamp(2rem, 5vw, 4.2rem);
-      font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 20px;
-      opacity: 0; animation: fadeUp 0.8s ease forwards 0.45s;
-    }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.62); display: block; }
+    .carousel-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(3,47,47,0.55) 0%, rgba(3,47,47,0.1) 70%); }
+    .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; width: 90%; max-width: 780px; padding: 0 20px; }
+    .hero-eyebrow { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-lt); display: block; margin-bottom: 16px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+    .hero-title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 4.2rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.45s; }
     .hero-title em { font-style: italic; color: var(--gold-lt); }
-    .hero-sub {
-      font-family: var(--font-acc); font-size: clamp(0.95rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.82); margin-bottom: 36px;
-      opacity: 0; animation: fadeUp 0.8s ease forwards 0.65s;
-    }
-    .hero-btns {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.8s ease forwards 0.85s;
-    }
-    .hero-btns .btn-primary-coir,
-    .hero-btns .btn-ghost-coir { width: auto; flex: 0 0 auto; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon { display: none !important; }
-    .carousel-control-prev, .carousel-control-next {
-      width: 36px; height: 36px; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
-      border-radius: 50%; margin: 0 6px; opacity: 0.8;
-    }
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover { background: var(--gold); opacity: 1; }
-    .carousel-indicators button {
-      width: 8px; height: 8px; border-radius: 50%;
-      border: none; background: rgba(255,255,255,0.4); transition: all 0.3s;
-    }
-    .carousel-indicators button.active {
-      background: var(--gold); width: 26px; border-radius: 4px;
-    }
+    .hero-sub { font-family: var(--font-acc); font-size: clamp(0.95rem, 2vw, 1.2rem); color: rgba(255,255,255,0.82); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.65s; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease forwards 0.85s; }
+    .hero-btns .btn-primary-coir, .hero-btns .btn-ghost-coir { width: auto; flex: 0 0 auto; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .carousel-control-prev-icon, .carousel-control-next-icon { display: none !important; }
+    .carousel-control-prev, .carousel-control-next { width: 36px; height: 36px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); border-radius: 50%; margin: 0 6px; opacity: 0.8; }
+    .carousel-control-prev:hover, .carousel-control-next:hover { background: var(--gold); opacity: 1; }
+    .carousel-indicators button { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.4); transition: all 0.3s; }
+    .carousel-indicators button.active { background: var(--gold); width: 26px; border-radius: 4px; }
 
-    /* ══════════════════════════════════════════
-       2. WHO WE ARE (ABOUT)
-    ══════════════════════════════════════════ */
+    /* STATS STRIP */
+    .stats-strip { background: var(--forest); padding: 48px 0; }
+    .stat-item { text-align: center; }
+    .stat-item .stat-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; color: var(--gold-lt); line-height: 1; }
+    .stat-item .stat-label { font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 6px; }
+    .stat-divider { width: 1px; background: rgba(255,255,255,0.15); height: 60px; align-self: center; }
+
+    /* ABOUT */
     .about-section { background: #fff; }
     .about-img-wrap { position: relative; }
-    .about-img-wrap img {
-      width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius);
-    }
-    .about-badge {
-      position: absolute; bottom: -20px; right: -20px;
-      width: 140px; height: 140px; background: var(--forest); border-radius: 50%;
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; box-shadow: var(--shadow-md);
-    }
-    .about-badge .big {
-      font-family: var(--font-head); font-size: 1.9rem;
-      font-weight: 700; color: var(--gold-lt); line-height: 1;
-    }
-    .about-badge .small {
-      font-family: var(--font-body); font-size: 0.65rem;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.7); margin-top: 4px;
-      text-align: center; padding: 0 8px;
-    }
-    .about-section h1 {
-      font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem);
-      color: var(--forest); font-weight: 600;
-    }
+    .about-img-wrap img { width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 8px 32px rgba(0,0,0,0.15); transition: var(--transition); }
+    .about-img-wrap:hover img { filter: brightness(0.95); }
+    .about-badge { position: absolute; bottom: -20px; right: -20px; width: 140px; height: 140px; background: linear-gradient(135deg, var(--forest) 0%, var(--forest2) 100%); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0,0,0,0.25); animation: slideUp 0.6s ease 0.3s both; }
+    .about-badge .big { font-family: var(--font-head); font-size: 1.9rem; font-weight: 700; color: var(--gold-lt); line-height: 1; }
+    .about-badge .small { font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 4px; text-align: center; padding: 0 8px; }
+    .about-section h1 { font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem); color: var(--forest); font-weight: 600; }
     .about-section p { font-size: 0.97rem; }
     .feature-list { list-style: none; padding: 0; margin: 0; }
-    .feature-list li {
-      font-family: var(--font-body); font-size: 0.93rem; color: var(--text-mid);
-      padding: 7px 0; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
+    .feature-list li { font-family: var(--font-body); font-size: 0.93rem; color: var(--text-mid); padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; transition: var(--transition); }
+    .feature-list li:hover { color: var(--forest); padding-left: 6px; }
     .feature-list li:last-child { border-bottom: none; }
-    .feature-list li i { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
+    .feature-list li i { color: var(--gold); font-size: 1rem; flex-shrink: 0; transition: var(--transition); }
+    .feature-list li:hover i { transform: scale(1.2); }
 
-    /* ══════════════════════════════════════════
-       3. GALLERY
-    ══════════════════════════════════════════ */
+    /* GALLERY */
     .gallery-section { background: var(--light-bg); }
     .gallery-filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .gf-btn {
-      font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-      padding: 8px 20px; border-radius: 3px;
-      border: 1.5px solid var(--border); background: #fff;
-      color: var(--text-muted); cursor: pointer; transition: var(--transition);
-    }
-    .gf-btn.active, .gf-btn:hover {
-      background: var(--forest); border-color: var(--forest); color: #fff;
-    }
+    .gf-btn { font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 10px 22px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; color: var(--text-muted); cursor: pointer; transition: var(--transition); position: relative; overflow: hidden; }
+    .gf-btn::before { content: ''; position: absolute; inset: 0; background: var(--forest); z-index: -1; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .gf-btn.active, .gf-btn:hover { background: var(--forest); border-color: var(--forest); color: #fff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(3,47,47,0.2); }
     .gallery-grid .item { float: left; padding: 5px; }
-    .gallery-grid .item a {
-      display: block; overflow: hidden; border-radius: 8px; position: relative;
-    }
-    .gallery-grid .item img {
-      width: 200px; height: 150px; object-fit: cover;
-      display: block; transition: transform 0.4s ease;
-    }
-    .gallery-grid .item a:hover img { transform: scale(1.07); }
+    .gallery-grid .item a { display: block; overflow: hidden; border-radius: 8px; position: relative; }
+    .gallery-grid .item img { width: 200px; height: 150px; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(1); }
+    .gallery-grid .item a:hover img { transform: scale(1.08); filter: brightness(0.9); }
 
-    /* ══════════════════════════════════════════
-       4. PRODUCTS TABS
-    ══════════════════════════════════════════ */
+    /* PRODUCTS */
     .products-section { background: var(--off-white); }
-    .product-tabs-wrap {
-      background: #fff; border-radius: 14px;
-      box-shadow: var(--shadow-md); overflow: hidden;
-    }
-    .product-tabs-nav {
-      display: flex; background: var(--light-bg);
-      border-bottom: 1px solid var(--border); padding: 0 8px;
-      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-    }
+    .product-tabs-wrap { background: #fff; border-radius: 14px; box-shadow: var(--shadow-md); overflow: hidden; }
+    .product-tabs-nav { display: flex; background: var(--light-bg); border-bottom: 2px solid var(--border); padding: 0 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .product-tabs-nav::-webkit-scrollbar { display: none; }
-    .ptab-btn {
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
-      letter-spacing: 0.5px; color: var(--text-muted);
-      background: none; border: none; border-bottom: 3px solid transparent;
-      padding: 18px 22px; cursor: pointer; transition: var(--transition);
-      white-space: nowrap; flex-shrink: 0;
-    }
-    .ptab-btn.active, .ptab-btn:hover { color: var(--forest); border-bottom-color: var(--gold); }
+    .ptab-btn { font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; color: var(--text-muted); background: none; border: none; border-bottom: 3px solid transparent; padding: 18px 22px; cursor: pointer; transition: var(--transition); white-space: nowrap; flex-shrink: 0; position: relative; }
+    .ptab-btn::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; }
+    .ptab-btn.active, .ptab-btn:hover { color: var(--forest); font-weight: 700; }
+    .ptab-btn.active::after { transform: scaleX(1); }
     .product-tabs-body { padding: 40px; }
-    .product-tab-pane { display: none; }
-    .product-tab-pane.active { display: flex; }
-    .product-tab-img {
-      width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius);
+    .product-tab-pane { display: none; opacity: 0; animation: fadeIn 0.3s ease forwards; }
+    .product-tab-pane.active { display: flex; opacity: 1; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+    .product-tab-img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
     .product-tab-content { padding-left: 32px; }
-    .product-tab-content h3 {
-      font-family: var(--font-head); font-size: 1.7rem;
-      color: var(--forest); margin-bottom: 12px;
-    }
+    .product-tab-content h3 { font-family: var(--font-head); font-size: 1.7rem; color: var(--forest); margin-bottom: 12px; }
     .product-tab-content p { font-size: 0.95rem; margin-bottom: 16px; }
-    .spec-pill {
-      display: inline-block; font-family: var(--font-body); font-size: 0.75rem;
-      font-weight: 600; background: var(--cream); color: var(--forest);
-      padding: 4px 12px; border-radius: 20px;
-      margin: 3px 3px 3px 0; border: 1px solid var(--border);
-    }
+    .spec-pill { display: inline-block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; background: var(--cream); color: var(--forest); padding: 5px 14px; border-radius: 20px; margin: 3px 3px 3px 0; border: 1.5px solid var(--border); transition: var(--transition); cursor: default; }
+    .spec-pill:hover { border-color: var(--gold); background: rgba(184,151,90,0.08); }
+    .prod-code { font-size: 0.65rem; color: var(--gold); font-family: var(--font-body); letter-spacing: 1px; margin-left: 8px; }
 
-    /* ══════════════════════════════════════════
-       5. MANUFACTURING
-    ══════════════════════════════════════════ */
-    .mfg-section {
-      background: url(assets/images/demo2.jpg) center/cover no-repeat fixed;
-      position: relative; padding: 120px 0;
-    }
-    .mfg-section::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(3,47,47,0.88) 0%, rgba(3,47,47,0.65) 100%);
-    }
+    /* MANUFACTURING */
+    .mfg-section { background: url(assets/images/demo2.jpg) center/cover no-repeat fixed; position: relative; padding: 120px 0; }
+    .mfg-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(3,47,47,0.88) 0%, rgba(3,47,47,0.65) 100%); }
     .mfg-section .container { position: relative; z-index: 1; }
-    .mfg-section .section-inner { max-width: 680px; }
-    .mfg-section h2 {
-      font-family: var(--font-head); font-size: clamp(1.8rem,3.5vw,2.8rem);
-      color: #fff; font-weight: 600;
-    }
+    .mfg-section .section-inner { max-width: 720px; }
+    .mfg-section h2 { font-family: var(--font-head); font-size: clamp(1.8rem,3.5vw,2.8rem); color: #fff; font-weight: 600; }
     .mfg-section p { color: rgba(255,255,255,0.82); font-size: 0.97rem; }
-    .mfg-features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-      gap: 16px; margin-top: 32px;
-    }
-    .mfg-feat {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(6px); border-radius: var(--radius); padding: 20px 18px;
-    }
-    .mfg-feat i { font-size: 1.4rem; color: var(--gold-lt); margin-bottom: 8px; display: block; }
-    .mfg-feat h5 { font-family: var(--font-head); font-size: 1rem; color: #fff; margin-bottom: 4px; }
-    .mfg-feat p { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin: 0; }
+    .mfg-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 16px; margin-top: 32px; }
+    .mfg-feat { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); border-radius: var(--radius); padding: 22px 18px; transition: var(--transition); position: relative; overflow: hidden; }
+    .mfg-feat::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212,184,122,0.1) 0%, transparent 100%); opacity: 0; transition: opacity 0.3s; }
+    .mfg-feat:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-4px); }
+    .mfg-feat:hover::before { opacity: 1; }
+    .mfg-feat i { font-size: 1.4rem; color: var(--gold-lt); margin-bottom: 8px; display: block; transition: var(--transition); position: relative; z-index: 1; }
+    .mfg-feat:hover i { transform: scale(1.2); }
+    .mfg-feat h5 { font-family: var(--font-head); font-size: 1rem; color: #fff; margin-bottom: 4px; position: relative; z-index: 1; }
+    .mfg-feat p { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin: 0; position: relative; z-index: 1; }
 
-    /* ══════════════════════════════════════════
-       6. WHY CHOOSE US
-    ══════════════════════════════════════════ */
+    /* WHY CHOOSE US */
     .whyus-section { background: #fff; }
-    .whyus-card {
-      padding: 36px 24px; border-radius: var(--radius); text-align: center;
-      border: 1px solid var(--border); transition: var(--transition); height: 100%;
-    }
-    .whyus-card:hover {
-      border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-4px);
-    }
-    .whyus-icon-wrap {
-      width: 72px; height: 72px; background: var(--cream); border-radius: 18px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px; transition: var(--transition);
-    }
+    .whyus-card { padding: 36px 24px; border-radius: var(--radius); text-align: center; border: 1.5px solid var(--border); transition: var(--transition); height: 100%; position: relative; }
+    .whyus-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .whyus-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(3,47,47,0.1); transform: translateY(-6px); }
+    .whyus-card:hover::after { transform: scaleX(1); }
+    .whyus-icon-wrap { width: 72px; height: 72px; background: var(--cream); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; transition: var(--transition); }
     .whyus-card:hover .whyus-icon-wrap { background: var(--forest); }
-    .whyus-icon-wrap img {
-      width: 38px; height: 38px; object-fit: contain; transition: var(--transition);
-    }
-    .whyus-card:hover .whyus-icon-wrap img { filter: brightness(10); }
-    .whyus-card h4 {
-      font-family: var(--font-head); font-size: 1.05rem;
-      color: var(--forest); margin-bottom: 8px;
-    }
+    .whyus-icon-wrap i { font-size: 1.6rem; color: var(--gold); transition: var(--transition); }
+    .whyus-card:hover .whyus-icon-wrap i { color: #fff; }
+    .whyus-card h4 { font-family: var(--font-head); font-size: 1.05rem; color: var(--forest); margin-bottom: 8px; }
     .whyus-card p { font-size: 0.88rem; line-height: 1.65; }
 
-    /* ══════════════════════════════════════════
-       7. MISSION / VALUES / VISION
-    ══════════════════════════════════════════ */
+    /* MVV */
     .mvv-section { background: var(--light-bg); }
-    .mvv-card {
-      background: #fff; border-radius: var(--radius);
-      padding: 36px 28px; height: 100%;
-      border-top: 4px solid transparent;
-      box-shadow: var(--shadow-sm); transition: var(--transition);
-    }
-    .mvv-card:hover {
-      border-top-color: var(--gold);
-      transform: translateY(-6px); box-shadow: var(--shadow-md);
-    }
-    .mvv-icon {
-      width: 60px; height: 60px; background: var(--cream);
-      border-radius: 14px; display: flex; align-items: center;
-      justify-content: center; margin-bottom: 20px;
-    }
-    .mvv-icon img { width: 36px; height: 36px; object-fit: contain; }
-    .mvv-card h3 {
-      font-family: var(--font-head); font-size: 1.15rem;
-      color: var(--forest); margin-bottom: 10px;
-    }
+    .mvv-card { background: #fff; border-radius: var(--radius); padding: 36px 28px; height: 100%; border-left: 4px solid transparent; box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; }
+    .mvv-card:hover { border-left-color: var(--gold); transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .mvv-card::before { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%); border-radius: 0 var(--radius) 0 60px; opacity: 0; transition: opacity 0.3s; }
+    .mvv-card:hover::before { opacity: 0.1; }
+    .mvv-icon { width: 60px; height: 60px; background: var(--cream); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: var(--transition); }
+    .mvv-card:hover .mvv-icon { background: var(--forest); }
+    .mvv-icon i { font-size: 1.6rem; color: var(--forest); transition: var(--transition); }
+    .mvv-card:hover .mvv-icon i { color: var(--gold-lt); }
+    .mvv-card h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--forest); margin-bottom: 10px; }
     .mvv-card p { font-size: 0.93rem; line-height: 1.7; }
 
-    /* ══════════════════════════════════════════
-       8. CONTACT
-    ══════════════════════════════════════════ */
+    /* CONTACT */
     .contact-section { background: var(--light-bg); }
-    .contact-form-card {
-      background: #fff; border-radius: 14px;
-      padding: 44px 40px; box-shadow: var(--shadow-md);
-    }
-    .contact-form-card h2 {
-      font-family: var(--font-head); font-size: 1.8rem;
-      color: var(--forest); margin-bottom: 6px;
-    }
-    .contact-form-card .sub {
-      font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px;
-    }
+    .contact-form-card { background: #fff; border-radius: 14px; padding: 44px 40px; box-shadow: var(--shadow-md); }
+    .contact-form-card h2 { font-family: var(--font-head); font-size: 1.8rem; color: var(--forest); margin-bottom: 6px; }
+    .contact-form-card .sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px; }
     .form-group { margin-bottom: 16px; }
     .form-row { display: flex; gap: 14px; }
     .form-row .form-group { flex: 1; }
-    .form-label {
-      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-dark);
-      display: block; margin-bottom: 6px;
-    }
-    .form-input {
-      width: 100%; font-family: var(--font-body); font-size: 0.92rem;
-      color: var(--text-dark); background: var(--off-white);
-      border: 1.5px solid var(--border); border-radius: 6px;
-      padding: 11px 14px; outline: none;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .form-input:focus {
-      border-color: var(--forest);
-      box-shadow: 0 0 0 3px rgba(3,47,47,0.1); background: #fff;
-    }
+    .form-label { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-dark); display: block; margin-bottom: 8px; }
+    .form-input { width: 100%; font-family: var(--font-body); font-size: 0.92rem; color: var(--text-dark); background: var(--off-white); border: 1.5px solid var(--border); border-radius: 6px; padding: 12px 14px; outline: none; transition: border-color 0.25s, box-shadow 0.25s, background 0.25s; }
+    .form-input::placeholder { color: color(var(--text-muted) / 0.6); }
+    .form-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(3,47,47,0.1); background: #fff; }
+    .form-input:hover:not(:focus) { border-color: var(--gold); }
     textarea.form-input { resize: vertical; min-height: 120px; }
-    .contact-info-panel {
-      background: var(--forest); border-radius: 14px;
-      padding: 40px 32px; height: 100%;
-    }
-    .contact-info-panel h3 {
-      font-family: var(--font-head); font-size: 1.5rem;
-      color: #fff; margin-bottom: 8px;
-    }
-    .contact-info-panel .tagline {
-      font-family: var(--font-acc); font-style: italic;
-      color: var(--gold-lt); font-size: 1rem; margin-bottom: 28px;
-    }
+    .contact-info-panel { background: var(--forest); border-radius: 14px; padding: 40px 32px; height: 100%; }
+    .contact-info-panel h3 { font-family: var(--font-head); font-size: 1.5rem; color: #fff; margin-bottom: 8px; }
+    .contact-info-panel .tagline { font-family: var(--font-acc); font-style: italic; color: var(--gold-lt); font-size: 1rem; margin-bottom: 28px; }
     .info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
-    .info-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(255,255,255,0.1); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold-lt); font-size: 1rem;
-    }
-    .info-text-label {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); display: block; margin-bottom: 2px;
-    }
-    .info-text-val {
-      font-family: var(--font-body); font-size: 0.9rem;
-      color: rgba(255,255,255,0.88); line-height: 1.5;
-    }
+    .info-icon { width: 38px; height: 38px; flex-shrink: 0; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold-lt); font-size: 1rem; transition: var(--transition); }
+    .info-item:hover .info-icon { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+    .info-text-label { font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); display: block; margin-bottom: 2px; }
+    .info-text-val { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255,255,255,0.88); line-height: 1.5; }
     .info-text-val a { color: inherit; text-decoration: none; }
     .info-text-val a:hover { color: var(--gold-lt); }
-    .info-divider {
-      border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 22px 0;
-    }
+    .info-divider { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 22px 0; }
 
-    /* ══════════════════════════════════════════
-       WHATSAPP FLOAT
-    ══════════════════════════════════════════ */
-    .wa-btn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      width: 56px; height: 56px; background: #25D366; color: #fff;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition);
-    }
-    .wa-btn:hover {
-      transform: scale(1.12); color: #fff;
-      box-shadow: 0 6px 28px rgba(37,211,102,0.6);
-    }
+    /* WHATSAPP */
+    .wa-btn { position: fixed; bottom: 28px; right: 28px; z-index: 9999; width: 56px; height: 56px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition); }
+    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
 
-    /* ══════════════════════════════════════════
-       9. FOOTER
-    ══════════════════════════════════════════ */
+    /* FOOTER */
     .site-footer { background: var(--forest); padding-top: 64px; }
-    .footer-brand p {
-      font-size: 0.88rem; color: rgba(255,255,255,0.55);
-      line-height: 1.7; max-width: 240px;
-    }
-    .footer-col-heading {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-lt); margin-bottom: 20px; display: block;
-    }
+    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 240px; }
+    .footer-col-heading { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 20px; display: block; }
     .footer-info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
-    .footer-info-item span,
-    .footer-info-item a {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      line-height: 1.55; transition: color 0.2s; word-break: break-word;
-    }
+    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; transition: var(--transition); }
+    .footer-info-item:hover i { transform: scale(1.15); }
+    .footer-info-item span, .footer-info-item a { font-family: var(--font-body); font-size: 0.87rem; color: rgba(255,255,255,0.6); text-decoration: none; line-height: 1.55; transition: color 0.2s; word-break: break-word; }
     .footer-info-item a:hover { color: var(--gold-lt); }
-    .footer-link {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      display: flex; align-items: center; gap: 6px;
-      padding: 5px 0; transition: color 0.25s, padding-left 0.25s;
-    }
+    .footer-link { font-family: var(--font-body); font-size: 0.87rem; color: rgba(255,255,255,0.6); text-decoration: none; display: flex; align-items: center; gap: 6px; padding: 5px 0; transition: color 0.25s, padding-left 0.25s; }
     .footer-link i { font-size: 0.7rem; color: var(--gold-lt); }
     .footer-link:hover { color: #fff; padding-left: 4px; }
-    .footer-divider {
-      border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0;
-    }
-    .footer-bottom {
-      padding: 18px 0; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 12px;
-    }
-    .footer-bottom p {
-      font-family: var(--font-body); font-size: 0.82rem;
-      color: rgba(255,255,255,0.45); margin: 0;
-    }
-    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0; }
+    .footer-bottom { padding: 18px 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+    .footer-bottom p { font-family: var(--font-body); font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; }
+    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     .footer-bottom a:hover { color: var(--gold-lt); }
     .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .social-link {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.08);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      text-decoration: none; transition: var(--transition); flex-shrink: 0;
-    }
-    .social-link:hover { background: var(--gold); }
+    .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: var(--transition); flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
+    .social-link:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
     .social-link i { font-size: 1rem; color: rgba(255,255,255,0.8); transition: color 0.2s; }
     .social-link:hover i { color: #fff; }
 
-    /* ══════════════════════════════════════════
-       RESPONSIVE BREAKPOINTS
-    ══════════════════════════════════════════ */
+    /* BACK TO TOP BUTTON */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 100px;
+      z-index: 9998;
+      width: 44px;
+      height: 44px;
+      background: var(--forest);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 2px 12px rgba(3,47,47,0.35);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+    }
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .scroll-to-top:hover {
+      transform: translateY(-4px);
+      background: var(--gold);
+      box-shadow: 0 4px 20px rgba(184,151,90,0.45);
+    }
 
-    /* ── Tablet ≤ 991px ── */
+    /* TRUST INDICATORS */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream);
+      color: var(--forest);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      animation: slideUp 0.5s ease 0.3s both;
+    }
+    .trust-badge i {
+      font-size: 0.8rem;
+      color: var(--gold);
+    }
+
+    /* STAGGERED ANIMATIONS FOR CARDS */
+    .whyus-card:nth-child(1) { animation: slideUp 0.6s ease 0.1s both; }
+    .whyus-card:nth-child(2) { animation: slideUp 0.6s ease 0.15s both; }
+    .whyus-card:nth-child(3) { animation: slideUp 0.6s ease 0.2s both; }
+    .whyus-card:nth-child(4) { animation: slideUp 0.6s ease 0.25s both; }
+    .whyus-card:nth-child(5) { animation: slideUp 0.6s ease 0.3s both; }
+    .whyus-card:nth-child(6) { animation: slideUp 0.6s ease 0.35s both; }
+    .whyus-card:nth-child(7) { animation: slideUp 0.6s ease 0.4s both; }
+    .whyus-card:nth-child(8) { animation: slideUp 0.6s ease 0.45s both; }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* IMPROVED CARD GRADIENTS */
+    .whyus-card::before, .mvv-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,151,90,0.03) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    .whyus-card:hover::before, .mvv-card:hover::before {
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 991px) {
       .main-nav .nav-link { padding: 12px 16px !important; }
       .main-nav .nav-link::after { display: none; }
       .translate-wrap { margin: 8px 16px 12px; }
       .about-badge { width: 110px; height: 110px; right: -10px; }
-      .about-badge .big { font-size: 1.5rem; }
-      .about-badge .small { font-size: 0.6rem; }
+      .scroll-to-top { right: 70px; }
     }
-
-    /* ── Tablet ≤ 768px ── */
     @media (max-width: 768px) {
-      .section    { padding: 64px 0; }
-      .section-sm { padding: 48px 0; }
+      .section { padding: 64px 0; } .section-sm { padding: 48px 0; }
       #heroCarousel, .carousel-item { height: 65vh; min-height: 380px; }
-      .hero-sub { font-size: 0.95rem; margin-bottom: 24px; }
-      .carousel-control-prev, .carousel-control-next { width: 32px; height: 32px; margin: 0 4px; }
       .about-img-wrap img { height: 360px; }
       .about-badge { bottom: -14px; right: 10px; width: 100px; height: 100px; }
-      .about-badge .big { font-size: 1.35rem; }
       .mfg-section { padding: 80px 0; background-attachment: scroll; }
       .mfg-features { grid-template-columns: 1fr 1fr; }
       .product-tab-pane.active { flex-direction: column; }
@@ -597,29 +409,20 @@
       .contact-form-card { padding: 28px 20px; }
       .form-row { flex-direction: column; gap: 0; }
       .contact-info-panel { padding: 28px 20px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
       .wa-btn { width: 48px; height: 48px; font-size: 22px; bottom: 18px; right: 18px; }
+      .scroll-to-top { right: 70px; width: 40px; height: 40px; font-size: 16px; }
+      .stat-divider { display: none; }
     }
-
-    /* ── Mobile ≤ 575px ── */
     @media (max-width: 575px) {
-      .section    { padding: 48px 0; }
-      .section-sm { padding: 36px 0; }
+      .section { padding: 48px 0; } .section-sm { padding: 36px 0; }
       #heroCarousel, .carousel-item { height: 100svh; min-height: 480px; }
-      .hero-content { width: 88%; padding: 0 12px; }
-      .hero-eyebrow { font-size: 0.65rem; letter-spacing: 2.5px; margin-bottom: 10px; }
-      .hero-title { font-size: clamp(1.7rem, 9vw, 2.4rem); margin-bottom: 14px; line-height: 1.1; }
-      .hero-sub { font-size: 0.88rem; margin-bottom: 20px; }
+      .hero-title { font-size: clamp(1.7rem, 9vw, 2.4rem); }
       .hero-btns { flex-direction: column; align-items: center; gap: 10px; }
-      .hero-btns .btn-primary-coir,
-      .hero-btns .btn-ghost-coir {
-        width: 220px; justify-content: center;
-        padding: 12px 20px; font-size: 0.78rem;
-      }
+      .hero-btns .btn-primary-coir, .hero-btns .btn-ghost-coir { width: 220px; justify-content: center; }
       .carousel-control-prev, .carousel-control-next { display: none; }
       .about-img-wrap img { height: 260px; }
       .about-badge { display: none; }
-      .mvv-card { padding: 24px 20px; }
       .mfg-section { padding: 60px 0; }
       .mfg-features { grid-template-columns: 1fr; }
       .product-tabs-body { padding: 16px; }
@@ -627,27 +430,19 @@
       .gallery-grid .item img { width: 100%; height: 130px; }
       .contact-form-card { padding: 20px 16px; }
       .contact-info-panel { padding: 24px 16px; margin-top: 8px; }
-      .site-footer .col-6.col-md-2,
-      .site-footer .col-6.col-md-3 { width: 100%; }
+      .site-footer .col-6.col-md-2, .site-footer .col-6.col-md-3 { width: 100%; }
       .footer-brand p { max-width: 100%; }
-      .footer-bottom p { font-size: 0.75rem; }
-      .wa-btn { width: 46px; height: 46px; font-size: 20px; bottom: 16px; right: 16px; }
-    }
-
-    /* ── Small mobile ≤ 380px ── */
-    @media (max-width: 380px) {
-      #heroCarousel, .carousel-item { height: 100svh; min-height: 420px; }
-      .hero-title { font-size: 1.5rem; }
-      .hero-btns .btn-primary-coir,
-      .hero-btns .btn-ghost-coir { width: 190px; font-size: 0.74rem; }
-      .mfg-features { grid-template-columns: 1fr; }
-      .wa-btn { width: 42px; height: 42px; font-size: 18px; bottom: 12px; right: 12px; }
+      .scroll-to-top { right: 18px; width: 38px; height: 38px; font-size: 14px; }
+      .trust-badge { font-size: 0.65rem; padding: 5px 10px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ════════════ TOP BAR ════════════ -->
+<!-- TOP OF PAGE ANCHOR -->
+<div id="top"></div>
+
+<!-- TOP BAR -->
 <div class="topbar d-none d-md-block">
   <div class="container-fluid px-4">
     <div class="d-flex justify-content-between align-items-center">
@@ -667,16 +462,14 @@
   </div>
 </div>
 
-<!-- ════════════ NAVBAR ════════════ -->
+<!-- NAVBAR -->
 <div class="main-nav">
   <div class="container-fluid px-4">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="index.html">
         <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
       </a>
-      <button class="navbar-toggler border-0" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navMain"
-        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMain">
@@ -687,34 +480,8 @@
           <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item ms-lg-3">
-            <div id="google_translate_element"></div>
-            <div class="translate-wrap">
-              <i class="bi bi-translate tw-icon"></i>
-              <span class="tw-label">Lang</span>
-              <select id="translate-select" title="Select language">
-                <option value="">English</option>
-                <option value="ar">Arabic</option>
-                <option value="zh-CN">Chinese</option>
-                <option value="nl">Dutch</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="hi">Hindi</option>
-                <option value="id">Indonesian</option>
-                <option value="it">Italian</option>
-                <option value="ja">Japanese</option>
-                <option value="ko">Korean</option>
-                <option value="ms">Malay</option>
-                <option value="pt">Portuguese</option>
-                <option value="ru">Russian</option>
-                <option value="es">Spanish</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
-                <option value="th">Thai</option>
-                <option value="tr">Turkish</option>
-                <option value="vi">Vietnamese</option>
-              </select>
-            </div>
+          <li class="nav-item language-item">
+              <div id="google_translate_element"></div>
           </li>
         </ul>
       </div>
@@ -723,9 +490,7 @@
 </div>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 1 — HERO CAROUSEL
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 1 — HERO CAROUSEL -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
@@ -739,9 +504,9 @@
       <img src="assets/images/head/silder-second.jpg" alt="Premium Coir Products">
       <div class="carousel-overlay"></div>
       <div class="hero-content">
-        <span class="hero-eyebrow">Tamilnadu, India — Est. 2010</span>
-        <h1 class="hero-title">Premium <em>Coir Products</em><br>for a Greener World</h1>
-        <p class="hero-sub">Trusted manufacturer &amp; exporter of sustainable coconut coir solutions</p>
+        <span class="hero-eyebrow">South India — Trusted Manufacturer &amp; Exporter</span>
+        <h1 class="hero-title">Premium <em>Coir &amp; Coconut</em><br>Products for the World</h1>
+        <p class="hero-sub">From coco peat blocks to fresh coconuts — eco-friendly, export-quality products</p>
         <div class="hero-btns">
           <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> Explore Products</a>
           <a href="contact.html" class="btn-ghost-coir"><i class="bi bi-chat-dots"></i> Get in Touch</a>
@@ -750,12 +515,12 @@
     </div>
 
     <div class="carousel-item">
-      <img src="assets/images/head/product.jpg" alt="What We Manufacture">
+      <img src="assets/images/head/product.jpg" alt="Our Product Range">
       <div class="carousel-overlay"></div>
       <div class="hero-content">
         <span class="hero-eyebrow">Our Products</span>
-        <h1 class="hero-title">What We <em>Manufacture</em></h1>
-        <p class="hero-sub">Coconut fibre, coco peat coins &amp; grow bags — crafted with precision</p>
+        <h1 class="hero-title">11 <em>Premium Products</em><br>Ready for Export</h1>
+        <p class="hero-sub">Coco peat blocks, grow bags, coir fibre, husk chips, tender coconuts &amp; more</p>
         <div class="hero-btns">
           <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> View Range</a>
         </div>
@@ -763,12 +528,12 @@
     </div>
 
     <div class="carousel-item">
-      <img src="assets/images/head/product2.jpg" alt="Global Partnerships">
+      <img src="assets/images/head/product2.jpg" alt="Global Export">
       <div class="carousel-overlay"></div>
       <div class="hero-content">
-        <span class="hero-eyebrow">Global Partnerships</span>
+        <span class="hero-eyebrow">Global Export Support</span>
         <h1 class="hero-title">Let's <em>Grow</em><br>Together</h1>
-        <p class="hero-sub">Serving 50+ countries with quality, integrity &amp; excellence</p>
+        <p class="hero-sub">Serving importers, distributors &amp; wholesalers worldwide with reliable supply</p>
         <div class="hero-btns">
           <a href="contact.html" class="btn-primary-coir"><i class="bi bi-handshake"></i> Partner With Us</a>
         </div>
@@ -780,8 +545,8 @@
       <div class="carousel-overlay"></div>
       <div class="hero-content">
         <span class="hero-eyebrow">Our Values</span>
-        <h1 class="hero-title">What We <em>Believe</em></h1>
-        <p class="hero-sub">Sustainability, quality &amp; customer-first in everything we do</p>
+        <h1 class="hero-title">Sustainable. <em>Reliable.</em><br>Export Ready.</h1>
+        <p class="hero-sub">Eco-friendly processing, competitive pricing &amp; customized packaging for every market</p>
         <div class="hero-btns">
           <a href="aboutcoir.html" class="btn-primary-coir"><i class="bi bi-info-circle"></i> About Coir</a>
         </div>
@@ -798,9 +563,35 @@
 </div>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 2 — WHO WE ARE
-══════════════════════════════════════════════════════ -->
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="row g-4 align-items-center justify-content-center">
+      <div class="col-6 col-md-auto stat-item">
+        <div class="stat-num">11+</div>
+        <div class="stat-label">Product Lines</div>
+      </div>
+      <div class="d-none d-md-block stat-divider"></div>
+      <div class="col-6 col-md-auto stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Global Clients</div>
+      </div>
+      <div class="d-none d-md-block stat-divider"></div>
+      <div class="col-6 col-md-auto stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="d-none d-md-block stat-divider"></div>
+      <div class="col-6 col-md-auto stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 2 — WHO WE ARE -->
 <section class="about-section section">
   <div class="container">
     <div class="row align-items-center g-5">
@@ -815,17 +606,21 @@
       </div>
       <div class="col-12 col-lg-7 ps-lg-5">
         <span class="eyebrow">Who We Are</span>
-        <h1>Greetings From<br>Anuradha Coirs &amp; Fibers</h1>
+        <h1>Welcome to Anuradha Coirs</h1>
         <div class="heading-line"></div>
-        <p class="mb-3">Welcome to Anuradha Coirs &amp; Fibers — a family-owned business rooted in Tamilnadu, India, with a 100% focus on building premium quality coir products for customers across the globe.</p>
-        <p class="mb-3">We have been manufacturing, exporting, and distributing premium coir products to the horticulture, landscaping, farming, and agriculture marketplace. With direct distribution centres overseas, we ensure our customers receive quality products at fair market value.</p>
-        <p class="mb-4">Serving nationwide and internationally with integrity and excellence, we take pride in our sustainable practices, innovative processes, and commitment to customer satisfaction at every step.</p>
-        <ul class="feature-list mb-4">
-          <li><i class="bi bi-check-circle-fill"></i> ISO-compliant quality management system</li>
-          <li><i class="bi bi-check-circle-fill"></i> Direct overseas distribution centres</li>
-          <li><i class="bi bi-check-circle-fill"></i> 100% natural, eco-friendly materials</li>
-          <li><i class="bi bi-check-circle-fill"></i> Export-ready packaging for global markets</li>
-        </ul>
+        <div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="trust-badge"><i class="bi bi-award-fill"></i>ISO Certified</span>
+          <span class="trust-badge"><i class="bi bi-globe-americas"></i>50+ Countries</span>
+          <span class="trust-badge"><i class="bi bi-shield-check"></i>Export Quality</span>
+        </div>
+
+        <p class="mb-3">Anuradha Coirs is a trusted manufacturer and exporter of premium quality coconut-based products from India. With a strong commitment to quality, sustainability, and customer satisfaction, we supply high-grade coir and coconut products to buyers across various international markets.</p>
+
+        <p class="mb-3">Located in the heart of South India’s coconut-growing region, Anuradha Coirs combines traditional expertise with modern processing methods to deliver eco-friendly and export-quality products suitable for agriculture, horticulture, hydroponics, industrial applications, and commercial trading.</p>
+
+        <p class="mb-4">Our wide range of products includes Coco Peat Blocks, Coco Peat Briquettes, Coir Fibre, Grow Bags, Open Top Grow Bags, Coco Husk Chips, Coco Coins &amp; Discs, Semi Husked Coconuts, Fully Husked Coconuts, Tender Coconuts, and Coconut Saplings. Every product is carefully processed, tested, and packed to meet international quality standards and buyer requirements.</p>
+
+
         <a href="contact.html" class="btn-primary-coir">Get in Touch <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
@@ -833,9 +628,7 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 3 — GALLERY
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 3 — GALLERY -->
 <section class="gallery-section section">
   <div class="container">
     <div class="row align-items-end mb-4">
@@ -887,9 +680,7 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 4 — WHAT WE OFFER / OUR MAJOR PRODUCTS
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 4 — OUR MAJOR PRODUCTS (7 TABS) -->
 <section class="products-section section-sm">
   <div class="container">
     <div class="row align-items-end mb-4">
@@ -904,44 +695,72 @@
     </div>
     <div class="product-tabs-wrap">
       <div class="product-tabs-nav">
-        <button class="ptab-btn active" data-tab="fibre">Coconut Fibre</button>
-        <button class="ptab-btn" data-tab="peat">Coco Peat Coin</button>
-        <button class="ptab-btn" data-tab="growbag">Grow Bag</button>
+        <button class="ptab-btn active" data-tab="fibre">Coir Fibre</button>
+        <button class="ptab-btn" data-tab="peat">Coco Peat Block</button>
+        <button class="ptab-btn" data-tab="briquette">Coco Briquettes</button>
+        <button class="ptab-btn" data-tab="growbag">Grow Bags</button>
+        <button class="ptab-btn" data-tab="chips">Husk Chips</button>
+        <button class="ptab-btn" data-tab="coins">Coco Coins</button>
+        <button class="ptab-btn" data-tab="coconut">Fresh Coconuts</button>
       </div>
       <div class="product-tabs-body">
 
+        <!-- Coir Fibre AC-01 -->
         <div class="product-tab-pane row align-items-center g-0 active" id="tab-fibre">
           <div class="col-12 col-md-5">
-            <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Coconut Fibre" class="product-tab-img">
+            <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Coir Fibre" class="product-tab-img">
           </div>
           <div class="col-12 col-md-7">
             <div class="product-tab-content">
-              <h3>Coconut Fibre</h3>
-              <p>Coconut fibre is a versatile growing medium widely used in horticulture. It improves soil aeration, water retention, and nutrient uptake for plants. Processed from premium-grade coconut husks, our fibre is used in coir pots, mats, logs, and growing substrates supplied to customers worldwide.</p>
+              <h3>Coir Fibre <span class="prod-code">AC-01</span></h3>
+              <p>Premium natural coir fibre extracted from matured coconut husks using advanced cleaning and drying methods. Widely used in mattresses, upholstery, geo textiles, ropes, brushes, and erosion control products worldwide.</p>
               <div style="margin:12px 0 16px;">
-                <span class="spec-pill">High Tensile Strength</span>
-                <span class="spec-pill">pH Neutral</span>
-                <span class="spec-pill">Excellent Water Retention</span>
-                <span class="spec-pill">Eco-Friendly</span>
-                <span class="spec-pill">Export Certified</span>
+                <span class="spec-pill">Bale 115×65×45 cm</span>
+                <span class="spec-pill">110–125 Kg / Bale</span>
+                <span class="spec-pill">Moisture &lt;15%</span>
+                <span class="spec-pill">Golden Brown</span>
+                <span class="spec-pill">180–200 Bales / 40ft HC</span>
               </div>
               <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
 
+        <!-- Coco Peat 5 KG Block AC-02 -->
         <div class="product-tab-pane row align-items-center g-0" id="tab-peat">
           <div class="col-12 col-md-5">
-            <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Peat Coin" class="product-tab-img">
+            <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Peat Block" class="product-tab-img">
           </div>
           <div class="col-12 col-md-7">
             <div class="product-tab-content">
-              <h3>Coco Peat Coin</h3>
-              <p>Our coco peat coins are compact, lightweight discs that expand up to 7× their original size when hydrated. Place the coin in a tray, add warm water, and allow it to fully expand before planting. Ideal for home gardening, nurseries, seed propagation, and hydroponics.</p>
+              <h3>Coco Peat 5 KG Block <span class="prod-code">AC-02</span></h3>
+              <p>Premium coco peat blocks for horticulture, hydroponics, nurseries, and greenhouse cultivation. Available in low EC, washed, unwashed, buffered, and customized grades. Expands to 70–75 litres per block.</p>
               <div style="margin:12px 0 16px;">
-                <span class="spec-pill">Expands 7× with Water</span>
-                <span class="spec-pill">Sterile Growing Medium</span>
-                <span class="spec-pill">Low EC &amp; pH Balanced</span>
+                <span class="spec-pill">Expands 70–75 L</span>
+                <span class="spec-pill">EC &lt;0.5 mS/cm</span>
+                <span class="spec-pill">pH 5.8–6.8</span>
+                <span class="spec-pill">Compression 5:1</span>
+                <span class="spec-pill">Up to 26 MT / 40ft HC</span>
+              </div>
+              <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coco Peat Briquettes AC-03 -->
+        <div class="product-tab-pane row align-items-center g-0" id="tab-briquette">
+          <div class="col-12 col-md-5">
+            <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Peat Briquette" class="product-tab-img">
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="product-tab-content">
+              <h3>Coco Peat Brick 650g <span class="prod-code">AC-03</span></h3>
+              <p>High-quality coco peat briquettes designed for home gardening, seed germination, nurseries, and horticulture. Lightweight, compact, and easy to use — expands to 8–9 litres when water is added.</p>
+              <div style="margin:12px 0 16px;">
+                <span class="spec-pill">Size 20×10×5 cm</span>
+                <span class="spec-pill">Expands 8–9 L</span>
+                <span class="spec-pill">EC &lt;0.5 mS/cm</span>
+                <span class="spec-pill">pH 5.8–6.8</span>
                 <span class="spec-pill">Biodegradable</span>
               </div>
               <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
@@ -949,19 +768,84 @@
           </div>
         </div>
 
+        <!-- Grow Bags AC-04 / AC-05 -->
         <div class="product-tab-pane row align-items-center g-0" id="tab-growbag">
           <div class="col-12 col-md-5">
             <img src="assets/images/productimages/growBags.jpg" alt="Grow Bag" class="product-tab-img">
           </div>
           <div class="col-12 col-md-7">
             <div class="product-tab-content">
-              <h3>Grow Bag</h3>
-              <p>Our coir grow bags are the preferred growing container for tomatoes, peppers, cucumbers, and other high-value crops. Excellent drainage and root aeration throughout the growing cycle. Reusable, 100% biodegradable, and compatible with drip irrigation systems.</p>
+              <h3>Coir Grow Bags <span class="prod-code">AC-04 / AC-05</span></h3>
+              <p>Premium grow bags and open-top prefill bags made from 100% coco peat and husk chips, ideal for greenhouse cultivation of tomatoes, roses, capsicum, strawberries, and more. Drip irrigation compatible and reusable.</p>
               <div style="margin:12px 0 16px;">
+                <span class="spec-pill">Sizes 100×20 cm</span>
+                <span class="spec-pill">16–36 L Volume</span>
+                <span class="spec-pill">UV Stabilized 3 Yrs</span>
                 <span class="spec-pill">Drip Irrigation Ready</span>
-                <span class="spec-pill">Superior Drainage</span>
-                <span class="spec-pill">Reusable 2–3 Cycles</span>
-                <span class="spec-pill">100% Biodegradable</span>
+                <span class="spec-pill">Custom Sizes Available</span>
+              </div>
+              <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Husk Chips AC-06 -->
+        <div class="product-tab-pane row align-items-center g-0" id="tab-chips">
+          <div class="col-12 col-md-5">
+            <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Coco Husk Chips" class="product-tab-img">
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="product-tab-content">
+              <h3>Coco Husk Chips <span class="prod-code">AC-06</span></h3>
+              <p>Superior quality coco husk chips from fresh coconut husks, widely used in orchid cultivation, hydroponics, landscaping, and reptile bedding. Available as 5 Kg compressed blocks or 25 Kg loose bags.</p>
+              <div style="margin:12px 0 16px;">
+                <span class="spec-pill">Chip Size 1–3 cm</span>
+                <span class="spec-pill">Moisture 15–18%</span>
+                <span class="spec-pill">EC &lt;0.5 mS/cm</span>
+                <span class="spec-pill">100% Natural</span>
+                <span class="spec-pill">Long-Lasting Substrate</span>
+              </div>
+              <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coco Coins AC-07 -->
+        <div class="product-tab-pane row align-items-center g-0" id="tab-coins">
+          <div class="col-12 col-md-5">
+            <img src="assets/images/productimages/coco-peat-coin.jpg" alt="Coco Coins" class="product-tab-img">
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="product-tab-content">
+              <h3>Coco Coins &amp; Discs <span class="prod-code">AC-07</span></h3>
+              <p>Premium coco peat coins and discs specially designed for seed germination and nursery propagation. Compressed discs expand quickly when water is added, providing an excellent growing environment for young plants.</p>
+              <div style="margin:12px 0 16px;">
+                <span class="spec-pill">Diameter 30–100 mm</span>
+                <span class="spec-pill">Fast Water Absorption</span>
+                <span class="spec-pill">pH 5.8–6.8</span>
+                <span class="spec-pill">EC &lt;0.5 mS/cm</span>
+                <span class="spec-pill">Biodegradable</span>
+              </div>
+              <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fresh Coconuts AC-08 to AC-11 -->
+        <div class="product-tab-pane row align-items-center g-0" id="tab-coconut">
+          <div class="col-12 col-md-5">
+            <img src="assets/images/head/product.jpg" alt="Fresh Coconuts" class="product-tab-img">
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="product-tab-content">
+              <h3>Coconuts &amp; Saplings <span class="prod-code">AC-08 to AC-11</span></h3>
+              <p>We export semi husked, fully husked, and tender coconuts sourced from premium South Indian farms, along with healthy coconut seedlings for commercial plantations. Carefully graded, packed, and exported with full documentation.</p>
+              <div style="margin:12px 0 16px;">
+                <span class="spec-pill">Semi Husked</span>
+                <span class="spec-pill">Fully Husked</span>
+                <span class="spec-pill">Tender Coconuts</span>
+                <span class="spec-pill">Coconut Saplings</span>
+                <span class="spec-pill">45–60 Day Shelf Life</span>
               </div>
               <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
@@ -977,33 +861,36 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 5 — OUR FACILITY / MANUFACTURING SITE
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 5 — MANUFACTURING -->
 <section class="mfg-section">
   <div class="container">
     <div class="section-inner">
       <span class="eyebrow" style="color:var(--gold-lt);">Our Facility</span>
-      <h2>Our Manufacturing Site</h2>
+      <h2>Our Manufacturing Process</h2>
       <div class="heading-line"></div>
-      <p class="mb-2">Our state-of-the-art facility is located in Nilakottai, Dindigul, Tamilnadu — the heart of India's coir industry. Equipped with modern machinery and skilled workers, we convert raw coconut husks into world-class coir products.</p>
-      <p class="mb-4">We follow strict quality control at every production stage — from raw material selection to final packaging — ensuring our products meet international standards and satisfy the most demanding customers worldwide.</p>
+      <p class="mb-2">At Anuradha Coirs, we follow a systematic 10-step manufacturing process — from coconut husk collection and fibre extraction to compression, quality inspection, packing, and container loading — ensuring premium products for international markets.</p>
+      <p class="mb-4">Every stage is carefully monitored for consistent quality, proper moisture control, and export-standard processing. We offer phytosanitary documentation, fumigation support, and flexible shipment through major Indian ports.</p>
       <a href="process.html" class="btn-ghost-coir">Discover Our Process <i class="bi bi-arrow-right"></i></a>
       <div class="mfg-features">
         <div class="mfg-feat">
           <i class="bi bi-gear-wide-connected"></i>
           <h5>Modern Machinery</h5>
-          <p>State-of-the-art equipment for consistent quality output</p>
+          <p>Hydraulic compression &amp; mechanical defibering for consistent output</p>
         </div>
         <div class="mfg-feat">
           <i class="bi bi-shield-check"></i>
-          <h5>Quality Control</h5>
-          <p>Multi-stage inspection before every shipment</p>
+          <h5>Quality Inspection</h5>
+          <p>EC, pH, moisture &amp; weight verified before every shipment</p>
         </div>
         <div class="mfg-feat">
           <i class="bi bi-truck"></i>
           <h5>Export Ready</h5>
-          <p>Packaging compliant with international trade standards</p>
+          <p>Phytosanitary docs, fumigation support &amp; container loading</p>
+        </div>
+        <div class="mfg-feat">
+          <i class="bi bi-tag-fill"></i>
+          <h5>Custom Packing</h5>
+          <p>Private labeling &amp; buyer-specific specifications on request</p>
         </div>
       </div>
     </div>
@@ -1011,9 +898,7 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 6 — WHY CHOOSE US / THE ANURADHA DIFFERENCE
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 6 — WHY CHOOSE US -->
 <section class="whyus-section section">
   <div class="container">
     <div class="text-center mb-5">
@@ -1024,30 +909,58 @@
     <div class="row g-4">
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="whyus-card">
-          <div class="whyus-icon-wrap"><img src="assets/images/whyus/check.png" alt="Quality"></div>
-          <h4>Quality Assured</h4>
-          <p>Every product passes rigorous quality checks before it leaves our facility — guaranteed consistency in every order.</p>
+          <div class="whyus-icon-wrap"><i class="bi bi-patch-check-fill"></i></div>
+          <h4>Premium Export Quality</h4>
+          <p>Every product passes rigorous quality checks — guaranteed consistency in every order from every batch.</p>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="whyus-card">
-          <div class="whyus-icon-wrap"><img src="assets/images/whyus/savings.png" alt="Price"></div>
+          <div class="whyus-icon-wrap"><i class="bi bi-currency-dollar"></i></div>
           <h4>Competitive Pricing</h4>
-          <p>Direct manufacturing and distribution means no middlemen — fair market value delivered straight to you.</p>
+          <p>Direct manufacturer and supplier — no middlemen means fair market value delivered straight to you.</p>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="whyus-card">
-          <div class="whyus-icon-wrap"><img src="assets/images/whyus/truck.png" alt="Delivery"></div>
+          <div class="whyus-icon-wrap"><i class="bi bi-box-seam"></i></div>
+          <h4>Custom Packaging</h4>
+          <p>Customized packing and private labeling available to match your brand and market requirements.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="whyus-card">
+          <div class="whyus-icon-wrap"><i class="bi bi-truck"></i></div>
           <h4>On-Time Delivery</h4>
-          <p>Punctuality is our promise. We honour delivery timelines with meticulous logistics planning, worldwide.</p>
+          <p>Timely shipment with complete export documentation and professional logistics support, worldwide.</p>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="whyus-card">
-          <div class="whyus-icon-wrap"><img src="assets/images/whyus/handshake.png" alt="Customer"></div>
-          <h4>Client-Centric</h4>
-          <p>Your success is our success. We build long-term partnerships based on trust, reliability, and mutual growth.</p>
+          <div class="whyus-icon-wrap"><i class="bi bi-leaf"></i></div>
+          <h4>Eco-Friendly Products</h4>
+          <p>100% natural, sustainable coconut products supporting responsible farming and green manufacturing.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="whyus-card">
+          <div class="whyus-icon-wrap"><i class="bi bi-globe-americas"></i></div>
+          <h4>Global Export Support</h4>
+          <p>Phytosanitary documentation, fumigation support, and flexible shipment through major Indian ports.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="whyus-card">
+          <div class="whyus-icon-wrap"><i class="bi bi-sliders"></i></div>
+          <h4>Flexible Specifications</h4>
+          <p>Low EC, washed, buffered, or custom grades — products tailored exactly to your requirements.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="whyus-card">
+          <div class="whyus-icon-wrap"><i class="bi bi-handshake"></i></div>
+          <h4>Long-Term Partnerships</h4>
+          <p>We build reliable, trust-based relationships with every importer, distributor, and business partner.</p>
         </div>
       </div>
     </div>
@@ -1055,36 +968,34 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 7 — OUR FOUNDATION / MISSION VALUES VISION
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 7 — MISSION, VISION & VALUES -->
 <section class="mvv-section section-sm">
   <div class="container">
     <div class="text-center mb-5">
       <span class="eyebrow">Our Foundation</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Mission, Values &amp; Vision</h2>
+      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Mission, Vision &amp; Values</h2>
       <div class="heading-line center"></div>
     </div>
     <div class="row g-4">
       <div class="col-12 col-md-4">
         <div class="mvv-card">
-          <div class="mvv-icon"><img src="assets/images/icons/target-and-goal-2852 (1).png" alt="Mission"></div>
+          <div class="mvv-icon"><i class="bi bi-bullseye"></i></div>
           <h3>Our Mission</h3>
-          <p>Enhance our competitiveness, uphold all regulations, and contribute to society by innovating, ensuring quality, boosting productivity, developing our people, and growing sustainably.</p>
+          <p>To deliver high-quality natural coconut products to global markets while maintaining sustainable practices, long-term business relationships, and complete customer satisfaction.</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="mvv-card">
-          <div class="mvv-icon"><img src="assets/images/icons/aggreement-and-growth-14753.png" alt="Values"></div>
+          <div class="mvv-icon"><i class="bi bi-stars"></i></div>
           <h3>Our Values</h3>
           <p>Integrity and Excellence in everything we do. We uphold the highest ethical standards in all our dealings and pioneer sustainable practices for tomorrow's growing challenges.</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="mvv-card">
-          <div class="mvv-icon"><img src="assets/images/icons/goal-target-check-list-black-outline-22644.png" alt="Vision"></div>
+          <div class="mvv-icon"><i class="bi bi-eye"></i></div>
           <h3>Our Vision</h3>
-          <p>To establish Anuradha Coirs &amp; Fibers as a leading global player in the coir sector through innovative investments, cost-effectiveness, and world-class processes.</p>
+          <p>To become a globally recognized supplier of eco-friendly coir and coconut products by consistently providing superior quality, innovation, and dependable export services.</p>
         </div>
       </div>
     </div>
@@ -1092,9 +1003,7 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 8 — REACH OUT / GET IN TOUCH
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 8 — CONTACT -->
 <section class="contact-section section">
   <div class="container">
     <div class="text-center mb-5">
@@ -1137,8 +1046,7 @@
               <label class="form-label">Message</label>
               <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"></textarea>
             </div>
-            <button type="submit" class="btn-primary-coir"
-              style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
+            <button type="submit" class="btn-primary-coir" style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
               Send Message <i class="bi bi-send-fill"></i>
             </button>
           </form>
@@ -1148,7 +1056,7 @@
       <div class="col-12 col-lg-5">
         <div class="contact-info-panel">
           <h3>Anuradha Coirs &amp; Fibers</h3>
-          <p class="tagline">Serving the world from the heart of India</p>
+          <p class="tagline">Serving the world from the heart of South India</p>
           <div class="info-item">
             <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
             <div>
@@ -1167,9 +1075,7 @@
             <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
             <div>
               <span class="info-text-label">Email</span>
-              <span class="info-text-val">
-                <a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a>
-              </span>
+              <span class="info-text-val"><a href="mailto:info@anuradhacoirsfibres.com">info@anuradhacoirsfibres.com</a></span>
             </div>
           </div>
           <hr class="info-divider">
@@ -1200,24 +1106,26 @@
 </section>
 
 
-<!-- ════════════ WHATSAPP FLOAT ════════════ -->
+<!-- SCROLL TO TOP BUTTON -->
+<a href="#top" class="scroll-to-top" id="scrollToTop" title="Scroll to top" aria-label="Scroll to top">
+  <i class="bi bi-chevron-up"></i>
+</a>
+
+<!-- WHATSAPP FLOAT -->
 <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
    target="_blank" class="wa-btn" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
   <i class="bi bi-whatsapp"></i>
 </a>
 
 
-<!-- ══════════════════════════════════════════════════════
-     SECTION 9 — FOOTER
-══════════════════════════════════════════════════════ -->
+<!-- SECTION 9 — FOOTER -->
 <footer class="site-footer">
   <div class="container">
     <div class="row g-5">
 
       <div class="col-12 col-md-4 footer-brand">
-        <img src="newlogo.png" alt="Anuradha Coirs" height="70"
-             style="filter:brightness(10);margin-bottom:16px;">
-        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients across 50+ countries.</p>
+        <img src="newlogo.png" alt="Anuradha Coirs" height="70" style="filter:brightness(10);margin-bottom:16px;">
+        <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+ clients across 50+ countries worldwide.</p>
       </div>
 
       <div class="col-6 col-md-2">
@@ -1280,14 +1188,11 @@
 </footer>
 
 
-<!-- ════════════ SCRIPTS ════════════ -->
+<!-- SCRIPTS -->
 <script>
 $(document).ready(function () {
-
-  /* Dynamic footer year */
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-  /* ── Product Tabs ── */
   $('.ptab-btn').on('click', function () {
     var tab = $(this).data('tab');
     $('.ptab-btn').removeClass('active');
@@ -1296,41 +1201,32 @@ $(document).ready(function () {
     $('#tab-' + tab).addClass('active');
   });
 
-  /* ── Gallery Isotope filter ── */
-  var $grid = $('.gallery-grid').isotope({
-    itemSelector: '.item',
-    layoutMode: 'fitRows'
-  });
+  var $grid = $('.gallery-grid').isotope({ itemSelector: '.item', layoutMode: 'fitRows' });
   $('.gf-btn').on('click', function () {
     $('.gf-btn').removeClass('active');
     $(this).addClass('active');
     $grid.isotope({ filter: $(this).data('filter') });
   });
 
-  /* ── Magnific Popup lightbox ── */
   $('.popup-btn').magnificPopup({
     type: 'image',
     gallery: { enabled: true },
     mainClass: 'mfp-fade'
   });
-
 });
 
-/* Google Translate bridge */
-document.getElementById('translate-select').addEventListener('change', function () {
-  var combo = document.querySelector('.goog-te-combo');
-  if (combo) { combo.value = this.value; combo.dispatchEvent(new Event('change')); }
-});
 </script>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 </html>
