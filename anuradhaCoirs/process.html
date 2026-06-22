@@ -585,6 +585,33 @@
       transform: scale(1.04)
     }
 
+    /* Multi-image container support */
+    .step-img-container {
+      display: grid;
+      width: 100%;
+      height: 100%;
+    }
+
+    .step-img-container.cols-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .step-img-container.cols-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .step-img-container img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      transition: transform .6s ease;
+      display: block;
+    }
+
+    .step-row:hover .step-img-container img {
+      transform: scale(1.04);
+    }
+
     .step-img-overlay {
       position: absolute;
       inset: 0;
@@ -1094,7 +1121,8 @@
         direction: ltr
       }
 
-      .step-img-panel img {
+      .step-img-panel img,
+      .step-img-container img {
         height: 280px
       }
 
@@ -1133,7 +1161,8 @@
         padding: 56px 0
       }
 
-      .step-img-panel img {
+      .step-img-panel img,
+      .step-img-container img {
         height: 240px
       }
 
@@ -1175,7 +1204,8 @@
         grid-template-columns: 1fr 1fr
       }
 
-      .step-img-panel img {
+      .step-img-panel img,
+      .step-img-container img {
         height: 200px
       }
 
@@ -1372,8 +1402,12 @@
       <!-- Step 1 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/rawMaterial.jpg" alt="Coconut Husk Collection"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/productimages/rawMaterial.jpg" alt="Coconut Husk Collection"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/manufacturer2.jpeg" alt="Coconut Husk Sorting"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">01</div>
         </div>
@@ -1397,8 +1431,12 @@
       <!-- Step 2 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/head/process2.jpg" alt="Husk Separation & Cleaning"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Products/semiHuskedCoconut.jpeg" alt="Husked Coconut Sorting"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/infrastructure4.jpeg" alt="Husk Conveyor and Piles"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">02</div>
         </div>
@@ -1422,8 +1460,12 @@
       <!-- Step 3 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/Coir Fibre.jpg" alt="Fibre Extraction"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Products/infrastructure2.jpeg" alt="Mechanical Fibre Extraction"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/manufacturer4.jpeg" alt="Defibering Production Line"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">03</div>
         </div>
@@ -1447,8 +1489,12 @@
       <!-- Step 4 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/rawMaterial.jpg" alt="Drying Process"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/productimages/Coir Fibre.jpg" alt="Sun Drying Yard"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/manufacturer.jpeg" alt="Workers Turning Fibre"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">04</div>
         </div>
@@ -1472,8 +1518,12 @@
       <!-- Step 5 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/screening.jpg" alt="Sieving & Screening"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/productimages/screening.jpg" alt="Coco Peat Sieving"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/infrastructure.jpeg" alt="Conveyor separator"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">05</div>
         </div>
@@ -1497,8 +1547,10 @@
       <!-- Step 6 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/head/process2.jpg" alt="Washing & Buffering"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-1">
+            <img src="assets/images/Products/infrastructure3.jpeg" alt="Washing & Buffering Infrastructure"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">06</div>
         </div>
@@ -1522,8 +1574,12 @@
       <!-- Step 7 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/packing.jpg" alt="Compression & Block Making"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Products/cocoPeatBlock.jpeg" alt="Coco Peat Blocks Stack"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">07</div>
         </div>
@@ -1547,8 +1603,12 @@
       <!-- Step 8 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/Quality.jpg" alt="Quality Inspection"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/productimages/Quality.jpg" alt="Quality Geotextiles Verification"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/manufacturer3.jpeg" alt="Seedling Quality Control"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">08</div>
         </div>
@@ -1572,8 +1632,12 @@
       <!-- Step 9 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/packing.jpg" alt="Packing & Labeling"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Products/coirgrowbags.jpeg" alt="Packed Grow Bags"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/bricks2.jpeg" alt="Wrapped Coco Peat Briquettes"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">09</div>
         </div>
@@ -1597,8 +1661,12 @@
       <!-- Step 10 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Container Loading & Export"
-            onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Products/Loading.jpeg" alt="Container Interior Loading"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Products/Loadings.jpeg" alt="Container Export Stack"
+              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">10</div>
         </div>
