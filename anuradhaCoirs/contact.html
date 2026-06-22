@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Anuradha Coirs &amp; Fibers</title>
-  <meta name="description" content="Get in touch with Anuradha Coirs & Fibers — India's trusted coir product manufacturer and exporter.">
+  <meta name="description"
+    content="Get in touch with Anuradha Coirs & Fibers — India's trusted coir product manufacturer and exporter.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,138 +28,261 @@
        ROOT VARIABLES — identical to index.html
     ══════════════════════════════════════════ */
     :root {
-      --forest:     #032f2f;
-      --forest2:    #054a4a;
-      --gold:       #b8975a;
-      --gold-lt:    #d4b87a;
-      --cream:      #f8f5ef;
-      --off-white:  #fafaf8;
-      --light-bg:   #f2f4f2;
-      --text-dark:  #1a1a1a;
-      --text-mid:   #444;
+      --forest: #032f2f;
+      --forest2: #054a4a;
+      --gold: #b8975a;
+      --gold-lt: #d4b87a;
+      --cream: #f8f5ef;
+      --off-white: #fafaf8;
+      --light-bg: #f2f4f2;
+      --text-dark: #1a1a1a;
+      --text-mid: #444;
       --text-muted: #777;
-      --border:     #e0e0d8;
-      --font-head:  'Playfair Display', Georgia, serif;
-      --font-body:  'DM Sans', system-ui, sans-serif;
-      --font-acc:   'Cormorant Garamond', Georgia, serif;
-      --radius:     10px;
-      --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
-      --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
-      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      --border: #e0e0d8;
+      --font-head: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-acc: 'Cormorant Garamond', Georgia, serif;
+      --radius: 10px;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.07);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     /* ══════════════════════════════════════════
        RESET & BASE
     ══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
-    body { font-family: var(--font-body); color: var(--text-dark); background: #fff; -webkit-font-smoothing: antialiased; top: 0 !important; overflow-x: hidden; }
-    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
-    p { font-family: var(--font-body); line-height: 1.75; color: var(--text-mid); }
-    a { transition: var(--transition); }
-    img { max-width: 100%; }
-    .section    { padding: 96px 0; }
-    .section-sm { padding: 64px 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      top: 0 !important;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-head);
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: var(--font-body);
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+
+    a {
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-sm {
+      padding: 64px 0;
+    }
 
     .eyebrow {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 12px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
     }
+
     .heading-line {
-      width: 48px; height: 3px;
+      width: 48px;
+      height: 3px;
       background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-      border-radius: 2px; margin: 16px 0 24px;
+      border-radius: 2px;
+      margin: 16px 0 24px;
     }
-    .heading-line.center { margin: 16px auto 24px; }
+
+    .heading-line.center {
+      margin: 16px auto 24px;
+    }
 
     /* ══════════════════════════════════════════
        BUTTONS
     ══════════════════════════════════════════ */
     .btn-primary-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 13px 30px; border-radius: 3px;
-      background: var(--forest); color: #fff;
-      text-decoration: none; border: 2px solid var(--forest);
-      transition: var(--transition); cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 13px 30px;
+      border-radius: 3px;
+      background: var(--forest);
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid var(--forest);
+      transition: var(--transition);
+      cursor: pointer;
     }
+
     .btn-primary-coir:hover {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35);
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184, 151, 90, 0.35);
     }
 
     /* ══════════════════════════════════════════
        GOOGLE TRANSLATE
     ══════════════════════════════════════════ */
-    .language-item{
-        min-width:180px;
-        display:flex;
-        align-items:center;
+    .language-item {
+      min-width: 180px;
+      display: flex;
+      align-items: center;
     }
-    #google_translate_element{
-        width:100%;
+
+    #google_translate_element {
+      width: 100%;
     }
-    .goog-te-gadget{
-        font-size:0 !important;
+
+    .goog-te-gadget {
+      font-size: 0 !important;
     }
-    .goog-te-combo{
-        width:100%;
-        height:42px;
-        border:1px solid #d9d9d9;
-        border-radius:8px;
-        padding:0 10px;
-        font-size:14px !important;
-        background:#fff;
+
+    .goog-te-combo {
+      width: 100%;
+      height: 42px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 0 10px;
+      font-size: 14px !important;
+      background: #fff;
     }
+
     .goog-logo-link,
-    .goog-te-gadget span{
-        display:none !important;
+    .goog-te-gadget span {
+      display: none !important;
     }
-    body{
-        top:0 !important;
+
+    body {
+      top: 0 !important;
     }
-    .goog-te-banner-frame{
-        display:none !important;
+
+    .goog-te-banner-frame {
+      display: none !important;
     }
+
     /* ══════════════════════════════════════════
        TOP BAR
     ══════════════════════════════════════════ */
     .topbar {
-      background: var(--forest); padding: 8px 0;
-      font-family: var(--font-body); font-size: 0.78rem;
-      color: rgba(255,255,255,0.75);
+      background: var(--forest);
+      padding: 8px 0;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.75);
     }
-    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
-    .topbar a:hover { color: var(--gold-lt); }
-    .topbar-sep { margin: 0 12px; opacity: 0.35; }
+
+    .topbar a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+    }
+
+    .topbar a:hover {
+      color: var(--gold-lt);
+    }
+
+    .topbar-sep {
+      margin: 0 12px;
+      opacity: 0.35;
+    }
 
     /* ══════════════════════════════════════════
        NAVBAR
     ══════════════════════════════════════════ */
     .main-nav {
-      background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .main-nav .navbar { padding: 0; }
-    .main-nav .navbar-brand img { height: 80px; transition: var(--transition); }
-    .main-nav .navbar-brand:hover img { opacity: 0.85; }
+
+    .main-nav .navbar {
+      padding: 0;
+    }
+
+    .main-nav .navbar-brand img {
+      height: 80px;
+      transition: var(--transition);
+    }
+
+    .main-nav .navbar-brand:hover img {
+      opacity: 0.85;
+    }
+
     .main-nav .nav-link {
-      font-family: var(--font-body); font-size: 0.82rem;
-      font-weight: 500; letter-spacing: 0.5px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
       color: var(--text-dark) !important;
       padding: 30px 14px !important;
-      position: relative; transition: color 0.25s;
+      position: relative;
+      transition: color 0.25s;
     }
+
     .main-nav .nav-link::after {
-      content: ''; position: absolute; bottom: 0; left: 14px;
-      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
     }
-    .main-nav .nav-link:hover { color: var(--gold) !important; }
+
+    .main-nav .nav-link:hover {
+      color: var(--gold) !important;
+    }
+
     .main-nav .nav-link:hover::after,
-    .main-nav .nav-link.active::after { width: calc(100% - 28px); }
-    .main-nav .nav-link.active { color: var(--forest) !important; font-weight: 600; }
+    .main-nav .nav-link.active::after {
+      width: calc(100% - 28px);
+    }
+
+    .main-nav .nav-link.active {
+      color: var(--forest) !important;
+      font-weight: 600;
+    }
 
     /* ══════════════════════════════════════════
        PAGE HERO BANNER
@@ -164,601 +291,1026 @@
       position: relative;
       height: 380px;
       background: url(assets/images/head/Contact-head.jpg) center/cover no-repeat;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .page-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(3,47,47,0.82) 0%, rgba(3,47,47,0.5) 100%);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(3, 47, 47, 0.82) 0%, rgba(3, 47, 47, 0.5) 100%);
     }
+
     .page-hero-content {
-      position: relative; z-index: 1; text-align: center; padding: 0 20px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 20px;
     }
-    .page-hero-content .eyebrow { color: var(--gold-lt); }
+
+    .page-hero-content .eyebrow {
+      color: var(--gold-lt);
+    }
+
     .page-hero-content h1 {
       font-family: var(--font-head);
       font-size: clamp(2.2rem, 5vw, 3.6rem);
-      font-weight: 600; color: #fff; line-height: 1.15;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
       margin-bottom: 12px;
     }
-    .page-hero-content h1 em { font-style: italic; color: var(--gold-lt); }
-    .page-hero-content p {
-      font-family: var(--font-acc); font-size: 1.1rem;
-      color: rgba(255,255,255,0.82);
+
+    .page-hero-content h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
     }
-    @media (max-width: 576px) { .page-hero { height: 260px; } }
+
+    .page-hero-content p {
+      font-family: var(--font-acc);
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    @media (max-width: 576px) {
+      .page-hero {
+        height: 260px;
+      }
+    }
 
     /* ══════════════════════════════════════════
        BREADCRUMB
     ══════════════════════════════════════════ */
     .breadcrumb-bar {
-      background: var(--cream); border-bottom: 1px solid var(--border);
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
       padding: 12px 0;
     }
+
     .breadcrumb-bar ol {
-      margin: 0; padding: 0; list-style: none;
-      display: flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
     }
+
     .breadcrumb-bar ol li a {
-      color: var(--forest); text-decoration: none; font-weight: 500;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 500;
     }
-    .breadcrumb-bar ol li a:hover { color: var(--gold); }
-    .breadcrumb-bar ol li.sep { color: var(--text-muted); font-size: 0.7rem; }
-    .breadcrumb-bar ol li.current { color: var(--text-muted); }
+
+    .breadcrumb-bar ol li a:hover {
+      color: var(--gold);
+    }
+
+    .breadcrumb-bar ol li.sep {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+
+    .breadcrumb-bar ol li.current {
+      color: var(--text-muted);
+    }
 
     /* ══════════════════════════════════════════
        CONTACT INFO CARDS (top 3)
     ══════════════════════════════════════════ */
-    .contact-info-section { background: #fff; }
+    .contact-info-section {
+      background: #fff;
+    }
+
     .cinfo-card {
-      background: var(--cream); border-radius: var(--radius);
-      padding: 36px 28px; text-align: center; height: 100%;
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      height: 100%;
       border: 1px solid var(--border);
       transition: var(--transition);
     }
+
     .cinfo-card:hover {
-      border-color: var(--gold); transform: translateY(-4px);
+      border-color: var(--gold);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
+
     .cinfo-icon {
-      width: 64px; height: 64px;
-      background: var(--forest); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: var(--forest);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto 20px;
-      font-size: 1.4rem; color: var(--gold-lt);
+      font-size: 1.4rem;
+      color: var(--gold-lt);
       transition: var(--transition);
     }
-    .cinfo-card:hover .cinfo-icon { background: var(--gold); color: #fff; }
+
+    .cinfo-card:hover .cinfo-icon {
+      background: var(--gold);
+      color: #fff;
+    }
+
     .cinfo-card h4 {
-      font-family: var(--font-head); font-size: 1rem;
-      color: var(--forest); margin-bottom: 10px;
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--forest);
+      margin-bottom: 10px;
     }
+
     .cinfo-card p {
-      font-size: 0.88rem; line-height: 1.65; margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin: 0;
     }
+
     .cinfo-card a {
-      color: var(--forest); text-decoration: none; font-weight: 500;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 500;
     }
-    .cinfo-card a:hover { color: var(--gold); }
+
+    .cinfo-card a:hover {
+      color: var(--gold);
+    }
 
     /* ══════════════════════════════════════════
        CONTACT FORM SECTION
     ══════════════════════════════════════════ */
-    .contact-form-section { background: var(--light-bg); }
+    .contact-form-section {
+      background: var(--light-bg);
+    }
 
     /* Form card */
     .contact-form-card {
-      background: #fff; border-radius: 14px;
-      padding: 44px 40px; box-shadow: var(--shadow-md);
+      background: #fff;
+      border-radius: 14px;
+      padding: 44px 40px;
+      box-shadow: var(--shadow-md);
     }
+
     .contact-form-card h2 {
-      font-family: var(--font-head); font-size: 1.8rem;
-      color: var(--forest); margin-bottom: 6px;
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--forest);
+      margin-bottom: 6px;
     }
+
     .contact-form-card .sub {
-      font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
     }
-    .form-group { margin-bottom: 16px; }
-    .form-row-2 { display: flex; gap: 14px; }
-    .form-row-2 .form-group { flex: 1; }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-row-2 {
+      display: flex;
+      gap: 14px;
+    }
+
+    .form-row-2 .form-group {
+      flex: 1;
+    }
+
     .form-label {
-      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-dark);
-      display: block; margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      display: block;
+      margin-bottom: 6px;
     }
+
     .form-input {
-      width: 100%; font-family: var(--font-body); font-size: 0.92rem;
-      color: var(--text-dark); background: var(--off-white);
-      border: 1.5px solid var(--border); border-radius: 6px;
-      padding: 11px 14px; outline: none;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      background: var(--off-white);
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 11px 14px;
+      outline: none;
       transition: border-color 0.25s, box-shadow 0.25s;
     }
+
     .form-input:focus {
       border-color: var(--forest);
-      box-shadow: 0 0 0 3px rgba(3,47,47,0.1);
+      box-shadow: 0 0 0 3px rgba(3, 47, 47, 0.1);
       background: #fff;
     }
-    textarea.form-input { resize: vertical; min-height: 130px; }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 130px;
+    }
+
     @media (max-width: 768px) {
-      .contact-form-card { padding: 28px 20px; }
-      .form-row-2 { flex-direction: column; gap: 0; }
+      .contact-form-card {
+        padding: 28px 20px;
+      }
+
+      .form-row-2 {
+        flex-direction: column;
+        gap: 0;
+      }
     }
 
     /* Info panel */
     .contact-info-panel {
-      background: var(--forest); border-radius: 14px;
-      padding: 40px 32px; height: 100%;
+      background: var(--forest);
+      border-radius: 14px;
+      padding: 40px 32px;
+      height: 100%;
     }
+
     .contact-info-panel h3 {
-      font-family: var(--font-head); font-size: 1.5rem;
-      color: #fff; margin-bottom: 8px;
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 8px;
     }
+
     .contact-info-panel .tagline {
-      font-family: var(--font-acc); font-style: italic;
-      color: var(--gold-lt); font-size: 1rem; margin-bottom: 28px;
+      font-family: var(--font-acc);
+      font-style: italic;
+      color: var(--gold-lt);
+      font-size: 1rem;
+      margin-bottom: 28px;
     }
-    .info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
     .info-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(255,255,255,0.1); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold-lt); font-size: 1rem;
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-lt);
+      font-size: 1rem;
     }
+
     .info-text-label {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); display: block; margin-bottom: 2px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      display: block;
+      margin-bottom: 2px;
     }
+
     .info-text-val {
-      font-family: var(--font-body); font-size: 0.9rem;
-      color: rgba(255,255,255,0.88); line-height: 1.5;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.5;
     }
-    .info-text-val a { color: inherit; text-decoration: none; }
-    .info-text-val a:hover { color: var(--gold-lt); }
-    .info-divider { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 22px 0; }
+
+    .info-text-val a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .info-text-val a:hover {
+      color: var(--gold-lt);
+    }
+
+    .info-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin: 22px 0;
+    }
 
     /* ══════════════════════════════════════════
        MAP SECTION
     ══════════════════════════════════════════ */
-    .map-section { background: #fff; }
-    .map-wrap { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); }
-    .map-wrap iframe { display: block; width: 100%; height: 420px; border: 0; }
+    .map-section {
+      background: #fff;
+    }
+
+    .map-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
 
     /* ══════════════════════════════════════════
        WHATSAPP FLOAT
     ══════════════════════════════════════════ */
     .wa-btn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      width: 56px; height: 56px; background: #25D366; color: #fff;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: var(--transition);
     }
-    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
-    @media (max-width: 576px) { .wa-btn { width: 48px; height: 48px; font-size: 22px; bottom: 16px; right: 16px; } }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      color: #fff;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    @media (max-width: 576px) {
+      .wa-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
 
     /* ══════════════════════════════════════════
        FOOTER
     ══════════════════════════════════════════ */
-    .site-footer { background: var(--forest); padding-top: 64px; }
-    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 240px; }
-    .footer-col-heading {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-lt); margin-bottom: 20px; display: block;
+    .site-footer {
+      background: var(--forest);
+      padding-top: 64px;
     }
-    .footer-info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+
+    .footer-col-heading {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-item i {
+      color: var(--gold-lt);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
     .footer-info-item span,
     .footer-info-item a {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none; line-height: 1.55; transition: color 0.2s;
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      line-height: 1.55;
+      transition: color 0.2s;
     }
-    .footer-info-item a:hover { color: var(--gold-lt); }
+
+    .footer-info-item a:hover {
+      color: var(--gold-lt);
+    }
+
     .footer-link {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      display: flex; align-items: center; gap: 6px;
-      padding: 5px 0; transition: color 0.25s, padding-left 0.25s;
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 0;
+      transition: color 0.25s, padding-left 0.25s;
     }
-    .footer-link i { font-size: 0.7rem; color: var(--gold-lt); }
-    .footer-link:hover { color: #fff; padding-left: 4px; }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0; }
+
+    .footer-link i {
+      font-size: 0.7rem;
+      color: var(--gold-lt);
+    }
+
+    .footer-link:hover {
+      color: #fff;
+      padding-left: 4px;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 40px 0 0;
+    }
+
     .footer-bottom {
-      padding: 18px 0; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 12px;
+      padding: 18px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
     }
-    .footer-bottom p { font-family: var(--font-body); font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; }
-    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--gold-lt); }
-    .social-links { display: flex; gap: 10px; }
+
+    .footer-bottom p {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--gold-lt);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
     .social-link {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.08);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      text-decoration: none; transition: var(--transition);
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
     }
-    .social-link:hover { background: var(--gold); }
-    .social-link i { font-size: 1rem; color: rgba(255,255,255,0.8); transition: color 0.2s; }
-    .social-link:hover i { color: #fff; }
+
+    .social-link:hover {
+      background: var(--gold);
+    }
+
+    .social-link i {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.2s;
+    }
+
+    .social-link:hover i {
+      color: #fff;
+    }
 
     /* ══════════════════════════════════════════
        RESPONSIVE — MOBILE FIXES
     ══════════════════════════════════════════ */
     @media (max-width: 991px) {
-      .main-nav .nav-link { padding: 12px 16px !important; }
-      .main-nav .nav-link::after { display: none; }
-      .translate-wrap { margin: 8px 16px 12px; }
+      .main-nav .nav-link {
+        padding: 12px 16px !important;
+      }
+
+      .main-nav .nav-link::after {
+        display: none;
+      }
+
+      .translate-wrap {
+        margin: 8px 16px 12px;
+      }
     }
+
     @media (max-width: 767px) {
-      .section    { padding: 52px 0; }
-      .section-sm { padding: 40px 0; }
-      .page-hero  { height: 230px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .wa-btn { width: 46px; height: 46px; font-size: 20px; bottom: 16px; right: 16px; }
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-sm {
+        padding: 40px 0;
+      }
+
+      .page-hero {
+        height: 230px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .wa-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+        bottom: 16px;
+        right: 16px;
+      }
     }
+
     @media (max-width: 575px) {
-      .section { padding: 44px 0; }
-      .page-hero { height: 200px; }
-      .page-hero-content h1 { font-size: 1.75rem; }
-      .page-hero-content p  { font-size: 0.88rem; }
-      .cinfo-card { padding: 24px 18px; }
-      .contact-form-card { padding: 24px 16px; }
-      .form-row-2 { flex-direction: column; gap: 0; }
-      .contact-info-panel { padding: 28px 20px; }
-      .map-wrap iframe { height: 280px; }
-      .fact-item { flex-direction: column; gap: 10px; }
-      .intro-img { height: 260px; }
-      .uses-block { padding: 18px 16px; }
+      .section {
+        padding: 44px 0;
+      }
+
+      .page-hero {
+        height: 200px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .page-hero-content p {
+        font-size: 0.88rem;
+      }
+
+      .cinfo-card {
+        padding: 24px 18px;
+      }
+
+      .contact-form-card {
+        padding: 24px 16px;
+      }
+
+      .form-row-2 {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .contact-info-panel {
+        padding: 28px 20px;
+      }
+
+      .map-wrap iframe {
+        height: 280px;
+      }
+
+      .fact-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .intro-img {
+        height: 260px;
+      }
+
+      .uses-block {
+        padding: 18px 16px;
+      }
+
       .site-footer .col-6.col-md-2,
-      .site-footer .col-6.col-md-3 { width: 100%; }
-      .footer-bottom p { font-size: 0.75rem; }
-      .wa-btn { width: 44px; height: 44px; font-size: 19px; bottom: 14px; right: 14px; }
+      .site-footer .col-6.col-md-3 {
+        width: 100%;
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+      }
+
+      .wa-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 19px;
+        bottom: 14px;
+        right: 14px;
+      }
     }
+
     @media (max-width: 380px) {
-      .page-hero { height: 175px; }
-      .page-hero-content h1 { font-size: 1.5rem; }
-      .page-hero-content p  { display: none; }
-      .btn-primary-coir { padding: 11px 20px; font-size: 0.78rem; }
-      .wa-btn { bottom: 12px; right: 12px; width: 42px; height: 42px; font-size: 18px; }
+      .page-hero {
+        height: 175px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .page-hero-content p {
+        display: none;
+      }
+
+      .btn-primary-coir {
+        padding: 11px 20px;
+        font-size: 0.78rem;
+      }
+
+      .wa-btn {
+        bottom: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ════════════ TOP BAR ════════════ -->
-<div class="topbar d-none d-md-block">
-  <div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <i class="bi bi-telephone-fill me-1" style="color:var(--gold);"></i>
-        <a href="tel:+919944859177">+91 99448 59177</a>
-        <span class="topbar-sep">|</span>
-        <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
-        <a href="/cdn-cgi/l/email-protection#fb92959d94bb9a958e899a9f939a98949289889d9299899e88d5989496"><span class="__cf_email__" data-cfemail="345d5a525b74555a414655505c55575b5d4647525d564651471a575b59">[email&#160;protected]</span></a>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="https://facebook.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-youtube"></i></a>
+  <!-- ════════════ TOP BAR ════════════ -->
+  <div class="topbar d-none d-md-block">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+          <a href="/cdn-cgi/l/email-protection#fb92959d94bb9a958e899a9f939a98949289889d9299899e88d5989496"><span
+              class="__cf_email__"
+              data-cfemail="345d5a525b74555a414655505c55575b5d4647525d564651471a575b59">anuradhaexporters@gmail.com</span></a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i
+              class="bi bi-youtube"></i></a> -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ════════════ NAVBAR ════════════ -->
-<div class="main-nav">
-  <div class="container-fluid px-4">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
-      </a>
-      <button class="navbar-toggler border-0" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navMain"
-        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="aboutcoir.html">About Coir</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-          <li class="nav-item language-item">
+  <!-- ════════════ NAVBAR ════════════ -->
+  <div class="main-nav">
+    <div class="container-fluid px-4">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+          aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutcoir.html">About Coir</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+            <li class="nav-item language-item">
               <div id="google_translate_element"></div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
-
-<!-- ════════════ PAGE HERO ════════════ -->
-<div class="page-hero">
-  <div class="page-hero-content">
-    <span class="eyebrow">Get In Touch</span>
-    <h1>Contact <em>Us</em></h1>
-    <p>We'd love to hear from you — reach out for quotes, partnerships, or any queries</p>
-  </div>
-</div>
-
-<!-- ════════════ BREADCRUMB ════════════ -->
-<div class="breadcrumb-bar">
-  <div class="container-fluid px-4">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li class="sep"><i class="bi bi-chevron-right"></i></li>
-      <li class="current">Contact Us</li>
-    </ol>
-  </div>
-</div>
-
-<!-- ════════════ CONTACT INFO CARDS ════════════ -->
-<section class="contact-info-section section-sm">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Reach Out</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">How to Find Us</h2>
-      <div class="heading-line center"></div>
-    </div>
-    <div class="row g-4">
-
-      <div class="col-12 col-md-4">
-        <div class="cinfo-card">
-          <div class="cinfo-icon"><i class="bi bi-geo-alt-fill"></i></div>
-          <h4>India Office</h4>
-          <p>212/6B Krishnapuram Main Road,<br>Nilakkottai, Dindigul,<br>Tamilnadu – 624219</p>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <div class="col-12 col-md-4">
-        <div class="cinfo-card">
-          <div class="cinfo-icon"><i class="bi bi-telephone-fill"></i></div>
-          <h4>Phone &amp; Email</h4>
-          <p>
-            <a href="tel:+919944859177">+91 99448 59177</a><br>
-            <a href="tel:2063919622">+1 206 391 9622</a><br>
-            <a href="/cdn-cgi/l/email-protection#8de4e3ebe2cdece3f8ffece9e5eceee2e4fffeebe4efffe8fea3eee2e0"><span class="__cf_email__" data-cfemail="9bf2f5fdf4dbfaf5eee9fafff3faf8f4f2e9e8fdf2f9e9fee8b5f8f4f6">[email&#160;protected]</span></a>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-4">
-        <div class="cinfo-card">
-          <div class="cinfo-icon"><i class="bi bi-globe-americas"></i></div>
-          <h4>US Office</h4>
-          <p>Mr. Dave Wertz<br>1101 Service Ave SE,<br>Roanoke VA – 24013</p>
-        </div>
-      </div>
-
+      </nav>
     </div>
   </div>
-</section>
 
-<!-- ════════════ CONTACT FORM + INFO PANEL ════════════ -->
-<section class="contact-form-section section">
-  <div class="container">
-    <div class="row g-4">
+  <!-- ════════════ PAGE HERO ════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Contact <em>Us</em></h1>
+      <p>We'd love to hear from you — reach out for quotes, partnerships, or any queries</p>
+    </div>
+  </div>
 
-      <!-- Form -->
-      <div class="col-12 col-lg-7">
-        <div class="contact-form-card">
-          <h2>Send Us a Message</h2>
-          <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
-          <form action="">
-            <div class="form-row-2">
-              <div class="form-group">
-                <label class="form-label">First Name</label>
-                <input type="text" name="firstName" class="form-input" placeholder="John">
+  <!-- ════════════ BREADCRUMB ════════════ -->
+  <div class="breadcrumb-bar">
+    <div class="container-fluid px-4">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li class="sep"><i class="bi bi-chevron-right"></i></li>
+        <li class="current">Contact Us</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ════════════ CONTACT INFO CARDS ════════════ -->
+  <section class="contact-info-section section-sm">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Reach Out</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">How to Find Us
+        </h2>
+        <div class="heading-line center"></div>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <h4>India Office</h4>
+            <p>212/6B Krishnapuram Main Road,<br>Nilakkottai, Dindigul,<br>Tamilnadu – 624219</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-telephone-fill"></i></div>
+            <h4>Phone &amp; Email</h4>
+            <p>
+              <a href="tel:+919944859177">+91 99448 59177</a><br>
+              <a href="tel:2063919622">+1 206 391 9622</a><br>
+              <a href="/cdn-cgi/l/email-protection#8de4e3ebe2cdece3f8ffece9e5eceee2e4fffeebe4efffe8fea3eee2e0"><span
+                  class="__cf_email__"
+                  data-cfemail="9bf2f5fdf4dbfaf5eee9fafff3faf8f4f2e9e8fdf2f9e9fee8b5f8f4f6">[email&#160;protected]</span></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-globe-americas"></i></div>
+            <h4>US Office</h4>
+            <p>Mr. Dave Wertz<br>1101 Service Ave SE,<br>Roanoke VA – 24013</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ CONTACT FORM + INFO PANEL ════════════ -->
+  <section class="contact-form-section section">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Form -->
+        <div class="col-12 col-lg-7">
+          <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+            <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
+            <form action="">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" name="firstName" class="form-input" placeholder="John">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" name="lastName" class="form-input" placeholder="Smith">
+                </div>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                </div>
               </div>
               <div class="form-group">
-                <label class="form-label">Last Name</label>
-                <input type="text" name="lastName" class="form-input" placeholder="Smith">
-              </div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group">
-                <label class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                <label class="form-label">Subject</label>
+                <input type="text" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
               </div>
               <div class="form-group">
-                <label class="form-label">Phone Number</label>
-                <input type="tel" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"></textarea>
+              </div>
+              <button type="submit" class="btn-primary-coir"
+                style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
+                Send Message <i class="bi bi-send-fill"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="col-12 col-lg-5">
+          <div class="contact-info-panel">
+            <h3>Anuradha Coirs &amp; Fibers</h3>
+            <p class="tagline">Serving the world from the heart of India</p>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <span class="info-text-label">India Office</span>
+                <span class="info-text-val">212/6B Krishnapuram Main Road, Nilakkottai,<br>Dindigul, Tamilnadu –
+                  624219</span>
               </div>
             </div>
-            <div class="form-group">
-              <label class="form-label">Subject</label>
-              <input type="text" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <span class="info-text-label">India Phone</span>
+                <span class="info-text-val"><a href="tel:+919944859177">+91 99448 59177</a></span>
+              </div>
             </div>
-            <div class="form-group">
-              <label class="form-label">Message</label>
-              <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"></textarea>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <span class="info-text-label">Email</span>
+                <span class="info-text-val"><a
+                    href="/cdn-cgi/l/email-protection#7c15121a133c1d12090e1d18141d1f13150e0f1a151e0e190f521f1311"><span
+                      class="__cf_email__"
+                      data-cfemail="01686f676e41606f747360656960626e6873726768637364722f626e6c">[email&#160;protected]</span></a></span>
+              </div>
             </div>
-            <button type="submit" class="btn-primary-coir" style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
-              Send Message <i class="bi bi-send-fill"></i>
-            </button>
-          </form>
-        </div>
-      </div>
 
-      <!-- Info Panel -->
-      <div class="col-12 col-lg-5">
-        <div class="contact-info-panel">
-          <h3>Anuradha Coirs &amp; Fibers</h3>
-          <p class="tagline">Serving the world from the heart of India</p>
+            <hr class="info-divider">
 
-          <div class="info-item">
-            <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
-            <div>
-              <span class="info-text-label">India Office</span>
-              <span class="info-text-val">212/6B Krishnapuram Main Road, Nilakkottai,<br>Dindigul, Tamilnadu – 624219</span>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-globe-americas"></i></div>
+              <div>
+                <span class="info-text-label">US Office</span>
+                <span class="info-text-val">Mr. Dave Wertz<br>1101 Service Ave SE, Roanoke VA – 24013</span>
+              </div>
             </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
-            <div>
-              <span class="info-text-label">India Phone</span>
-              <span class="info-text-val"><a href="tel:+919944859177">+91 99448 59177</a></span>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <span class="info-text-label">US Phone</span>
+                <span class="info-text-val"><a href="tel:2063919622">+1 206 391 9622</a></span>
+              </div>
             </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
-            <div>
-              <span class="info-text-label">Email</span>
-              <span class="info-text-val"><a href="/cdn-cgi/l/email-protection#7c15121a133c1d12090e1d18141d1f13150e0f1a151e0e190f521f1311"><span class="__cf_email__" data-cfemail="01686f676e41606f747360656960626e6873726768637364722f626e6c">[email&#160;protected]</span></a></span>
-            </div>
-          </div>
 
-          <hr class="info-divider">
+            <hr class="info-divider">
 
-          <div class="info-item">
-            <div class="info-icon"><i class="bi bi-globe-americas"></i></div>
-            <div>
-              <span class="info-text-label">US Office</span>
-              <span class="info-text-val">Mr. Dave Wertz<br>1101 Service Ave SE, Roanoke VA – 24013</span>
+            <!-- Social links -->
+            <div class="d-flex gap-2 mt-2">
+              <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+                title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+                title="Instagram"><i class="bi bi-instagram"></i></a>
+              <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+                  class="bi bi-youtube"></i></a> -->
+              <a href="/cdn-cgi/l/email-protection#167f787079567778636477727e7775797f6465707f746473653875797b"
+                class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
             </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
-            <div>
-              <span class="info-text-label">US Phone</span>
-              <span class="info-text-val"><a href="tel:2063919622">+1 206 391 9622</a></span>
-            </div>
-          </div>
-
-          <hr class="info-divider">
-
-          <!-- Social links -->
-          <div class="d-flex gap-2 mt-2">
-            <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="/cdn-cgi/l/email-protection#167f787079567778636477727e7775797f6465707f746473653875797b" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════ MAP ════════════ -->
-<section class="map-section section-sm">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Find Us</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Our Locations</h2>
-      <div class="heading-line center"></div>
-    </div>
-    <div class="row g-4">
-      <div class="col-12 col-lg-6">
-        <p style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">India — Tamilnadu</p>
-        <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.4120!2d77.8700!3d10.1700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00aa7ceaaaaaa%3A0x1!2sNilakkottai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin"
-            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+  <!-- ════════════ MAP ════════════ -->
+  <section class="map-section section-sm">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Find Us</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Our Locations
+        </h2>
+        <div class="heading-line center"></div>
       </div>
-      <div class="col-12 col-lg-6">
-        <p style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">USA — Roanoke, Virginia</p>
-        <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.7569362798754!2d-79.9232254250235!3d37.253474042019235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d0d8061e91821%3A0xe6d0f8bde5fb4ae6!2s1101%20Service%20Ave%20SE%2C%20Roanoke%2C%20VA%2024013%2C%20USA!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin"
-            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <p
+            style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">
+            India — Tamilnadu</p>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.4120!2d77.8700!3d10.1700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00aa7ceaaaaaa%3A0x1!2sNilakkottai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <p
+            style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">
+            USA — Roanoke, Virginia</p>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.7569362798754!2d-79.9232254250235!3d37.253474042019235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d0d8061e91821%3A0xe6d0f8bde5fb4ae6!2s1101%20Service%20Ave%20SE%2C%20Roanoke%2C%20VA%2024013%2C%20USA!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════ WHATSAPP FLOAT ════════════ -->
-<a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
-   target="_blank" class="wa-btn" title="Chat on WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
+  <!-- ════════════ WHATSAPP FLOAT ════════════ -->
+  <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+    target="_blank" class="wa-btn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
-<!-- ════════════ FOOTER ════════════ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="row g-5">
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
 
-      <div class="col-12 col-md-4 footer-brand">
-        <img src="newlogo.png" alt="Anuradha Coirs" height="70"
-             style="filter:brightness(10);margin-bottom:16px;display:block;">
-        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients across 50+ countries.</p>
+        <div class="col-12 col-md-4 footer-brand">
+          <img src="newlogo.png" alt="Anuradha Coirs" height="70"
+            style="filter:brightness(10);margin-bottom:16px;display:block;">
+          <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients
+            across 50+ countries.</p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <span class="footer-col-heading">Navigation</span>
+          <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+          <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+          <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+          <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+          <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+          <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <span class="footer-col-heading">India Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+919944859177">+91 99448 59177</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="/cdn-cgi/l/email-protection#2f464149406f4e415a5d4e4b474e4c40465d5c49464d5d4a5c014c4042"><span
+                class="__cf_email__"
+                data-cfemail="adc4c3cbc2edccc3d8dfccc9c5cccec2c4dfdecbc4cfdfc8de83cec2c0">[email&#160;protected]</span></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <span class="footer-col-heading">US Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:2063919622">+1 206 391 9622</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="/cdn-cgi/l/email-protection#e980878f86a988879c9b888d81888a86809b9a8f808b9b8c9ac78a8684"><span
+                class="__cf_email__"
+                data-cfemail="9ff6f1f9f0dffef1eaedfefbf7fefcf0f6edecf9f6fdedfaecb1fcf0f2">[email&#160;protected]</span></a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="col-6 col-md-2">
-        <span class="footer-col-heading">Navigation</span>
-        <a href="index.html"     class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
-        <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
-        <a href="product.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
-        <a href="process.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
-        <a href="gallery.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
-        <a href="contact.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <span class="footer-col-heading">India Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:+919944859177">+91 99448 59177</a>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="/cdn-cgi/l/email-protection#2f464149406f4e415a5d4e4b474e4c40465d5c49464d5d4a5c014c4042"><span class="__cf_email__" data-cfemail="adc4c3cbc2edccc3d8dfccc9c5cccec2c4dfdecbc4cfdfc8de83cec2c0">[email&#160;protected]</span></a>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All Rights
+          Reserved. | <a href="#">Terms &amp; Conditions</a></p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+            title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+            title="Instagram"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+              class="bi bi-youtube"></i></a> -->
+          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+              class="bi bi-envelope-fill"></i></a>
         </div>
       </div>
-
-      <div class="col-12 col-md-3">
-        <span class="footer-col-heading">US Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:2063919622">+1 206 391 9622</a>
-        </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="/cdn-cgi/l/email-protection#e980878f86a988879c9b888d81888a86809b9a8f808b9b8c9ac78a8684"><span class="__cf_email__" data-cfemail="9ff6f1f9f0dffef1eaedfefbf7fefcf0f6edecf9f6fdedfaecb1fcf0f2">[email&#160;protected]</span></a>
-        </div>
-      </div>
-
     </div>
+  </footer>
 
-    <hr class="footer-divider">
-    <div class="footer-bottom">
-      <p>&copy; <span id="footer-year"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All Rights Reserved. | <a href="#">Terms &amp; Conditions</a></p>
-      <div class="social-links">
-        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
-        <a href="mailto:info@anuradhacoirsfibres.com" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ════════════ SCRIPTS ════════════ -->
-<script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-</script>
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
+  <!-- ════════════ SCRIPTS ════════════ -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
         pageLanguage: 'en',
         autoDisplay: false
-    }, 'google_translate_element');
-}
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
+
 </html>

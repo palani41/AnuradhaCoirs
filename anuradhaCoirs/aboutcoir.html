@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Coir | Anuradha Coirs &amp; Fibers</title>
-  <meta name="description" content="Learn about coir — its formation, types, applications and fascinating facts. Anuradha Coirs & Fibers, Tamilnadu, India.">
+  <meta name="description"
+    content="Learn about coir — its formation, types, applications and fascinating facts. Anuradha Coirs & Fibers, Tamilnadu, India.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,756 +28,1278 @@
        ROOT VARIABLES
     ══════════════════════════════════════════ */
     :root {
-      --forest:     #032f2f;
-      --gold:       #b8975a;
-      --gold-lt:    #d4b87a;
-      --cream:      #f8f5ef;
-      --off-white:  #fafaf8;
-      --light-bg:   #f2f4f2;
-      --text-dark:  #1a1a1a;
-      --text-mid:   #444;
+      --forest: #032f2f;
+      --gold: #b8975a;
+      --gold-lt: #d4b87a;
+      --cream: #f8f5ef;
+      --off-white: #fafaf8;
+      --light-bg: #f2f4f2;
+      --text-dark: #1a1a1a;
+      --text-mid: #444;
       --text-muted: #777;
-      --border:     #e0e0d8;
-      --font-head:  'Playfair Display', Georgia, serif;
-      --font-body:  'DM Sans', system-ui, sans-serif;
-      --font-acc:   'Cormorant Garamond', Georgia, serif;
-      --radius:     10px;
-      --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
-      --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
-      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      --border: #e0e0d8;
+      --font-head: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-acc: 'Cormorant Garamond', Georgia, serif;
+      --radius: 10px;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.07);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     /* ══════════════════════════════════════════
        RESET & BASE
     ══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
-    body { font-family: var(--font-body); color: var(--text-dark); background: #fff; -webkit-font-smoothing: antialiased; top: 0 !important; overflow-x: hidden; }
-    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
-    p { font-family: var(--font-body); line-height: 1.75; color: var(--text-mid); }
-    a { transition: var(--transition); }
-    img { max-width: 100%; }
-    .section    { padding: 96px 0; }
-    .section-sm { padding: 64px 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      top: 0 !important;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-head);
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: var(--font-body);
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+
+    a {
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-sm {
+      padding: 64px 0;
+    }
 
     .eyebrow {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 12px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
     }
+
     .heading-line {
-      width: 48px; height: 3px;
+      width: 48px;
+      height: 3px;
       background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-      border-radius: 2px; margin: 16px 0 24px;
+      border-radius: 2px;
+      margin: 16px 0 24px;
     }
-    .heading-line.center { margin: 16px auto 24px; }
+
+    .heading-line.center {
+      margin: 16px auto 24px;
+    }
 
     /* ══════════════════════════════════════════
        BUTTON
     ══════════════════════════════════════════ */
     .btn-primary-coir {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.85rem;
-      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-      padding: 13px 30px; border-radius: 3px;
-      background: var(--forest); color: #fff;
-      text-decoration: none; border: 2px solid var(--forest);
-      transition: var(--transition); cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 13px 30px;
+      border-radius: 3px;
+      background: var(--forest);
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid var(--forest);
+      transition: var(--transition);
+      cursor: pointer;
     }
+
     .btn-primary-coir:hover {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,151,90,0.35);
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184, 151, 90, 0.35);
     }
 
     /* ══════════════════════════════════════════
        GOOGLE TRANSLATE
     ══════════════════════════════════════════ */
-    .language-item{
-        min-width:180px;
-        display:flex;
-        align-items:center;
+    .language-item {
+      min-width: 180px;
+      display: flex;
+      align-items: center;
     }
-    #google_translate_element{
-        width:100%;
+
+    #google_translate_element {
+      width: 100%;
     }
-    .goog-te-gadget{
-        font-size:0 !important;
+
+    .goog-te-gadget {
+      font-size: 0 !important;
     }
-    .goog-te-combo{
-        width:100%;
-        height:42px;
-        border:1px solid #d9d9d9;
-        border-radius:8px;
-        padding:0 10px;
-        font-size:14px !important;
-        background:#fff;
+
+    .goog-te-combo {
+      width: 100%;
+      height: 42px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 0 10px;
+      font-size: 14px !important;
+      background: #fff;
     }
+
     .goog-logo-link,
-    .goog-te-gadget span{
-        display:none !important;
+    .goog-te-gadget span {
+      display: none !important;
     }
-    body{
-        top:0 !important;
+
+    body {
+      top: 0 !important;
     }
-    .goog-te-banner-frame{
-        display:none !important;
+
+    .goog-te-banner-frame {
+      display: none !important;
     }
 
     /* ══════════════════════════════════════════
        TOP BAR
     ══════════════════════════════════════════ */
     .topbar {
-      background: var(--forest); padding: 8px 0;
-      font-family: var(--font-body); font-size: 0.78rem;
-      color: rgba(255,255,255,0.75);
+      background: var(--forest);
+      padding: 8px 0;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.75);
     }
-    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; }
-    .topbar a:hover { color: var(--gold-lt); }
-    .topbar-sep { margin: 0 12px; opacity: 0.35; }
+
+    .topbar a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+    }
+
+    .topbar a:hover {
+      color: var(--gold-lt);
+    }
+
+    .topbar-sep {
+      margin: 0 12px;
+      opacity: 0.35;
+    }
 
     /* ══════════════════════════════════════════
        NAVBAR
     ══════════════════════════════════════════ */
     .main-nav {
-      background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .main-nav .navbar { padding: 0; }
-    .main-nav .navbar-brand img { height: 80px; transition: var(--transition); }
-    .main-nav .navbar-brand:hover img { opacity: 0.85; }
+
+    .main-nav .navbar {
+      padding: 0;
+    }
+
+    .main-nav .navbar-brand img {
+      height: 80px;
+      transition: var(--transition);
+    }
+
+    .main-nav .navbar-brand:hover img {
+      opacity: 0.85;
+    }
+
     .main-nav .nav-link {
-      font-family: var(--font-body); font-size: 0.82rem;
-      font-weight: 500; letter-spacing: 0.5px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
       color: var(--text-dark) !important;
       padding: 30px 14px !important;
-      position: relative; transition: color 0.25s;
+      position: relative;
+      transition: color 0.25s;
     }
+
     .main-nav .nav-link::after {
-      content: ''; position: absolute; bottom: 0; left: 14px;
-      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
     }
-    .main-nav .nav-link:hover { color: var(--gold) !important; }
+
+    .main-nav .nav-link:hover {
+      color: var(--gold) !important;
+    }
+
     .main-nav .nav-link:hover::after,
-    .main-nav .nav-link.active::after { width: calc(100% - 28px); }
-    .main-nav .nav-link.active { color: var(--forest) !important; font-weight: 600; }
+    .main-nav .nav-link.active::after {
+      width: calc(100% - 28px);
+    }
+
+    .main-nav .nav-link.active {
+      color: var(--forest) !important;
+      font-weight: 600;
+    }
 
     /* ══════════════════════════════════════════
        PAGE HERO
     ══════════════════════════════════════════ */
     .page-hero {
-      position: relative; height: 380px;
+      position: relative;
+      height: 380px;
       background: url(assets/images/head/about-head.jpg) center/cover no-repeat;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .page-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(3,47,47,0.82) 0%, rgba(3,47,47,0.5) 100%);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(3, 47, 47, 0.82) 0%, rgba(3, 47, 47, 0.5) 100%);
     }
-    .page-hero-content { position: relative; z-index: 1; text-align: center; padding: 0 20px; }
-    .page-hero-content .eyebrow { color: var(--gold-lt); }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .page-hero-content .eyebrow {
+      color: var(--gold-lt);
+    }
+
     .page-hero-content h1 {
-      font-family: var(--font-head); font-size: clamp(2.2rem,5vw,3.6rem);
-      font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 12px;
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 12px;
     }
-    .page-hero-content h1 em { font-style: italic; color: var(--gold-lt); }
-    .page-hero-content p { font-family: var(--font-acc); font-size: 1.1rem; color: rgba(255,255,255,0.82); }
-    @media (max-width: 576px) { .page-hero { height: 260px; } }
+
+    .page-hero-content h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .page-hero-content p {
+      font-family: var(--font-acc);
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    @media (max-width: 576px) {
+      .page-hero {
+        height: 260px;
+      }
+    }
 
     /* ══════════════════════════════════════════
        BREADCRUMB
     ══════════════════════════════════════════ */
     .breadcrumb-bar {
-      background: var(--cream); border-bottom: 1px solid var(--border); padding: 12px 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
     }
+
     .breadcrumb-bar ol {
-      margin: 0; padding: 0; list-style: none;
-      display: flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
     }
-    .breadcrumb-bar ol li a { color: var(--forest); text-decoration: none; font-weight: 500; }
-    .breadcrumb-bar ol li a:hover { color: var(--gold); }
-    .breadcrumb-bar ol li.sep { color: var(--text-muted); font-size: 0.7rem; }
-    .breadcrumb-bar ol li.current { color: var(--text-muted); }
+
+    .breadcrumb-bar ol li a {
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb-bar ol li a:hover {
+      color: var(--gold);
+    }
+
+    .breadcrumb-bar ol li.sep {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+
+    .breadcrumb-bar ol li.current {
+      color: var(--text-muted);
+    }
 
     /* ══════════════════════════════════════════
        INTRO SECTION
     ══════════════════════════════════════════ */
-    .intro-section { background: #fff; }
+    .intro-section {
+      background: #fff;
+    }
+
     .intro-section h2 {
-      font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem);
-      color: var(--forest); font-weight: 600;
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--forest);
+      font-weight: 600;
     }
+
     .intro-section p {
-      font-family: var(--font-acc); font-size: 1.05rem;
-      line-height: 1.85; color: var(--text-mid); text-align: justify;
+      font-family: var(--font-acc);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      text-align: justify;
     }
+
     .intro-img {
-      width: 100%; height: 420px; object-fit: cover;
-      border-radius: var(--radius); box-shadow: var(--shadow-md);
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
     }
 
     /* ══════════════════════════════════════════
        CONTENT SECTIONS (alternating)
     ══════════════════════════════════════════ */
-    .content-section { padding: 80px 0; }
-    .content-section:nth-child(even) { background: var(--light-bg); }
-    .content-section:nth-child(odd)  { background: #fff; }
+    .content-section {
+      padding: 80px 0;
+    }
+
+    .content-section:nth-child(even) {
+      background: var(--light-bg);
+    }
+
+    .content-section:nth-child(odd) {
+      background: #fff;
+    }
 
     .content-section h2 {
-      font-family: var(--font-head); font-size: clamp(1.6rem,3vw,2.2rem);
-      color: var(--forest); font-weight: 600; margin-bottom: 0;
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--forest);
+      font-weight: 600;
+      margin-bottom: 0;
     }
+
     .content-section p {
-      font-family: var(--font-acc); font-size: 1.05rem;
-      line-height: 1.85; color: var(--text-mid); text-align: justify;
+      font-family: var(--font-acc);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      text-align: justify;
     }
 
     /* Uses list inside content sections */
     .uses-block {
-      background: var(--cream); border-left: 4px solid var(--gold);
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
       border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 24px 28px; margin-top: 24px;
+      padding: 24px 28px;
+      margin-top: 24px;
     }
+
     .uses-block h4 {
-      font-family: var(--font-head); font-size: 1rem;
-      color: var(--forest); margin-bottom: 14px;
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--forest);
+      margin-bottom: 14px;
     }
-    .uses-block ul { list-style: none; padding: 0; margin: 0; }
+
+    .uses-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
     .uses-block ul li {
-      font-family: var(--font-acc); font-size: 1rem;
-      color: var(--text-mid); padding: 6px 0;
+      font-family: var(--font-acc);
+      font-size: 1rem;
+      color: var(--text-mid);
+      padding: 6px 0;
       border-bottom: 1px solid var(--border);
-      display: flex; gap: 10px; align-items: flex-start;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
     }
-    .uses-block ul li:last-child { border-bottom: none; }
-    .uses-block ul li i { color: var(--gold); font-size: 0.9rem; margin-top: 4px; flex-shrink: 0; }
+
+    .uses-block ul li:last-child {
+      border-bottom: none;
+    }
+
+    .uses-block ul li i {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
 
     /* ══════════════════════════════════════════
        APPLICATIONS GRID
     ══════════════════════════════════════════ */
-    .applications-section { background: var(--forest); padding: 96px 0; }
-    .applications-section .eyebrow { color: var(--gold-lt); }
-    .applications-section h2 {
-      font-family: var(--font-head); font-size: clamp(1.8rem,3vw,2.6rem);
-      color: #fff; font-weight: 600;
+    .applications-section {
+      background: var(--forest);
+      padding: 96px 0;
     }
+
+    .applications-section .eyebrow {
+      color: var(--gold-lt);
+    }
+
+    .applications-section h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #fff;
+      font-weight: 600;
+    }
+
     .app-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius); padding: 24px 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 24px 20px;
       transition: var(--transition);
     }
+
     .app-card:hover {
-      background: rgba(255,255,255,0.13);
+      background: rgba(255, 255, 255, 0.13);
       border-color: var(--gold);
       transform: translateY(-4px);
     }
+
     .app-card i {
-      font-size: 1.6rem; color: var(--gold-lt);
-      display: block; margin-bottom: 12px;
+      font-size: 1.6rem;
+      color: var(--gold-lt);
+      display: block;
+      margin-bottom: 12px;
     }
+
     .app-card p {
-      font-family: var(--font-body); font-size: 0.88rem;
-      color: rgba(255,255,255,0.78); margin: 0; line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0;
+      line-height: 1.6;
     }
 
     /* ══════════════════════════════════════════
        FACTS BAND
     ══════════════════════════════════════════ */
-    .facts-section { background: var(--cream); padding: 96px 0; }
+    .facts-section {
+      background: var(--cream);
+      padding: 96px 0;
+    }
+
     .fact-item {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: 20px; border-radius: var(--radius);
-      background: #fff; border: 1px solid var(--border);
-      transition: var(--transition); height: 100%;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      height: 100%;
     }
-    .fact-item:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+
+    .fact-item:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+    }
+
     .fact-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: var(--forest); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold-lt); font-size: 1.1rem;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--forest);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-lt);
+      font-size: 1.1rem;
     }
-    .fact-item p { font-family: var(--font-body); font-size: 0.9rem; line-height: 1.65; margin: 0; }
+
+    .fact-item p {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin: 0;
+    }
 
     /* ══════════════════════════════════════════
        WHATSAPP FLOAT
     ══════════════════════════════════════════ */
     .wa-btn {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      width: 56px; height: 56px; background: #25D366; color: #fff;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: var(--transition);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: var(--transition);
     }
-    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
-    @media (max-width: 576px) { .wa-btn { width: 48px; height: 48px; font-size: 22px; bottom: 16px; right: 16px; } }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      color: #fff;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    @media (max-width: 576px) {
+      .wa-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
 
     /* ══════════════════════════════════════════
        FOOTER
     ══════════════════════════════════════════ */
-    .site-footer { background: var(--forest); padding-top: 64px; }
-    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 240px; }
-    .footer-col-heading {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-lt); margin-bottom: 20px; display: block;
+    .site-footer {
+      background: var(--forest);
+      padding-top: 64px;
     }
-    .footer-info-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-    .footer-info-item i { color: var(--gold-lt); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+
+    .footer-col-heading {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-item i {
+      color: var(--gold-lt);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
     .footer-info-item span,
     .footer-info-item a {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none; line-height: 1.55; transition: color 0.2s;
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      line-height: 1.55;
+      transition: color 0.2s;
     }
-    .footer-info-item a:hover { color: var(--gold-lt); }
+
+    .footer-info-item a:hover {
+      color: var(--gold-lt);
+    }
+
     .footer-link {
-      font-family: var(--font-body); font-size: 0.87rem;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      display: flex; align-items: center; gap: 6px;
-      padding: 5px 0; transition: color 0.25s, padding-left 0.25s;
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 0;
+      transition: color 0.25s, padding-left 0.25s;
     }
-    .footer-link i { font-size: 0.7rem; color: var(--gold-lt); }
-    .footer-link:hover { color: #fff; padding-left: 4px; }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0 0; }
+
+    .footer-link i {
+      font-size: 0.7rem;
+      color: var(--gold-lt);
+    }
+
+    .footer-link:hover {
+      color: #fff;
+      padding-left: 4px;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 40px 0 0;
+    }
+
     .footer-bottom {
-      padding: 18px 0; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 12px;
+      padding: 18px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
     }
-    .footer-bottom p { font-family: var(--font-body); font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; }
-    .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--gold-lt); }
-    .social-links { display: flex; gap: 10px; }
+
+    .footer-bottom p {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--gold-lt);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
     .social-link {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.08);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      text-decoration: none; transition: var(--transition);
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
     }
-    .social-link:hover { background: var(--gold); }
-    .social-link i { font-size: 1rem; color: rgba(255,255,255,0.8); transition: color 0.2s; }
-    .social-link:hover i { color: #fff; }
+
+    .social-link:hover {
+      background: var(--gold);
+    }
+
+    .social-link i {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.2s;
+    }
+
+    .social-link:hover i {
+      color: #fff;
+    }
 
     /* ══════════════════════════════════════════
        RESPONSIVE — MOBILE FIXES
     ══════════════════════════════════════════ */
     @media (max-width: 991px) {
-      .main-nav .nav-link { padding: 12px 16px !important; }
-      .main-nav .nav-link::after { display: none; }
-      .translate-wrap { margin: 8px 16px 12px; }
+      .main-nav .nav-link {
+        padding: 12px 16px !important;
+      }
+
+      .main-nav .nav-link::after {
+        display: none;
+      }
+
+      .translate-wrap {
+        margin: 8px 16px 12px;
+      }
     }
+
     @media (max-width: 767px) {
-      .section    { padding: 52px 0; }
-      .section-sm { padding: 40px 0; }
-      .page-hero  { height: 230px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .wa-btn { width: 46px; height: 46px; font-size: 20px; bottom: 16px; right: 16px; }
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-sm {
+        padding: 40px 0;
+      }
+
+      .page-hero {
+        height: 230px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .wa-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+        bottom: 16px;
+        right: 16px;
+      }
     }
+
     @media (max-width: 575px) {
-      .section { padding: 44px 0; }
-      .page-hero { height: 200px; }
-      .page-hero-content h1 { font-size: 1.75rem; }
-      .page-hero-content p  { font-size: 0.88rem; }
-      .cinfo-card { padding: 24px 18px; }
-      .contact-form-card { padding: 24px 16px; }
-      .form-row-2 { flex-direction: column; gap: 0; }
-      .contact-info-panel { padding: 28px 20px; }
-      .map-wrap iframe { height: 280px; }
-      .fact-item { flex-direction: column; gap: 10px; }
-      .intro-img { height: 260px; }
-      .uses-block { padding: 18px 16px; }
+      .section {
+        padding: 44px 0;
+      }
+
+      .page-hero {
+        height: 200px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .page-hero-content p {
+        font-size: 0.88rem;
+      }
+
+      .cinfo-card {
+        padding: 24px 18px;
+      }
+
+      .contact-form-card {
+        padding: 24px 16px;
+      }
+
+      .form-row-2 {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .contact-info-panel {
+        padding: 28px 20px;
+      }
+
+      .map-wrap iframe {
+        height: 280px;
+      }
+
+      .fact-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .intro-img {
+        height: 260px;
+      }
+
+      .uses-block {
+        padding: 18px 16px;
+      }
+
       .site-footer .col-6.col-md-2,
-      .site-footer .col-6.col-md-3 { width: 100%; }
-      .footer-bottom p { font-size: 0.75rem; }
-      .wa-btn { width: 44px; height: 44px; font-size: 19px; bottom: 14px; right: 14px; }
+      .site-footer .col-6.col-md-3 {
+        width: 100%;
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+      }
+
+      .wa-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 19px;
+        bottom: 14px;
+        right: 14px;
+      }
     }
+
     @media (max-width: 380px) {
-      .page-hero { height: 175px; }
-      .page-hero-content h1 { font-size: 1.5rem; }
-      .page-hero-content p  { display: none; }
-      .btn-primary-coir { padding: 11px 20px; font-size: 0.78rem; }
-      .wa-btn { bottom: 12px; right: 12px; width: 42px; height: 42px; font-size: 18px; }
+      .page-hero {
+        height: 175px;
+      }
+
+      .page-hero-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .page-hero-content p {
+        display: none;
+      }
+
+      .btn-primary-coir {
+        padding: 11px 20px;
+        font-size: 0.78rem;
+      }
+
+      .wa-btn {
+        bottom: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ════════════ TOP BAR ════════════ -->
-<div class="topbar d-none d-md-block">
-  <div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <i class="bi bi-telephone-fill me-1" style="color:var(--gold);"></i>
-        <a href="tel:+919944859177">+91 99448 59177</a>
-        <span class="topbar-sep">|</span>
-        <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
-        <a href="/cdn-cgi/l/email-protection#4821262e270829263d3a292c20292b27213a3b2e212a3a2d3b662b2725"><span class="__cf_email__" data-cfemail="751c1b131a35141b000714111d14161a1c0706131c170710065b161a18">[email&#160;protected]</span></a>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="https://facebook.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i class="bi bi-youtube"></i></a>
+  <!-- ════════════ TOP BAR ════════════ -->
+  <div class="topbar d-none d-md-block">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+          <a href="/cdn-cgi/l/email-protection#4821262e270829263d3a292c20292b27213a3b2e212a3a2d3b66 2b2725"><span
+              class="__cf_email__"
+              data-cfemail="751c1b131a35141b000714111d14161a1c0706131c170710065b161a18">anuradhaexporters@gmail.com</span></a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i
+              class="bi bi-youtube"></i></a> -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ════════════ NAVBAR ════════════ -->
-<div class="main-nav">
-  <div class="container-fluid px-4">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
-      </a>
-      <button class="navbar-toggler border-0" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navMain"
-        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="aboutcoir.html">About Coir</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item language-item">
+  <!-- ════════════ NAVBAR ════════════ -->
+  <div class="main-nav">
+    <div class="container-fluid px-4">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+          aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="aboutcoir.html">About Coir</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item language-item">
               <div id="google_translate_element"></div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
-
-<!-- ════════════ PAGE HERO ════════════ -->
-<div class="page-hero">
-  <div class="page-hero-content">
-    <span class="eyebrow">Premium Manufacturer & Exporter</span>
-    <h1>About <em>Coir</em></h1>
-    <p>Trusted supplier of premium coconut and coir products from India to global markets</p>
-  </div>
-</div>
-
-<!-- ════════════ BREADCRUMB ════════════ -->
-<div class="breadcrumb-bar">
-  <div class="container-fluid px-4">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li class="sep"><i class="bi bi-chevron-right"></i></li>
-      <li class="current">About Coir</li>
-    </ol>
-  </div>
-</div>
-
-<!-- ════════════ INTRO — IMPORTANCE OF COIR ════════════ -->
-<section class="intro-section section">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-12 col-lg-6">
-        <span class="eyebrow">Why Coir Matters</span>
-        <h2>Importance of Coir</h2>
-        <div class="heading-line"></div>
-        <p class="mb-3">
-        Coir is a natural fibre extracted from the outer husk of coconuts and is one of the most versatile eco-friendly materials used across various industries worldwide. Known for its durability, strength, and biodegradability, coir has become an important sustainable alternative to synthetic materials in agriculture, horticulture, industrial manufacturing, and erosion control applications.
-        </p>
-
-        <p>
-        Anuradha Coirs specializes in processing and exporting high-quality coir products manufactured from carefully selected coconut husks sourced from the fertile coconut-growing regions of South India.
-        </p>
-      </div>
-      <div class="col-12 col-lg-6">
-        <img src="assets/images/head/silder-first.jpg" alt="Coir fibre" class="intro-img">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ FORMATION OF COIR FIBRES ════════════ -->
-<section class="content-section">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-12">
-        <span class="eyebrow">Science &amp; Structure</span>
-        <h2>Formation of Coir Fibres</h2>
-        <div class="heading-line"></div>
-        <p>
-        Coir fibre is mainly categorized into two types: Brown Coir Fibre and White Coir Fibre. Each type is extracted from different stages of coconut maturity and serves specific industrial, agricultural, and commercial applications.
-        </p>
-
-        <p class="mt-3">
-        Coir products are recognized worldwide for their eco-friendly nature, durability, water retention capability, and suitability for horticulture, hydroponics, landscaping, erosion control, and manufacturing industries.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ BROWN COIR ════════════ -->
-<section class="content-section">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-12 col-lg-7">
-        <span class="eyebrow">Mature Coconuts</span>
-        <h2>Brown Coir</h2>
-        <div class="heading-line"></div>
-        <p>
-        Brown coir fibre is extracted from matured coconuts and is strong, durable, and highly resistant to saltwater. It is widely used in multiple industrial and commercial applications due to its excellent strength and long-lasting performance.
-        </p>
-        <div class="uses-block">
-          <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
-          <ul>
-            <li><i class="bi bi-check-circle-fill"></i>Mattresses and upholstery products</li>
-            <li><i class="bi bi-check-circle-fill"></i>Brushes and ropes</li>
-            <li><i class="bi bi-check-circle-fill"></i>Geo textiles and erosion control mats</li>
-            <li><i class="bi bi-check-circle-fill"></i>Rubberized coir products</li>
-            <li><i class="bi bi-check-circle-fill"></i>Door mats and floor coverings</li>
-          </ul>
-
-        </div>
-      </div>
-      <div class="col-12 col-lg-5 d-flex align-items-center">
-        <img src="assets/images/productimages/Coconut-Fibre.jpg" alt="Brown Coir"
-             style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ WHITE COIR ════════════ -->
-<section class="content-section">
-  <div class="container">
-    <div class="row g-5 flex-lg-row-reverse">
-      <div class="col-12 col-lg-7">
-        <span class="eyebrow">Immature Coconuts</span>
-        <h2>White Coir</h2>
-        <div class="heading-line"></div>
-        <p>
-        White coir fibre is extracted from immature green coconuts and is finer and softer in texture. It is mainly used where flexibility and softness are required.
-        </p>
-        <div class="uses-block">
-          <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
-          <ul>
-          <li><i class="bi bi-check-circle-fill"></i>Rope making</li>
-          <li><i class="bi bi-check-circle-fill"></i>Fishing nets</li>
-          <li><i class="bi bi-check-circle-fill"></i>Handicrafts</li>
-          <li><i class="bi bi-check-circle-fill"></i>Brushes and twines</li>
+            </li>
           </ul>
         </div>
-      </div>
-      <div class="col-12 col-lg-5 d-flex align-items-center">
-        <img src="assets/images/head/product.jpg" alt="White Coir"
-             style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
-      </div>
+      </nav>
     </div>
   </div>
-</section>
 
-<!-- ════════════ APPLICATIONS GRID ════════════ -->
-<section class="applications-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Versatility</span>
-      <h2>Application &amp; Uses of Coir Fibre</h2>
-      <div class="heading-line center" style="background:linear-gradient(90deg,var(--gold),var(--gold-lt));"></div>
-    </div>
-    <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-flower1"></i>
-          <p>Horticulture & Hydroponics</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-house-fill"></i>
-          <p>Greenhouse Farming</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-droplet-fill"></i>
-          <p>Nursery Plantations</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-arrow-repeat"></i>
-          <p>Soil Conditionings</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-recycle"></i>
-          <p>Geo Textile Industry</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-tree-fill"></i>
-          <p>Mattress Manufacturing</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-palette-fill"></i>
-          <p>Rope & Twine Industry</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-shield-fill-check"></i>
-          <p>Erosion Control Systems</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="app-card">
-          <i class="bi bi-file-earmark-fill"></i>
-          <p>Landscaping Applications</p>
-        </div>
-      </div>
+  <!-- ════════════ PAGE HERO ════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">Premium Manufacturer & Exporter</span>
+      <h1>About <em>Coir</em></h1>
+      <p>Trusted supplier of premium coconut and coir products from India to global markets</p>
     </div>
   </div>
-</section>
 
-<!-- ════════════ FASCINATING FACTS ════════════ -->
-<section class="facts-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Did You Know?</span>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">Fascinating Facts About Coir</h2>
-      <div class="heading-line center"></div>
+  <!-- ════════════ BREADCRUMB ════════════ -->
+  <div class="breadcrumb-bar">
+    <div class="container-fluid px-4">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li class="sep"><i class="bi bi-chevron-right"></i></li>
+        <li class="current">About Coir</li>
+      </ol>
     </div>
-    <div class="row g-4">
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="fact-item">
-          <div class="fact-icon"><i class="bi bi-recycle"></i></div>
+  </div>
+
+  <!-- ════════════ INTRO — IMPORTANCE OF COIR ════════════ -->
+  <section class="intro-section section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6">
+          <span class="eyebrow">Why Coir Matters</span>
+          <h2>Importance of Coir</h2>
+          <div class="heading-line"></div>
+          <p class="mb-3">
+            Coir is a natural fibre extracted from the outer husk of coconuts and is one of the most versatile
+            eco-friendly materials used across various industries worldwide. Known for its durability, strength, and
+            biodegradability, coir has become an important sustainable alternative to synthetic materials in
+            agriculture, horticulture, industrial manufacturing, and erosion control applications.
+          </p>
+
           <p>
-            Coir is a 100% natural, biodegradable, and renewable resource that supports environmentally responsible farming and manufacturing practices.
+            Anuradha Coirs specializes in processing and exporting high-quality coir products manufactured from
+            carefully selected coconut husks sourced from the fertile coconut-growing regions of South India.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img src="assets/images/head/ImportanceOfCoir.jpeg" alt="Coir fibre" class="intro-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FORMATION OF COIR FIBRES ════════════ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12">
+          <span class="eyebrow">Science &amp; Structure</span>
+          <h2>Formation of Coir Fibres</h2>
+          <div class="heading-line"></div>
+          <p>
+            Coir fibre is mainly categorized into two types: Brown Coir Fibre and White Coir Fibre. Each type is
+            extracted from different stages of coconut maturity and serves specific industrial, agricultural, and
+            commercial applications.
+          </p>
+
+          <p class="mt-3">
+            Coir products are recognized worldwide for their eco-friendly nature, durability, water retention
+            capability, and suitability for horticulture, hydroponics, landscaping, erosion control, and manufacturing
+            industries.
           </p>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="fact-item">
-          <div class="fact-icon"><i class="bi bi-water"></i></div>
+    </div>
+  </section>
+
+  <!-- ════════════ BROWN COIR ════════════ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-lg-7">
+          <span class="eyebrow">Mature Coconuts</span>
+          <h2>Brown Coir</h2>
+          <div class="heading-line"></div>
           <p>
-          Coco peat and coir-based growing media can absorb and retain large amounts of water, making them highly suitable for horticulture and hydroponic cultivation.
+            Brown coir fibre is extracted from matured coconuts and is strong, durable, and highly resistant to
+            saltwater. It is widely used in multiple industrial and commercial applications due to its excellent
+            strength and long-lasting performance.
           </p>
+          <div class="uses-block">
+            <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i>Mattresses and upholstery products</li>
+              <li><i class="bi bi-check-circle-fill"></i>Brushes and ropes</li>
+              <li><i class="bi bi-check-circle-fill"></i>Geo textiles and erosion control mats</li>
+              <li><i class="bi bi-check-circle-fill"></i>Rubberized coir products</li>
+              <li><i class="bi bi-check-circle-fill"></i>Door mats and floor coverings</li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 d-flex align-items-center">
+          <img src="assets/images/Products/brownCoir.jpeg" alt="Brown Coir"
+            style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="fact-item">
-          <div class="fact-icon"><i class="bi bi-shield-check"></i></div>
+    </div>
+  </section>
+
+  <!-- ════════════ WHITE COIR ════════════ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row g-5 flex-lg-row-reverse">
+        <div class="col-12 col-lg-7">
+          <span class="eyebrow">Immature Coconuts</span>
+          <h2>White Coir</h2>
+          <div class="heading-line"></div>
           <p>
-          Coir products provide excellent aeration to plant roots, promoting healthier and faster plant growth.
+            White coir fibre is extracted from immature green coconuts and is finer and softer in texture. It is mainly
+            used where flexibility and softness are required.
           </p>
+          <div class="uses-block">
+            <h4><i class="bi bi-list-check me-2" style="color:var(--gold);"></i>Examples of Uses</h4>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i>Rope making</li>
+              <li><i class="bi bi-check-circle-fill"></i>Fishing nets</li>
+              <li><i class="bi bi-check-circle-fill"></i>Handicrafts</li>
+              <li><i class="bi bi-check-circle-fill"></i>Brushes and twines</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="fact-item">
-          <div class="fact-icon"><i class="bi bi-box-seam"></i></div>
-          <p>
-          Coir fibre is naturally strong and resistant to moisture, fungal growth, and saltwater damage.
-          </p>
-        </div>s
+        <div class="col-12 col-lg-5 d-flex align-items-center">
+          <img src="assets/images/Products/whiteCoirFibre.jpeg" alt="White Coir"
+            style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-md);">
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <div class="text-center mt-5">
-      <a href="product.html" class="btn-primary-coir">Explore Our Products <i class="bi bi-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ WHATSAPP FLOAT ════════════ -->
-<a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
-   target="_blank" class="wa-btn" title="Chat on WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
-
-<!-- ════════════ FOOTER ════════════ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="row g-5">
-
-      <div class="col-12 col-md-4 footer-brand">
-        <img src="newlogo.png" alt="Anuradha Coirs" height="70"
-             style="filter:brightness(10);margin-bottom:16px;display:block;">
-        <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients across 50+ countries.</p>
+  <!-- ════════════ APPLICATIONS GRID ════════════ -->
+  <section class="applications-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Versatility</span>
+        <h2>Application &amp; Uses of Coir Fibre</h2>
+        <div class="heading-line center" style="background:linear-gradient(90deg,var(--gold),var(--gold-lt));"></div>
       </div>
-
-      <div class="col-6 col-md-2">
-        <span class="footer-col-heading">Navigation</span>
-        <a href="index.html"     class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
-        <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
-        <a href="product.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
-        <a href="process.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
-        <a href="gallery.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
-        <a href="contact.html"   class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <span class="footer-col-heading">India Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-flower1"></i>
+            <p>Horticulture & Hydroponics</p>
+          </div>
         </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:+919944859177">+91 99448 59177</a>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-house-fill"></i>
+            <p>Greenhouse Farming</p>
+          </div>
         </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="/cdn-cgi/l/email-protection#4a23242c250a2b243f382b2e222b29252338392c2328382f3964292527"><span class="__cf_email__" data-cfemail="b0d9ded6dff0d1dec5c2d1d4d8d1d3dfd9c2c3d6d9d2c2d5c39ed3dfdd">[email&#160;protected]</span></a>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-droplet-fill"></i>
+            <p>Nursery Plantations</p>
+          </div>
         </div>
-      </div>
-
-      <div class="col-12 col-md-3">
-        <span class="footer-col-heading">US Office</span>
-        <div class="footer-info-item">
-          <i class="bi bi-geo-alt-fill"></i>
-          <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-arrow-repeat"></i>
+            <p>Soil Conditionings</p>
+          </div>
         </div>
-        <div class="footer-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:2063919622">+1 206 391 9622</a>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-recycle"></i>
+            <p>Geo Textile Industry</p>
+          </div>
         </div>
-        <div class="footer-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="/cdn-cgi/l/email-protection#2e474048416e4f405b5c4f4a464f4d41475c5d48474c5c4b5d004d4143"><span class="__cf_email__" data-cfemail="7e171018113e1f100b0c1f1a161f1d11170c0d18171c0c1b0d501d1113">[email&#160;protected]</span></a>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-tree-fill"></i>
+            <p>Mattress Manufacturing</p>
+          </div>
         </div>
-      </div>
-
-    </div>
-    <hr class="footer-divider">
-    <div class="footer-bottom">
-      <p>&copy; <span id="footer-year"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All Rights Reserved. | <a href="#">Terms &amp; Conditions</a></p>
-      <div class="social-links">
-        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
-        <a href="/cdn-cgi/l/email-protection#6c05020a032c0d02191e0d08040d0f03051e1f0a050e1e091f420f0301" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-palette-fill"></i>
+            <p>Rope & Twine Industry</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-shield-fill-check"></i>
+            <p>Erosion Control Systems</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="app-card">
+            <i class="bi bi-file-earmark-fill"></i>
+            <p>Landscaping Applications</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- ════════════ SCRIPTS ════════════ -->
-<script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-</script>
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
+  <!-- ════════════ FASCINATING FACTS ════════════ -->
+  <section class="facts-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Did You Know?</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">Fascinating
+          Facts About Coir</h2>
+        <div class="heading-line center"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="fact-item">
+            <div class="fact-icon"><i class="bi bi-recycle"></i></div>
+            <p>
+              Coir is a 100% natural, biodegradable, and renewable resource that supports environmentally responsible
+              farming and manufacturing practices.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="fact-item">
+            <div class="fact-icon"><i class="bi bi-water"></i></div>
+            <p>
+              Coco peat and coir-based growing media can absorb and retain large amounts of water, making them highly
+              suitable for horticulture and hydroponic cultivation.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="fact-item">
+            <div class="fact-icon"><i class="bi bi-shield-check"></i></div>
+            <p>
+              Coir products provide excellent aeration to plant roots, promoting healthier and faster plant growth.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="fact-item">
+            <div class="fact-icon"><i class="bi bi-box-seam"></i></div>
+            <p>
+              Coir fibre is naturally strong and resistant to moisture, fungal growth, and saltwater damage.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-5">
+        <a href="product.html" class="btn-primary-coir">Explore Our Products <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ WHATSAPP FLOAT ════════════ -->
+  <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+    target="_blank" class="wa-btn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-12 col-md-4 footer-brand">
+          <img src="logobg.png" alt="Anuradha Coirs" height="70"
+            style="filter:brightness(10);margin-bottom:16px;display:block;">
+          <p>Premium manufacturer &amp; exporter of coconut coir products from Tamilnadu, India. Trusted by 500+ clients
+            across 50+ countries.</p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <span class="footer-col-heading">Navigation</span>
+          <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+          <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+          <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+          <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+          <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+          <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <span class="footer-col-heading">India Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+919944859177">+91 99448 59177</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="/cdn-cgi/l/email-protection#4a23242c250a2b243f382b2e222b29252338392c2328382f3964292527"><span
+                class="__cf_email__"
+                data-cfemail="b0d9ded6dff0d1dec5c2d1d4d8d1d3dfd9c2c3d6d9d2c2d5c39ed3dfdd">[email&#160;protected]</span></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <span class="footer-col-heading">US Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:2063919622">+1 206 391 9622</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="/cdn-cgi/l/email-protection#2e474048416e4f405b5c4f4a464f4d41475c5d48474c5c4b5d004d4143"><span
+                class="__cf_email__"
+                data-cfemail="7e171018113e1f100b0c1f1a161f1d11170c0d18171c0c1b0d501d1113">[email&#160;protected]</span></a>
+          </div>
+        </div>
+
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All Rights
+          Reserved. | <a href="#">Terms &amp; Conditions</a></p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+            title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+            title="Instagram"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+              class="bi bi-youtube"></i></a> -->
+          <a href="/cdn-cgi/l/email-protection#6c05020a032c0d02191e0d08040d0f03051e1f0a050e1e091f420f0301"
+            class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════ SCRIPTS ════════════ -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
         pageLanguage: 'en',
         autoDisplay: false
-    }, 'google_translate_element');
-}
-</script>
+      }, 'google_translate_element');
+    }
+  </script>
 
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 </body>
+
 </html>
