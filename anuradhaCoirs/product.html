@@ -3625,7 +3625,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-0" id="orderModalBody">
-                    <div class="order-layout">
+                    <div class="order-layout" id="orderModalFormView">
                         <!-- FORM COLUMN -->
                         <div class="order-form-col">
                             <div id="orderFormInner">
@@ -3720,6 +3720,7 @@
                             <div class="os-totals" id="osTotals"></div>
                         </div>
                     </div>
+                    <div id="orderModalSuccessView" style="display: none;"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-submit-order" id="btnSubmitOrder" onclick="submitOrder()">
@@ -4111,6 +4112,14 @@
            ORDER MODAL
         ══════════════════════════════════════ */
         function openOrderModal() {
+            // Restore default view (form and footer)
+            const formView = document.getElementById('orderModalFormView');
+            const successView = document.getElementById('orderModalSuccessView');
+            const modalFooter = document.querySelector('.order-modal .modal-footer');
+            if (formView) formView.style.display = '';
+            if (successView) successView.style.display = 'none';
+            if (modalFooter) modalFooter.style.display = '';
+
             renderOrderSummary();
             new bootstrap.Modal(document.getElementById('orderModal')).show();
         }
@@ -4204,11 +4213,15 @@
             const encoded = encodeURIComponent(msg);
             const waURL = `https://wa.me/919361315289?text=${encoded}`;
 
-            // Show success state inside modal
-            const modalBody = document.getElementById('orderModalBody');
+            // Show success state inside modal by toggling visibility
+            const formView = document.getElementById('orderModalFormView');
+            const successView = document.getElementById('orderModalSuccessView');
             const modalFooter = document.querySelector('.order-modal .modal-footer');
-            modalFooter.style.display = 'none';
-            modalBody.innerHTML = `<div class="order-success">
+            if (formView) formView.style.display = 'none';
+            if (modalFooter) modalFooter.style.display = 'none';
+            if (successView) {
+                successView.style.display = 'block';
+                successView.innerHTML = `<div class="order-success">
     <div class="success-icon"><i class="bi bi-check-lg"></i></div>
     <h4>Order Ready to Send!</h4>
     <p>Your enquiry has been prepared. Click below to open WhatsApp and send it directly to our team.</p>
@@ -4220,6 +4233,7 @@
       Our team will respond within 24 hours with pricing and availability.
     </p>
   </div>`;
+            }
         }
 
         function finalizeOrder() {
@@ -4227,6 +4241,13 @@
             updateCartBadge();
             renderCartItems();
             showToast('Order sent! Our team will contact you soon.', 'success', 'bi-whatsapp');
+            
+            // Hide the modal after redirecting
+            const modalEl = document.getElementById('orderModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
         }
 
         /* ══════════════════════════════════════
