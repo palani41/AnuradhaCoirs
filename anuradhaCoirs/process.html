@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Process | Anuradha Coirs &amp; Fibers</title>
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/png">
   <meta name="description"
     content="Discover how Anuradha Coirs & Fibers processes coconut fibre — from raw material to export-ready packaging.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,7 +206,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: inherit;
       filter: brightness(.42)
     }
 
@@ -598,6 +599,10 @@
 
     .step-img-container.cols-2 {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .step-img-container.cols-2 img:nth-child(3):last-child {
+      grid-column: span 2;
     }
 
     .step-img-container img {
@@ -1242,7 +1247,7 @@
   <div class="main-nav">
     <div class="container-fluid px-4">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html"><img src="newlogo.png" alt="Anuradha Coirs"
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs"
             style="height:80px;width:auto;"></a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
           <span class="navbar-toggler-icon"></span>
@@ -1266,7 +1271,7 @@
 
   <!-- PAGE HERO -->
   <div class="page-hero">
-    <img src="assets/images/head/process.jfif" alt="Our Process" class="page-hero-img">
+    <img src="assets/images/Process/drying.jpeg" alt="Our Process" class="page-hero-img">
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow">From Husk to Export</span>
@@ -1403,10 +1408,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/productimages/rawMaterial.jpg" alt="Coconut Husk Collection"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/manufacturer2.jpeg" alt="Coconut Husk Sorting"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/huskCollection.jpeg" alt="Coconut Husk Collection"
+              onerror="this.src='assets/images/Process/huskCollection.jpeg'">
+            <img src="assets/images/Process/huskCollection2.jpeg" alt="Coconut Husk Sorting"
+              onerror="this.src='assets/images/Process/huskCollection2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">01</div>
@@ -1432,10 +1437,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Products/semiHuskedCoconut.jpeg" alt="Husked Coconut Sorting"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/infrastructure4.jpeg" alt="Husk Conveyor and Piles"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/huskSeparation.jpeg" alt="Husked Coconut Sorting"
+              onerror="this.src='assets/images/Process/huskSeparation.jpeg'">
+            <img src="assets/images/Process/huskSeparation1.jpeg" alt="Husk Conveyor and Piles"
+              onerror="this.src='assets/images/Process/huskSeparation1.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">02</div>
@@ -1461,10 +1466,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Products/infrastructure2.jpeg" alt="Mechanical Fibre Extraction"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/manufacturer4.jpeg" alt="Defibering Production Line"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/fibreExtraction2.jpeg" alt="Defibering Production Line"
+              onerror="this.src='assets/images/Process/fibreExtraction2.jpeg'">
+            <img src="assets/images/Process/fibreExtraction.jpeg" alt="Mechanical Fibre Extraction"
+              onerror="this.src='assets/images/Process/fibreExtraction.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">03</div>
@@ -1490,10 +1495,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/productimages/Coir Fibre.jpg" alt="Sun Drying Yard"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/manufacturer.jpeg" alt="Workers Turning Fibre"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/drying.jpeg" alt="Sun Drying Yard"
+              onerror="this.src='assets/images/Process/drying.jpeg'">
+            <img src="assets/images/Process/drying2.jpeg" alt="Workers Turning Fibre"
+              onerror="this.src='assets/images/Process/drying2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">04</div>
@@ -1519,10 +1524,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/productimages/screening.jpg" alt="Coco Peat Sieving"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/infrastructure.jpeg" alt="Conveyor separator"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/serving.jpeg" alt="Coco Peat Sieving"
+              onerror="this.src='assets/images/Process/serving.jpeg'">
+            <img src="assets/images/Process/serving2.jpeg" alt="Conveyor separator"
+              onerror="this.src='assets/images/Process/serving2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">05</div>
@@ -1547,9 +1552,11 @@
       <!-- Step 6 -->
       <div class="step-row">
         <div class="step-img-panel">
-          <div class="step-img-container cols-1">
-            <img src="assets/images/Products/infrastructure3.jpeg" alt="Washing & Buffering Infrastructure"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+          <div class="step-img-container cols-2">
+            <img src="assets/images/Process/washing.jpeg" alt="Washing & Buffering Infrastructure"
+              onerror="this.src='assets/images/Process/washing.jpeg'">
+            <img src="assets/images/Process/washing2.jpeg" alt="Conveyor separator"
+              onerror="this.src='assets/images/Process/washing2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">06</div>
@@ -1575,10 +1582,14 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Products/cocoPeatBlock.jpeg" alt="Coco Peat Blocks Stack"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/blockMaking.jpeg" alt="Coco Peat Blocks Stack"
+              onerror="this.src='assets/images/Process/blockMaking.jpeg'">
+            <img src="assets/images/Process/blockMaking2.jpeg" alt="Coco Peat Blocks Stack"
+              onerror="this.src='assets/images/Process/blockMaking2.jpeg'">
+            <img src="assets/images/Process/blockMaking3.jpeg" alt="Coco Peat Blocks Stack"
+              onerror="this.src='assets/images/Process/blockMaking3.jpeg'">
+            <img src="assets/images/Process/blockMaking4.jpeg" alt="Coco Peat Blocks Stack"
+              onerror="this.src='assets/images/Process/blockMaking4.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">07</div>
@@ -1604,10 +1615,14 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/productimages/Quality.jpg" alt="Quality Geotextiles Verification"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/manufacturer3.jpeg" alt="Seedling Quality Control"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/inspection.jpeg" alt="Quality Geotextiles Verification"
+              onerror="this.src='assets/images/Process/inspection.jpeg'">
+            <img src="assets/images/Process/inspection2.jpeg" alt="Quality Geotextiles Verification"
+              onerror="this.src='assets/images/Process/inspection2.jpeg'">
+            <img src="assets/images/Process/inspection3.jpeg" alt="Quality Geotextiles Verification"
+              onerror="this.src='assets/images/Process/inspection3.jpeg'">
+            <img src="assets/images/Process/inspection4.jpeg" alt="Quality Geotextiles Verification"
+              onerror="this.src='assets/images/Process/inspection4.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">08</div>
@@ -1633,10 +1648,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Products/coirgrowbags.jpeg" alt="Packed Grow Bags"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/bricks2.jpeg" alt="Wrapped Coco Peat Briquettes"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/packing.jpeg" alt="Packed Grow Bags"
+              onerror="this.src='assets/images/Process/packing.jpeg'">
+            <img src="assets/images/Process/packing2.jpeg" alt="Wrapped Coco Peat Briquettes"
+              onerror="this.src='assets/images/Process/packing2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">09</div>
@@ -1662,10 +1677,12 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Products/Loading.jpeg" alt="Container Interior Loading"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
-            <img src="assets/images/Products/Loadings.jpeg" alt="Container Export Stack"
-              onerror="this.src='assets/images/productimages/Coconut-Fibre.jpg'">
+            <img src="assets/images/Process/loading.jpeg" alt="Container Interior Loading"
+              onerror="this.src='assets/images/Process/loading.jpeg'">
+            <img src="assets/images/Process/loading2.jpeg" alt="Container Export Stack"
+              onerror="this.src='assets/images/Process/loading2.jpeg'">
+            <img src="assets/images/Process/loading3.jpeg" alt="Container Export Stack"
+              onerror="this.src='assets/images/Process/loading3.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">10</div>
@@ -1793,9 +1810,9 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-12 col-md-4 footer-brand">
-          <img src="newlogo.png" alt="Anuradha Coirs" height="70" style="filter:brightness(10);margin-bottom:16px;">
-          <p>Premium manufacturer &amp; exporter of coconut coir products from Tamil Nadu, India. Trusted by 500+
-            clients across 50+ countries.</p>
+          <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;">
+          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
+            clients across 50+ countries worldwide.</p>
         </div>
         <div class="col-6 col-md-2">
           <span class="footer-col-heading">Navigation</span>
@@ -1808,47 +1825,57 @@
         </div>
         <div class="col-6 col-md-3">
           <span class="footer-col-heading">India Office</span>
-          <div class="footer-info-item"><i class="bi bi-geo-alt-fill"></i>
-            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN - 624219</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
           </div>
-          <div class="footer-info-item"><i class="bi bi-telephone-fill"></i>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
             <a href="tel:+919944859177">+91 99448 59177</a>
           </div>
-          <div class="footer-info-item"><i class="bi bi-envelope-fill"></i>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
             <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
           </div>
         </div>
         <div class="col-12 col-md-3">
           <span class="footer-col-heading">US Office</span>
-          <div class="footer-info-item"><i class="bi bi-geo-alt-fill"></i>
-            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA - 24013</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
           </div>
-          <div class="footer-info-item"><i class="bi bi-telephone-fill"></i>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
             <a href="tel:+12063919622">+1 206 391 9622</a>
           </div>
-          <div class="footer-info-item"><i class="bi bi-envelope-fill"></i>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
             <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
           </div>
         </div>
       </div>
       <hr class="footer-divider">
       <div class="footer-bottom">
-        <p>&copy; <span id="fyear"></span> <a href="index.html">Anuradha Coirs &amp; Fibers</a>. All rights reserved.
+        <p>&copy; <span id="footer-year"></span>
+          <a href="index.html">Anuradha Coirs &amp; Fibers</a>.
+          All Rights Reserved. | <a href="#">Terms &amp; Conditions</a>
         </p>
         <div class="social-links">
-          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"><i
-              class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"><i
-              class="bi bi-instagram"></i></a>
-          <!-- <a href="https://youtube.com" target="_blank" class="social-link"><i class="bi bi-youtube"></i></a> -->
-          <a href="mailto:anuradhaexporters@gmail.com" class="social-link"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+            title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+            title="Instagram"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+              class="bi bi-youtube"></i></a> -->
+          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+              class="bi bi-envelope-fill"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('fyear').textContent = new Date().getFullYear();
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
     /* Kill GT banner */
     function killGTBanner() {
