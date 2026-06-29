@@ -3982,11 +3982,14 @@
             sec.style.display = 'block';
             sec.innerHTML = `<div class="recently-section">
     <div class="recently-title"><i class="bi bi-clock-history me-2" style="color:var(--gold)"></i>Recently Viewed</div>
-    <div class="recently-grid">${prods.map(p => `
+    <div class="recently-grid">${prods.map(p => {
+      const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
+      return `
       <div class="recently-item" onclick="openDetail('${esc(p.id)}')">
-        <img src="${esc(p.image || 'assets/images/Products/coirfiberNew.jpeg')}" alt="${esc(p.name)}" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+        <img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
         <div class="recently-item-name">${esc(p.name)}</div>
-      </div>`).join('')}
+      </div>`;
+    }).join('')}
     </div>
   </div>`;
         }
@@ -4063,7 +4066,7 @@
             cart.forEach(item => {
                 const p = SEED.find(x => x.id === item.id);
                 if (!p) return;
-                const img = p.image || 'assets/images/Products/coirfiberNew.jpeg';
+                const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 html += `<div class="cart-item">
       <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
       <div class="cart-item-info">
@@ -4148,7 +4151,7 @@
             cart.forEach(item => {
                 const p = SEED.find(x => x.id === item.id);
                 if (!p) return;
-                const img = p.image || 'assets/images/Products/coirfiberNew.jpeg';
+                const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 itemsHtml += `<div class="os-item">
       <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
       <div class="os-item-info">
