@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anuradha Coirs &amp; Fibers | Premium Coir &amp; Coconut Products</title>
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/png">
   <meta name="description"
     content="Anuradha Coirs & Fibers — Trusted manufacturer and exporter of coco peat blocks, coir fibre, grow bags, husk chips, coconuts and more from South India.">
 
@@ -857,7 +858,7 @@
     }
 
     .mfg-section .section-inner {
-      max-width: 720px;
+      max-width: 100%;
     }
 
     .mfg-section h2 {
@@ -938,6 +939,138 @@
       margin: 0;
       position: relative;
       z-index: 1;
+    }
+
+    .mfg-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .mfg-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 15px -15px -15px 15px;
+      border: 2px solid var(--gold-lt);
+      border-radius: 0 70% 0 70% / 0 70% 0 70%;
+      z-index: 0;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      pointer-events: none;
+    }
+
+    .mfg-img-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 440px;
+      overflow: hidden;
+      border-radius: 0 70% 0 70% / 0 70% 0 70%;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .mfg-img-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(3, 47, 47, 0.8) 0%, transparent 60%);
+      opacity: 0.85;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+
+    .mfg-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .mfg-img-wrap:hover .mfg-img-container {
+      border-radius: 70% 0 70% 0 / 70% 0 70% 0;
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .mfg-img-wrap:hover img {
+      transform: scale(1.08);
+    }
+
+    .mfg-img-wrap:hover::before {
+      inset: 5px -5px -5px 5px;
+      border-color: #fff;
+      border-radius: 70% 0 70% 0 / 70% 0 70% 0;
+    }
+
+    .mfg-img-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      opacity: 0.95;
+      background: rgba(3, 47, 47, 0.35);
+      transition: all 0.4s;
+      pointer-events: none;
+    }
+
+    .mfg-play-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      pointer-events: auto;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      padding: 16px 24px;
+      border-radius: var(--radius);
+    }
+
+    .mfg-play-btn i {
+      font-size: 2.6rem;
+      color: var(--gold-lt);
+      margin-bottom: 6px;
+      transition: all 0.3s;
+    }
+
+    .mfg-play-btn span {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 4px;
+      transition: all 0.3s;
+    }
+
+    .mfg-play-btn:hover {
+      transform: scale(1.06);
+      color: #fff !important;
+    }
+
+    .mfg-img-wrap:hover .mfg-img-overlay {
+      background: rgba(3, 47, 47, 0.55);
+    }
+
+    .mfg-play-btn:hover i {
+      transform: scale(1.1) rotate(5deg);
+      color: #fff;
+    }
+
+    .mfg-play-btn:hover span {
+      color: #fff !important;
+      border-bottom-color: #fff;
     }
 
     /* WHY CHOOSE US */
@@ -1569,6 +1702,15 @@
       .scroll-to-top {
         right: 70px;
       }
+
+      .mfg-img-wrap {
+        margin-top: 40px;
+        max-width: 360px;
+      }
+
+      .mfg-img-container {
+        height: 360px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1789,7 +1931,7 @@
     <div class="container-fluid px-4">
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="index.html">
-          <img src="newlogo.png" alt="Anuradha Coirs &amp; Fibers">
+          <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers">
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
           aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -1838,7 +1980,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="assets/images/head/product.jpg" alt="Our Product Range">
+        <img src="assets/images/head/homePageNew.jpeg" alt="Our Product Range">
         <div class="carousel-overlay"></div>
         <div class="hero-content">
           <span class="hero-eyebrow">Our Products</span>
@@ -1864,7 +2006,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="assets/images/head/silder-first.jpg" alt="Our Values">
+        <img src="assets/images/head/homePageNew2.jpeg" alt="Our Values">
         <div class="carousel-overlay"></div>
         <div class="hero-content">
           <span class="hero-eyebrow">Our Values</span>
@@ -1921,7 +2063,7 @@
       <div class="row align-items-center g-5">
         <div class="col-12 col-lg-5">
           <div class="about-img-wrap">
-            <img src="assets/images/head/product.jpg" alt="About Anuradha Coirs">
+            <img src="assets/images/head/homePageNew3.jpeg" alt="About Anuradha Coirs">
             <div class="about-badge">
               <span class="big">10+</span>
               <span class="small">Years Trusted</span>
@@ -1959,61 +2101,40 @@
   </section>
 
 
-  <!-- SECTION 3 — GALLERY -->
-  <section class="gallery-section section">
+  <!-- SECTION 3 — MISSION, VISION & VALUES -->
+  <section class="mvv-section section-sm">
     <div class="container">
-      <div class="row align-items-end mb-4">
-        <div class="col">
-          <span class="eyebrow">Our Work</span>
-          <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Gallery</h2>
-          <div class="heading-line"></div>
-        </div>
-        <div class="col-auto d-none d-md-block">
-          <a href="gallery.html" class="btn-primary-coir">View Full Gallery <i class="bi bi-arrow-right"></i></a>
-        </div>
+      <div class="text-center mb-5">
+        <span class="eyebrow">Our Foundation</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Mission, Vision
+          &amp; Values</h2>
+        <div class="heading-line center"></div>
       </div>
-      <div class="gallery-filter-bar">
-        <button class="gf-btn active" data-filter="*">All</button>
-        <button class="gf-btn" data-filter=".ptg">Products</button>
-        <button class="gf-btn" data-filter=".Infr">Infrastructure</button>
-        <button class="gf-btn" data-filter=".selfie">Manufacture</button>
-      </div>
-      <div class="gallery-grid gallery-item row text-center">
-        <div class="item ptg col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/brownCoir.jpeg" class="popup-btn"><img
-              src="assets/images/Products/brownCoir.jpeg" alt="Product"></a>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="mvv-card">
+            <div class="mvv-icon"><i class="bi bi-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>To deliver high-quality natural coconut products to global markets while maintaining sustainable
+              practices, long-term business relationships, and complete customer satisfaction.</p>
+          </div>
         </div>
-        <div class="item ptg col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/cocoPeatCoin.jpg" class="popup-btn"><img
-              src="assets/images/Products/cocoPeatCoin.jpg" alt="Product"></a>
+        <div class="col-12 col-md-4">
+          <div class="mvv-card">
+            <div class="mvv-icon"><i class="bi bi-stars"></i></div>
+            <h3>Our Values</h3>
+            <p>Integrity and Excellence in everything we do. We uphold the highest ethical standards in all our dealings
+              and pioneer sustainable practices for tomorrow's growing challenges.</p>
+          </div>
         </div>
-        <div class="item selfie col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/manufacturer.jpeg" class="popup-btn"><img
-              src="assets/images/Products/manufacturer.jpeg" alt="manufacturer"></a>
+        <div class="col-12 col-md-4">
+          <div class="mvv-card">
+            <div class="mvv-icon"><i class="bi bi-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>To become a globally recognized supplier of eco-friendly coir and coconut products by consistently
+              providing superior quality, innovation, and dependable export services.</p>
+          </div>
         </div>
-        <div class="item Infr col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/infrastructure.jpeg" class="popup-btn"><img
-              src="assets/images/Products/infrastructure.jpeg" alt="Infrastructure"></a>
-        </div>
-        <div class="item selfie col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/manufacturer2.jpeg" class="popup-btn"><img
-              src="assets/images/Products/manufacturer2.jpeg" alt="manufacturer"></a>
-        </div>
-        <div class="item Infr col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/infrastructure2.jpeg" class="popup-btn"><img
-              src="assets/images/Products/infrastructure2.jpeg" alt="Infrastructure"></a>
-        </div>
-        <div class="item ptg col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/openTopGrowBag.jpg" class="popup-btn"><img
-              src="assets/images/Products/openTopGrowBag.jpg" alt="Product"></a>
-        </div>
-        <div class="item ptg col-lg-3 col-md-4 col-6 mb-2">
-          <a href="assets/images/Products/coirFiber.jpeg" class="popup-btn"><img
-              src="assets/images/Products/coirFiber.jpeg" alt="Product"></a>
-        </div>
-      </div>
-      <div class="text-center mt-4 d-md-none">
-        <a href="gallery.html" class="btn-primary-coir">View Full Gallery <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -2048,7 +2169,7 @@
           <!-- Coir Fibre AC-01 -->
           <div class="product-tab-pane row align-items-center g-0 active" id="tab-fibre">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/coirFiber.jpeg" alt="Coir Fibre" class="product-tab-img">
+              <img src="assets/images/Products/coirfiberNew.png" alt="Coir Fibre" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2071,7 +2192,7 @@
           <!-- Coco Peat 5 KG Block AC-02 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-peat">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocoPeatBlock.jpeg" alt="Coco Peat Block" class="product-tab-img">
+              <img src="assets/images/Products/cocopeatblock631.png" alt="Coco Peat Block" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2094,7 +2215,7 @@
           <!-- Coco Peat Briquettes AC-03 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-briquette">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Briquette" class="product-tab-img">
+              <img src="assets/images/Products/bricks.png" alt="Coco Peat Briquette" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2116,7 +2237,7 @@
           <!-- Grow Bags AC-04 / AC-05 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-growbag">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/openTopGrowBag.jpg" alt="Grow Bag" class="product-tab-img">
+              <img src="assets/images/Products/coirGrowBag.png" alt="Grow Bag" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2139,7 +2260,7 @@
           <!-- Husk Chips AC-06 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-chips">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips" class="product-tab-img">
+              <img src="assets/images/Products/cocochips.png" alt="Coco Husk Chips" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2162,7 +2283,7 @@
           <!-- Coco Coins AC-07 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-coins">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocoPeatCoin.jpg" alt="Coco Coins" class="product-tab-img">
+              <img src="assets/images/Products/cocoPeatCoin2.png" alt="Coco Coins" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2185,7 +2306,7 @@
           <!-- Fresh Coconuts AC-08 to AC-11 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-coconut">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/TenderCoconut.jpeg" alt="Fresh Coconuts" class="product-tab-img">
+              <img src="assets/images/Products/TenderCoconut.png" alt="Fresh Coconuts" class="product-tab-img">
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2217,37 +2338,56 @@
   <!-- SECTION 5 — MANUFACTURING -->
   <section class="mfg-section">
     <div class="container">
-      <div class="section-inner">
-        <span class="eyebrow" style="color:var(--gold-lt);">Our Facility</span>
-        <h2>Our Manufacturing Process</h2>
-        <div class="heading-line"></div>
-        <p class="mb-2">At Anuradha Coirs, we follow a systematic 10-step manufacturing process — from coconut husk
-          collection and fibre extraction to compression, quality inspection, packing, and container loading — ensuring
-          premium products for international markets.</p>
-        <p class="mb-4">Every stage is carefully monitored for consistent quality, proper moisture control, and
-          export-standard processing. We offer phytosanitary documentation, fumigation support, and flexible shipment
-          through major Indian ports.</p>
-        <a href="process.html" class="btn-ghost-coir">Discover Our Process <i class="bi bi-arrow-right"></i></a>
-        <div class="mfg-features">
-          <div class="mfg-feat">
-            <i class="bi bi-gear-wide-connected"></i>
-            <h5>Modern Machinery</h5>
-            <p>Hydraulic compression &amp; mechanical defibering for consistent output</p>
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-7">
+          <div class="section-inner">
+            <span class="eyebrow" style="color:var(--gold-lt);">Our Facility</span>
+            <h2>Our Manufacturing Process</h2>
+            <div class="heading-line"></div>
+            <p class="mb-2">At Anuradha Coirs, we follow a systematic 10-step manufacturing process — from coconut husk
+              collection and fibre extraction to compression, quality inspection, packing, and container loading —
+              ensuring
+              premium products for international markets.</p>
+            <p class="mb-4">Every stage is carefully monitored for consistent quality, proper moisture control, and
+              export-standard processing. We offer phytosanitary documentation, fumigation support, and flexible
+              shipment
+              through major Indian ports.</p>
+            <a href="process.html" class="btn-ghost-coir">Discover Our Process <i class="bi bi-arrow-right"></i></a>
+            <div class="mfg-features">
+              <div class="mfg-feat">
+                <i class="bi bi-gear-wide-connected"></i>
+                <h5>Modern Machinery</h5>
+                <p>Hydraulic compression &amp; mechanical defibering for consistent output</p>
+              </div>
+              <div class="mfg-feat">
+                <i class="bi bi-shield-check"></i>
+                <h5>Quality Inspection</h5>
+                <p>EC, pH, moisture &amp; weight verified before every shipment</p>
+              </div>
+              <div class="mfg-feat">
+                <i class="bi bi-truck"></i>
+                <h5>Export Ready</h5>
+                <p>Phytosanitary docs, fumigation support &amp; container loading</p>
+              </div>
+              <div class="mfg-feat">
+                <i class="bi bi-tag-fill"></i>
+                <h5>Custom Packing</h5>
+                <p>Private labeling &amp; buyer-specific specifications on request</p>
+              </div>
+            </div>
           </div>
-          <div class="mfg-feat">
-            <i class="bi bi-shield-check"></i>
-            <h5>Quality Inspection</h5>
-            <p>EC, pH, moisture &amp; weight verified before every shipment</p>
-          </div>
-          <div class="mfg-feat">
-            <i class="bi bi-truck"></i>
-            <h5>Export Ready</h5>
-            <p>Phytosanitary docs, fumigation support &amp; container loading</p>
-          </div>
-          <div class="mfg-feat">
-            <i class="bi bi-tag-fill"></i>
-            <h5>Custom Packing</h5>
-            <p>Private labeling &amp; buyer-specific specifications on request</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="mfg-img-wrap">
+            <div class="mfg-img-container">
+              <img src="assets/images/Products/coir_drying_yard.jpeg" alt="Anuradha Coirs Drying Yard">
+              <div class="mfg-img-overlay">
+                <a href="process.html" class="mfg-play-btn" style="text-decoration: none;">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Discover Our Process</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2259,9 +2399,9 @@
   <section class="whyus-section section">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="eyebrow">Why Choose Us</span>
-        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">The Anuradha
-          Difference</h2>
+        <span class="eyebrow">Our Commitment</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Sustainability
+          &amp; Quality Combined</h2>
         <div class="heading-line center"></div>
       </div>
       <div class="row g-4">
@@ -2327,43 +2467,7 @@
   </section>
 
 
-  <!-- SECTION 7 — MISSION, VISION & VALUES -->
-  <section class="mvv-section section-sm">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="eyebrow">Our Foundation</span>
-        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Mission, Vision
-          &amp; Values</h2>
-        <div class="heading-line center"></div>
-      </div>
-      <div class="row g-4">
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-bullseye"></i></div>
-            <h3>Our Mission</h3>
-            <p>To deliver high-quality natural coconut products to global markets while maintaining sustainable
-              practices, long-term business relationships, and complete customer satisfaction.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-stars"></i></div>
-            <h3>Our Values</h3>
-            <p>Integrity and Excellence in everything we do. We uphold the highest ethical standards in all our dealings
-              and pioneer sustainable practices for tomorrow's growing challenges.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-eye"></i></div>
-            <h3>Our Vision</h3>
-            <p>To become a globally recognized supplier of eco-friendly coir and coconut products by consistently
-              providing superior quality, innovation, and dependable export services.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- SECTION — CUSTOMER REVIEWS -->
   <section class="section" style="background:var(--off-white);">
@@ -2741,7 +2845,7 @@
       <div class="row g-5">
 
         <div class="col-12 col-md-4 footer-brand">
-          <img src="newlogo.png" alt="Anuradha Coirs" height="70" style="filter:brightness(10);margin-bottom:16px;">
+          <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;">
           <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
             clients across 50+ countries worldwide.</p>
         </div>
