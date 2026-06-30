@@ -207,20 +207,29 @@
       width: 100%;
       height: 100%;
       object-fit: inherit;
-      filter: brightness(.42)
+      filter: none;
     }
 
     .page-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(3, 47, 47, .85) 0%, rgba(3, 47, 47, .4) 100%)
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.25) 100%);
+      z-index: 1;
     }
 
     .page-hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 0 20px
+      padding: 0 20px;
+    }
+
+    .page-hero-content .eyebrow {
+      color: #ffe7b3;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     .eyebrow {
@@ -236,23 +245,26 @@
 
     .page-hero-content h1 {
       font-family: var(--fh);
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       font-weight: 600;
       color: #fff;
       line-height: 1.1;
-      margin-bottom: 12px
+      margin-bottom: 12px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
     }
 
     .page-hero-content h1 em {
       font-style: italic;
-      color: var(--gold-lt)
+      color: #ffe7b3;
     }
 
     .page-hero-content p {
       font-family: var(--fa);
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, .8);
-      margin: 0
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 500;
+      margin: 0;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     /* ── BREADCRUMB ── */
@@ -1526,10 +1538,10 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Process/serving.jpeg" alt="Coco Peat Sieving"
-              onerror="this.src='assets/images/Process/serving.jpeg'">
-            <img src="assets/images/Process/serving2.jpeg" alt="Conveyor separator"
-              onerror="this.src='assets/images/Process/serving2.jpeg'">
+            <img src="assets/images/Process/washing.jpeg" alt="Washing & Buffering Infrastructure"
+              onerror="this.src='assets/images/Process/washing.jpeg'">
+            <img src="assets/images/Process/washing2.jpeg" alt="Conveyor separator"
+              onerror="this.src='assets/images/Process/washing2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">05</div>
@@ -1555,10 +1567,8 @@
       <div class="step-row">
         <div class="step-img-panel">
           <div class="step-img-container cols-2">
-            <img src="assets/images/Process/washing.jpeg" alt="Washing & Buffering Infrastructure"
-              onerror="this.src='assets/images/Process/washing.jpeg'">
-            <img src="assets/images/Process/washing2.jpeg" alt="Conveyor separator"
-              onerror="this.src='assets/images/Process/washing2.jpeg'">
+            <img src="assets/images/Process/serving2.jpeg" alt="Conveyor separator"
+              onerror="this.src='assets/images/Process/serving2.jpeg'">
           </div>
           <div class="step-img-overlay"></div>
           <div class="step-number-tag">06</div>
