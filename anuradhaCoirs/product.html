@@ -2855,7 +2855,7 @@
             position: fixed;
             bottom: 26px;
             right: 26px;
-            z-index: 9999;
+            z-index: 999;
             width: 52px;
             height: 52px;
             background: #25D366;
@@ -3107,9 +3107,30 @@
 
             .dm-img-col {
                 width: 100%;
-                max-height: 240px;
+                max-height: none;
+                padding: 20px 15px;
                 border-right: none;
                 border-bottom: 1px solid var(--border-lt);
+            }
+
+            .dm-img-main {
+                height: 200px;
+            }
+
+            .dm-thumb-row {
+                margin-top: 10px;
+                gap: 6px;
+            }
+
+            .dm-thumb {
+                width: 44px;
+                height: 44px;
+            }
+
+            .dm-info-col {
+                padding: 20px 15px;
+                max-height: none;
+                overflow-y: visible;
             }
 
             .footer-bottom {
@@ -3827,10 +3848,7 @@
                 badge: 'export',
                 images: [
                     'assets/images/Products/openTopGrowBag.jpg',
-                    'assets/images/Products/openTopGrowBag2.jpeg',
                     'assets/images/Products/openTopGrowBag3.jpeg',
-                    'assets/images/Products/openTopGrowBag4.jpeg',
-                    'assets/images/Products/tallCoconut.jpeg'
                 ],
                 description: 'Open top grow bags specially developed for commercial cultivation and nursery applications. Pre-filled with high-quality coco peat and husk chips mixture to support healthy root growth.',
                 pills: ['High Air Porosity', 'Root Development', 'Weed-Free', 'Greenhouse Ready', 'Prefilled'],
@@ -3911,7 +3929,8 @@
                 images: [
                     'assets/images/Products/ageofSeedlings.jpeg',
                     'assets/images/Products/NurserySeedlings.jpeg',
-                    'assets/images/Products/cocopeat_seedling.jpeg'
+                    'assets/images/Products/openTopGrowBag4.jpeg',
+                    'assets/images/Products/tallCoconut.jpeg'
                 ],
                 description: 'Healthy coconut seedlings suitable for commercial plantations, farms, landscaping projects, and agricultural developments. Grown under controlled nursery conditions for healthy growth and better yield performance.',
                 pills: ['Disease-Free', 'Strong Roots', 'High Yielding', 'Tropical Climates', 'Bulk Export'],
