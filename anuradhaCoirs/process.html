@@ -62,7 +62,8 @@
       background: #fff;
       color: var(--text-dark);
       -webkit-font-smoothing: antialiased;
-      top: 0 !important
+      top: 0 !important;
+      overflow-x: hidden;
     }
 
     a {
@@ -769,13 +770,15 @@
       margin-top: 6px
     }
 
-    /* Reverse layout for even rows */
-    .step-row:nth-child(even) {
-      direction: rtl
-    }
+    /* Reverse layout for even rows (Desktop only) */
+    @media (min-width: 992px) {
+      .step-row:nth-child(even) {
+        direction: rtl
+      }
 
-    .step-row:nth-child(even)>* {
-      direction: ltr
+      .step-row:nth-child(even)>* {
+        direction: ltr
+      }
     }
 
     /* ── COMMITMENT BAND ── */
