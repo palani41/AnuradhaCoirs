@@ -60,7 +60,7 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      font-size: 17.5px;
       overflow-x: hidden;
     }
 
@@ -85,7 +85,8 @@
 
     p {
       font-family: var(--font-body);
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.8;
       color: var(--text-mid);
     }
 
@@ -801,20 +802,20 @@
 
     .product-tab-content h3 {
       font-family: var(--font-head);
-      font-size: 1.7rem;
+      font-size: 1.75rem;
       color: var(--forest);
       margin-bottom: 12px;
     }
 
     .product-tab-content p {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       margin-bottom: 16px;
     }
 
     .spec-pill {
       display: inline-block;
       font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       font-weight: 600;
       background: var(--cream);
       color: var(--forest);
@@ -837,6 +838,345 @@
       font-family: var(--font-body);
       letter-spacing: 1px;
       margin-left: 8px;
+    }
+
+    /* PRODUCT GALLERY & THUMBNAILS */
+    .product-gallery-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 10px;
+    }
+
+    .main-img-holder {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(224, 224, 216, 0.5);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .main-img-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      transition: transform 0.4s ease;
+    }
+
+    .main-img-holder:hover img {
+      transform: scale(1.05);
+    }
+
+    .thumb-list {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+    }
+
+    .thumb-list::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .thumb-list::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .gallery-thumb {
+      width: 68px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .gallery-thumb:hover,
+    .gallery-thumb.active {
+      opacity: 1;
+      border-color: var(--gold);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 767px) {
+      .product-tab-content {
+        padding-left: 0;
+        margin-top: 24px;
+      }
+    }
+
+    /* PREMIUM QUICK VIEW MODAL SPECIFIC STYLING */
+    .modal-content-premium {
+      border-radius: 24px !important;
+      overflow: hidden;
+      border: 1px solid rgba(184, 151, 90, 0.25) !important;
+      box-shadow: 0 25px 60px rgba(3, 47, 47, 0.2) !important;
+      background: #ffffff;
+    }
+
+    .modal-header-premium {
+      background: var(--forest);
+      color: #ffffff;
+      border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+      padding: 22px 28px !important;
+      position: relative;
+    }
+
+    .modal-header-premium::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold-grad);
+    }
+
+    .modal-title-premium {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 1.35rem;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-body-premium {
+      padding: 0 !important;
+    }
+
+    /* Modal Left Column: Carousel & Gallery Thumbnails */
+    .modal-gallery-side {
+      background: var(--light-bg);
+      border-right: 1px solid var(--border);
+      padding: 32px !important;
+    }
+
+    .modal-main-img-holder {
+      width: 100%;
+      height: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(224, 224, 216, 0.5);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .modal-main-img-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .modal-main-img-holder:hover img {
+      transform: scale(1.05);
+    }
+
+    .modal-thumb-list {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+    }
+
+    .modal-thumb-list::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .modal-thumb-list::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .modal-gallery-thumb {
+      width: 64px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      background: #ffffff;
+    }
+
+    .modal-gallery-thumb:hover,
+    .modal-gallery-thumb.active {
+      opacity: 1;
+      border-color: var(--gold);
+      transform: scale(1.04);
+      box-shadow: 0 4px 10px rgba(184, 151, 90, 0.15);
+    }
+
+    /* Modal Right Column: Specs & Feature Pills */
+    .modal-details-side {
+      padding: 32px 36px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .modal-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-tag {
+      background: rgba(184, 151, 90, 0.12);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid rgba(184, 151, 90, 0.15);
+    }
+
+    .modal-code {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      background: var(--light-bg);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .modal-product-name {
+      font-family: var(--font-head);
+      color: var(--forest);
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .modal-product-desc {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
+    .modal-section-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--forest);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    /* Feature Pills styling */
+    .modal-pills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .modal-pill-item {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--forest);
+      background: rgba(3, 47, 47, 0.04);
+      border: 1px solid rgba(3, 47, 47, 0.08);
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.25s;
+    }
+
+    .modal-pill-item i {
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    .modal-pill-item:hover {
+      background: var(--gold-pale);
+      border-color: rgba(184, 151, 90, 0.25);
+    }
+
+    /* Key-Value Specifications List */
+    .modal-specs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 24px;
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .modal-spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-lt);
+      font-size: 0.92rem;
+    }
+
+    .modal-spec-row:last-child {
+      border-bottom: none;
+    }
+
+    .modal-spec-label {
+      font-weight: 600;
+      color: var(--forest);
+      font-size: 0.92rem;
+    }
+
+    .modal-spec-value {
+      color: var(--text-mid);
+      text-align: right;
+    }
+
+    .modal-action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-lt);
+    }
+
+    @media (max-width: 767px) {
+      .modal-gallery-side {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 24px !important;
+      }
+
+      .modal-details-side {
+        padding: 24px !important;
+      }
+
+      .modal-main-img-holder {
+        height: 240px;
+      }
     }
 
     /* MANUFACTURING */
@@ -871,7 +1211,7 @@
 
     .mfg-section p {
       color: rgba(255, 255, 255, 0.82);
-      font-size: 0.97rem;
+      font-size: 1.05rem;
     }
 
     .mfg-features {
@@ -935,7 +1275,7 @@
     }
 
     .mfg-feat p {
-      font-size: 0.82rem;
+      font-size: 0.92rem;
       color: rgba(255, 255, 255, 0.65);
       margin: 0;
       position: relative;
@@ -1081,158 +1421,593 @@
       border-bottom-color: #fff;
     }
 
-    /* WHY CHOOSE US */
-    .whyus-section {
-      background: #fff;
+    /* AMBIENT GLOWS & SCROLL REVEAL ANIMATIONS */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    .whyus-card {
-      padding: 36px 24px;
-      border-radius: var(--radius);
-      text-align: center;
-      border: 1.5px solid var(--border);
-      transition: var(--transition);
-      height: 100%;
-      position: relative;
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .whyus-card::after {
-      content: '';
+    .stagger-1 {
+      transition-delay: 0.05s;
+    }
+
+    .stagger-2 {
+      transition-delay: 0.1s;
+    }
+
+    .stagger-3 {
+      transition-delay: 0.15s;
+    }
+
+    .stagger-4 {
+      transition-delay: 0.2s;
+    }
+
+    .stagger-5 {
+      transition-delay: 0.25s;
+    }
+
+    .stagger-6 {
+      transition-delay: 0.3s;
+    }
+
+    .stagger-7 {
+      transition-delay: 0.35s;
+    }
+
+    .stagger-8 {
+      transition-delay: 0.4s;
+    }
+
+    .whyus-bg-glow-1 {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+      top: -10%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(184, 151, 90, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      animation: floatGlow 12s infinite alternate ease-in-out;
     }
 
-    .whyus-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 8px 32px rgba(3, 47, 47, 0.1);
-      transform: translateY(-6px);
+    .whyus-bg-glow-2 {
+      position: absolute;
+      bottom: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(3, 47, 47, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      animation: floatGlow 16s infinite alternate-reverse ease-in-out;
     }
 
-    .whyus-card:hover::after {
-      transform: scaleX(1);
+    @keyframes floatGlow {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(30px, -20px) scale(1.1);
+      }
+
+      100% {
+        transform: translate(-20px, 40px) scale(0.9);
+      }
+    }
+    /* COMMITMENT INTERACTIVE HUB */
+    .commitment-hub-section {
+      background: linear-gradient(180deg, #ffffff 0%, var(--cream2) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
     }
 
-    .whyus-icon-wrap {
-      width: 72px;
-      height: 72px;
-      background: var(--cream);
-      border-radius: 18px;
+    .commitment-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    /* Left panel - list of dial buttons */
+    .commitment-dial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dial-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(184, 151, 90, 0.15);
+      border-radius: 14px;
+      padding: 16px 20px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 4px 10px rgba(3, 47, 47, 0.02);
+      outline: none;
+    }
+
+    .dial-num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--gold);
+      background: rgba(184, 151, 90, 0.08);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 18px;
-      transition: var(--transition);
+      transition: all 0.4s ease;
+      flex-shrink: 0;
     }
 
-    .whyus-card:hover .whyus-icon-wrap {
-      background: var(--forest);
-    }
-
-    .whyus-icon-wrap i {
-      font-size: 1.6rem;
-      color: var(--gold);
-      transition: var(--transition);
-    }
-
-    .whyus-card:hover .whyus-icon-wrap i {
-      color: #fff;
-    }
-
-    .whyus-card h4 {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
+    .dial-btn-text {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.96rem;
       color: var(--forest);
+      transition: all 0.4s ease;
+    }
+
+    .dial-btn:hover {
+      border-color: rgba(184, 151, 90, 0.4);
+      transform: translateX(8px);
+      box-shadow: 0 8px 20px rgba(3, 47, 47, 0.06);
+    }
+
+    .dial-btn.active {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: #ffffff !important;
+      transform: translateX(12px);
+      box-shadow: 0 10px 24px rgba(3, 47, 47, 0.15);
+    }
+
+    .dial-btn.active .dial-num {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .dial-btn.active .dial-btn-text {
+      color: #ffffff;
+    }
+
+    /* Right panel - display box container */
+    .commitment-display-box {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid rgba(184, 151, 90, 0.2);
+      box-shadow: 0 20px 50px rgba(3, 47, 47, 0.08);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .commitment-panel {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+    }
+
+    .commitment-panel.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .panel-img-holder {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 2px solid rgba(184, 151, 90, 0.15);
+    }
+
+    .panel-img-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 10s ease;
+    }
+
+    .commitment-panel.active .panel-img-holder img {
+      transform: scale(1.08);
+    }
+
+    .panel-content {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .panel-content h3 {
+      font-family: var(--font-head);
+      color: var(--forest);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .panel-content h3 i {
+      color: var(--gold);
+    }
+
+    .panel-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .commitment-dial-list {
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 4px 4px 12px;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+        scrollbar-width: none;
+      }
+      
+      .commitment-dial-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .dial-btn {
+        flex-shrink: 0;
+        width: auto;
+        padding: 12px 18px;
+        border-radius: 20px;
+        gap: 8px;
+      }
+
+      .dial-btn:hover {
+        transform: none;
+      }
+
+      .dial-btn.active {
+        transform: none;
+      }
+
+      .dial-num {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+      }
+
+      .dial-btn-text {
+        font-size: 0.88rem;
+      }
+
+      .commitment-display-box {
+        min-height: 440px;
+        border-radius: 18px;
+      }
+
+      .panel-img-holder {
+        height: 180px;
+      }
+
+      .panel-content {
+        padding: 22px;
+      }
+
+      .panel-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .panel-content p {
+        font-size: 0.94rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* MVV — PREMIUM 3D FLIP DECK */
+    .mvv-section {
+      background: var(--light-bg);
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .mvv-heading-block {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .mvv-heading-block .eyebrow {
+      color: var(--gold);
+    }
+
+    .mvv-heading-block .mvv-heading {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      color: var(--forest);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .mvv-heading-block .mvv-sub {
+      font-family: var(--font-acc);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 540px;
+      margin: 10px auto 0;
+    }
+
+    .mvv-flip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    /* Flip Card Container */
+    .mvv-flip-container {
+      perspective: 1200px;
+      height: 380px;
+      cursor: pointer;
+    }
+
+    .mvv-flip-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Hover Flip trigger */
+    .mvv-flip-container:hover .mvv-flip-card {
+      transform: rotateY(180deg);
+    }
+
+    /* Card Faces */
+    .mvv-card-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 24px;
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    /* FRONT FACE: Solid Brand Themed Card */
+    .mvv-card-front {
+      border: 1px solid rgba(184, 151, 90, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-step-1 .mvv-card-front {
+      background: linear-gradient(135deg, var(--forest) 0%, #021a1a 100%);
+      --face-theme: var(--gold);
+    }
+
+    .card-step-2 .mvv-card-front {
+      background: linear-gradient(135deg, var(--gold) 0%, #87672f 100%);
+      --face-theme: #ffffff;
+    }
+
+    .card-step-3 .mvv-card-front {
+      background: linear-gradient(135deg, #4a7c59 0%, #2b4f35 100%);
+      --face-theme: var(--gold-lt);
+    }
+
+    /* Decorative Gold Lines on Front */
+    .mvv-card-front::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    /* Large outlined background numbers */
+    .mvv-front-num {
+      position: absolute;
+      top: 30px;
+      right: 36px;
+      font-family: var(--font-acc);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+      line-height: 1;
+    }
+
+    .mvv-front-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+      transition: all 0.4s;
+    }
+
+    /* Glowing Pulsing Ring behind icon */
+    .mvv-front-icon::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: spinOrbit 12s linear infinite;
+    }
+
+    @keyframes spinOrbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .mvv-front-icon i {
+      font-size: 2rem;
+      color: var(--face-theme);
+    }
+
+    .mvv-front-tag {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--face-theme);
+      opacity: 0.8;
+      margin-top: auto;
       margin-bottom: 8px;
     }
 
-    .whyus-card p {
-      font-size: 0.88rem;
-      line-height: 1.65;
+    .mvv-front-title {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 24px;
     }
 
-    /* MVV */
-    .mvv-section {
-      background: var(--light-bg);
+    /* Prompt indicator */
+    .mvv-front-prompt {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s;
     }
 
-    .mvv-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 36px 28px;
-      height: 100%;
-      border-left: 4px solid transparent;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      position: relative;
+    .mvv-flip-container:hover .mvv-front-prompt {
+      color: #ffffff;
     }
 
-    .mvv-card:hover {
-      border-left-color: var(--gold);
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    /* BACK FACE: Crisp white editorial card */
+    .mvv-card-back {
+      background: #ffffff;
+      border: 1px solid rgba(224, 224, 216, 0.8);
+      transform: rotateY(180deg);
+      justify-content: center;
     }
 
-    .mvv-card::before {
+    /* Step thematic left line highlight on back */
+    .mvv-card-back::before {
       content: '';
       position: absolute;
       top: 0;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%);
-      border-radius: 0 var(--radius) 0 60px;
-      opacity: 0;
-      transition: opacity 0.3s;
+      bottom: 0;
+      left: 0;
+      width: 6px;
+      border-radius: 24px 0 0 24px;
     }
 
-    .mvv-card:hover::before {
-      opacity: 0.1;
-    }
-
-    .mvv-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--cream);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    .mvv-card:hover .mvv-icon {
+    .card-step-1 .mvv-card-back::before {
       background: var(--forest);
     }
 
-    .mvv-icon i {
-      font-size: 1.6rem;
+    .card-step-2 .mvv-card-back::before {
+      background: var(--gold);
+    }
+
+    .card-step-3 .mvv-card-back::before {
+      background: #4a7c59;
+    }
+
+    .mvv-back-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .card-step-1 .mvv-back-icon {
       color: var(--forest);
-      transition: var(--transition);
     }
 
-    .mvv-card:hover .mvv-icon i {
-      color: var(--gold-lt);
+    .card-step-2 .mvv-back-icon {
+      color: var(--gold);
     }
 
-    .mvv-card h3 {
+    .card-step-3 .mvv-back-icon {
+      color: #4a7c59;
+    }
+
+    .mvv-back-title {
       font-family: var(--font-head);
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       color: var(--forest);
-      margin-bottom: 10px;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    .mvv-card p {
-      font-size: 0.93rem;
-      line-height: 1.7;
+    .mvv-back-text {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin: 0;
     }
+
+    /* RESPONSIVE LAYOUT */
+    @media (max-width: 991px) {
+      .mvv-flip-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .mvv-flip-container {
+        height: 340px;
+      }
+    }
+
 
     /* CONTACT */
     .contact-section {
@@ -2109,38 +2884,96 @@
   </section>
 
 
-  <!-- SECTION 3 — MISSION, VISION & VALUES -->
-  <section class="mvv-section section-sm">
+  <!-- SECTION 3 — MISSION, VISION & VALUES (3D FLIP CARDS) -->
+  <section class="mvv-section">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="mvv-heading-block">
         <span class="eyebrow">Our Foundation</span>
-        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Mission, Vision
-          &amp; Values</h2>
+        <h2 class="mvv-heading">Mission, Vision &amp; Values</h2>
         <div class="heading-line center"></div>
+        <p class="mvv-sub">The principles that guide every batch we process and every partnership we build.</p>
       </div>
-      <div class="row g-4">
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-bullseye"></i></div>
-            <h3>Our Mission</h3>
-            <p>To deliver high-quality natural coconut products to global markets while maintaining sustainable
-              practices, long-term business relationships, and complete customer satisfaction.</p>
+
+      <div class="mvv-flip-grid">
+        <!-- Card 1: Mission -->
+        <div class="mvv-flip-container card-step-1">
+          <div class="mvv-flip-card">
+            <!-- Front Face -->
+            <div class="mvv-card-face mvv-card-front">
+              <span class="mvv-front-num">01</span>
+              <div class="mvv-front-icon">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <div>
+                <span class="mvv-front-tag">Purpose</span>
+                <h3 class="mvv-front-title">Our Mission</h3>
+              </div>
+              <div class="mvv-front-prompt">
+                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+            <!-- Back Face -->
+            <div class="mvv-card-face mvv-card-back">
+              <i class="bi bi-bullseye mvv-back-icon"></i>
+              <h3 class="mvv-back-title">Our Mission</h3>
+              <p class="mvv-back-text">To deliver high-quality natural coconut products to global markets while
+                maintaining sustainable practices, long-term business relationships, and complete customer satisfaction.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-stars"></i></div>
-            <h3>Our Values</h3>
-            <p>Integrity and Excellence in everything we do. We uphold the highest ethical standards in all our dealings
-              and pioneer sustainable practices for tomorrow's growing challenges.</p>
+
+        <!-- Card 2: Values -->
+        <div class="mvv-flip-container card-step-2">
+          <div class="mvv-flip-card">
+            <!-- Front Face -->
+            <div class="mvv-card-face mvv-card-front">
+              <span class="mvv-front-num">02</span>
+              <div class="mvv-front-icon">
+                <i class="bi bi-stars"></i>
+              </div>
+              <div>
+                <span class="mvv-front-tag">Principles</span>
+                <h3 class="mvv-front-title">Our Values</h3>
+              </div>
+              <div class="mvv-front-prompt">
+                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+            <!-- Back Face -->
+            <div class="mvv-card-face mvv-card-back">
+              <i class="bi bi-stars mvv-back-icon"></i>
+              <h3 class="mvv-back-title">Our Values</h3>
+              <p class="mvv-back-text">Integrity and excellence in everything we do. We uphold the highest ethical
+                standards in all our dealings and pioneer sustainable practices for tomorrow's growing challenges.</p>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="mvv-card">
-            <div class="mvv-icon"><i class="bi bi-eye"></i></div>
-            <h3>Our Vision</h3>
-            <p>To become a globally recognized supplier of eco-friendly coir and coconut products by consistently
-              providing superior quality, innovation, and dependable export services.</p>
+
+        <!-- Card 3: Vision -->
+        <div class="mvv-flip-container card-step-3">
+          <div class="mvv-flip-card">
+            <!-- Front Face -->
+            <div class="mvv-card-face mvv-card-front">
+              <span class="mvv-front-num">03</span>
+              <div class="mvv-front-icon">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div>
+                <span class="mvv-front-tag">Direction</span>
+                <h3 class="mvv-front-title">Our Vision</h3>
+              </div>
+              <div class="mvv-front-prompt">
+                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+              </div>
+            </div>
+            <!-- Back Face -->
+            <div class="mvv-card-face mvv-card-back">
+              <i class="bi bi-eye mvv-back-icon"></i>
+              <h3 class="mvv-back-title">Our Vision</h3>
+              <p class="mvv-back-text">To become a globally recognized supplier of eco-friendly coir and coconut
+                products by consistently providing superior quality, innovation, and dependable export services.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2177,7 +3010,22 @@
           <!-- Coir Fibre AC-01 -->
           <div class="product-tab-pane row align-items-center g-0 active" id="tab-fibre">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/coirfiberNew2.jpeg" alt="Coir Fibre" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/coirfiberNew3.jpeg" alt="Coir Fibre" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/whiteCoirFibre.jpeg" alt="Coir Fibre" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2185,14 +3033,15 @@
                 <p>Premium natural coir fibre extracted from matured coconut husks using advanced cleaning and drying
                   methods. Widely used in mattresses, upholstery, geo textiles, ropes, brushes, and erosion control
                   products worldwide.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Bale 115×65×45 cm</span>
                   <span class="spec-pill">110–125 Kg / Bale</span>
                   <span class="spec-pill">Moisture &lt;15%</span>
                   <span class="spec-pill">Golden Brown</span>
                   <span class="spec-pill">180–200 Bales / 40ft HC</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="fibre"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2200,7 +3049,22 @@
           <!-- Coco Peat 5 KG Block AC-02 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-peat">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocopeatblock631.jpeg" alt="Coco Peat Block" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/cocopeatblock631.jpeg" alt="Coco Peat Block"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/cocopeatblock631.jpeg" alt="Coco Peat Block"
+                    class="gallery-thumb active" onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocopeatblock632.jpeg" alt="Coco Peat Block" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocopeatblock633.jpeg" alt="Coco Peat Block" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat Block" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2208,14 +3072,15 @@
                 <p>Premium coco peat blocks for horticulture, hydroponics, nurseries, and greenhouse cultivation.
                   Available in low EC, washed, unwashed, buffered, and customized grades. Expands to 70–75 litres per
                   block.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Expands 70–75 L</span>
                   <span class="spec-pill">EC &lt;0.5 mS/cm</span>
                   <span class="spec-pill">pH 5.8–6.8</span>
                   <span class="spec-pill">Compression 5:1</span>
                   <span class="spec-pill">Up to 26 MT / 40ft HC</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="peat"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2223,21 +3088,35 @@
           <!-- Coco Peat Briquettes AC-03 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-briquette">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Briquette" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Briquette"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Briquette" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/bricks2.jpeg" alt="Coco Peat Briquette" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/bricks3.jpeg" alt="Coco Peat Briquette" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
                 <h3>Coco Peat Brick 650g <span class="prod-code">AC-03</span></h3>
                 <p>High-quality coco peat briquettes designed for home gardening, seed germination, nurseries, and
                   horticulture. Lightweight, compact, and easy to use — expands to 8–9 litres when water is added.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Size 20×10×5 cm</span>
                   <span class="spec-pill">Expands 8–9 L</span>
                   <span class="spec-pill">EC &lt;0.5 mS/cm</span>
                   <span class="spec-pill">pH 5.8–6.8</span>
                   <span class="spec-pill">Biodegradable</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="briquette"><i class="bi bi-eye"></i>
+                  Quick View</button>
               </div>
             </div>
           </div>
@@ -2245,7 +3124,22 @@
           <!-- Grow Bags AC-04 / AC-05 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-growbag">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/coirGrowBag.jpeg" alt="Grow Bag" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/coirGrowBag.jpeg" alt="Grow Bag"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/coirGrowBag.jpeg" alt="Grow Bag" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/coirGrowBag2.jpeg" alt="Grow Bag" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/GB.jpeg" alt="Grow Bag" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/openTopGrowBag.jpg" alt="Grow Bag" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2253,14 +3147,15 @@
                 <p>Premium grow bags and open-top prefill bags made from 100% coco peat and husk chips, ideal for
                   greenhouse cultivation of tomatoes, roses, capsicum, strawberries, and more. Drip irrigation
                   compatible and reusable.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Sizes 100×20 cm</span>
                   <span class="spec-pill">16–36 L Volume</span>
                   <span class="spec-pill">UV Stabilized 3 Yrs</span>
                   <span class="spec-pill">Drip Irrigation Ready</span>
                   <span class="spec-pill">Custom Sizes Available</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="growbag"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2268,7 +3163,20 @@
           <!-- Husk Chips AC-06 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-chips">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocochips.jpeg" alt="Coco Husk Chips" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/cocochips.jpeg" alt="Coco Husk Chips"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/cocochips.jpeg" alt="Coco Husk Chips" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocoHuskChips2.jpeg" alt="Coco Husk Chips" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2276,14 +3184,15 @@
                 <p>Superior quality coco husk chips from fresh coconut husks, widely used in orchid cultivation,
                   hydroponics, landscaping, and reptile bedding. Available as 5 Kg compressed blocks or 25 Kg loose
                   bags.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Chip Size 1–3 cm</span>
                   <span class="spec-pill">Moisture 15–18%</span>
                   <span class="spec-pill">EC &lt;0.5 mS/cm</span>
                   <span class="spec-pill">100% Natural</span>
                   <span class="spec-pill">Long-Lasting Substrate</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="chips"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2291,7 +3200,22 @@
           <!-- Coco Coins AC-07 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-coins">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/cocoPeatCoin2.jpeg" alt="Coco Coins" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/cocoPeatCoin2.jpeg" alt="Coco Coins"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/cocoPeatCoin2.jpeg" alt="Coco Coins" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocoPeatCoin3.jpeg" alt="Coco Coins" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/cocoPeatCoin4.jpeg" alt="Coco Coins" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2299,14 +3223,15 @@
                 <p>Premium coco peat coins and discs specially designed for seed germination and nursery propagation.
                   Compressed discs expand quickly when water is added, providing an excellent growing environment for
                   young plants.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Diameter 30–100 mm</span>
                   <span class="spec-pill">Fast Water Absorption</span>
                   <span class="spec-pill">pH 5.8–6.8</span>
                   <span class="spec-pill">EC &lt;0.5 mS/cm</span>
                   <span class="spec-pill">Biodegradable</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="coins"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2314,7 +3239,22 @@
           <!-- Fresh Coconuts AC-08 to AC-11 -->
           <div class="product-tab-pane row align-items-center g-0" id="tab-coconut">
             <div class="col-12 col-md-5">
-              <img src="assets/images/Products/TenderCoconut.jpeg" alt="Fresh Coconuts" class="product-tab-img">
+              <div class="product-gallery-wrap">
+                <div class="main-img-holder">
+                  <img src="assets/images/Products/TenderCoconut.jpeg" alt="Fresh Coconuts"
+                    class="product-tab-img main-gallery-img">
+                </div>
+                <div class="thumb-list">
+                  <img src="assets/images/Products/TenderCoconut.jpeg" alt="Fresh Coconuts" class="gallery-thumb active"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/TenderCoconut2.jpeg" alt="Fresh Coconuts" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/fullyHuskedCoconut.jpeg" alt="Fresh Coconuts" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                  <img src="assets/images/Products/NurserySeedlings.jpeg" alt="Fresh Coconuts" class="gallery-thumb"
+                    onclick="swapProductImage(this)">
+                </div>
+              </div>
             </div>
             <div class="col-12 col-md-7">
               <div class="product-tab-content">
@@ -2322,14 +3262,15 @@
                 <p>We export semi husked, fully husked, and tender coconuts sourced from premium South Indian farms,
                   along with healthy coconut seedlings for commercial plantations. Carefully graded, packed, and
                   exported with full documentation.</p>
-                <div style="margin:12px 0 16px;">
+                <div style="margin:12px 0 20px;">
                   <span class="spec-pill">Semi Husked</span>
                   <span class="spec-pill">Fully Husked</span>
                   <span class="spec-pill">Tender Coconuts</span>
                   <span class="spec-pill">Coconut Saplings</span>
                   <span class="spec-pill">45–60 Day Shelf Life</span>
                 </div>
-                <a href="product.html" class="btn-primary-coir">Learn More <i class="bi bi-arrow-right"></i></a>
+                <button class="btn-primary-coir view-details-btn" data-product="coconut"><i class="bi bi-eye"></i> Quick
+                  View</button>
               </div>
             </div>
           </div>
@@ -2341,6 +3282,64 @@
       </div>
     </div>
   </section>
+
+  <!-- PRODUCT QUICK VIEW MODAL -->
+  <div class="modal fade" id="productQuickViewModal" tabindex="-1" aria-labelledby="productQuickViewModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-premium">
+        <div class="modal-header modal-header-premium">
+          <h5 class="modal-title modal-title-premium" id="productModalTitle">Product Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-premium">
+          <div class="row g-0">
+            <!-- Left Column: Gallery & Swapper -->
+            <div class="col-12 col-md-6 modal-gallery-side">
+              <div class="modal-main-img-holder">
+                <img id="modalProductMainImg" src="" alt="Product Overview"
+                  style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="modal-thumb-list" id="modalProductThumbList">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+            <!-- Right Column: Specs & Description -->
+            <div class="col-12 col-md-6">
+              <div class="modal-details-side">
+                <div>
+                  <div class="modal-badge-row">
+                    <span id="productModalTag" class="modal-tag">Spec</span>
+                    <span id="productModalCode" class="modal-code">AC-01</span>
+                  </div>
+                  <h3 id="productModalName" class="modal-product-name">Product Title</h3>
+                  <p id="productModalDesc" class="modal-product-desc">Description</p>
+
+                  <h6 class="modal-section-title">Key Features</h6>
+                  <div class="modal-pills-list" id="productModalPillsList">
+                    <!-- Populated by JS -->
+                  </div>
+
+                  <h6 class="modal-section-title">Specifications</h6>
+                  <div class="modal-specs-list" id="productModalSpecsList">
+                    <!-- Populated by JS -->
+                  </div>
+                </div>
+
+                <div class="modal-action-row">
+                  <button id="modalInquireBtn" class="btn-primary-coir w-100 py-2.5"
+                    style="font-size: 0.88rem; font-weight: 600; border-radius: 8px;"><i
+                      class="bi bi-chat-dots-fill me-1"></i> Inquire Now</button>
+                  <button type="button" class="btn btn-outline-secondary px-4 py-2.5" data-bs-dismiss="modal"
+                    style="font-size: 0.88rem; font-weight: 600; border-radius: 8px;">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- SECTION 5 — MANUFACTURING -->
@@ -2389,7 +3388,8 @@
           <div class="mfg-img-wrap">
             <div class="mfg-img-container">
               <!-- Carousel describing the whole manufacturing process -->
-              <div id="mfgProcessCarousel" class="carousel slide carousel-fade h-100 w-100" data-bs-ride="carousel" data-bs-interval="3500">
+              <div id="mfgProcessCarousel" class="carousel slide carousel-fade h-100 w-100" data-bs-ride="carousel"
+                data-bs-interval="3500">
                 <div class="carousel-inner h-100 w-100">
                   <div class="carousel-item active h-100 w-100">
                     <img src="assets/images/Process/huskCollection.jpeg" alt="Coconut Husk Collection">
@@ -2437,71 +3437,184 @@
   </section>
 
 
-  <!-- SECTION 6 — WHY CHOOSE US -->
-  <section class="whyus-section section">
+  <!-- SECTION 6 — OUR COMMITMENT INTERACTIVE HUB -->
+  <section class="commitment-hub-section">
+    <!-- Floating background glow elements -->
+    <div class="whyus-bg-glow-1"></div>
+    <div class="whyus-bg-glow-2"></div>
+    
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-5" style="position: relative; z-index: 5;">
         <span class="eyebrow">Our Commitment</span>
-        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Sustainability
-          &amp; Quality Combined</h2>
+        <h2 class="commitment-title">Sustainability &amp; Quality Combined</h2>
         <div class="heading-line center"></div>
       </div>
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-patch-check-fill"></i></div>
-            <h4>Premium Export Quality</h4>
-            <p>Every product passes rigorous quality checks — guaranteed consistency in every order from every batch.
-            </p>
+      
+      <div class="row g-4 align-items-stretch">
+        <!-- Mobile Selector Dropdown (Visible only on mobile/tablet) -->
+        <div class="col-12 d-lg-none">
+          <div class="commitment-mobile-selector mb-3">
+            <label class="eyebrow d-block mb-2" style="font-size: 0.8rem; letter-spacing: 1px;">Select Commitment Pillar</label>
+            <select class="form-select mobile-commitment-select" style="font-family: var(--font-body); font-weight: 600; color: var(--forest); border: 1.5px solid rgba(184, 151, 90, 0.25); border-radius: 12px; padding: 14px; background-color: #ffffff; box-shadow: 0 4px 10px rgba(3, 47, 47, 0.02); outline: none;">
+              <option value="q1">01 — Premium Export Quality</option>
+              <option value="q2">02 — Competitive Pricing</option>
+              <option value="q3">03 — Custom Packaging</option>
+              <option value="q4">04 — On-Time Delivery</option>
+              <option value="q5">05 — Eco-Friendly Products</option>
+              <option value="q6">06 — Global Export Support</option>
+              <option value="q7">07 — Flexible Specifications</option>
+              <option value="q8">08 — Long-Term Partnerships</option>
+            </select>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-currency-dollar"></i></div>
-            <h4>Competitive Pricing</h4>
-            <p>Direct manufacturer and supplier — no middlemen means fair market value delivered straight to you.</p>
+
+        <!-- Left Side: Interactive Dial Buttons list (Hidden on mobile/tablet) -->
+        <div class="col-12 col-lg-5 d-none d-lg-flex">
+          <div class="commitment-dial-list w-100">
+            
+            <!-- Dial 01 -->
+            <div class="dial-btn active" data-target="q1">
+              <span class="dial-num">01</span>
+              <span class="dial-btn-text">Premium Export Quality</span>
+            </div>
+            
+            <!-- Dial 02 -->
+            <div class="dial-btn" data-target="q2">
+              <span class="dial-num">02</span>
+              <span class="dial-btn-text">Competitive Pricing</span>
+            </div>
+            
+            <!-- Dial 03 -->
+            <div class="dial-btn" data-target="q3">
+              <span class="dial-num">03</span>
+              <span class="dial-btn-text">Custom Packaging</span>
+            </div>
+            
+            <!-- Dial 04 -->
+            <div class="dial-btn" data-target="q4">
+              <span class="dial-num">04</span>
+              <span class="dial-btn-text">On-Time Delivery</span>
+            </div>
+            
+            <!-- Dial 05 -->
+            <div class="dial-btn" data-target="q5">
+              <span class="dial-num">05</span>
+              <span class="dial-btn-text">Eco-Friendly Products</span>
+            </div>
+            
+            <!-- Dial 06 -->
+            <div class="dial-btn" data-target="q6">
+              <span class="dial-num">06</span>
+              <span class="dial-btn-text">Global Export Support</span>
+            </div>
+            
+            <!-- Dial 07 -->
+            <div class="dial-btn" data-target="q7">
+              <span class="dial-num">07</span>
+              <span class="dial-btn-text">Flexible Specifications</span>
+            </div>
+            
+            <!-- Dial 08 -->
+            <div class="dial-btn" data-target="q8">
+              <span class="dial-num">08</span>
+              <span class="dial-btn-text">Long-Term Partnerships</span>
+            </div>
+            
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-box-seam"></i></div>
-            <h4>Custom Packaging</h4>
-            <p>Customized packing and private labeling available to match your brand and market requirements.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-truck"></i></div>
-            <h4>On-Time Delivery</h4>
-            <p>Timely shipment with complete export documentation and professional logistics support, worldwide.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-leaf"></i></div>
-            <h4>Eco-Friendly Products</h4>
-            <p>100% natural, sustainable coconut products supporting responsible farming and green manufacturing.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-globe-americas"></i></div>
-            <h4>Global Export Support</h4>
-            <p>Phytosanitary documentation, fumigation support, and flexible shipment through major Indian ports.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-sliders"></i></div>
-            <h4>Flexible Specifications</h4>
-            <p>Low EC, washed, buffered, or custom grades — products tailored exactly to your requirements.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="whyus-card">
-            <div class="whyus-icon-wrap"><i class="bi bi-handshake"></i></div>
-            <h4>Long-Term Partnerships</h4>
-            <p>We build reliable, trust-based relationships with every importer, distributor, and business partner.</p>
+        
+        <!-- Right Side: Dynamic Interactive Display Card -->
+        <div class="col-12 col-lg-7">
+          <div class="commitment-display-box">
+            
+            <!-- Panel 01 -->
+            <div class="commitment-panel active" id="panel-q1">
+              <div class="panel-img-holder">
+                <img src="assets/images/Process/inspection.jpeg" alt="Quality Standards" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-patch-check-fill"></i> Premium Export Quality</h3>
+                <p>Every product batch passes rigorous laboratory quality checkups. We test for electrical conductivity (EC), moisture content, buffering standards, and expansion capacity to guarantee that every shipment meets premium international agricultural standards.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 02 -->
+            <div class="commitment-panel" id="panel-q2">
+              <div class="panel-img-holder">
+                <img src="assets/images/Process/blockMaking3.jpeg" alt="Pricing" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-currency-dollar"></i> Competitive Pricing</h3>
+                <p>Operating as a direct manufacturer with our own drying fields, processing machinery, and hydraulic balers allows us to bypass intermediaries. This direct supply chain passes structural cost savings straight to importers and nurseries worldwide.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 03 -->
+            <div class="commitment-panel" id="panel-q3">
+              <div class="panel-img-holder">
+                <img src="assets/images/Products/GBS.jpeg" alt="Packaging" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-box-seam"></i> Custom Packaging &amp; OEM</h3>
+                <p>We customize grow bag specifications, compressed block ratios, briquette designs, and polybag prints. Our private labeling support enables distributors and brands to configure retail-ready sizes according to target markets.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 04 -->
+            <div class="commitment-panel" id="panel-q4">
+              <div class="panel-img-holder">
+                <img src="assets/images/Process/loading.jpeg" alt="Logistics" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-truck"></i> On-Time Delivery</h3>
+                <p>With structured warehousing and proximity to major Southern Indian deep-water ports (Tuticorin and Cochin), we organize freight forwarding, secure vessel space, and complete container loading schedules with high reliability.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 05 -->
+            <div class="commitment-panel" id="panel-q5">
+              <div class="panel-img-holder">
+                <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Eco Friendly" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-leaf"></i> Eco-Friendly Products</h3>
+                <p>Our coir fiber and peat substrates are 100% natural, biodegradable organic crop boosters. By reclaiming raw coconut husks, we support closed-loop farming and assist the global agricultural market in transitioning to carbon-neutral soil mediums.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 06 -->
+            <div class="commitment-panel" id="panel-q6">
+              <div class="panel-img-holder">
+                <img src="assets/images/Products/coirfiberNew.jpeg" alt="Export Documentation" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-globe-americas"></i> Global Export Support</h3>
+                <p>We navigate phytosanitary certification requirements, professional fumigation parameters, certificates of origin, and custom declarations. Our experience guarantees seamless transit across customs hubs in Europe, the Americas, and Asia.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 07 -->
+            <div class="commitment-panel" id="panel-q7">
+              <div class="panel-img-holder">
+                <img src="assets/images/Products/cocochips.jpeg" alt="Flexible Specs" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-sliders"></i> Flexible Specifications</h3>
+                <p>We blend coco peat, coco chips, and coco fiber ratios in custom percentages depending on your botanical crops. We deliver washed, unwashed, or calcium-buffered substrates to match specific plant rooting parameters.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 08 -->
+            <div class="commitment-panel" id="panel-q8">
+              <div class="panel-img-holder">
+                <img src="assets/images/Process/inspection3.jpeg" alt="Partnerships" onerror="this.src='assets/images/demo2.jpg'">
+              </div>
+              <div class="panel-content">
+                <h3><i class="bi bi-handshake"></i> Long-Term Partnerships</h3>
+                <p>We believe in building sustainable business relationships. We support verified distributors with flexible credit policies, supply chain continuity guarantees, and direct technical consultations for wholesale growers.</p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -2763,7 +3876,7 @@
 
 
   <!-- SECTION 8 — CONTACT -->
-  <section class="contact-section section">
+  <section id="contact" class="contact-section section">
     <div class="container">
       <div class="text-center mb-5">
         <span class="eyebrow">Reach Out</span>
@@ -2970,9 +4083,213 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Product details database for Quick View modal
+    const productDetailsData = {
+      fibre: {
+        name: "Coir Fibre",
+        code: "AC-01",
+        tag: "Coir Fibre",
+        desc: "Premium natural coir fibre extracted from matured coconut husks. Processed using advanced cleaning and drying methods for superior quality. Widely used in mattresses, upholstery, geo textiles, ropes, brushes, and erosion control products.",
+        images: [
+          "assets/images/Products/coirfiberNew.jpeg",
+          "assets/images/Products/brownCoir.jpeg",
+          "assets/images/Products/whiteCoirFibre.jpeg",
+          "assets/images/Products/coirfiberNew2.jpeg",
+          "assets/images/Products/coirfiberNew3.jpeg",
+          "assets/images/Products/coirfiberNew4.jpeg",
+          "assets/images/Products/coirfiberNew5.jpeg"
+        ],
+        pills: ['High Tensile Strength', 'Eco-Friendly', 'Hydraulic Baled', 'Low Moisture', 'Export Certified'],
+        specs: [
+          ["Bale Size", "115 × 65 × 45 cm"],
+          ["Weight", "110 – 125 kg"],
+          ["Fibre Length", "5 – 25 cm"],
+          ["Moisture", "Below 15%"],
+          ["Impurities", "Below 3%"],
+          ["Colour", "Golden Brown"],
+          ["Loadability", "180 – 200 Bales / 40ft HC"]
+        ]
+      },
+      peat: {
+        name: "Coco Peat 5 KG Block",
+        code: "AC-02",
+        tag: "Coco Peat Block",
+        desc: "Premium quality coco peat blocks suitable for horticulture, hydroponics, nurseries, and greenhouse cultivation. Available in low EC, washed, unwashed, buffered, and customized grades per buyer requirements.",
+        images: [
+          "assets/images/Products/cocopeatblock631.jpeg",
+          "assets/images/Products/cocopeatblock632.jpeg",
+          "assets/images/Products/cocopeatblock633.jpeg",
+          "assets/images/Products/cocopeatblock635.jpeg",
+          "assets/images/Products/cocopeat_block.jpeg"
+        ],
+        pills: ['Excellent Water Retention', 'High Air Porosity', 'Organic', 'Low EC', 'pH Balanced'],
+        specs: [
+          ["Block Size", "30 × 30 × 12 cm"],
+          ["Weight", "4.8 – 5 kg"],
+          ["Expansion", "70 – 75 Litres"],
+          ["EC Value", "Below 0.5 mS/cm"],
+          ["pH Value", "5.8 – 6.8"],
+          ["Moisture", "Below 15%"],
+          ["Compression", "5:1"]
+        ]
+      },
+      briquette: {
+        name: "Coco Peat Brick 650 Gms",
+        code: "AC-03",
+        tag: "Coco Briquettes",
+        desc: "Lightweight coco peat briquettes specially designed for home gardening, seed germination, nurseries, and horticulture. Easy to use and expand quickly after adding water.",
+        images: [
+          "assets/images/Products/bricks.jpeg",
+          "assets/images/Products/bricks2.jpeg",
+          "assets/images/Products/bricks3.jpeg"
+        ],
+        pills: ['Lightweight', '8–9 L Expansion', 'Root Penetration', 'Moisture Retention', 'Indoor & Outdoor'],
+        specs: [
+          ["Brick Size", "20 × 10 × 5 cm"],
+          ["Weight", "650 grams"],
+          ["Expansion", "8 – 9 Litres"],
+          ["EC Value", "Below 0.5 mS/cm"],
+          ["pH Value", "5.8 – 6.8"],
+          ["Moisture", "Below 15%"]
+        ]
+      },
+      growbag: {
+        name: "Coir Grow Bags & Open Tops",
+        code: "AC-04 / AC-05",
+        tag: "Grow Bags",
+        desc: "Premium grow bags and open-top prefill bags made from 100% coco peat and husk chips mixture, ideal for greenhouse cultivation of tomatoes, roses, capsicum, strawberries, and nursery applications. Drip irrigation compatible and reusable.",
+        images: [
+          "assets/images/Products/coirGrowBag.jpeg",
+          "assets/images/Products/coirGrowBag2.jpeg",
+          "assets/images/Products/openTopGrowBag.jpg",
+          "assets/images/Products/GB.jpeg",
+          "assets/images/Products/GBOT.jpeg",
+          "assets/images/Products/GBS.jpeg",
+          "assets/images/Products/GBSOT.jpeg"
+        ],
+        pills: ['High Air Porosity', 'Superior Drainage', 'Eco-Friendly', 'UV Stabilized Packing', 'Prefilled Ready'],
+        specs: [
+          ["Grow Bag Sizes", "100×20×18 / 100×20×15 cm"],
+          ["Open Top Sizes", "25×25×20 / 25×18×16 cm"],
+          ["Volumes", "36 L / 30 L / 12.5 L"],
+          ["Filling Mixture", "Coco Peat + Husk Chips"],
+          ["EC Value", "Below 0.5 mS/cm"],
+          ["pH Value", "5.8 – 6.8"],
+          ["UV Stabilizer", "3 Year Approved"]
+        ]
+      },
+      chips: {
+        name: "Coco Husk Chips",
+        code: "AC-06",
+        tag: "Husk Chips",
+        desc: "Superior quality coco husk chips processed from fresh coconut husks. Widely used in orchid cultivation, hydroponics, landscaping, reptile bedding, and horticulture applications.",
+        images: [
+          "assets/images/Products/cocochips.jpeg",
+          "assets/images/Products/cocoHuskChips.jpeg",
+          "assets/images/Products/cocoHuskChips2.jpeg"
+        ],
+        pills: ['Excellent Aeration', 'High Moisture Retention', 'Long-Lasting', '100% Natural', 'Orchid Ideal'],
+        specs: [
+          ["Chip Size", "1 – 3 cm"],
+          ["Moisture Content", "15% – 18%"],
+          ["EC Value", "Below 0.5 mS/cm"],
+          ["Packing Mode", "5 kg Blocks / 25 kg Loose Bags"],
+          ["Material", "100% Natural Coconut Husk"]
+        ]
+      },
+      coins: {
+        name: "Coco Coins & Discs",
+        code: "AC-07",
+        tag: "Coco Coins",
+        desc: "Premium compressed coco peat coins and discs designed for seed germination and nursery propagation. Expand quickly when water is added and provide an excellent growing environment for young plants.",
+        images: [
+          "assets/images/Products/cocoPeatCoin2.jpeg",
+          "assets/images/Products/cocoPeatCoin.jpeg",
+          "assets/images/Products/cocoPeatCoin3.jpeg",
+          "assets/images/Products/cocoPeatCoin4.jpeg"
+        ],
+        pills: ['Fast Water Absorption', 'Seed Germination', 'Lightweight', 'Eco-Friendly', 'Custom Sizes'],
+        specs: [
+          ["Diameter Range", "30 – 100 mm"],
+          ["Thickness", "8 – 20 mm"],
+          ["pH Value", "5.8 – 6.8"],
+          ["EC Value", "Below 0.5 mS/cm"],
+          ["Material", "100% Natural Coco Peat"]
+        ]
+      },
+      coconut: {
+        name: "Fresh Coconuts & Saplings",
+        code: "AC-08 to AC-11",
+        tag: "Fresh Coconuts",
+        desc: "Export quality semi husked, fully husked, and tender fresh coconuts sourced from selected farms in South Indian, along with healthy nursery-grown coconut seedlings suitable for commercial plantations and developments.",
+        images: [
+          "assets/images/Products/TenderCoconut.jpeg",
+          "assets/images/Products/TenderCoconut2.jpeg",
+          "assets/images/Products/fullyHuskedCoconut.jpeg",
+          "assets/images/Products/NurserySeedlings.jpeg",
+          "assets/images/Products/ageofSeedlings.jpeg",
+          "assets/images/Products/tallCoconut.jpeg"
+        ],
+        pills: ['Disease-Free', 'High Oil Yield', 'Naturally Sweet', 'Hygienically Harvested', 'Bulk Export'],
+        specs: [
+          ["Semi Husked Weight", "450 – 650 g"],
+          ["Fully Husked Weight", "500 – 700 g"],
+          ["Tender Coconut Weight", "800 g – 1.5 kg"],
+          ["Saplings Height", "2 – 4 ft healthy"],
+          ["Planting Variety", "Tall / Hybrid / Dwarf"],
+          ["Shelf Life", "45 – 60 Days"],
+          ["PP Bag Packing", "PP Bags / Mesh / Gunny Bags"]
+        ]
+      }
+    };
+
+    // Swap images function for thumbnails inside tab panes
+    window.swapProductImage = function (thumb) {
+      const parent = thumb.closest('.product-gallery-wrap');
+      const mainImg = parent.querySelector('.main-gallery-img');
+      mainImg.src = thumb.src;
+      parent.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    };
+
+    // Swap images function for thumbnails inside modal window
+    window.swapModalProductImage = function (thumb) {
+      const modalBody = thumb.closest('.modal-body-premium');
+      const mainImg = modalBody.querySelector('.modal-main-gallery-img');
+      mainImg.src = thumb.src;
+      modalBody.querySelectorAll('.modal-gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    };
+
     $(document).ready(function () {
       document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+      // Commitment Interactive Hub Dial Controls
+      $('.dial-btn').on('click mouseenter', function () {
+        const target = $(this).data('target');
+        $('.dial-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        $('.commitment-panel').removeClass('active');
+        $('#panel-' + target).addClass('active');
+
+        // Keep mobile select menu synchronized
+        $('.mobile-commitment-select').val(target);
+      });
+
+      // Mobile Select Dropdown Control
+      $('.mobile-commitment-select').on('change', function () {
+        const target = $(this).val();
+        
+        $('.commitment-panel').removeClass('active');
+        $('#panel-' + target).addClass('active');
+        
+        // Keep desktop dials synchronized
+        $('.dial-btn').removeClass('active');
+        $(`.dial-btn[data-target="${target}"]`).addClass('active');
+      });
+
+      // Product Tabs
       $('.ptab-btn').on('click', function () {
         var tab = $(this).data('tab');
         $('.ptab-btn').removeClass('active');
@@ -2981,6 +4298,83 @@
         $('#tab-' + tab).addClass('active');
       });
 
+      // Quick View Modal Population & Triggers
+      $('.view-details-btn').on('click', function () {
+        const prodKey = $(this).data('product');
+        const data = productDetailsData[prodKey];
+        if (!data) return;
+
+        $('#productModalTitle').text(data.name + ' - Technical Overview');
+        $('#productModalName').text(data.name);
+        $('#productModalCode').text(data.code);
+        $('#productModalTag').text(data.tag);
+        $('#productModalDesc').text(data.desc);
+
+        // Populate Main Image on Load
+        $('#modalProductMainImg').attr('src', data.images[0]);
+
+        // Populate Gallery Thumbnails inside Modal
+        let thumbsHtml = '';
+        data.images.forEach((img, idx) => {
+          thumbsHtml += `
+            <img src="${img}" alt="${data.name}" class="modal-gallery-thumb ${idx === 0 ? 'active' : ''}" onclick="swapModalProductImage(this)">
+          `;
+        });
+        $('#modalProductThumbList').html(thumbsHtml);
+
+        // Populate Feature Pills
+        let pillsHtml = '';
+        data.pills.forEach(pill => {
+          pillsHtml += `
+            <span class="modal-pill-item"><i class="bi bi-patch-check-fill"></i> ${pill}</span>
+          `;
+        });
+        $('#productModalPillsList').html(pillsHtml);
+
+        // Populate Key-Value Specifications List
+        let specsHtml = '';
+        data.specs.forEach(spec => {
+          specsHtml += `
+            <div class="modal-spec-row">
+              <span class="modal-spec-label">${spec[0]}</span>
+              <span class="modal-spec-value">${spec[1]}</span>
+            </div>
+          `;
+        });
+        $('#productModalSpecsList').html(specsHtml);
+
+        // Set Inquire button attribute
+        $('#modalInquireBtn').attr('data-product-name', data.name);
+
+        // Show Modal
+        const modal = new bootstrap.Modal(document.getElementById('productQuickViewModal'));
+        modal.show();
+      });
+
+      // Handle Inquire Button in Modal
+      $('#modalInquireBtn').on('click', function () {
+        const productName = $(this).attr('data-product-name');
+
+        // Hide Modal
+        const modalEl = document.getElementById('productQuickViewModal');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) {
+          modal.hide();
+        }
+
+        // Fill Form Message field
+        const messageInput = $('textarea[name="message"]');
+        if (messageInput.length > 0) {
+          messageInput.val("Hello Anuradha Coirs, I would like to inquire about pricing, specifications, and shipping details for: " + productName + ". Thank you.");
+        }
+
+        // Smooth Scroll to Contact
+        $('html, body').animate({
+          scrollTop: $('#contact').offset().top - 80
+        }, 800);
+      });
+
+      // Gallery Filter Isotope
       var $grid = $('.gallery-grid').isotope({ itemSelector: '.item', layoutMode: 'fitRows' });
       $('.gf-btn').on('click', function () {
         $('.gf-btn').removeClass('active');
@@ -2988,13 +4382,13 @@
         $grid.isotope({ filter: $(this).data('filter') });
       });
 
+      // Magnific Popup
       $('.popup-btn').magnificPopup({
         type: 'image',
         gallery: { enabled: true },
         mainClass: 'mfp-fade'
       });
     });
-
   </script>
   <script>
     function googleTranslateElementInit() {
