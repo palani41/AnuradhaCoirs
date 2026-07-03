@@ -1776,6 +1776,25 @@
             letter-spacing: .3px;
         }
 
+        .cart-unit-select {
+            border: 1.5px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            font-family: var(--fb);
+            font-weight: 600;
+            color: var(--text-mid);
+            outline: none;
+            background: #fff;
+            cursor: pointer;
+            transition: var(--tr);
+            height: 24px;
+        }
+        .cart-unit-select:hover, .cart-unit-select:focus {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
         /* Qty selector in detail modal */
         .dm-qty-row {
             display: flex;
@@ -3381,10 +3400,7 @@
                 <span>Total Items</span>
                 <strong id="cartTotalItems">0</strong>
             </div>
-            <div class="cart-summary-row">
-                <span>Total Qty</span>
-                <strong id="cartTotalQty">0</strong>
-            </div>
+
             <div class="cart-total-row">
                 <div>
                     <div class="cart-total-label">Enquiry Summary</div>
@@ -4040,9 +4056,9 @@
         /* ══════════════════════════════════════
            CART STATE
         ══════════════════════════════════════ */
-        let cart = []; // [{id, qty}]
+        let cart = []; // [{id, unit, amount}]
 
-        function cartCount() { return cart.reduce((s, i) => s + i.qty, 0); }
+        function cartCount() { return cart.length; }
         function cartItemCount() { return cart.length; }
 
         function updateCartBadge() {
@@ -4057,13 +4073,13 @@
             }
         }
 
-        function addToCart(id, qty = 1) {
+        function addToCart(id, amount = 100) {
             const existing = cart.find(i => i.id === id);
             if (existing) {
-                existing.qty += qty;
+                existing.amount += amount;
                 showToast('Quantity updated in cart', 'success', 'bi-cart-check-fill');
             } else {
-                cart.push({ id, qty });
+                cart.push({ id, unit: 'Pieces', amount: amount });
                 showToast('Added to enquiry cart!', 'success', 'bi-cart-plus-fill');
             }
             // Badge pop animation
@@ -4082,10 +4098,44 @@
             showToast('Item removed from cart', 'info', 'bi-trash');
         }
 
-        function updateQty(id, delta) {
+        function changeCartUnit(id, unit) {
             const item = cart.find(i => i.id === id);
             if (!item) return;
-            item.qty = Math.max(1, item.qty + delta);
+            item.unit = unit;
+            
+            // Set reasonable default amounts based on selected unit
+            if (unit === 'Ton') {
+                item.amount = 10;
+            } else if (unit === 'Kg') {
+                item.amount = 500;
+            } else {
+                item.amount = 100;
+            }
+            renderCartItems();
+            updateCartBadge();
+        }
+
+        function updateCartAmount(id, deltaSign) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            let delta = 1;
+            if (item.unit === 'Kg') {
+                delta = 50;
+            } else if (item.unit === 'Pieces') {
+                delta = 10;
+            }
+            item.amount = Math.max(1, item.amount + (deltaSign * delta));
+            renderCartItems();
+            updateCartBadge();
+        }
+
+        function setCartAmount(id, val) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            const parsed = parseInt(val);
+            if (!isNaN(parsed) && parsed > 0) {
+                item.amount = parsed;
+            }
             renderCartItems();
             updateCartBadge();
         }
@@ -4116,13 +4166,18 @@
         <div class="cart-item-cat">${esc(p.category)}</div>
         <div class="cart-item-name">${esc(p.name)}</div>
         <div class="cart-item-code">${esc(p.code)}</div>
-        <div class="cart-item-actions">
-          <div class="cart-qty-ctrl">
-            <button onclick="updateQty('${p.id}',-1)"><i class="bi bi-dash"></i></button>
-            <span>${item.qty}</span>
-            <button onclick="updateQty('${p.id}',1)"><i class="bi bi-plus"></i></button>
+        <div class="cart-item-actions" style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">
+          <select class="cart-unit-select" onchange="changeCartUnit('${p.id}', this.value)">
+            <option value="Pieces" ${item.unit === 'Pieces' ? 'selected' : ''}>Pieces</option>
+            <option value="Kg" ${item.unit === 'Kg' ? 'selected' : ''}>Kg</option>
+            <option value="Ton" ${item.unit === 'Ton' ? 'selected' : ''}>Ton</option>
+          </select>
+          <div class="cart-qty-ctrl" style="display:flex;align-items:center;border:1.5px solid var(--border);border-radius:4px;overflow:hidden;">
+            <button onclick="updateCartAmount('${p.id}',-1)" style="width:24px;height:24px;border:none;background:var(--cream2);cursor:pointer;display:flex;align-items:center;justify-content:center;"><i class="bi bi-dash"></i></button>
+            <input type="number" value="${item.amount}" onchange="setCartAmount('${p.id}',this.value)" style="width:55px;text-align:center;border:none;outline:none;font-family:var(--fb);font-weight:700;font-size:.85rem;background:#fff;height:24px;padding:0;">
+            <button onclick="updateCartAmount('${p.id}',1)" style="width:24px;height:24px;border:none;background:var(--cream2);cursor:pointer;display:flex;align-items:center;justify-content:center;"><i class="bi bi-plus"></i></button>
           </div>
-          <button class="cart-item-remove" onclick="removeFromCart('${p.id}')" title="Remove"><i class="bi bi-trash"></i></button>
+          <button class="cart-item-remove" onclick="removeFromCart('${p.id}')" title="Remove" style="margin-left:auto;background:none;border:none;color:var(--text-muted);cursor:pointer;transition:var(--tr);"><i class="bi bi-trash"></i></button>
         </div>
       </div>
     </div>`;
@@ -4132,7 +4187,6 @@
 
             // Update summary rows
             document.getElementById('cartTotalItems').textContent = cartItemCount();
-            document.getElementById('cartTotalQty').textContent = cartCount();
         }
 
         function openCart() {
@@ -4157,7 +4211,7 @@
             if (cart.length === 0) { showToast('Cart is empty', 'info', 'bi-cart-x'); return; }
             const lines = cart.map(item => {
                 const p = SEED.find(x => x.id === item.id);
-                return `• ${p.name} (${p.code}) — Qty: ${item.qty}`;
+                return `• ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
             }).join('%0A');
             const msg = `Hello! I'm interested in the following products from Anuradha Coirs & Fibers:%0A%0A${lines}%0A%0APlease send me pricing and availability.`;
             window.open(`https://wa.me/919361315289?text=${msg}`, '_blank');
@@ -4199,14 +4253,13 @@
       <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
       <div class="os-item-info">
         <div class="os-item-name">${esc(p.name)}</div>
-        <div class="os-item-qty">Code: ${esc(p.code)} &nbsp;|&nbsp; Qty: ${item.qty}</div>
+        <div class="os-item-qty">Code: ${esc(p.code)} &nbsp;|&nbsp; ${item.amount} ${item.unit}</div>
       </div>
     </div>`;
             });
 
             totalsEl.innerHTML = `
     <div class="os-total-row"><span>Total Products</span><span>${cartItemCount()}</span></div>
-    <div class="os-total-row"><span>Total Quantity</span><span>${cartCount()}</span></div>
     <div class="os-total-row grand"><span>Enquiry Status</span><span style="color:var(--green);font-size:.82rem;">Ready to Send</span></div>
     <p style="font-size:.7rem;color:var(--text-light);margin-top:10px;line-height:1.5;">Pricing will be quoted after we review your requirements. All exports are subject to current availability and shipping terms.</p>
   `;
@@ -4253,7 +4306,7 @@
             let productLines = '';
             cart.forEach((item, idx) => {
                 const p = SEED.find(x => x.id === item.id);
-                if (p) productLines += `\n${idx + 1}. ${p.name} (${p.code}) — Qty: ${item.qty}`;
+                if (p) productLines += `\n${idx + 1}. ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
             });
 
             const msg = `🌿 *NEW PRODUCT ENQUIRY — ANURADHA COIRS & FIBERS*\n\n`
@@ -4267,8 +4320,7 @@
                 + `${address}, ${city}, ${state} ${zip}\n`
                 + `Country: ${country}\n\n`
                 + `🛒 *Ordered Products:*${productLines}\n\n`
-                + `📦 *Total Products:* ${cartItemCount()}\n`
-                + `📊 *Total Quantity:* ${cartCount()}\n\n`
+                + `📦 *Total Products:* ${cartItemCount()}\n\n`
                 + (notes ? `📝 *Notes:* ${notes}\n\n` : '')
                 + `Please confirm availability and share pricing. Thank you!`;
 
@@ -4412,7 +4464,7 @@
       <img src="${esc(img)}" alt="${esc(p.name)}" class="pc-img" loading="lazy" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
       <div class="pc-overlay">
         <button class="pc-qv btn-qv" data-id="${esc(p.id)}" onclick="event.stopPropagation();openDetail('${esc(p.id)}')"><i class="bi bi-eye me-1"></i>Quick View</button>
-        <button class="pc-add-cart" data-id="${esc(p.id)}" onclick="event.stopPropagation();addToCart('${esc(p.id)}',1)"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+        <button class="pc-add-cart" data-id="${esc(p.id)}" onclick="event.stopPropagation();addToCart('${esc(p.id)}',100);setTimeout(openCart,400);"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
       </div>
       ${galleryNav}
       ${badge}${codeBadge}
@@ -4427,7 +4479,7 @@
       <div class="pc-desc">${esc(p.description)}</div>
       <div class="pc-pills">${pills}</div>
       <div class="pc-actions">
-        <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('${esc(p.id)}',1)"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+        <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('${esc(p.id)}',100);setTimeout(openCart,400);"><i class="bi bi-cart-plus"></i> Add to Cart</button>
         <button class="btn-details btn-qv" data-id="${esc(p.id)}" onclick="event.stopPropagation();openDetail('${esc(p.id)}')"><i class="bi bi-eye-fill"></i></button>
         <a href="contact.html?product=${encodeURIComponent(p.name)}" class="btn-quote-sm" onclick="event.stopPropagation()"><i class="bi bi-send-fill"></i></a>
       </div>
@@ -4587,7 +4639,7 @@
           <span class="dm-qty-label">Quantity</span>
           <div class="dm-qty-ctrl">
             <button onclick="detQtyChange(-1)"><i class="bi bi-dash"></i></button>
-            <input type="number" id="detQtyInput" value="1" min="1" max="9999">
+            <input type="number" id="detQtyInput" value="100" min="1" max="9999">
             <button onclick="detQtyChange(1)"><i class="bi bi-plus"></i></button>
           </div>
         </div>
@@ -4605,10 +4657,10 @@
         function detQtyChange(d) {
             const el = document.getElementById('detQtyInput');
             if (!el) return;
-            el.value = Math.max(1, parseInt(el.value || 1) + d);
+            el.value = Math.max(1, parseInt(el.value || 100) + d * 10);
         }
         function addToCartFromDetail(id) {
-            const qty = parseInt(document.getElementById('detQtyInput')?.value || 1);
+            const qty = parseInt(document.getElementById('detQtyInput')?.value || 100);
             addToCart(id, qty);
             // Close modal
             const modalEl = document.getElementById('detModal');

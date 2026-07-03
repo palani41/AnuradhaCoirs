@@ -991,6 +991,13 @@
       transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
+    .mfg-img-container .carousel,
+    .mfg-img-container .carousel-inner,
+    .mfg-img-container .carousel-item {
+      height: 100%;
+      width: 100%;
+    }
+
     .mfg-img-wrap:hover .mfg-img-container {
       border-radius: 70% 0 70% 0 / 70% 0 70% 0;
       transform: translateY(-8px);
@@ -2381,7 +2388,41 @@
         <div class="col-12 col-lg-5">
           <div class="mfg-img-wrap">
             <div class="mfg-img-container">
-              <img src="assets/images/Products/coir_drying_yard.jpeg" alt="Anuradha Coirs Drying Yard">
+              <!-- Carousel describing the whole manufacturing process -->
+              <div id="mfgProcessCarousel" class="carousel slide carousel-fade h-100 w-100" data-bs-ride="carousel" data-bs-interval="3500">
+                <div class="carousel-inner h-100 w-100">
+                  <div class="carousel-item active h-100 w-100">
+                    <img src="assets/images/Process/huskCollection.jpeg" alt="Coconut Husk Collection">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/huskSeparation.jpeg" alt="Husk Separation & Cleaning">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/fibreExtraction.jpeg" alt="Fibre Extraction">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/drying.jpeg" alt="Natural Drying">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/serving2.jpeg" alt="Sieving & Screening">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/washingBuffering.jpeg" alt="Washing & Buffering">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/blockMaking.jpeg" alt="Compression & Block Making">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/inspection.jpeg" alt="Quality Inspection">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Products/coirGrowBag.jpeg" alt="Packing & Labeling">
+                  </div>
+                  <div class="carousel-item h-100 w-100">
+                    <img src="assets/images/Process/loading.jpeg" alt="Container Loading & Export">
+                  </div>
+                </div>
+              </div>
               <div class="mfg-img-overlay">
                 <a href="process.html" class="mfg-play-btn" style="text-decoration: none;">
                   <i class="bi bi-play-circle-fill"></i>
