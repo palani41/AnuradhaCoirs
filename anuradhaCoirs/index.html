@@ -953,6 +953,78 @@
       padding: 0 !important;
     }
 
+    /* MODAL LANDSCAPE NON-SCROLLABLE DESIGN */
+    @media (min-width: 768px) {
+      #productQuickViewModal .modal-dialog {
+        max-width: 1080px;
+        width: 90%;
+      }
+
+      .modal-content-premium {
+        height: 590px;
+        overflow: hidden;
+      }
+
+      .modal-body-premium {
+        height: calc(100% - 62px); /* Subtract header height to prevent cut-off at bottom */
+        overflow: hidden;
+      }
+      
+      .modal-body-premium > .row {
+        height: 100%;
+      }
+
+      .modal-body-premium > .row > div {
+        height: 100%;
+      }
+
+      .modal-gallery-side {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .modal-main-img-holder {
+        height: 350px;
+        margin-bottom: 12px;
+      }
+
+      .modal-details-side {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 32px 36px !important;
+      }
+
+      .modal-details-side > div:first-child {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 8px;
+        min-height: 0;
+      }
+      
+      /* Custom scrollbar for details pane content */
+      .modal-details-side > div:first-child::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      .modal-details-side > div:first-child::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      .modal-details-side > div:first-child::-webkit-scrollbar-thumb {
+        background: rgba(184, 151, 90, 0.25);
+        border-radius: 3px;
+      }
+
+      .modal-details-side > div:first-child::-webkit-scrollbar-thumb:hover {
+        background: var(--gold);
+      }
+    }
+
     /* Modal Left Column: Carousel & Gallery Thumbnails */
     .modal-gallery-side {
       background: var(--light-bg);
