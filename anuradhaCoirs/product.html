@@ -3114,6 +3114,13 @@
             .cart-drawer {
                 width: 100%;
             }
+
+            /* Prevent mobile navbar cart button stretching */
+            .nav-cart-btn {
+                align-self: flex-start;
+                margin: 12px !important;
+                width: fit-content;
+            }
         }
 
         @media(max-width:767px) {
@@ -3237,6 +3244,28 @@
 
             .order-form-row.thirds {
                 grid-template-columns: 1fr;
+            }
+
+            /* Circular action buttons on product card mobile overlay */
+            .pc-overlay {
+                background: linear-gradient(to top, rgba(3, 47, 47, 0.45) 0%, transparent 80%);
+            }
+            .pc-qv,
+            .pc-add-cart {
+                opacity: 1;
+                transform: translateY(0);
+                padding: 0;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .pc-qv i,
+            .pc-add-cart i {
+                margin: 0 !important;
+                font-size: 1.1rem;
             }
         }
 
@@ -4464,8 +4493,8 @@
     <div class="pc-img-wrap">
       <img src="${esc(img)}" alt="${esc(p.name)}" class="pc-img" loading="lazy" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
       <div class="pc-overlay">
-        <button class="pc-qv btn-qv" data-id="${esc(p.id)}" onclick="event.stopPropagation();openDetail('${esc(p.id)}')"><i class="bi bi-eye me-1"></i>Quick View</button>
-        <button class="pc-add-cart" data-id="${esc(p.id)}" onclick="event.stopPropagation();addToCart('${esc(p.id)}',100);setTimeout(openCart,400);"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+        <button class="pc-qv btn-qv" data-id="${esc(p.id)}" onclick="event.stopPropagation();openDetail('${esc(p.id)}')"><i class="bi bi-eye"></i><span class="d-none d-sm-inline ms-1">Quick View</span></button>
+        <button class="pc-add-cart" data-id="${esc(p.id)}" onclick="event.stopPropagation();addToCart('${esc(p.id)}',100);setTimeout(openCart,400);"><i class="bi bi-cart-plus"></i><span class="d-none d-sm-inline ms-1">Add to Cart</span></button>
       </div>
       ${galleryNav}
       ${badge}${codeBadge}
