@@ -1,0 +1,206 @@
+/* CUSTOM GOOGLE TRANSLATE DROPDOWN STYLE */
+
+.custom-translate-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  vertical-align: middle;
+}
+
+.custom-translate-btn {
+  background: #ffffff;
+  border: 1px solid rgba(3, 47, 47, 0.18);
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #032f2f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-width: 145px;
+  justify-content: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.custom-translate-btn:hover {
+  background: #f2f4f2;
+  border-color: #032f2f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(3, 47, 47, 0.08);
+}
+
+.custom-translate-btn img.btn-flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.custom-translate-btn .chevron-icon {
+  margin-left: auto;
+  font-size: 10px;
+  transition: transform 0.3s;
+  color: #032f2f;
+}
+
+.custom-translate-dropdown.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.custom-translate-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #ffffff;
+  border: 1px solid rgba(3, 47, 47, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(3, 47, 47, 0.12);
+  width: 250px;
+  max-height: 380px;
+  display: none;
+  flex-direction: column;
+  z-index: 1050;
+  overflow: hidden;
+  animation: translateSlideIn 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes translateSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-translate-menu.show {
+  display: flex;
+}
+
+.custom-translate-search-wrap {
+  padding: 12px;
+  border-bottom: 1px solid rgba(3, 47, 47, 0.05);
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 2;
+}
+
+.custom-translate-search {
+  width: 100%;
+  padding: 8px 12px 8px 32px;
+  font-size: 12px;
+  border: 1px solid rgba(3, 47, 47, 0.15);
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23032f2f' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+}
+
+.custom-translate-search:focus {
+  border-color: #032f2f;
+  box-shadow: 0 0 0 3px rgba(3, 47, 47, 0.08);
+}
+
+.custom-translate-list {
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Custom scrollbar for dropdown list */
+.custom-translate-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-translate-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-translate-list::-webkit-scrollbar-thumb {
+  background: rgba(3, 47, 47, 0.15);
+  border-radius: 4px;
+}
+
+.custom-translate-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(3, 47, 47, 0.3);
+}
+
+.custom-translate-list li {
+  padding: 8px 16px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.custom-translate-list li:hover {
+  background: rgba(3, 47, 47, 0.06);
+  color: #032f2f;
+  padding-left: 18px;
+}
+
+.custom-translate-list li.active {
+  background: rgba(3, 47, 47, 0.1);
+  color: #032f2f;
+  font-weight: 600;
+}
+
+.custom-translate-list li img.list-flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Hide default Google Translate widgets completely */
+#google_translate_element,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-menu-value {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Responsive adjustment for collapsed mobile navigation menu */
+@media (max-width: 991.98px) {
+  .custom-translate-dropdown {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .custom-translate-btn {
+    width: 100%;
+    min-width: 100%;
+  }
+  .custom-translate-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 4px;
+    box-shadow: 0 4px 15px rgba(3, 47, 47, 0.08);
+  }
+}

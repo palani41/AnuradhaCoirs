@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Magnific Popup -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+  <!-- Custom Translate Dropdown Styling -->
+  <link rel="stylesheet" href="assets/translate.css">
   <!-- jQuery + Isotope + Magnific -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
@@ -338,89 +340,200 @@
       font-weight: 600;
     }
 
-    /* HERO */
+    /* ===================================================
+       HERO — MODERN ANIMATED REDESIGN
+    =================================================== */
+    .hero-modern {
+      position: relative;
+      overflow: hidden;
+      background: var(--forest);
+    }
+
     #heroCarousel {
-      height: 88vh;
-      min-height: 520px;
+      height: 92vh;
+      min-height: 560px;
     }
 
     .carousel-item {
-      height: 88vh;
-      min-height: 520px;
+      height: 92vh;
+      min-height: 560px;
       position: relative;
+      overflow: hidden;
     }
 
-    .carousel-item img {
+    /* Ken Burns slow-zoom wrapper */
+    .kb-zoom {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .kb-zoom img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: none;
       display: block;
+      transform: scale(1.06);
+      animation: kenBurns 9s ease-in-out infinite alternate;
+      animation-play-state: paused;
     }
 
+    .carousel-item.active .kb-zoom img {
+      animation-play-state: running;
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1.06) translate(0, 0);
+      }
+
+      100% {
+        transform: scale(1.16) translate(-1.5%, -1%);
+      }
+    }
+
+    /* Layered readability overlay */
     .carousel-overlay {
       position: absolute;
       inset: 0;
-      background: none;
+      z-index: 1;
+      /* background:
+        linear-gradient(180deg, rgba(2, 20, 20, 0.55) 0%, rgba(2, 20, 20, 0.25) 32%, rgba(2, 20, 20, 0.7) 100%),
+        radial-gradient(ellipse 65% 55% at 50% 48%, rgba(3, 47, 47, 0.55) 0%, rgba(3, 47, 47, 0.15) 55%, rgba(3, 47, 47, 0) 100%); */
+    }
+
+    /* subtle animated grain/texture sweep for depth */
+    .hero-sheen {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 40%, rgba(212, 184, 122, 0.08) 50%, transparent 60%);
+      background-size: 250% 250%;
+      animation: sheenSweep 10s ease-in-out infinite;
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes sheenSweep {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      50% {
+        background-position: 100% 100%;
+      }
+
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
     .hero-content {
       position: absolute;
-      top: 50%;
+      top: 48%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      width: 90%;
-      max-width: 780px;
-      padding: 0 20px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      width: 92%;
+      max-width: 840px;
+      padding: 40px 30px;
+      z-index: 3;
+      background: rgba(3, 20, 20, 0.30);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-eyebrow-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.15s;
+    }
+
+    .hero-eyebrow-ring {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(212, 184, 122, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spinSlow 9s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .hero-eyebrow-ring i {
+      font-size: 0.7rem;
+      color: var(--gold-lt);
+    }
+
+    @keyframes spinSlow {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hero-eyebrow {
       font-family: var(--font-body);
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold-lt);
-      display: block;
-      margin-bottom: 16px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.2s;
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
     }
 
     .hero-title {
       font-family: var(--font-head);
       font-size: clamp(2rem, 5vw, 4.2rem);
-      font-weight: 600;
-      color: #fff;
+      font-weight: 700;
+      color: #ffffff;
       line-height: 1.15;
       margin-bottom: 20px;
       opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.45s;
+      animation: fadeUp 0.8s ease forwards 0.35s;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9), 0 1px 22px rgba(0, 0, 0, 0.7);
     }
 
     .hero-title em {
       font-style: italic;
-      color: var(--gold-lt);
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, #fff0d2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shimmerText 4s linear infinite;
+    }
+
+    @keyframes shimmerText {
+      to {
+        background-position: 200% center;
+      }
     }
 
     .hero-sub {
       font-family: var(--font-acc);
-      font-size: clamp(0.95rem, 2vw, 1.2rem);
-      color: rgba(255, 255, 255, 0.82);
-      margin-bottom: 36px;
+      font-size: clamp(0.95rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.96);
+      margin-bottom: 34px;
       opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.65s;
+      animation: fadeUp 0.8s ease forwards 0.55s;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
     }
 
     .hero-btns {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
       opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.85s;
+      animation: fadeUp 0.8s ease forwards 0.75s;
     }
 
     .hero-btns .btn-primary-coir,
@@ -432,7 +545,7 @@
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(24px);
       }
 
       to {
@@ -441,6 +554,79 @@
       }
     }
 
+    /* Top progress track — replaces classic bootstrap dots */
+    .hero-progress-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 5;
+      display: flex;
+    }
+
+    .hero-progress-seg {
+      flex: 1;
+      height: 100%;
+      margin-right: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .hero-progress-seg:last-child {
+      margin-right: 0;
+    }
+
+    .hero-progress-seg .fill {
+      position: absolute;
+      inset: 0;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+    }
+
+    .hero-progress-seg.done .fill {
+      width: 100%;
+    }
+
+    .hero-progress-seg.filling .fill {
+      width: 100%;
+      transition: width linear;
+    }
+
+    /* Slide number pills, bottom-right */
+    .hero-slide-nums {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+    }
+
+    .hero-slide-nums .cur {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .hero-slide-nums .sep {
+      width: 26px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-slide-nums .tot {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* Redesigned prev/next controls */
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
       display: none !important;
@@ -448,36 +634,185 @@
 
     .carousel-control-prev,
     .carousel-control-next {
-      width: 36px;
-      height: 36px;
+      width: 52px;
+      height: 52px;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
       border-radius: 50%;
-      margin: 0 6px;
-      opacity: 0.8;
+      margin: 0 24px;
+      opacity: 1;
+      z-index: 5;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .carousel-control-prev:hover,
     .carousel-control-next:hover {
       background: var(--gold);
-      opacity: 1;
+      border-color: var(--gold);
+      transform: translateY(-50%) scale(1.08);
     }
 
-    .carousel-indicators button {
-      width: 8px;
+    /* Floating glass stat chips */
+    .hero-float-chips {
+      position: absolute;
+      left: 32px;
+      bottom: 34px;
+      z-index: 5;
+      gap: 14px;
+    }
+
+    .hero-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      padding: 12px 16px;
+      animation: chipFloat 5s ease-in-out infinite;
+    }
+
+    .hero-chip:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .hero-chip:nth-child(3) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes chipFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    .hero-chip i {
+      font-size: 1.15rem;
+      color: var(--gold-lt);
+    }
+
+    .hero-chip strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-chip span {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 3px;
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 26px;
+      transform: translateX(-50%);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .scroll-cue:hover {
+      color: #fff;
+    }
+
+    .scroll-cue .mouse {
+      width: 24px;
+      height: 38px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 14px;
+      position: relative;
+    }
+
+    .scroll-cue .mouse::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      width: 4px;
       height: 8px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255, 255, 255, 0.4);
-      transition: all 0.3s;
+      background: var(--gold-lt);
+      border-radius: 2px;
+      transform: translateX(-50%);
+      animation: scrollDot 1.8s ease-in-out infinite;
     }
 
-    .carousel-indicators button.active {
-      background: var(--gold);
-      width: 26px;
-      border-radius: 4px;
+    @keyframes scrollDot {
+      0% {
+        opacity: 1;
+        top: 6px;
+      }
+
+      70% {
+        opacity: 0;
+        top: 20px;
+      }
+
+      100% {
+        opacity: 0;
+        top: 6px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-float-chips {
+        display: none !important;
+      }
+
+      .hero-slide-nums {
+        right: 18px;
+        bottom: 18px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .hero-content {
+        padding: 26px 20px;
+        border-radius: 14px;
+      }
+
+      .hero-slide-nums {
+        display: none;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        display: none;
+      }
+
+      .scroll-cue {
+        bottom: 16px;
+      }
     }
 
     /* STATS STRIP */
@@ -520,56 +855,222 @@
       background: #fff;
     }
 
-    .about-img-wrap {
+    /* HIGH-END MODERN COLLAGE DESIGN FOR WELCOME SECTION */
+    .about-collage-container {
       position: relative;
-    }
-
-    .about-img-wrap img {
+      height: 520px;
       width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
     }
 
-    .about-img-wrap:hover img {
-      filter: brightness(0.95);
-    }
-
-    .about-badge {
+    /* Abstract Dot Matrix Grid */
+    .collage-dots-grid {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
+      top: -10px;
+      left: -10px;
       width: 140px;
       height: 140px;
+      background-image: radial-gradient(var(--gold-lt) 2px, transparent 2px);
+      background-size: 16px 16px;
+      opacity: 0.35;
+      z-index: -3;
+      animation: dotsFloat 8s ease-in-out infinite alternate;
+    }
+
+    /* Solid geometric frame backdrop */
+    .collage-frame-bg {
+      position: absolute;
+      inset: 20px;
+      border: 2px dashed rgba(184, 151, 90, 0.3);
+      border-radius: 24px;
+      z-index: -2;
+      pointer-events: none;
+      animation: rotateFrame 40s linear infinite;
+    }
+
+    /* Main Front Image Card */
+    .collage-card-main {
+      position: absolute;
+      width: 80%;
+      height: 420px;
+      left: 0;
+      top: 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 55px rgba(3, 47, 47, 0.22);
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .collage-card-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    /* Secondary Detail Image Card (Floating Right/Bottom) */
+    .collage-card-sub {
+      position: absolute;
+      width: 52%;
+      height: 220px;
+      right: -10px;
+      bottom: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      z-index: 3;
+      border: 4px solid #ffffff;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation: subFloat 6s ease-in-out infinite alternate;
+    }
+
+    .collage-card-sub img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Floating Year Badge */
+    .collage-trust-seal {
+      position: absolute;
+      left: -25px;
+      bottom: -15px;
+      width: 130px;
+      height: 130px;
+      z-index: 4;
+      animation: floatBadgeNew 5s ease-in-out infinite;
+    }
+
+    .collage-trust-inner {
+      width: 100%;
+      height: 100%;
       background: linear-gradient(135deg, var(--forest) 0%, var(--forest2) 100%);
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-      animation: slideUp 0.6s ease 0.3s both;
+      box-shadow: 0 12px 35px rgba(3, 47, 47, 0.35);
+      border: 2px solid var(--gold);
     }
 
-    .about-badge .big {
+    .collage-trust-inner .num {
       font-family: var(--font-head);
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--gold-lt);
       line-height: 1;
     }
 
-    .about-badge .small {
+    .collage-trust-inner .txt {
       font-family: var(--font-body);
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
+      color: #ffffff;
       margin-top: 4px;
       text-align: center;
       padding: 0 8px;
+    }
+
+    /* Rotating Text Circular Stamp (Top-Right) */
+    .collage-rotating-stamp {
+      position: absolute;
+      right: -25px;
+      top: -25px;
+      width: 110px;
+      height: 110px;
+      z-index: 4;
+      pointer-events: none;
+      animation: stampRotate 15s linear infinite;
+    }
+
+    .collage-rotating-stamp svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--gold);
+    }
+
+    /* Interactive Hover Effects */
+    .about-collage-container:hover .collage-card-main {
+      transform: translate(-10px, -10px) rotate(-1.5deg);
+      box-shadow: 0 35px 70px rgba(3, 47, 47, 0.28);
+    }
+
+    .about-collage-container:hover .collage-card-main img {
+      transform: scale(1.05);
+    }
+
+    .about-collage-container:hover .collage-card-sub {
+      transform: translate(15px, 15px) rotate(1.5deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Keyframes */
+    @keyframes stampRotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateFrame {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dotsFloat {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(10px, 5px);
+      }
+    }
+
+    @keyframes subFloat {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes floatBadgeNew {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-8px) scale(1.02);
+      }
+    }
+
+    @media (max-width: 991px) {
+      .about-collage-container {
+        height: 420px;
+        max-width: 460px;
+        margin: 0 auto;
+      }
+
+      .collage-card-main {
+        height: 340px;
+      }
+
+      .collage-card-sub {
+        height: 170px;
+      }
     }
 
     .about-section h1 {
@@ -966,15 +1467,16 @@
       }
 
       .modal-body-premium {
-        height: calc(100% - 62px); /* Subtract header height to prevent cut-off at bottom */
+        height: calc(100% - 62px);
+        /* Subtract header height to prevent cut-off at bottom */
         overflow: hidden;
       }
-      
-      .modal-body-premium > .row {
+
+      .modal-body-premium>.row {
         height: 100%;
       }
 
-      .modal-body-premium > .row > div {
+      .modal-body-premium>.row>div {
         height: 100%;
       }
 
@@ -999,28 +1501,28 @@
         padding: 32px 36px !important;
       }
 
-      .modal-details-side > div:first-child {
+      .modal-details-side>div:first-child {
         flex: 1;
         overflow-y: auto;
         padding-right: 8px;
         min-height: 0;
       }
-      
+
       /* Custom scrollbar for details pane content */
-      .modal-details-side > div:first-child::-webkit-scrollbar {
+      .modal-details-side>div:first-child::-webkit-scrollbar {
         width: 6px;
       }
-      
-      .modal-details-side > div:first-child::-webkit-scrollbar-track {
+
+      .modal-details-side>div:first-child::-webkit-scrollbar-track {
         background: transparent;
       }
-      
-      .modal-details-side > div:first-child::-webkit-scrollbar-thumb {
+
+      .modal-details-side>div:first-child::-webkit-scrollbar-thumb {
         background: rgba(184, 151, 90, 0.25);
         border-radius: 3px;
       }
 
-      .modal-details-side > div:first-child::-webkit-scrollbar-thumb:hover {
+      .modal-details-side>div:first-child::-webkit-scrollbar-thumb:hover {
         background: var(--gold);
       }
     }
@@ -1574,6 +2076,7 @@
         transform: translate(-20px, 40px) scale(0.9);
       }
     }
+
     /* COMMITMENT INTERACTIVE HUB */
     .commitment-hub-section {
       background: linear-gradient(180deg, #ffffff 0%, var(--cream2) 100%);
@@ -1754,7 +2257,7 @@
         margin-bottom: 20px;
         scrollbar-width: none;
       }
-      
+
       .commitment-dial-list::-webkit-scrollbar {
         display: none;
       }
@@ -2543,16 +3046,19 @@
         align-items: center;
         justify-content: space-between;
       }
+
       .main-nav .navbar-brand {
         display: flex;
         align-items: center;
         padding: 0;
         margin: 0;
       }
+
       .main-nav .navbar-brand img {
         height: 48px !important;
         width: auto;
       }
+
       .main-nav .navbar-toggler {
         padding: 8px !important;
         margin: 0 !important;
@@ -2604,8 +3110,8 @@
 
       #heroCarousel,
       .carousel-item {
-        height: 65vh;
-        min-height: 380px;
+        height: 72vh;
+        min-height: 420px;
       }
 
       .about-img-wrap img {
@@ -2712,11 +3218,6 @@
       .hero-btns .btn-ghost-coir {
         width: 220px;
         justify-content: center;
-      }
-
-      .carousel-control-prev,
-      .carousel-control-next {
-        display: none;
       }
 
       .about-img-wrap img {
@@ -2835,82 +3336,130 @@
   </div>
 
 
-  <!-- SECTION 1 — HERO CAROUSEL -->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+  <!-- SECTION 1 — HERO (MODERN ANIMATED REDESIGN) -->
+  <section class="hero-modern">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+
+      <!-- Top progress track (replaces classic dot indicators) -->
+      <div class="hero-progress-track" id="heroProgressTrack">
+        <div class="hero-progress-seg" data-bs-target="#heroCarousel" data-bs-slide-to="0"><span class="fill"></span>
+        </div>
+        <div class="hero-progress-seg" data-bs-target="#heroCarousel" data-bs-slide-to="1"><span class="fill"></span>
+        </div>
+        <div class="hero-progress-seg" data-bs-target="#heroCarousel" data-bs-slide-to="2"><span class="fill"></span>
+        </div>
+        <div class="hero-progress-seg" data-bs-target="#heroCarousel" data-bs-slide-to="3"><span class="fill"></span>
+        </div>
+      </div>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="kb-zoom"><img src="assets/images/head/HomePageimages.jpeg" alt="Premium Coir Products"></div>
+          <div class="carousel-overlay"></div>
+          <div class="hero-sheen"></div>
+          <div class="hero-content">
+            <span class="hero-eyebrow-wrap">
+              <span class="hero-eyebrow-ring"><i class="bi bi-star-fill"></i></span>
+              <span class="hero-eyebrow">South India — Trusted Manufacturer &amp; Exporter</span>
+            </span>
+            <h1 class="hero-title">Premium <em>Coir &amp; Coconut</em><br>Products for the World</h1>
+            <p class="hero-sub">From coco peat blocks to fresh coconuts — eco-friendly, export-quality products</p>
+            <div class="hero-btns">
+              <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> Explore
+                Products</a>
+              <a href="contact.html" class="btn-ghost-coir"><i class="bi bi-chat-dots"></i> Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="kb-zoom"><img src="assets/images/head/homePageNew.png" alt="Our Product Range"></div>
+          <div class="carousel-overlay"></div>
+          <div class="hero-sheen"></div>
+          <div class="hero-content">
+            <span class="hero-eyebrow-wrap">
+              <span class="hero-eyebrow-ring"><i class="bi bi-box-seam-fill"></i></span>
+              <span class="hero-eyebrow">Our Products</span>
+            </span>
+            <h1 class="hero-title">11 <em>Premium Products</em><br>Ready for Export</h1>
+            <p class="hero-sub">Coco peat blocks, grow bags, coir fibre, husk chips, tender coconuts &amp; more</p>
+            <div class="hero-btns">
+              <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> View Range</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="kb-zoom"><img src="assets/images/head/product2.jpg" alt="Global Export"></div>
+          <div class="carousel-overlay"></div>
+          <div class="hero-sheen"></div>
+          <div class="hero-content">
+            <span class="hero-eyebrow-wrap">
+              <span class="hero-eyebrow-ring"><i class="bi bi-globe-americas"></i></span>
+              <span class="hero-eyebrow">Global Export Support</span>
+            </span>
+            <h1 class="hero-title">Let's <em>Grow</em><br>Together</h1>
+            <p class="hero-sub">Serving importers, distributors &amp; wholesalers worldwide with reliable supply</p>
+            <div class="hero-btns">
+              <a href="contact.html" class="btn-primary-coir"><i class="bi bi-handshake"></i> Partner With Us</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="kb-zoom"><img src="assets/images/head/homePageNew2.png" alt="Our Values"></div>
+          <div class="carousel-overlay"></div>
+          <div class="hero-sheen"></div>
+          <div class="hero-content">
+            <span class="hero-eyebrow-wrap">
+              <span class="hero-eyebrow-ring"><i class="bi bi-leaf-fill"></i></span>
+              <span class="hero-eyebrow">Our Values</span>
+            </span>
+            <h1 class="hero-title">Sustainable. <em>Reliable.</em><br>Export Ready.</h1>
+            <p class="hero-sub">Eco-friendly processing, competitive pricing &amp; customized packaging for every market
+            </p>
+            <div class="hero-btns">
+              <a href="aboutcoir.html" class="btn-primary-coir"><i class="bi bi-info-circle"></i> About Coir</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <i class="bi bi-chevron-left" style="font-size:1.2rem;color:#fff;"></i>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <i class="bi bi-chevron-right" style="font-size:1.2rem;color:#fff;"></i>
+      </button>
+
+      <!-- Floating glass stat chips -->
+      <div class="hero-float-chips d-none d-lg-flex">
+        <div class="hero-chip"><i class="bi bi-box-seam"></i>
+          <div><strong>11+</strong><span>Products</span></div>
+        </div>
+        <div class="hero-chip"><i class="bi bi-globe-americas"></i>
+          <div><strong>50+</strong><span>Countries</span></div>
+        </div>
+        <div class="hero-chip"><i class="bi bi-award-fill"></i>
+          <div><strong>10+</strong><span>Years</span></div>
+        </div>
+      </div>
+
+      <!-- Slide counter -->
+      <!-- <div class="hero-slide-nums">
+        <span class="cur" id="heroCurSlide">01</span>
+        <span class="sep"></span>
+        <span class="tot">04</span>
+      </div> -->
+
     </div>
-    <div class="carousel-inner">
-
-      <div class="carousel-item active">
-        <img src="assets/images/head/HomePageimages.jpeg" alt="Premium Coir Products">
-        <div class="carousel-overlay"></div>
-        <div class="hero-content">
-          <span class="hero-eyebrow">South India — Trusted Manufacturer &amp; Exporter</span>
-          <h1 class="hero-title">Premium <em>Coir &amp; Coconut</em><br>Products for the World</h1>
-          <p class="hero-sub">From coco peat blocks to fresh coconuts — eco-friendly, export-quality products</p>
-          <div class="hero-btns">
-            <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> Explore Products</a>
-            <a href="contact.html" class="btn-ghost-coir"><i class="bi bi-chat-dots"></i> Get in Touch</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="assets/images/head/homePageNew.jpeg" alt="Our Product Range">
-        <div class="carousel-overlay"></div>
-        <div class="hero-content">
-          <span class="hero-eyebrow">Our Products</span>
-          <h1 class="hero-title">11 <em>Premium Products</em><br>Ready for Export</h1>
-          <p class="hero-sub">Coco peat blocks, grow bags, coir fibre, husk chips, tender coconuts &amp; more</p>
-          <div class="hero-btns">
-            <a href="product.html" class="btn-primary-coir"><i class="bi bi-grid-3x3-gap-fill"></i> View Range</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="assets/images/head/product2.jpg" alt="Global Export">
-        <div class="carousel-overlay"></div>
-        <div class="hero-content">
-          <span class="hero-eyebrow">Global Export Support</span>
-          <h1 class="hero-title">Let's <em>Grow</em><br>Together</h1>
-          <p class="hero-sub">Serving importers, distributors &amp; wholesalers worldwide with reliable supply</p>
-          <div class="hero-btns">
-            <a href="contact.html" class="btn-primary-coir"><i class="bi bi-handshake"></i> Partner With Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="assets/images/head/homePageNew2.jpeg" alt="Our Values">
-        <div class="carousel-overlay"></div>
-        <div class="hero-content">
-          <span class="hero-eyebrow">Our Values</span>
-          <h1 class="hero-title">Sustainable. <em>Reliable.</em><br>Export Ready.</h1>
-          <p class="hero-sub">Eco-friendly processing, competitive pricing &amp; customized packaging for every market
-          </p>
-          <div class="hero-btns">
-            <a href="aboutcoir.html" class="btn-primary-coir"><i class="bi bi-info-circle"></i> About Coir</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <i class="bi bi-chevron-left" style="font-size:1.1rem;color:#fff;"></i>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <i class="bi bi-chevron-right" style="font-size:1.1rem;color:#fff;"></i>
-    </button>
-  </div>
+  </section>
 
 
   <!-- STATS STRIP -->
-  <div class="stats-strip">
+  <!-- <div class="stats-strip">
     <div class="container">
       <div class="row g-4 align-items-center justify-content-center">
         <div class="col-6 col-md-auto stat-item">
@@ -2934,19 +3483,49 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- SECTION 2 — WHO WE ARE -->
-  <section class="about-section section">
+  <section class="about-section section" id="whoWeAre">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-12 col-lg-5">
-          <div class="about-img-wrap">
-            <img src="assets/images/head/homePageNew3.jpeg" alt="About Anuradha Coirs">
-            <div class="about-badge">
-              <span class="big">10+</span>
-              <span class="small">Years Trusted</span>
+          <div class="about-collage-container">
+            <!-- Decorative dot pattern backdrop -->
+            <div class="collage-dots-grid"></div>
+            <!-- Rotating outline frame -->
+            <div class="collage-frame-bg"></div>
+
+            <!-- Main image card -->
+            <div class="collage-card-main">
+              <img src="assets/images/head/homePageNew3.jpeg" alt="About Anuradha Coirs">
+            </div>
+
+            <!-- Secondary overlapping product detail card -->
+            <div class="collage-card-sub">
+              <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Coir Peat Buffering Detail"
+                onerror="this.src='assets/images/head/product2.jpg'">
+            </div>
+
+            <!-- Rotating circular seal badge -->
+            <div class="collage-rotating-stamp">
+              <svg viewBox="0 0 100 100">
+                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"></path>
+                <text font-family="var(--font-body)" font-size="7.2" font-weight="bold" letter-spacing="1">
+                  <textPath href="#circlePath">
+                    ★ ANURADHA COIRS ★ PREMIUM COIR EXPORTER
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+
+            <!-- Floating years trust seal -->
+            <div class="collage-trust-seal">
+              <div class="collage-trust-inner">
+                <span class="num">10+</span>
+                <span class="txt">Years Trusted</span>
+              </div>
             </div>
           </div>
         </div>
@@ -3006,7 +3585,7 @@
                 <h3 class="mvv-front-title">Our Mission</h3>
               </div>
               <div class="mvv-front-prompt">
-                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+                <span>Hover / Tap to learn more</span> <i class="bi bi-arrow-right"></i>
               </div>
             </div>
             <!-- Back Face -->
@@ -3034,7 +3613,7 @@
                 <h3 class="mvv-front-title">Our Values</h3>
               </div>
               <div class="mvv-front-prompt">
-                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+                <span>Hover / Tap to learn more</span> <i class="bi bi-arrow-right"></i>
               </div>
             </div>
             <!-- Back Face -->
@@ -3061,7 +3640,7 @@
                 <h3 class="mvv-front-title">Our Vision</h3>
               </div>
               <div class="mvv-front-prompt">
-                <span>Hover to learn more</span> <i class="bi bi-arrow-right"></i>
+                <span>Hover / Tap to learn more</span> <i class="bi bi-arrow-right"></i>
               </div>
             </div>
             <!-- Back Face -->
@@ -3539,20 +4118,22 @@
     <!-- Floating background glow elements -->
     <div class="whyus-bg-glow-1"></div>
     <div class="whyus-bg-glow-2"></div>
-    
+
     <div class="container">
       <div class="text-center mb-5" style="position: relative; z-index: 5;">
         <span class="eyebrow">Our Commitment</span>
         <h2 class="commitment-title">Sustainability &amp; Quality Combined</h2>
         <div class="heading-line center"></div>
       </div>
-      
+
       <div class="row g-4 align-items-stretch">
         <!-- Mobile Selector Dropdown (Visible only on mobile/tablet) -->
         <div class="col-12 d-lg-none">
           <div class="commitment-mobile-selector mb-3">
-            <label class="eyebrow d-block mb-2" style="font-size: 0.8rem; letter-spacing: 1px;">Select Commitment Pillar</label>
-            <select class="form-select mobile-commitment-select" style="font-family: var(--font-body); font-weight: 600; color: var(--forest); border: 1.5px solid rgba(184, 151, 90, 0.25); border-radius: 12px; padding: 14px; background-color: #ffffff; box-shadow: 0 4px 10px rgba(3, 47, 47, 0.02); outline: none;">
+            <label class="eyebrow d-block mb-2" style="font-size: 0.8rem; letter-spacing: 1px;">Select Commitment
+              Pillar</label>
+            <select class="form-select mobile-commitment-select"
+              style="font-family: var(--font-body); font-weight: 600; color: var(--forest); border: 1.5px solid rgba(184, 151, 90, 0.25); border-radius: 12px; padding: 14px; background-color: #ffffff; box-shadow: 0 4px 10px rgba(3, 47, 47, 0.02); outline: none;">
               <option value="q1">01 — Premium Export Quality</option>
               <option value="q2">02 — Competitive Pricing</option>
               <option value="q3">03 — Custom Packaging</option>
@@ -3568,84 +4149,90 @@
         <!-- Left Side: Interactive Dial Buttons list (Hidden on mobile/tablet) -->
         <div class="col-12 col-lg-5 d-none d-lg-flex">
           <div class="commitment-dial-list w-100">
-            
+
             <!-- Dial 01 -->
             <div class="dial-btn active" data-target="q1">
               <span class="dial-num">01</span>
               <span class="dial-btn-text">Premium Export Quality</span>
             </div>
-            
+
             <!-- Dial 02 -->
             <div class="dial-btn" data-target="q2">
               <span class="dial-num">02</span>
               <span class="dial-btn-text">Competitive Pricing</span>
             </div>
-            
+
             <!-- Dial 03 -->
             <div class="dial-btn" data-target="q3">
               <span class="dial-num">03</span>
               <span class="dial-btn-text">Custom Packaging</span>
             </div>
-            
+
             <!-- Dial 04 -->
             <div class="dial-btn" data-target="q4">
               <span class="dial-num">04</span>
               <span class="dial-btn-text">On-Time Delivery</span>
             </div>
-            
+
             <!-- Dial 05 -->
             <div class="dial-btn" data-target="q5">
               <span class="dial-num">05</span>
               <span class="dial-btn-text">Eco-Friendly Products</span>
             </div>
-            
+
             <!-- Dial 06 -->
             <div class="dial-btn" data-target="q6">
               <span class="dial-num">06</span>
               <span class="dial-btn-text">Global Export Support</span>
             </div>
-            
+
             <!-- Dial 07 -->
             <div class="dial-btn" data-target="q7">
               <span class="dial-num">07</span>
               <span class="dial-btn-text">Flexible Specifications</span>
             </div>
-            
+
             <!-- Dial 08 -->
             <div class="dial-btn" data-target="q8">
               <span class="dial-num">08</span>
               <span class="dial-btn-text">Long-Term Partnerships</span>
             </div>
-            
+
           </div>
         </div>
-        
+
         <!-- Right Side: Dynamic Interactive Display Card -->
         <div class="col-12 col-lg-7">
           <div class="commitment-display-box">
-            
+
             <!-- Panel 01 -->
             <div class="commitment-panel active" id="panel-q1">
               <div class="panel-img-holder">
-                <img src="assets/images/Process/inspection.jpeg" alt="Quality Standards" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Process/inspection.jpeg" alt="Quality Standards"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-patch-check-fill"></i> Premium Export Quality</h3>
-                <p>Every product batch passes rigorous laboratory quality checkups. We test for electrical conductivity (EC), moisture content, buffering standards, and expansion capacity to guarantee that every shipment meets premium international agricultural standards.</p>
+                <p>Every product batch passes rigorous laboratory quality checkups. We test for electrical conductivity
+                  (EC), moisture content, buffering standards, and expansion capacity to guarantee that every shipment
+                  meets premium international agricultural standards.</p>
               </div>
             </div>
-            
+
             <!-- Panel 02 -->
             <div class="commitment-panel" id="panel-q2">
               <div class="panel-img-holder">
-                <img src="assets/images/Process/blockMaking3.jpeg" alt="Pricing" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Process/blockMaking3.jpeg" alt="Pricing"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-currency-dollar"></i> Competitive Pricing</h3>
-                <p>Operating as a direct manufacturer with our own drying fields, processing machinery, and hydraulic balers allows us to bypass intermediaries. This direct supply chain passes structural cost savings straight to importers and nurseries worldwide.</p>
+                <p>Operating as a direct manufacturer with our own drying fields, processing machinery, and hydraulic
+                  balers allows us to bypass intermediaries. This direct supply chain passes structural cost savings
+                  straight to importers and nurseries worldwide.</p>
               </div>
             </div>
-            
+
             <!-- Panel 03 -->
             <div class="commitment-panel" id="panel-q3">
               <div class="panel-img-holder">
@@ -3653,65 +4240,82 @@
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-box-seam"></i> Custom Packaging &amp; OEM</h3>
-                <p>We customize grow bag specifications, compressed block ratios, briquette designs, and polybag prints. Our private labeling support enables distributors and brands to configure retail-ready sizes according to target markets.</p>
+                <p>We customize grow bag specifications, compressed block ratios, briquette designs, and polybag prints.
+                  Our private labeling support enables distributors and brands to configure retail-ready sizes according
+                  to target markets.</p>
               </div>
             </div>
-            
+
             <!-- Panel 04 -->
             <div class="commitment-panel" id="panel-q4">
               <div class="panel-img-holder">
-                <img src="assets/images/Process/loading.jpeg" alt="Logistics" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Process/loading.jpeg" alt="Logistics"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-truck"></i> On-Time Delivery</h3>
-                <p>With structured warehousing and proximity to major Southern Indian deep-water ports (Tuticorin and Cochin), we organize freight forwarding, secure vessel space, and complete container loading schedules with high reliability.</p>
+                <p>With structured warehousing and proximity to major Southern Indian deep-water ports (Tuticorin and
+                  Cochin), we organize freight forwarding, secure vessel space, and complete container loading schedules
+                  with high reliability.</p>
               </div>
             </div>
-            
+
             <!-- Panel 05 -->
             <div class="commitment-panel" id="panel-q5">
               <div class="panel-img-holder">
-                <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Eco Friendly" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Eco Friendly"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-leaf"></i> Eco-Friendly Products</h3>
-                <p>Our coir fiber and peat substrates are 100% natural, biodegradable organic crop boosters. By reclaiming raw coconut husks, we support closed-loop farming and assist the global agricultural market in transitioning to carbon-neutral soil mediums.</p>
+                <p>Our coir fiber and peat substrates are 100% natural, biodegradable organic crop boosters. By
+                  reclaiming raw coconut husks, we support closed-loop farming and assist the global agricultural market
+                  in transitioning to carbon-neutral soil mediums.</p>
               </div>
             </div>
-            
+
             <!-- Panel 06 -->
             <div class="commitment-panel" id="panel-q6">
               <div class="panel-img-holder">
-                <img src="assets/images/Products/coirfiberNew.jpeg" alt="Export Documentation" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Products/coirfiberNew.jpeg" alt="Export Documentation"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-globe-americas"></i> Global Export Support</h3>
-                <p>We navigate phytosanitary certification requirements, professional fumigation parameters, certificates of origin, and custom declarations. Our experience guarantees seamless transit across customs hubs in Europe, the Americas, and Asia.</p>
+                <p>We navigate phytosanitary certification requirements, professional fumigation parameters,
+                  certificates of origin, and custom declarations. Our experience guarantees seamless transit across
+                  customs hubs in Europe, the Americas, and Asia.</p>
               </div>
             </div>
-            
+
             <!-- Panel 07 -->
             <div class="commitment-panel" id="panel-q7">
               <div class="panel-img-holder">
-                <img src="assets/images/Products/cocochips.jpeg" alt="Flexible Specs" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Products/cocochips.jpeg" alt="Flexible Specs"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-sliders"></i> Flexible Specifications</h3>
-                <p>We blend coco peat, coco chips, and coco fiber ratios in custom percentages depending on your botanical crops. We deliver washed, unwashed, or calcium-buffered substrates to match specific plant rooting parameters.</p>
+                <p>We blend coco peat, coco chips, and coco fiber ratios in custom percentages depending on your
+                  botanical crops. We deliver washed, unwashed, or calcium-buffered substrates to match specific plant
+                  rooting parameters.</p>
               </div>
             </div>
-            
+
             <!-- Panel 08 -->
             <div class="commitment-panel" id="panel-q8">
               <div class="panel-img-holder">
-                <img src="assets/images/Process/inspection3.jpeg" alt="Partnerships" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Process/inspection3.jpeg" alt="Partnerships"
+                  onerror="this.src='assets/images/demo2.jpg'">
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-handshake"></i> Long-Term Partnerships</h3>
-                <p>We believe in building sustainable business relationships. We support verified distributors with flexible credit policies, supply chain continuity guarantees, and direct technical consultations for wholesale growers.</p>
+                <p>We believe in building sustainable business relationships. We support verified distributors with
+                  flexible credit policies, supply chain continuity guarantees, and direct technical consultations for
+                  wholesale growers.</p>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -4352,8 +4956,10 @@
     // Swap images function for thumbnails inside modal window
     window.swapModalProductImage = function (thumb) {
       const modalBody = thumb.closest('.modal-body-premium');
-      const mainImg = modalBody.querySelector('.modal-main-gallery-img');
-      mainImg.src = thumb.src;
+      const mainImg = modalBody.querySelector('#modalProductMainImg');
+      if (mainImg) {
+        mainImg.src = thumb.src;
+      }
       modalBody.querySelectorAll('.modal-gallery-thumb').forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
     };
@@ -4361,12 +4967,45 @@
     $(document).ready(function () {
       document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+      /* ---------- HERO: progress-bar + slide-counter sync ---------- */
+      var heroEl = document.getElementById('heroCarousel');
+      if (heroEl) {
+        var heroIntervalMs = 6000;
+        var $segs = $('#heroProgressTrack .hero-progress-seg');
+
+        function runHeroProgress(activeIndex) {
+          $segs.removeClass('filling done').each(function (i) {
+            var $fill = $(this).find('.fill');
+            $fill.css('transition', 'none').css('width', i < activeIndex ? '100%' : '0%');
+            if (i < activeIndex) { $(this).addClass('done'); }
+          });
+          // force reflow then animate current segment
+          void $segs.eq(activeIndex)[0].offsetWidth;
+          var $cur = $segs.eq(activeIndex).addClass('filling');
+          $cur.find('.fill').css('transition', 'width ' + heroIntervalMs + 'ms linear').css('width', '100%');
+          $('#heroCurSlide').text(String(activeIndex + 1).padStart(2, '0'));
+        }
+
+        // init first slide
+        runHeroProgress(0);
+
+        heroEl.addEventListener('slide.bs.carousel', function (e) {
+          runHeroProgress(e.to);
+        });
+
+        // clicking a segment jumps to that slide
+        $segs.on('click', function () {
+          var idx = $(this).index();
+          bootstrap.Carousel.getOrCreateInstance(heroEl).to(idx);
+        });
+      }
+
       // Commitment Interactive Hub Dial Controls
       $('.dial-btn').on('click mouseenter', function () {
         const target = $(this).data('target');
         $('.dial-btn').removeClass('active');
         $(this).addClass('active');
-        
+
         $('.commitment-panel').removeClass('active');
         $('#panel-' + target).addClass('active');
 
@@ -4377,10 +5016,10 @@
       // Mobile Select Dropdown Control
       $('.mobile-commitment-select').on('change', function () {
         const target = $(this).val();
-        
+
         $('.commitment-panel').removeClass('active');
         $('#panel-' + target).addClass('active');
-        
+
         // Keep desktop dials synchronized
         $('.dial-btn').removeClass('active');
         $(`.dial-btn[data-target="${target}"]`).addClass('active');
@@ -4485,8 +5124,20 @@
         gallery: { enabled: true },
         mainClass: 'mfp-fade'
       });
+
+      // Show/hide back-to-top button
+      var $scrollBtn = $('#scrollToTop');
+      $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 400) {
+          $scrollBtn.addClass('show');
+        } else {
+          $scrollBtn.removeClass('show');
+        }
+      });
     });
   </script>
+  <!-- Custom Google Translate Dropdown Script -->
+  <script src="assets/translate.js"></script>
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
