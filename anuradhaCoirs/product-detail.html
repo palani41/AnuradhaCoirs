@@ -2893,7 +2893,7 @@
         /* ══════════════════════════════════════
    WHATSAPP FLOAT
 ══════════════════════════════════════ */
-        .wa-btn {
+            .wa-btn {
       position: fixed;
       bottom: 28px;
       right: 28px;
@@ -4333,37 +4333,31 @@
      NAVBAR
 ════════════════════════════════════ -->
     <div class="main-nav">
-        <div class="container-fluid px-4">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo/mainlogo.png"
-                        alt="Anuradha Coirs"></a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navMain">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navMain">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="aboutcoir.html">About Coir</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                        <li class="nav-item language-item">
-                            <div id="google_translate_element"></div>
-                        </li>
-                        <!-- Cart Button -->
-                        <li class="nav-item">
-                            <button class="nav-cart-btn" id="navCartBtn" onclick="openCart()">
-                                <i class="bi bi-cart3"></i> Cart
-                                <span class="nav-cart-badge" id="navCartBadge">0</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+    <div class="container-fluid px-4">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+          aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutcoir.html">About Coir</a></li>
+            <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item language-item">
+              <div id="google_translate_element"></div>
+            </li>
+          </ul>
         </div>
+      </nav>
     </div>
+  </div>
 
     <!-- ════════════════════════════════════
      PAGE HERO
@@ -4743,7 +4737,7 @@
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 return `
       <div class="recently-item" onclick="openDetail('${esc(p.id)}')">
-        <img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+        <img src="${esc(img)}" alt="${esc(p.name)}">
         <div class="recently-item-name">${esc(p.name)}</div>
       </div>`;
             }).join('')}
@@ -4888,7 +4882,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 html += `<div class="cart-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img">
       <div class="cart-item-info">
         <div class="cart-item-cat">${esc(p.category)}</div>
         <div class="cart-item-name">${esc(p.name)}</div>
@@ -4978,7 +4972,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 itemsHtml += `<div class="os-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img">
       <div class="os-item-info">
         <div class="os-item-name">${esc(p.name)}</div>
         <div class="os-item-qty">Code: ${esc(p.code)} &nbsp;|&nbsp; ${item.amount} ${item.unit}</div>
@@ -5171,7 +5165,7 @@
             const imgs = (p.images && p.images.length) ? p.images : [p.image || 'assets/images/Products/coirfiberNew.jpeg'];
             const img = imgs[0];
             const thumbRow = imgs.length > 1 ? `<div class="dm-thumb-row">${imgs.map((src, i) =>
-                `<img src="${esc(src)}" class="dm-thumb${i === 0 ? ' active' : ''}" onclick="switchDetailImg('${esc(src)}', this)" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">`
+                `<img src="${esc(src)}" class="dm-thumb${i === 0 ? ' active' : ''}" onclick="switchDetailImg('${esc(src)}', this)">`
             ).join('')}</div>` : '';
             const bm = BADGE_META[p.badge] || (p.isNew ? BADGE_META['new'] : null);
             const badge = bm ? `<span class="pc-badge ${bm.cls}" style="position:relative;top:0;left:0;">${bm.lbl}</span>` : '';
@@ -5182,7 +5176,7 @@
                 <div class="dm-layout page-mode">
                     <div class="dm-img-col">
                         <div class="dm-img-main-container" id="dmImgContainer" onmousemove="zoomMainImg(event)" onmouseleave="resetZoomMainImg()">
-                            <img src="${esc(img)}" alt="${esc(p.name)}" class="dm-img-main" id="dmMainImg" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+                            <img src="${esc(img)}" alt="${esc(p.name)}" class="dm-img-main" id="dmMainImg">
                         </div>
                         ${thumbRow}
                         <div class="dm-img-meta">
@@ -5248,7 +5242,7 @@
                     <div class="info-row reveal-on-scroll">
                         <div class="info-media-col">
                             <div class="info-media-wrapper">
-                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img">
                             </div>
                         </div>
                         <div class="info-content-col">
@@ -5282,7 +5276,7 @@
                     <div class="info-row row-reversed reveal-on-scroll">
                         <div class="info-media-col">
                             <div class="info-media-wrapper">
-                                <img src="${esc(mainWhereUsedImg)}" alt="Where ${esc(p.name)} is used" class="info-media-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+                                <img src="${esc(mainWhereUsedImg)}" alt="Where ${esc(p.name)} is used" class="info-media-img">
                             </div>
                         </div>
                         <div class="info-content-col">
@@ -5529,7 +5523,7 @@
                 return `
                     <div class="prod-card" data-id="${esc(p.id)}" onclick="window.location.href='product-detail.html?id=${p.id}'" style="cursor: pointer;">
                         <div class="pc-img-wrap">
-                            <img src="${esc(img)}" alt="${esc(p.name)}" class="pc-img" loading="lazy" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+                            <img src="${esc(img)}" alt="${esc(p.name)}" class="pc-img" loading="lazy">
                             ${badge}
                             <button class="pc-wish${isWishlisted ? ' active' : ''}" onclick="event.stopPropagation();toggleWish('${esc(p.id)}',this)">
                                 <i class="bi bi-heart${isWishlisted ? '-fill' : ''}"></i>
@@ -5571,7 +5565,8 @@
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script src="assets/cookie-consent.js"></script>
+    
+  <script src="assets/cookie-consent.js"></script>
 </body>
 
 </html>

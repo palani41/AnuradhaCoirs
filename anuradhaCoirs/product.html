@@ -79,23 +79,23 @@
             overflow-x: hidden;
         }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: var(--fh);
-      line-height: 1.15;
-    }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fh);
+            line-height: 1.15;
+        }
 
-    p {
-      font-family: var(--fb);
-      line-height: 1.8;
-      color: var(--text-mid);
-    }
+        p {
+            font-family: var(--fb);
+            line-height: 1.8;
+            color: var(--text-mid);
+        }
 
-        
+
 
         a {
             text-decoration: none;
@@ -136,11 +136,14 @@
    NAVBAR
 ══════════════════════════════════════ */
         .main-nav {
-            background: #fff;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, .08);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 2px 24px rgba(3, 47, 47, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s var(--tr, ease);
         }
 
         .main-nav .navbar {
@@ -149,16 +152,22 @@
         }
 
         .main-nav .navbar-brand img {
-            height: 80px;
+            height: 74px;
+            transition: all .3s;
+        }
+
+        .main-nav .navbar-brand:hover img {
+            opacity: 0.85;
+            transform: scale(1.03);
         }
 
         .main-nav .nav-link {
             font-family: var(--fb);
             font-size: .82rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: .5px;
             color: var(--text-dark) !important;
-            padding: 30px 14px !important;
+            padding: 28px 16px !important;
             position: relative;
             transition: color .25s;
         }
@@ -166,26 +175,27 @@
         .main-nav .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 14px;
+            bottom: 14px;
+            left: 16px;
             width: 0;
-            height: 2px;
-            background: var(--gold);
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+            border-radius: 3px;
             transition: width .3s;
         }
 
         .main-nav .nav-link:hover {
-            color: var(--gold) !important;
+            color: var(--gold-deep) !important;
         }
 
         .main-nav .nav-link:hover::after,
         .main-nav .nav-link.active::after {
-            width: calc(100% - 28px);
+            width: calc(100% - 32px);
         }
 
         .main-nav .nav-link.active {
             color: var(--forest) !important;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* ── Cart Icon in Navbar ── */
@@ -261,104 +271,208 @@
 ══════════════════════════════════════ */
         .page-hero {
             position: relative;
-            height: 320px;
-            overflow: hidden;
+            min-height: 480px;
+            background: url(assets/images/head/product2.jpg) top/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
-        .page-hero-img {
+        .page-hero::before {
+            content: '';
             position: absolute;
             inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: none;
+            background: linear-gradient(180deg, rgba(3, 10, 10, 0.55) 0%, rgba(3, 47, 47, 0.72) 55%, rgba(3, 47, 47, 0.92) 100%);
         }
 
-        .page-hero-overlay {
+        .page-hero::after {
+            content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.25) 100%);
+            background-image:
+                repeating-linear-gradient(45deg, rgba(228, 192, 127, 0.10) 0 2px, transparent 2px 26px),
+                repeating-linear-gradient(-45deg, rgba(228, 192, 127, 0.07) 0 2px, transparent 2px 26px);
+            mix-blend-mode: overlay;
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184, 151, 90, 0.35) 0%, transparent 70%);
+            filter: blur(10px);
             z-index: 1;
+            animation: heroBlobFloat 9s ease-in-out infinite alternate;
+        }
+
+        .hero-blob.b1 {
+            top: -120px;
+            left: -100px;
+        }
+
+        .hero-blob.b2 {
+            bottom: -140px;
+            right: -80px;
+            animation-delay: 2s;
+            background: radial-gradient(circle, rgba(6, 80, 76, 0.5) 0%, transparent 70%);
+        }
+
+        @keyframes heroBlobFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, -20px) scale(1.15);
+            }
         }
 
         .page-hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: center;
             padding: 0 20px;
+            max-width: 820px;
         }
 
-        .page-hero-content .eyebrow {
-            color: #ffe7b3;
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
-        }
-
-        .eyebrow {
+        .page-hero-content .eyebrow-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-family: var(--fb);
-            font-size: .72rem;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.2px;
             text-transform: uppercase;
-            color: var(--gold-lt);
-            display: block;
-            margin-bottom: 12px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            color: #ffe6b0;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 230, 176, 0.35);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroTextIn 0.8s ease 0s forwards;
         }
 
         .page-hero-content h1 {
             font-family: var(--fh);
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            font-weight: 600;
+            font-size: clamp(2.4rem, 5.2vw, 4rem);
+            font-weight: 700;
             color: #fff;
             line-height: 1.1;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(28px);
+            animation: heroTextIn 0.9s ease 0.15s forwards;
         }
 
         .page-hero-content h1 em {
             font-style: italic;
-            color: #ffe7b3;
+            color: var(--gold-lt);
         }
 
         .page-hero-content p {
-            font-family: var(--fb);
-            font-size: 1.1rem;
-            color: #ffffff;
+            font-family: var(--fa);
+            font-size: 1.2rem;
+            color: #fff;
             font-weight: 500;
             margin: 0;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transform: translateY(24px);
+            animation: heroTextIn 0.9s ease 0.32s forwards;
+        }
+
+        @keyframes heroTextIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-cue {
+            position: absolute;
+            bottom: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-hover);
+            animation: cueBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes cueBounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero {
+                min-height: 320px;
+            }
+        }
+
+        /* ── Floating breadcrumb card (About page style) ── */
+        .breadcrumb-float-wrap {
+            position: relative;
+            z-index: 5;
         }
 
         /* ══════════════════════════════════════
-   BREADCRUMB
+   BREADCRUMB (floating pill card)
 ══════════════════════════════════════ */
         .breadcrumb-bar {
-            background: var(--gold-pale);
-            padding: 11px 0;
-            border-bottom: 1px solid rgba(184, 151, 90, .18);
+            background: #fff;
+            border-radius: 999px;
+            box-shadow: var(--shadow-hover);
+            padding: 14px 30px;
+            max-width: 480px;
+            margin: 0 auto;
+            transform: translateY(-50%);
         }
 
         .breadcrumb-bar .breadcrumb {
             margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             font-family: var(--fb);
-            font-size: .8rem;
+            font-size: .82rem;
         }
 
         .breadcrumb-item a {
             color: var(--forest);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         .breadcrumb-item a:hover {
-            color: var(--gold);
+            color: var(--gold-deep);
         }
 
         .breadcrumb-item.active {
-            color: var(--text-muted);
+            color: var(--gold-deep);
+            font-weight: 600;
         }
 
         .breadcrumb-item+.breadcrumb-item::before {
@@ -1811,7 +1925,9 @@
             transition: var(--tr);
             height: 24px;
         }
-        .cart-unit-select:hover, .cart-unit-select:focus {
+
+        .cart-unit-select:hover,
+        .cart-unit-select:focus {
             border-color: var(--gold);
             color: var(--gold);
         }
@@ -2892,49 +3008,28 @@
    WHATSAPP FLOAT
 ══════════════════════════════════════ */
         .wa-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      width: 58px;
-      height: 58px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 27px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-      transition: all 0.3s ease;
-    }
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            z-index: 999;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px #25d36673;
+            transition: var(--tr);
+        }
 
-    .wa-btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 2px solid #25D366;
-      animation: waPulse 2.2s ease-out infinite;
-    }
-
-    @keyframes waPulse {
-      0% {
-        transform: scale(1);
-        opacity: 0.7;
-      }
-      100% {
-        transform: scale(1.7);
-        opacity: 0;
-      }
-    }
-
-    .wa-btn:hover {
-      transform: scale(1.12);
-      color: #fff;
-      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
-    }
+        .wa-btn:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
 
         /* ══════════════════════════════════════
    FOOTER
@@ -3143,16 +3238,19 @@
                 align-items: center;
                 justify-content: space-between;
             }
+
             .main-nav .navbar-brand {
                 display: flex;
                 align-items: center;
                 padding: 0;
                 margin: 0;
             }
+
             .main-nav .navbar-brand img {
                 height: 48px !important;
                 width: auto;
             }
+
             .main-nav .navbar-toggler {
                 padding: 8px !important;
                 margin: 0 !important;
@@ -3232,12 +3330,12 @@
             }
 
             .wa-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 23px;
-        bottom: 16px;
-        right: 16px;
-      }
+                width: 46px;
+                height: 46px;
+                font-size: 22px;
+                bottom: 80px;
+                right: 18px;
+            }
 
             .prod-grid.gl .prod-card {
                 flex-direction: column;
@@ -3316,6 +3414,7 @@
             .pc-overlay {
                 background: linear-gradient(to top, rgba(3, 47, 47, 0.45) 0%, transparent 80%);
             }
+
             .pc-qv,
             .pc-add-cart {
                 opacity: 1;
@@ -3328,6 +3427,7 @@
                 align-items: center;
                 justify-content: center;
             }
+
             .pc-qv i,
             .pc-add-cart i {
                 margin: 0 !important;
@@ -3583,24 +3683,23 @@
      PAGE HERO
 ════════════════════════════════════ -->
     <div class="page-hero">
-        <img src="assets/images/head/product2.jpg" alt="Products" class="page-hero-img">
-        <div class="page-hero-overlay"></div>
+        <div class="hero-blob b1"></div>
+        <div class="hero-blob b2"></div>
         <div class="page-hero-content">
-            <span class="eyebrow">What We Offer</span>
+            <span class="eyebrow-pill"><i class="bi bi-stars"></i> What We Offer</span>
             <h1>Our <em>Products</em></h1>
             <p>Premium coir solutions crafted for a greener world</p>
         </div>
+        <div class="scroll-cue"><i class="bi bi-chevron-down"></i></div>
     </div>
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb-bar">
-        <div class="container-fluid px-4">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
-                    <li class="breadcrumb-item active">Products</li>
-                </ol>
-            </nav>
+    <!-- FLOATING BREADCRUMB -->
+    <div class="breadcrumb-float-wrap">
+        <div class="breadcrumb-bar">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
         </div>
     </div>
 
@@ -3967,7 +4066,7 @@
         ══════════════════════════════════════ */
         let cart = JSON.parse(localStorage.getItem('ac_cart') || '[]'); // [{id, unit, amount}]
 
-        window.addEventListener('storage', function(e) {
+        window.addEventListener('storage', function (e) {
             if (e.key === 'ac_cart') {
                 cart = JSON.parse(e.newValue || '[]');
                 updateCartBadge();
@@ -3977,7 +4076,7 @@
             }
         });
 
-        window.addEventListener('pageshow', function() {
+        window.addEventListener('pageshow', function () {
             cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             updateCartBadge();
         });
@@ -4035,7 +4134,7 @@
             const item = cart.find(i => i.id === id);
             if (!item) return;
             item.unit = unit;
-            
+
             // Set reasonable default amounts based on selected unit
             if (unit === 'Ton') {
                 item.amount = 10;

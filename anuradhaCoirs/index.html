@@ -91,9 +91,9 @@
       color: var(--text-mid);
     }
 
-    
 
-    
+
+
 
     a {
       transition: var(--transition);
@@ -1758,7 +1758,7 @@
 
     /* MANUFACTURING */
     .mfg-section {
-      background: url(assets/images/demo2.jpg) center/cover no-repeat fixed;
+      background: url(assets/images/Process/inspection.jpeg) center/cover no-repeat fixed;
       position: relative;
       padding: 120px 0;
     }
@@ -2748,13 +2748,24 @@
     }
 
     /* WHATSAPP */
-    .wa-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 23px;
-        bottom: 16px;
-        right: 16px;
-      }
+        .wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: all 0.3s ease;
+    }
 
     .wa-btn::after {
       content: '';
@@ -3515,7 +3526,7 @@
             <!-- Secondary overlapping product detail card -->
             <div class="collage-card-sub">
               <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Coir Peat Buffering Detail"
-                onerror="this.src='assets/images/head/product2.jpg'">
+               >
             </div>
 
             <!-- Rotating circular seal badge -->
@@ -3983,7 +3994,7 @@
             <!-- Left Column: Gallery & Swapper -->
             <div class="col-12 col-md-6 modal-gallery-side">
               <div class="modal-main-img-holder">
-                <img id="modalProductMainImg" src="" alt="Product Overview"
+                <img id="modalProductMainImg"  alt="Product Overview"
                   style="width: 100%; height: 100%; object-fit: cover;">
               </div>
               <div class="modal-thumb-list" id="modalProductThumbList">
@@ -4215,7 +4226,7 @@
             <div class="commitment-panel active" id="panel-q1">
               <div class="panel-img-holder">
                 <img src="assets/images/Process/inspection.jpeg" alt="Quality Standards"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-patch-check-fill"></i> Premium Export Quality</h3>
@@ -4229,7 +4240,7 @@
             <div class="commitment-panel" id="panel-q2">
               <div class="panel-img-holder">
                 <img src="assets/images/Process/blockMaking3.jpeg" alt="Pricing"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-currency-dollar"></i> Competitive Pricing</h3>
@@ -4242,7 +4253,8 @@
             <!-- Panel 03 -->
             <div class="commitment-panel" id="panel-q3">
               <div class="panel-img-holder">
-                <img src="assets/images/Products/GBS.jpeg" alt="Packaging" onerror="this.src='assets/images/demo2.jpg'">
+                <img src="assets/images/Products/GBS.jpeg" alt="Packaging"
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-box-seam"></i> Custom Packaging &amp; OEM</h3>
@@ -4256,7 +4268,7 @@
             <div class="commitment-panel" id="panel-q4">
               <div class="panel-img-holder">
                 <img src="assets/images/Process/loading.jpeg" alt="Logistics"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-truck"></i> On-Time Delivery</h3>
@@ -4270,7 +4282,7 @@
             <div class="commitment-panel" id="panel-q5">
               <div class="panel-img-holder">
                 <img src="assets/images/Products/cocopeatblock635.jpeg" alt="Eco Friendly"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-leaf"></i> Eco-Friendly Products</h3>
@@ -4284,7 +4296,7 @@
             <div class="commitment-panel" id="panel-q6">
               <div class="panel-img-holder">
                 <img src="assets/images/Products/coirfiberNew.jpeg" alt="Export Documentation"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-globe-americas"></i> Global Export Support</h3>
@@ -4298,7 +4310,7 @@
             <div class="commitment-panel" id="panel-q7">
               <div class="panel-img-holder">
                 <img src="assets/images/Products/cocochips.jpeg" alt="Flexible Specs"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-sliders"></i> Flexible Specifications</h3>
@@ -4312,7 +4324,7 @@
             <div class="commitment-panel" id="panel-q8">
               <div class="panel-img-holder">
                 <img src="assets/images/Process/inspection3.jpeg" alt="Partnerships"
-                  onerror="this.src='assets/images/demo2.jpg'">
+                 >
               </div>
               <div class="panel-content">
                 <h3><i class="bi bi-handshake"></i> Long-Term Partnerships</h3>
@@ -4795,7 +4807,7 @@
           <div class="contact-form-card">
             <h2>Send Us a Message</h2>
             <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
-            <form action="">
+            <form >
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label">First Name</label>
@@ -5468,7 +5480,8 @@
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
-    <script src="assets/cookie-consent.js"></script>
+  
+  <script src="assets/cookie-consent.js"></script>
 </body>
 
 </html>
