@@ -1,6 +1,7 @@
 /* ══════════════════════════════════════
    PRODUCT DATA (SHARED WITH EXTENDED META AND HIGHLIGHTS)
-══════════════════════════════════════ */
+   Includes dynamic modern reviews and suitable crops for all varieties.
+   ══════════════════════════════════════ */
 const SEED = [
     {
         id: 'p001', code: 'AC-01', name: 'Coir Fibre', category: 'Coir Fibre',
@@ -64,7 +65,12 @@ const SEED = [
                 icon: 'bi-anchor'
             }
         ],
-        crops: []
+        crops: ['Hops', 'Grapes', 'Vanilla Vines', 'Climbing Peppers', 'Runner Beans'],
+        reviews: [
+            { name: 'David Carter', location: 'Melbourne, Australia', rating: 5, comment: 'Excellent strength and clean fibers. The moisture level is perfectly within specs, making it highly reliable for our production line.' },
+            { name: 'Kenji Sato', location: 'Yokohama, Japan', rating: 5, comment: 'Highly resilient coir fiber with minimal dust. The uniform bale size makes storage and handling extremely efficient.' },
+            { name: 'Clara Dupont', location: 'Lyon, France', rating: 5, comment: 'Very good density and color. The fiber length is consistent throughout the shipment. Will definitely buy again.' }
+        ]
     },
     {
         id: 'p002', code: 'AC-02', name: 'Coco Peat 5 KG Block', category: 'Coco Peat',
@@ -126,7 +132,12 @@ const SEED = [
                 icon: 'bi-house-fill'
             }
         ],
-        crops: ['Tomatoes', 'Strawberries', 'Blueberries', 'Bell Peppers', 'Cucumbers', 'Roses']
+        crops: ['Tomatoes', 'Strawberries', 'Blueberries', 'Bell Peppers', 'Cucumbers', 'Roses'],
+        reviews: [
+            { name: 'Sarah Jenkins', location: 'California, USA', rating: 5, comment: 'Outstanding water retention. The block expands beautifully and has a very low EC level which keeps our plants thriving.' },
+            { name: 'Marcus Weber', location: 'Munich, Germany', rating: 5, comment: 'Consistent expansion and optimal pH. We have seen a noticeable improvement in root structure since we switched to this coco peat.' },
+            { name: 'Anita Desai', location: 'Bangalore, India', rating: 5, comment: 'Premium grade peat with excellent aeration. Clean, uniform quality and expands very quickly after hydration.' }
+        ]
     },
     {
         id: 'p003', code: 'AC-03', name: 'Coco Peat Bricks 650 Gms', category: 'Coco Peat',
@@ -186,7 +197,12 @@ const SEED = [
                 icon: 'bi-people-fill'
             }
         ],
-        crops: ['Herbs', 'Flowers', 'Tomatoes', 'Lettuce', 'Chili Peppers']
+        crops: ['Herbs', 'Flowers', 'Tomatoes', 'Lettuce', 'Chili Peppers'],
+        reviews: [
+            { name: 'Emily Watson', location: 'London, UK', rating: 5, comment: 'So clean and easy to handle at home. Just add a little water and it expands into the perfect soil mix for my indoor herbs.' },
+            { name: 'Liam O\'Connor', location: 'Dublin, Ireland', rating: 5, comment: 'Convenient size and expands rapidly. Perfect for small propagation setups and starting seeds on the balcony.' },
+            { name: 'Hana Tanaka', location: 'Kyoto, Japan', rating: 5, comment: 'Lightweight and clean. Excellent drainage and moisture retention, making it very helpful for repotting delicate plants.' }
+        ]
     },
     {
         id: 'p004', code: 'AC-04', name: 'Coir Grow Bags', category: 'Grow Bags',
@@ -247,7 +263,12 @@ const SEED = [
                 icon: 'bi-flower2'
             }
         ],
-        crops: ['Strawberries', 'Tomatoes', 'Bell Peppers', 'Cucumbers', 'Eggplants']
+        crops: ['Strawberries', 'Tomatoes', 'Bell Peppers', 'Cucumbers', 'Eggplants'],
+        reviews: [
+            { name: 'Robert van der Berg', location: 'Rotterdam, Netherlands', rating: 5, comment: 'The drainage slits and planting holes are pre-cut perfectly. Saves a lot of preparation time and the bags hold up really well.' },
+            { name: 'Carlos Gomez', location: 'Murcia, Spain', rating: 5, comment: 'Exceptional root development. The UV-resistant cover is thick and durable, holding up easily through multiple harvest seasons.' },
+            { name: 'Michael Chang', location: 'Ontario, Canada', rating: 5, comment: 'Great water-to-air ratio. Highly uniform performance across all bags, which is critical for our hydroponic setup.' }
+        ]
     },
     {
         id: 'p005', code: 'AC-05', name: 'Open Top Grow Bags', category: 'Grow Bags',
@@ -309,7 +330,12 @@ const SEED = [
                 icon: 'bi-house-fill'
             }
         ],
-        crops: ['Blueberries', 'Raspberries', 'Roses', 'Tomatoes', 'Chili Peppers']
+        crops: ['Blueberries', 'Raspberries', 'Roses', 'Tomatoes', 'Chili Peppers'],
+        reviews: [
+            { name: 'Alessandro Rossi', location: 'Latina, Italy', rating: 5, comment: 'Extremely convenient. Just expand in place and plant directly. Our berry plants established roots faster than ever before.' },
+            { name: 'Julie Nielsen', location: 'Odense, Denmark', rating: 5, comment: 'Strong bags with excellent stability. The aeration is superb, preventing any root circling issues.' },
+            { name: 'Samuel Taylor', location: 'Nelson, New Zealand', rating: 5, comment: 'Perfect for tomatoes. Minimal runoff and great moisture retention. Highly recommend these open-top bags.' }
+        ]
     },
     {
         id: 'p006', code: 'AC-06', name: 'Coco Husk Chips', category: 'Coco Peat',
@@ -371,7 +397,12 @@ const SEED = [
                 icon: 'bi-box-seam'
             }
         ],
-        crops: ['Orchids', 'Anthuriums', 'Bromeliads', 'Ferns', 'Succulents']
+        crops: ['Orchids', 'Anthuriums', 'Bromeliads', 'Ferns', 'Succulents'],
+        reviews: [
+            { name: 'Evelyn Ross', location: 'Portland, USA', rating: 5, comment: 'Ideal size and very clean chips. My orchids love the airy potting structure it provides. Very slow to decompose.' },
+            { name: 'Lucas Silva', location: 'Sao Paulo, Brazil', rating: 5, comment: 'Excellent drainage capacity. Use it for landscaping mulch and potting. Retains moisture without getting waterlogged.' },
+            { name: 'Chloe Martin', location: 'Vancouver, Canada', rating: 5, comment: 'Consistent chunk size with almost no fine dust. Perfect substrate for high-humidity terrariums as well.' }
+        ]
     },
     {
         id: 'p007', code: 'AC-07', name: 'Coco Coins & Discs', category: 'Coco Peat',
@@ -432,7 +463,12 @@ const SEED = [
                 icon: 'bi-box'
             }
         ],
-        crops: ['Herbs', 'Tomatoes', 'Lettuce', 'Marigolds', 'Cucumbers']
+        crops: ['Herbs', 'Tomatoes', 'Lettuce', 'Marigolds', 'Cucumbers'],
+        reviews: [
+            { name: 'Sophie Dubois', location: 'Paris, France', rating: 5, comment: 'Unbelievably fast expansion! These make starting seeds so tidy. Direct transplanting means zero root shock.' },
+            { name: 'James Miller', location: 'Seattle, USA', rating: 5, comment: 'The biodegradable wrap holds together perfectly during hydration. Great germination success rates.' },
+            { name: 'Oliver Davis', location: 'Sydney, Australia', rating: 5, comment: 'Super convenient for balcony gardening. Fluffy texture that gives seeds a healthy, airy start.' }
+        ]
     },
     {
         id: 'p008', code: 'AC-08', name: 'Semi Husked Coconut', category: 'Fresh Coconuts',
@@ -492,7 +528,12 @@ const SEED = [
                 icon: 'bi-calendar2-heart'
             }
         ],
-        crops: []
+        crops: ['East Coast Tall', 'West Coast Tall', 'Orange Dwarf', 'Green Dwarf', 'Hybrid Palms'],
+        reviews: [
+            { name: 'Fatima Al-Sabah', location: 'Dubai, UAE', rating: 5, comment: 'Fresh, heavy, and filled with sweet water. The outer husk cap is clean and intact, keeping the coconut fresh.' },
+            { name: 'Joseph Ng', location: 'Singapore', rating: 5, comment: 'Top export quality. The shell is hard and intact, and the kernel inside is thick and delicious.' },
+            { name: 'Thomas Miller', location: 'London, UK', rating: 5, comment: 'Very good shelf life. Arrived in excellent condition with no spoilage. Highly satisfied with the maturity level.' }
+        ]
     },
     {
         id: 'p009', code: 'AC-09', name: 'Fully Husked Coconut', category: 'Fresh Coconuts',
@@ -553,7 +594,12 @@ const SEED = [
                 icon: 'bi-ship'
             }
         ],
-        crops: []
+        crops: ['Tall Coconut Palms', 'Dwarf Green Palms', 'Orange Dwarf Palms', 'Hybrid Coconuts'],
+        reviews: [
+            { name: 'Ryan Reynolds', location: 'Vancouver, Canada', rating: 5, comment: 'Cleanly husked with zero shell cracking. Perfect maturity for shredding and oil extraction.' },
+            { name: 'Mei Ling', location: 'Hong Kong', rating: 5, comment: 'Very high yield of thick white meat. Fresh, sweet scent upon cracking. Will reorder regularly.' },
+            { name: 'Arthur Pendelton', location: 'Cardiff, UK', rating: 5, comment: 'Extremely clean and uniform in size. Long shelf life and ideal for raw culinary uses.' }
+        ]
     },
     {
         id: 'p010', code: 'AC-10', name: 'Tender Coconut', category: 'Fresh Coconuts',
@@ -613,7 +659,12 @@ const SEED = [
                 icon: 'bi-geo-alt-fill'
             }
         ],
-        crops: []
+        crops: ['Chowghat Orange Dwarf', 'Malayan Yellow Dwarf', 'Ganga Bondam', 'Hybrid Palms'],
+        reviews: [
+            { name: 'Ahmed Khan', location: 'Riyadh, Saudi Arabia', rating: 5, comment: 'Incredibly sweet coconut water. The malai inside was thin and jelly-like, just as described. Very refreshing.' },
+            { name: 'Yuki Sato', location: 'Tokyo, Japan', rating: 5, comment: 'Tastes exceptionally fresh, like it was just plucked. The packaging kept it cold and fresh throughout transit.' },
+            { name: 'Gabriel Garcia', location: 'Madrid, Spain', rating: 5, comment: 'High water volume per nut. A healthy, natural hydration option that is far better than sugary drinks.' }
+        ]
     },
     {
         id: 'p011', code: 'AC-11', name: 'Coconut Seedlings', category: 'Fresh Coconuts',
@@ -674,7 +725,12 @@ const SEED = [
                 icon: 'bi-grid-fill'
             }
         ],
-        crops: []
+        crops: ['Tall Coconut Cultivars', 'Dwarf Cultivars', 'Hybrid Palms', 'TxD Palms'],
+        reviews: [
+            { name: 'Benjamin Harrison', location: 'Florida, USA', rating: 5, comment: 'Strong, vigorous roots and healthy green leaves. They have established quickly in our sandy coastal soil.' },
+            { name: 'Wayan Surya', location: 'Bali, Indonesia', rating: 5, comment: 'Healthy seedlings with excellent root structure. Very high survival rate after transplanting in our orchard.' },
+            { name: 'Maria Gonzales', location: 'Manila, Philippines', rating: 5, comment: 'Arrived well-packed and healthy. They are showing rapid growth within just a few weeks of planting.' }
+        ]
     }
 ];
 

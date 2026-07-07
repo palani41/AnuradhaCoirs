@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -38,9 +38,9 @@
       --text-light: #999;
       --border: #e3e1dc;
       --border-lt: #eeecea;
-      --fh: 'Playfair Display', Georgia, serif;
-      --fb: 'DM Sans', system-ui, sans-serif;
-      --fa: 'Cormorant Garamond', Georgia, serif;
+      --fh: 'Poppins', system-ui, sans-serif;
+      --fb: 'Inter', system-ui, sans-serif;
+      --fa: 'Poppins', system-ui, sans-serif;
       --tr: all .28s cubic-bezier(.25, .46, .45, .94);
       --nav-h: 88px;
       --radius: 12px;
@@ -69,10 +69,23 @@
       overflow-x: hidden;
     }
 
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--fh);
+      line-height: 1.15;
     }
+
+    p {
+      font-family: var(--fb);
+      line-height: 1.8;
+      color: var(--text-mid);
+    }
+
+    
 
     a {
       text-decoration: none;
@@ -268,7 +281,7 @@
     }
 
     .page-hero-content p {
-      font-family: var(--fa);
+      font-family: var(--fb);
       font-size: 1.1rem;
       color: #ffffff;
       font-weight: 500;
@@ -360,7 +373,7 @@
     }
 
     .intro-band p {
-      font-family: var(--fa);
+      font-family: var(--fb);
       font-size: 1.05rem;
       font-style: italic;
       color: rgba(255, 255, 255, .75);
@@ -743,7 +756,7 @@
     }
 
     .step-content-panel p {
-      font-family: var(--fa);
+      font-family: var(--fb);
       font-size: 1rem;
       font-style: italic;
       color: var(--text-mid);
@@ -924,7 +937,7 @@
     }
 
     .cta-band p {
-      font-family: var(--fa);
+      font-family: var(--fb);
       font-size: 1.05rem;
       color: rgba(255, 255, 255, .7);
       margin-bottom: 30px
@@ -971,27 +984,37 @@
 
     /* ── WHATSAPP ── */
     .wa-btn {
-      position: fixed;
-      bottom: 26px;
-      right: 26px;
-      z-index: 9999;
-      width: 52px;
-      height: 52px;
-      background: #25D366;
-      color: #fff;
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
+      }
+
+    .wa-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(37, 211, 102, .45);
-      transition: var(--tr)
+      border: 2px solid #25D366;
+      animation: waPulse 2.2s ease-out infinite;
+    }
+
+    @keyframes waPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
     }
 
     .wa-btn:hover {
-      transform: scale(1.1);
-      color: #fff
+      transform: scale(1.12);
+      color: #fff;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
     }
 
     /* ── FOOTER ── */
@@ -1236,11 +1259,11 @@
       }
 
       .wa-btn {
-        width: 46px;
-        height: 46px;
-        font-size: 22px;
-        bottom: 18px;
-        right: 18px
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
       }
     }
 
@@ -1962,6 +1985,7 @@
 
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+    <script src="assets/cookie-consent.js"></script>
 </body>
 
 </html>

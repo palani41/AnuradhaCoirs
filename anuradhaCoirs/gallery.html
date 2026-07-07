@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Bootstrap 5 -->
@@ -29,6 +29,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
 
   <style>
     /* ══════════════════════════════════════════
@@ -39,6 +40,8 @@
       --forest2: #054a4a;
       --gold: #b8975a;
       --gold-lt: #d4b87a;
+      --rope: #a9843f;
+      --rope-dark: #7a5d2b;
       --cream: #f8f5ef;
       --off-white: #fafaf8;
       --light-bg: #f2f4f2;
@@ -46,9 +49,9 @@
       --text-mid: #444;
       --text-muted: #777;
       --border: #e0e0d8;
-      --font-head: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --font-acc: 'Cormorant Garamond', Georgia, serif;
+      --font-head: 'Poppins', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-acc: 'Poppins', system-ui, sans-serif;
       --radius: 10px;
       --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.07);
       --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -81,11 +84,6 @@
       overflow-x: hidden;
     }
 
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
     h1,
     h2,
     h3,
@@ -93,14 +91,20 @@
     h5,
     h6 {
       font-family: var(--font-head);
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     p {
       font-family: var(--font-body);
-      line-height: 1.75;
+      line-height: 1.8;
       color: var(--text-mid);
     }
+
+    
+
+    
+
+    
 
     a {
       transition: var(--transition);
@@ -252,11 +256,12 @@
     }
 
     /* ══════════════════════════════════════════
-       PAGE HERO
+       PAGE HERO — slow drift, drifting fibre wisps,
+       staggered text reveal, rope-hem divider
     ══════════════════════════════════════════ */
     .page-hero {
       position: relative;
-      height: 340px;
+      height: 400px;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -265,18 +270,151 @@
 
     .page-hero-img {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      inset: -2%;
+      width: 104%;
+      height: 104%;
       object-fit: cover;
       filter: none;
+      animation: heroKenBurns 22s ease-in-out infinite alternate;
+      transform-origin: 55% 40%;
+    }
+
+    @keyframes heroKenBurns {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.13);
+      }
     }
 
     .page-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.25) 100%);
+      background: linear-gradient(to bottom, rgba(3, 15, 15, 0.35) 0%, rgba(3, 20, 20, 0.62) 55%, rgba(3, 15, 15, 0.4) 100%);
       z-index: 1;
+    }
+
+    /* soft roaming glow, like sunlight catching dust in a drying shed */
+    .hero-glow {
+      position: absolute;
+      z-index: 1;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 184, 122, 0.22) 0%, rgba(212, 184, 122, 0) 68%);
+      top: -180px;
+      left: 8%;
+      animation: heroGlowDrift 16s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes heroGlowDrift {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(18vw, 90px);
+      }
+    }
+
+    /* drifting coir-fibre wisps rising through the frame */
+    .hero-fibers {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .fiber-wisp {
+      position: absolute;
+      bottom: -160px;
+      width: 2px;
+      height: 110px;
+      border-radius: 4px;
+      background: linear-gradient(180deg, rgba(212, 184, 122, 0) 0%, rgba(212, 184, 122, 0.6) 45%, rgba(212, 184, 122, 0) 100%);
+      opacity: 0;
+      filter: blur(0.3px);
+      animation: fiberDrift 13s linear infinite;
+    }
+
+    .fiber-wisp:nth-child(1) {
+      left: 8%;
+      height: 90px;
+      animation-duration: 11s;
+      animation-delay: 0s;
+      transform: rotate(10deg);
+    }
+
+    .fiber-wisp:nth-child(2) {
+      left: 20%;
+      height: 130px;
+      animation-duration: 15s;
+      animation-delay: 2s;
+      transform: rotate(-6deg);
+    }
+
+    .fiber-wisp:nth-child(3) {
+      left: 34%;
+      height: 80px;
+      animation-duration: 12s;
+      animation-delay: 5s;
+      transform: rotate(4deg);
+    }
+
+    .fiber-wisp:nth-child(4) {
+      left: 50%;
+      height: 140px;
+      animation-duration: 17s;
+      animation-delay: 1s;
+      transform: rotate(-9deg);
+    }
+
+    .fiber-wisp:nth-child(5) {
+      left: 66%;
+      height: 95px;
+      animation-duration: 13s;
+      animation-delay: 4s;
+      transform: rotate(7deg);
+    }
+
+    .fiber-wisp:nth-child(6) {
+      left: 80%;
+      height: 120px;
+      animation-duration: 16s;
+      animation-delay: 3s;
+      transform: rotate(-4deg);
+    }
+
+    .fiber-wisp:nth-child(7) {
+      left: 92%;
+      height: 85px;
+      animation-duration: 14s;
+      animation-delay: 6s;
+      transform: rotate(9deg);
+    }
+
+    @keyframes fiberDrift {
+      0% {
+        transform: translateY(0) rotate(var(--r, 0deg));
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.85;
+      }
+
+      88% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: translateY(-580px) rotate(var(--r, 0deg));
+        opacity: 0;
+      }
     }
 
     .page-hero-content {
@@ -292,6 +430,8 @@
       font-weight: 700;
       letter-spacing: 4px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      animation: heroRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
     }
 
     .page-hero-content h1 {
@@ -304,20 +444,106 @@
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
     }
 
+    .page-hero-content h1 .hw {
+      display: inline-block;
+      opacity: 0;
+      animation: heroRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .page-hero-content h1 .hw:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .page-hero-content h1 .hw:nth-child(2) {
+      animation-delay: 0.45s;
+    }
+
     .page-hero-content h1 em {
       font-style: italic;
       color: #ffe7b3;
     }
 
     .page-hero-content p {
-      font-family: var(--font-acc);
-      font-style: italic;
+      font-family: var(--font-body);
       font-size: 1.1rem;
       color: #ffffff;
       font-weight: 500;
       max-width: 580px;
       margin: 0 auto;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      animation: heroRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.62s both;
+    }
+
+    .hero-divider {
+      width: 0;
+      height: 2px;
+      margin: 18px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold-lt), transparent);
+      animation: heroLineGrow 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+    }
+
+    @keyframes heroRise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroLineGrow {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+
+      to {
+        width: 90px;
+        opacity: 1;
+      }
+    }
+
+    /* scroll cue */
+    .hero-scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      z-index: 2;
+      transform: translateX(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      animation: heroBounce 2.2s ease-in-out infinite;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-scroll-cue:hover {
+      color: #fff;
+      border-color: var(--gold-lt);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    @keyframes heroBounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(7px);
+      }
     }
 
     /* Breadcrumb */
@@ -351,48 +577,279 @@
     }
 
     /* ══════════════════════════════════════════
-       GALLERY SECTION
+       COVERFLOW SHOWCASE  (signature element:
+       photos "hung" on a twisted coir rope,
+       clipped with a wooden peg, like a drying line)
     ══════════════════════════════════════════ */
-    .gallery-section {
-      padding: 72px 0 96px;
+    .showcase-section {
+      padding: 68px 0 40px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(184, 151, 90, 0.08) 0%, rgba(184, 151, 90, 0) 60%),
+        var(--cream);
+      position: relative;
     }
 
-    /* ── Filter bar ── */
-    .gf-bar {
+    .coverflow-wrap {
+      position: relative;
+      height: 430px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
       justify-content: center;
-      margin-bottom: 40px;
+      perspective: 1400px;
+      margin-top: 10px;
+      touch-action: pan-y;
     }
 
-    .gf-btn {
+    /* the twisted rope line the photos hang from */
+    .rope-line {
+      position: absolute;
+      top: 38px;
+      left: 6%;
+      right: 6%;
+      height: 10px;
+      z-index: 1;
+      border-radius: 6px;
+      background:
+        repeating-linear-gradient(115deg,
+          var(--rope) 0px, var(--rope) 6px,
+          var(--rope-dark) 6px, var(--rope-dark) 12px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    }
+
+    .rope-line::before,
+    .rope-line::after {
+      content: '';
+      position: absolute;
+      top: -6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--rope-dark);
+      box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .rope-line::before {
+      left: -8px;
+    }
+
+    .rope-line::after {
+      right: -8px;
+    }
+
+    .coverflow-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    .cf-item {
+      position: absolute;
+      top: 54px;
+      left: 50%;
+      width: 250px;
+      margin-left: -125px;
+      transform-origin: top center;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.65s ease, filter 0.5s ease;
+      cursor: pointer;
+    }
+
+    /* string from rope down to the peg */
+    .cf-string {
+      width: 2px;
+      height: 20px;
+      background: var(--rope-dark);
+      margin: 0 auto;
+    }
+
+    /* wooden peg clipping the photo to the rope */
+    .cf-peg {
+      width: 22px;
+      height: 12px;
+      margin: -1px auto 0;
+      background: linear-gradient(160deg, #c8935a, #8f5f34);
+      border-radius: 3px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 3;
+    }
+
+    .cf-peg::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 3px;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.25);
+      transform: translate(-50%, -50%);
+      border-radius: 1px;
+    }
+
+    .cf-card {
+      background: #fff;
+      padding: 10px 10px 34px;
+      border-radius: 3px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cf-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 2px;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+
+    .cf-card .cf-tag {
+      display: block;
+      text-align: center;
       font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 1rem;
+      color: var(--forest);
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cf-item.is-center {
+      z-index: 5;
+    }
+
+    /* Arrows */
+    .cf-arrow {
+      position: absolute;
+      top: 54%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(3, 47, 47, 0.85);
+      color: #fff;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cf-arrow:hover {
+      background: var(--gold);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .cf-prev {
+      left: 0;
+    }
+
+    .cf-next {
+      right: 0;
+    }
+
+    @media (max-width: 767px) {
+      .cf-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+      }
+
+      .coverflow-wrap {
+        height: 360px;
+      }
+
+      .cf-item {
+        width: 190px;
+        margin-left: -95px;
+        top: 44px;
+      }
+
+      .cf-card {
+        padding: 8px 8px 26px;
+      }
+
+      .cf-card img {
+        height: 175px;
+      }
+
+      .rope-line {
+        top: 30px;
+      }
+    }
+
+    .cf-caption {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .cf-caption #cfLabel {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      color: var(--forest);
+      display: block;
+    }
+
+    .cf-badge {
+      display: inline-block;
+      margin-top: 6px;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 10px 26px;
-      border-radius: 3px;
+      background: var(--gold);
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 20px;
+    }
+
+    .cf-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .cf-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
       cursor: pointer;
-      border: 1.5px solid var(--border);
-      background: #fff;
-      color: var(--text-muted);
       transition: var(--transition);
     }
 
-    .gf-btn:hover {
-      border-color: var(--forest);
-      color: var(--forest);
+    .cf-dot.is-active {
+      background: var(--gold);
+      width: 22px;
+      border-radius: 5px;
     }
 
-    .gf-btn.is-active {
-      background: var(--forest);
-      border-color: var(--forest);
-      color: #fff;
+    /* ══════════════════════════════════════════
+       GALLERY SECTION — "Swatch Board" catalogue grid
+       Category colors: Products=gold, Manufacture=forest, Brand Visuals=rope
+    ══════════════════════════════════════════ */
+    .gallery-section {
+      padding: 40px 0 96px;
+      background: var(--off-white);
     }
 
-    /* ── Stats row ── */
+    .gallery-intro {
+      max-width: 620px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      min-height: 28px;
+      transition: opacity 0.3s ease;
+    }
+
     .gallery-stats {
       display: flex;
       gap: 40px;
@@ -423,59 +880,160 @@
       color: var(--text-muted);
     }
 
-    /* ── Isotope Grid ── */
-    .gal-grid {
-      /* clearfix */
+    /* Filter chips act as a category legend, each carrying its swatch color */
+    .gf-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 44px;
     }
 
-    .gal-grid::after {
-      content: '';
-      display: block;
-      clear: both;
+    .gf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 9px 20px 9px 14px;
+      border-radius: 30px;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+
+    .gf-btn .gf-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .gf-btn[data-filter="*"] .gf-dot {
+      background: conic-gradient(var(--gold) 0 33%, var(--forest) 33% 66%, var(--rope) 66% 100%);
+    }
+
+    .gf-btn[data-filter=".products"] .gf-dot {
+      background: var(--gold);
+    }
+
+    .gf-btn[data-filter=".process"] .gf-dot {
+      background: var(--forest);
+    }
+
+    .gf-btn[data-filter=".banners"] .gf-dot {
+      background: var(--rope);
+    }
+
+    .gf-btn .gf-count {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .gf-btn:hover {
+      border-color: var(--forest);
+      color: var(--forest);
+      transform: translateY(-1px);
+    }
+
+    .gf-btn.is-active {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: #fff;
+    }
+
+    .gf-btn.is-active .gf-count {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Grid — isotope masonry using a sizer element */
+    .gal-grid {
+      position: relative;
+    }
+
+    .grid-sizer,
+    .gal-item {
+      width: 25%;
     }
 
     .gal-item {
-      float: left;
-      padding: 6px;
-      width: 25%;
-      /* 4-col desktop */
+      padding: 7px;
     }
 
-    /* Wrapper + image */
+    .gal-item-lg {
+      width: 50%;
+    }
+
     .gal-inner {
       position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      background: var(--light-bg);
       display: block;
+      overflow: hidden;
       cursor: pointer;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+      border-top: 4px solid var(--gold);
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .gal-inner:hover {
+      box-shadow: 0 14px 32px rgba(3, 47, 47, 0.16);
+      transform: translateY(-3px);
+    }
+
+    .gal-item.process .gal-inner {
+      border-top-color: var(--forest);
+    }
+
+    .gal-item.banners .gal-inner {
+      border-top-color: var(--rope);
+    }
+
+    .gal-thumb {
+      position: relative;
+      overflow: hidden;
     }
 
     .gal-inner img {
       width: 100%;
-      height: 200px;
+      height: 190px;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gal-item-tall .gal-inner img {
+      height: 260px;
+    }
+
+    .gal-item-short .gal-inner img {
+      height: 150px;
+    }
+
+    .gal-item-lg .gal-inner img {
+      height: 300px;
     }
 
     .gal-inner:hover img {
       transform: scale(1.07);
     }
 
-    /* Hover overlay */
     .gal-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(3, 47, 47, 0.55);
+      background: rgba(3, 47, 47, 0.38);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
       opacity: 0;
-      transition: opacity 0.3s;
-      border-radius: 8px;
+      transition: opacity 0.35s ease;
     }
 
     .gal-inner:hover .gal-overlay {
@@ -483,46 +1041,67 @@
     }
 
     .gal-overlay .ov-icon {
-      font-size: 2rem;
-      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest);
+      font-size: 1.15rem;
       transform: scale(0.7);
-      transition: transform 0.3s;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .gal-inner:hover .gal-overlay .ov-icon {
+    .gal-inner:hover .ov-icon {
       transform: scale(1);
     }
 
-    .gal-overlay .ov-label {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold-lt);
+    /* Persistent swatch-tag caption beneath every thumbnail */
+    .gal-caption {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 12px;
+      border-top: 1px dashed var(--border);
     }
 
-    /* Category badge (top-left) */
-    .gal-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-family: var(--font-body);
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .gal-cat-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
       background: var(--gold);
-      color: #fff;
-      padding: 3px 10px;
-      border-radius: 20px;
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
+      flex-shrink: 0;
     }
 
-    .gal-inner:hover .gal-badge {
-      opacity: 1;
+    .gal-item.process .gal-cat-dot {
+      background: var(--forest);
+    }
+
+    .gal-item.banners .gal-cat-dot {
+      background: var(--rope);
+    }
+
+    .gal-label {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ══════════════════════════════════════════
@@ -547,7 +1126,7 @@
     }
 
     .cta-band p {
-      font-family: var(--font-acc);
+      font-family: var(--font-body);
       font-size: 1.05rem;
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 32px;
@@ -598,27 +1177,37 @@
        WHATSAPP FLOAT
     ══════════════════════════════════════════ */
     .wa-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      width: 56px;
-      height: 56px;
-      background: #25D366;
-      color: #fff;
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
+      }
+
+    .wa-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-      transition: var(--transition);
+      border: 2px solid #25D366;
+      animation: waPulse 2.2s ease-out infinite;
+    }
+
+    @keyframes waPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
     }
 
     .wa-btn:hover {
       transform: scale(1.12);
       color: #fff;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
     }
 
     /* ══════════════════════════════════════════
@@ -803,8 +1392,13 @@
         margin: 8px 16px 12px;
       }
 
+      .grid-sizer,
       .gal-item {
         width: 33.333%;
+      }
+
+      .gal-item-lg {
+        width: 66.666%;
       }
     }
 
@@ -814,15 +1408,30 @@
       }
 
       .gallery-section {
-        padding: 52px 0 72px;
+        padding: 32px 0 72px;
       }
 
+      .showcase-section {
+        padding: 40px 0 20px;
+      }
+
+      .grid-sizer,
       .gal-item {
         width: 50%;
       }
 
-      .gal-inner img {
+      .gal-item-lg {
+        width: 100%;
+      }
+
+      .gal-inner img,
+      .gal-item-tall .gal-inner img,
+      .gal-item-short .gal-inner img {
         height: 170px;
+      }
+
+      .gal-item-lg .gal-inner img {
+        height: 220px;
       }
 
       .footer-bottom {
@@ -832,11 +1441,11 @@
       }
 
       .wa-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 22px;
-        bottom: 18px;
-        right: 18px;
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
       }
     }
 
@@ -850,21 +1459,36 @@
       }
 
       .gallery-section {
-        padding: 40px 0 60px;
+        padding: 28px 0 60px;
       }
 
+      .grid-sizer,
       .gal-item {
         width: 50%;
-        padding: 4px;
+        padding: 5px;
       }
 
-      .gal-inner img {
-        height: 140px;
+      .gal-item-lg {
+        width: 100%;
+      }
+
+      .gal-inner img,
+      .gal-item-tall .gal-inner img,
+      .gal-item-short .gal-inner img {
+        height: 130px;
+      }
+
+      .gal-item-lg .gal-inner img {
+        height: 190px;
+      }
+
+      .gal-label {
+        font-size: 0.8rem;
       }
 
       .gf-btn {
-        padding: 8px 16px;
-        font-size: 0.72rem;
+        padding: 7px 14px 7px 10px;
+        font-size: 0.7rem;
       }
 
       .gs-num {
@@ -885,9 +1509,9 @@
       }
 
       .wa-btn {
-        width: 46px;
-        height: 46px;
-        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
         bottom: 16px;
         right: 16px;
       }
@@ -895,11 +1519,21 @@
 
     @media (max-width: 380px) {
       .wa-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-        bottom: 12px;
-        right: 12px;
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .cf-item,
+      .gal-inner,
+      .gal-inner img {
+        transition: none !important;
+        animation: none !important;
       }
     }
   </style>
@@ -920,8 +1554,6 @@
             style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
             style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
-          <!-- <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i
-              class="bi bi-youtube"></i></a> -->
         </div>
       </div>
     </div>
@@ -979,6 +1611,32 @@
     </div>
   </div>
 
+  <!-- ════════════ COVERFLOW SHOWCASE ════════════ -->
+  <section class="showcase-section">
+    <div class="container">
+      <div class="text-center mb-2">
+        <span class="eyebrow">Featured Showcase</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">
+          Hung Fresh Off the <em style="color:var(--gold);font-style:italic;">Line</em>
+        </h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="coverflow-wrap" id="coverflowWrap">
+        <button class="cf-arrow cf-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+        <div class="rope-line"></div>
+        <div class="coverflow-track" id="coverflowTrack"></div>
+        <button class="cf-arrow cf-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+      </div>
+
+      <div class="cf-caption">
+        <span id="cfLabel">Loading&hellip;</span>
+        <span id="cfBadge" class="cf-badge">Products</span>
+      </div>
+      <div class="cf-dots" id="cfDots"></div>
+    </div>
+  </section>
+
   <!-- ════════════ GALLERY SECTION ════════════ -->
   <section class="gallery-section">
     <div class="container">
@@ -996,28 +1654,36 @@
       <div class="gallery-stats">
         <div class="gs-item">
           <span class="gs-num" id="visible-count">28</span>
-          <span class="gs-label">Photos</span>
-        </div>
-        <div class="gs-item">
-          <span class="gs-num">3</span>
-          <span class="gs-label">Categories</span>
+          <span class="gs-label">Showing</span>
         </div>
         <div class="gs-item">
           <span class="gs-num">50+</span>
           <span class="gs-label">Countries Served</span>
         </div>
+        <div class="gs-item">
+          <span class="gs-num">500+</span>
+          <span class="gs-label">Clients Worldwide</span>
+        </div>
       </div>
+
+      <!-- Category description, swaps with the active filter -->
+      <p class="gallery-intro" id="galleryIntro">Every photo below, sorted like fibre on a sample board.</p>
 
       <!-- Filter buttons -->
       <div class="gf-bar">
-        <button class="gf-btn is-active" data-filter="*">All</button>
-        <button class="gf-btn" data-filter=".products">Products</button>
-        <button class="gf-btn" data-filter=".process">Manufacture</button>
-        <button class="gf-btn" data-filter=".banners">Brand Visuals</button>
+        <button class="gf-btn is-active" data-filter="*"><span class="gf-dot"></span>All <span class="gf-count"
+            id="count-all"></span></button>
+        <button class="gf-btn" data-filter=".products"><span class="gf-dot"></span>Products <span class="gf-count"
+            id="count-products"></span></button>
+        <button class="gf-btn" data-filter=".process"><span class="gf-dot"></span>Manufacture <span class="gf-count"
+            id="count-process"></span></button>
+        <button class="gf-btn" data-filter=".banners"><span class="gf-dot"></span>Brand Visuals <span class="gf-count"
+            id="count-banners"></span></button>
       </div>
 
       <!-- Dynamic Isotope Grid -->
       <div class="gal-grid" id="galGrid">
+        <div class="grid-sizer"></div>
       </div><!-- /gal-grid -->
 
     </div>
@@ -1109,8 +1775,6 @@
             title="Facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
             title="Instagram"><i class="bi bi-instagram"></i></a>
-          <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
-              class="bi bi-youtube"></i></a> -->
           <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
               class="bi bi-envelope-fill"></i></a>
         </div>
@@ -1122,157 +1786,304 @@
   <script>
     const galleryData = [
       // 1. Manufacture (from Process Folder)
-      { folder: 'Process', filename: 'huskCollection.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'huskCollection2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'huskCollection3.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'huskSeparation.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'huskSeparation1.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'fibreExtraction.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'fibreExtraction2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'drying.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'drying2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'serving.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'washingBuffering.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'washing.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'washing2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'blockMaking.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'blockMaking2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'blockMaking3.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'blockMaking4.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'inspection.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'inspection2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'inspection3.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'inspection4.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'loading.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'loading2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Process', filename: 'loading3.jpeg', category: 'process', badge: 'Manufacture' },
+      { folder: 'Process', filename: 'huskCollection.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Collection' },
+      { folder: 'Process', filename: 'huskCollection2.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Collection' },
+      { folder: 'Process', filename: 'huskCollection3.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Collection' },
+      { folder: 'Process', filename: 'huskSeparation.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Separation' },
+      { folder: 'Process', filename: 'huskSeparation1.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Separation' },
+      { folder: 'Process', filename: 'fibreExtraction.jpeg', category: 'process', badge: 'Manufacture', label: 'Fibre Extraction' },
+      { folder: 'Process', filename: 'fibreExtraction2.jpeg', category: 'process', badge: 'Manufacture', label: 'Fibre Extraction' },
+      { folder: 'Process', filename: 'drying.jpeg', category: 'process', badge: 'Manufacture', label: 'Coir Drying' },
+      { folder: 'Process', filename: 'drying2.jpeg', category: 'process', badge: 'Manufacture', label: 'Coir Drying Yard' },
+      { folder: 'Process', filename: 'serving.jpeg', category: 'process', badge: 'Manufacture', label: 'Husk Processing' },
+      { folder: 'Process', filename: 'washingBuffering.jpeg', category: 'process', badge: 'Manufacture', label: 'Washing & Buffering' },
+      { folder: 'Process', filename: 'washing.jpeg', category: 'process', badge: 'Manufacture', label: 'Coco Peat Washing' },
+      { folder: 'Process', filename: 'washing2.jpeg', category: 'process', badge: 'Manufacture', label: 'Coco Peat Washing' },
+      { folder: 'Process', filename: 'blockMaking.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing' },
+      { folder: 'Process', filename: 'blockMaking2.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing' },
+      { folder: 'Process', filename: 'blockMaking3.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing' },
+      { folder: 'Process', filename: 'blockMaking4.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing' },
+      { folder: 'Process', filename: 'inspection.jpeg', category: 'process', badge: 'Manufacture', label: 'Quality Inspection' },
+      { folder: 'Process', filename: 'inspection2.jpeg', category: 'process', badge: 'Manufacture', label: 'Quality Inspection' },
+      { folder: 'Process', filename: 'inspection3.jpeg', category: 'process', badge: 'Manufacture', label: 'Quality Inspection' },
+      { folder: 'Process', filename: 'inspection4.jpeg', category: 'process', badge: 'Manufacture', label: 'Quality Inspection' },
+      { folder: 'Process', filename: 'loading.jpeg', category: 'process', badge: 'Manufacture', label: 'Container Loading' },
+      { folder: 'Process', filename: 'loading2.jpeg', category: 'process', badge: 'Manufacture', label: 'Container Loading' },
+      { folder: 'Process', filename: 'loading3.jpeg', category: 'process', badge: 'Manufacture', label: 'Container Loading' },
 
       // 2. Manufacture (from Products Folder - machinery / facility / staff)
-      { folder: 'Products', filename: 'block_pressing_machine.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'cocopeat_drying_yard.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'coir_drying_yard.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'factory_conveyor_belt.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'factory_staff_group.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'green_tractor_loader.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'infrastructure.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'infrastructure2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'infrastructure3.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'manufactureCoir.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'manufacturer2.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'manufacturer3.jpeg', category: 'process', badge: 'Manufacture' },
-      { folder: 'Products', filename: 'manufacturer4.jpeg', category: 'process', badge: 'Manufacture' },
+      { folder: 'Products', filename: 'block_pressing_machine.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing Machine' },
+      { folder: 'Products', filename: 'cocopeat_drying_yard.jpeg', category: 'process', badge: 'Manufacture', label: 'Coco Peat Drying Yard' },
+      { folder: 'Products', filename: 'coir_drying_yard.jpeg', category: 'process', badge: 'Manufacture', label: 'Coir Drying Yard' },
+      { folder: 'Products', filename: 'factory_conveyor_belt.jpeg', category: 'process', badge: 'Manufacture', label: 'Factory Conveyor Belt' },
+      { folder: 'Products', filename: 'factory_staff_group.jpeg', category: 'process', badge: 'Manufacture', label: 'Our Factory Team' },
+      { folder: 'Products', filename: 'infrastructure2.jpeg', category: 'process', badge: 'Manufacture', label: 'Factory Infrastructure' },
+      { folder: 'Products', filename: 'manufactureCoir.jpeg', category: 'process', badge: 'Manufacture', label: 'Coir Manufacturing' },
+      { folder: 'Products', filename: 'manufacturer2.jpeg', category: 'process', badge: 'Manufacture', label: 'Manufacturing Facility' },
 
       // 3. Brand Visuals (from head Folder)
-      { folder: 'head', filename: 'HomePageimages.jpeg', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'homePageNew.png', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'homePageNew2.png', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'homePageNew3.jpeg', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'Contact-head.jpeg', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'product2.jpg', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'ImportanceOfCoir.jpeg', category: 'banners', badge: 'Brand Visuals' },
-      { folder: 'head', filename: 'about-head.jpeg', category: 'banners', badge: 'Brand Visuals' },
+      { folder: 'head', filename: 'HomePageimages.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'Anuradha Coirs & Fibers' },
+      { folder: 'head', filename: 'Contact-head.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'Reach Out To Us' },
+      { folder: 'head', filename: 'ImportanceOfCoir.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'The Importance of Coir' },
 
       // 4. Products (from Products Folder)
-      { folder: 'Products', filename: 'NurserySeedlings.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'TenderCoconut.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'TenderCoconut2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'TenderCoconut3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'ageofSeedlings.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'bricks.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'bricks2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'bricks3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'brownCoir.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoHuskChips.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoHuskChips2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoHuskChips3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoHuskChips4.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoPeatCoin.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoPeatCoin2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocoPeatCoin3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocochips.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocopeat_block.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocopeatblock631.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocopeatblock632.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocopeatblock633.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'cocopeatblock635.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'GBS.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'GB.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'GBSOT.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'GBOT.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirGrowBag.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirGrowBag2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirfiberNew.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirfiberNew2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirfiberNew3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirfiberNew4.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'coirfiberNew5.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'fullyHuskedCoconut.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'fullyHuskedCoconut2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'fullyHuskedCoconut3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'fullyHuskedCoconut4.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'fullySemiHuskedCoconuts.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'greenSemicoconut.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'loose_cocopeat.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'openTopGrowBag.jpg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'openTopGrowBag2.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'openTopGrowBag3.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'openTopGrowBag4.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'raw_coconut_husks.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'semiHuskedCoconut.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'tallCoconut.jpeg', category: 'products', badge: 'Products' },
-      { folder: 'Products', filename: 'whiteCoirFibre.jpeg', category: 'products', badge: 'Products' }
+      { folder: 'Products', filename: 'NurserySeedlings.jpeg', category: 'products', badge: 'Products', label: 'Nursery Seedlings' },
+      { folder: 'Products', filename: 'TenderCoconut.jpeg', category: 'products', badge: 'Products', label: 'Tender Coconut' },
+      { folder: 'Products', filename: 'TenderCoconut2.jpeg', category: 'products', badge: 'Products', label: 'Tender Coconut' },
+      { folder: 'Products', filename: 'TenderCoconut3.jpeg', category: 'products', badge: 'Products', label: 'Tender Coconut' },
+      { folder: 'Products', filename: 'ageofSeedlings.jpeg', category: 'products', badge: 'Products', label: 'Coconut Seedlings' },
+      { folder: 'Products', filename: 'bricks.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Bricks' },
+      { folder: 'Products', filename: 'bricks2.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Bricks' },
+      { folder: 'Products', filename: 'bricks3.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Bricks' },
+      { folder: 'Products', filename: 'brownCoir.jpeg', category: 'products', badge: 'Products', label: 'Brown Coir Fibre' },
+      { folder: 'Products', filename: 'cocoHuskChips.jpeg', category: 'products', badge: 'Products', label: 'Coco Husk Chips' },
+      { folder: 'Products', filename: 'cocoHuskChips2.jpeg', category: 'products', badge: 'Products', label: 'Coco Husk Chips' },
+      { folder: 'Products', filename: 'cocoHuskChips3.jpeg', category: 'products', badge: 'Products', label: 'Coco Husk Chips' },
+      { folder: 'Products', filename: 'cocoPeatCoin.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Coins' },
+      { folder: 'Products', filename: 'cocoPeatCoin2.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Coins' },
+      { folder: 'Products', filename: 'cocoPeatCoin3.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Coins' },
+      { folder: 'Products', filename: 'cocochips.jpeg', category: 'products', badge: 'Products', label: 'Coco Chips' },
+      { folder: 'Products', filename: 'cocopeat_block.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Block' },
+      { folder: 'Products', filename: 'cocopeatblock631.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Block' },
+      { folder: 'Products', filename: 'cocopeatblock632.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Block' },
+      { folder: 'Products', filename: 'cocopeatblock633.jpeg', category: 'products', badge: 'Products', label: 'Coco Peat Block' },
+      { folder: 'Products', filename: 'GBS.jpeg', category: 'products', badge: 'Products', label: 'Grow Bag Slabs' },
+      { folder: 'Products', filename: 'GB.jpeg', category: 'products', badge: 'Products', label: 'Grow Bags' },
+      { folder: 'Products', filename: 'GBSOT.jpeg', category: 'products', badge: 'Products', label: 'Open Top Grow Bags' },
+      { folder: 'Products', filename: 'GBOT.jpeg', category: 'products', badge: 'Products', label: 'Open Top Grow Bags' },
+      { folder: 'Products', filename: 'coirGrowBag.jpeg', category: 'products', badge: 'Products', label: 'Coir Grow Bags' },
+      { folder: 'Products', filename: 'coirGrowBag2.jpeg', category: 'products', badge: 'Products', label: 'Coir Grow Bags' },
+      { folder: 'Products', filename: 'coirfiberNew.jpeg', category: 'products', badge: 'Products', label: 'Coir Fibre' },
+      { folder: 'Products', filename: 'coirfiberNew2.jpeg', category: 'products', badge: 'Products', label: 'Premium Coir Fibre' },
+      { folder: 'Products', filename: 'coirfiberNew3.jpeg', category: 'products', badge: 'Products', label: 'White Coir Fibre' },
+      { folder: 'Products', filename: 'coirfiberNew4.jpeg', category: 'products', badge: 'Products', label: 'Coir Fibre Bales' },
+      { folder: 'Products', filename: 'coirfiberNew5.jpeg', category: 'products', badge: 'Products', label: 'Coir Fibre' },
+      { folder: 'Products', filename: 'fullyHuskedCoconut.jpeg', category: 'products', badge: 'Products', label: 'Fully Husked Coconut' },
+      { folder: 'Products', filename: 'fullyHuskedCoconut2.jpeg', category: 'products', badge: 'Products', label: 'Fully Husked Coconuts' },
+      { folder: 'Products', filename: 'fullyHuskedCoconut3.jpeg', category: 'products', badge: 'Products', label: 'Fully Husked Coconuts' },
+      { folder: 'Products', filename: 'fullyHuskedCoconut4.jpeg', category: 'products', badge: 'Products', label: 'Fully Husked Coconuts' },
+      { folder: 'Products', filename: 'fullySemiHuskedCoconuts.jpeg', category: 'products', badge: 'Products', label: 'Semi-Husked Coconuts' },
+      { folder: 'Products', filename: 'greenSemicoconut.jpeg', category: 'products', badge: 'Products', label: 'Green Semi-Husked Coconut' },
+      { folder: 'Products', filename: 'loose_cocopeat.jpeg', category: 'products', badge: 'Products', label: 'Loose Coco Peat' },
+      { folder: 'Products', filename: 'openTopGrowBag.jpg', category: 'products', badge: 'Products', label: 'Open Top Grow Bag' },
+      { folder: 'Products', filename: 'openTopGrowBag2.jpeg', category: 'products', badge: 'Products', label: 'Open Top Grow Bags' },
+      { folder: 'Products', filename: 'openTopGrowBag3.jpeg', category: 'products', badge: 'Products', label: 'Open Top Grow Bags' },
+      { folder: 'Products', filename: 'openTopGrowBag4.jpeg', category: 'products', badge: 'Products', label: 'Open Top Grow Bags' },
+      { folder: 'Products', filename: 'raw_coconut_husks.jpeg', category: 'products', badge: 'Products', label: 'Raw Coconut Husks' },
+      { folder: 'Products', filename: 'semiHuskedCoconut.jpeg', category: 'products', badge: 'Products', label: 'Semi-Husked Coconuts' },
+      { folder: 'Products', filename: 'tallCoconut.jpeg', category: 'products', badge: 'Products', label: 'Tall Coconut Seedlings' },
+      { folder: 'Products', filename: 'whiteCoirFibre.jpeg', category: 'products', badge: 'Products', label: 'White Coir Fibre' }
     ];
+
+    // Helper to generate a clean title from filename
+    function formatLabel(filename) {
+      let name = filename.substring(0, filename.lastIndexOf('.'));
+      name = name.replace(/[-_]/g, ' ');
+      name = name.replace(/(\d+)/g, ' $1');
+      name = name.replace(/([a-z])([A-Z])/g, '$1 $2');
+      name = name.replace(/\s+/g, ' ').trim();
+      return name.split(' ').map(word => {
+        if (!word) return '';
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      }).join(' ');
+    }
 
     $(document).ready(function () {
       /* Footer year */
       document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-      // Dynamic Grid Generator
-      const $galGrid = $('#galGrid');
+      /* ══════════════ COVERFLOW SHOWCASE ══════════════ */
+      // Curated highlight reel — one strong image per storyline
+      const featuredFiles = [
+        'coirfiberNew2.jpeg', 'bricks.jpeg', 'cocopeat_block.jpeg', 'raw_coconut_husks.jpeg',
+        'openTopGrowBag2.jpeg', 'fibreExtraction.jpeg', 'coirGrowBag.jpeg', 'cocoHuskChips2.jpeg', 'blockMaking2.jpeg'
+      ];
+      const featured = featuredFiles
+        .map(fn => galleryData.find(g => g.filename === fn))
+        .filter(Boolean);
 
-      // Helper to generate a clean title from filename
-      function formatLabel(filename) {
-        let name = filename.substring(0, filename.lastIndexOf('.'));
-        name = name.replace(/[-_]/g, ' ');
-        name = name.replace(/(\d+)/g, ' $1');
-        name = name.replace(/([a-z])([A-Z])/g, '$1 $2');
-        name = name.replace(/\s+/g, ' ').trim();
-        return name.split(' ').map(word => {
-          if (!word) return '';
-          return word.charAt(0).toUpperCase() + word.slice(1);
-        }).join(' ');
+      const $track = $('#coverflowTrack');
+      const $label = $('#cfLabel');
+      const $badge = $('#cfBadge');
+      const $dots = $('#cfDots');
+      const n = featured.length;
+      let current = 0;
+      let autoplayTimer = null;
+
+      // Build DOM once
+      featured.forEach((item, i) => {
+        const path = `assets/images/${item.folder}/${item.filename}`;
+        const label = item.label || formatLabel(item.filename);
+        const $el = $(`
+          <div class="cf-item" data-index="${i}">
+            <div class="cf-string"></div>
+            <div class="cf-peg"></div>
+            <div class="cf-card">
+              <img src="${path}" alt="${label}" loading="lazy">
+              <span class="cf-tag">${label}</span>
+            </div>
+          </div>
+        `);
+        $el.on('click', function () {
+          const idx = parseInt($(this).data('index'), 10);
+          if (idx !== current) { current = idx; renderCoverflow(true); }
+        });
+        $track.append($el);
+
+        const $dot = $(`<span class="cf-dot" data-index="${i}"></span>`);
+        $dot.on('click', function () {
+          current = parseInt($(this).data('index'), 10);
+          renderCoverflow(true);
+        });
+        $dots.append($dot);
+      });
+
+      const $items = $track.find('.cf-item');
+      const $dotEls = $dots.find('.cf-dot');
+
+      function shortestOffset(i, cur) {
+        let raw = i - cur;
+        if (raw > n / 2) raw -= n;
+        if (raw < -n / 2) raw += n;
+        return raw;
       }
 
-      // Generate items HTML
-      galleryData.forEach(item => {
+      function renderCoverflow() {
+        $items.each(function () {
+          const i = parseInt($(this).data('index'), 10);
+          const offset = shortestOffset(i, current);
+          const abs = Math.abs(offset);
+          const $el = $(this);
+
+          if (abs > 3) {
+            $el.css({ opacity: 0, pointerEvents: 'none' });
+            return;
+          }
+
+          const x = offset * 150;
+          const rotate = offset * -32;
+          const scale = 1 - abs * 0.16;
+          const z = -abs * 140;
+          const opacity = 1 - abs * 0.28;
+
+          $el.css({
+            transform: `translateX(${x}px) translateZ(${z}px) rotateY(${rotate}deg) scale(${scale})`,
+            zIndex: 10 - abs,
+            opacity: Math.max(opacity, 0),
+            pointerEvents: 'auto'
+          });
+          $el.toggleClass('is-center', offset === 0);
+        });
+
+        const cur = featured[current];
+        $label.text(cur.label || formatLabel(cur.filename));
+        $badge.text(cur.badge);
+
+        $dotEls.each(function () {
+          const i = parseInt($(this).data('index'), 10);
+          $(this).toggleClass('is-active', i === current);
+        });
+      }
+
+      function next() { current = (current + 1) % n; renderCoverflow(); }
+      function prev() { current = (current - 1 + n) % n; renderCoverflow(); }
+
+      $('.cf-next').on('click', function () { next(); restartAutoplay(); });
+      $('.cf-prev').on('click', function () { prev(); restartAutoplay(); });
+
+      function startAutoplay() {
+        autoplayTimer = setInterval(next, 4200);
+      }
+      function restartAutoplay() {
+        clearInterval(autoplayTimer);
+        startAutoplay();
+      }
+
+      const $wrap = $('#coverflowWrap');
+      $wrap.on('mouseenter', () => clearInterval(autoplayTimer));
+      $wrap.on('mouseleave', startAutoplay);
+
+      // Touch swipe support
+      let touchStartX = 0;
+      $wrap.on('touchstart', function (e) { touchStartX = e.originalEvent.touches[0].clientX; });
+      $wrap.on('touchend', function (e) {
+        const dx = e.originalEvent.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) next(); else prev();
+          restartAutoplay();
+        }
+      });
+
+      renderCoverflow();
+      startAutoplay();
+
+      /* ══════════════ FILTERABLE "SWATCH BOARD" GRID ══════════════ */
+      const $galGrid = $('#galGrid');
+
+      const introText = {
+        '*': 'Every photo below, sorted like fibre on a sample board.',
+        '.products': 'Finished coir & coconut goods — grow bags, cocopeat blocks, fibre and more, ready for export.',
+        '.process': 'Behind the scenes: husk collection, extraction, drying and quality checks at our facility.',
+        '.banners': 'Brand imagery used across our website and marketing materials.'
+      };
+
+      // Track a running index per-category so the first item of each
+      // category can be presented as a larger "featured" swatch.
+      const catSeen = {};
+      galleryData.forEach((item, idx) => {
         const path = `assets/images/${item.folder}/${item.filename}`;
-        const label = formatLabel(item.filename);
+        const label = item.label || formatLabel(item.filename);
+        const delay = (idx % 16) * 0.045;
+
+        const seen = catSeen[item.category] || 0;
+        catSeen[item.category] = seen + 1;
+
+        let sizeClass = '';
+        if (seen === 0) {
+          sizeClass = 'gal-item-lg gal-item-tall';           // featured card per category
+        } else if (seen % 5 === 1) {
+          sizeClass = 'gal-item-tall';
+        } else if (seen % 5 === 3) {
+          sizeClass = 'gal-item-short';
+        }
+
         const itemHtml = `
-          <div class="gal-item ${item.category}">
-            <a href="${path}" class="gal-inner popup-btn">
-              <img src="${path}" alt="${label}" loading="lazy">
-              <div class="gal-overlay">
-                <i class="bi bi-zoom-in ov-icon"></i>
-                <span class="ov-label">${label}</span>
+          <div class="gal-item ${item.category} ${sizeClass}">
+            <div class="gal-inner popup-wrap" style="animation-delay: ${delay}s;">
+              <a href="${path}" class="gal-thumb popup-btn">
+                <img src="${path}" alt="${label}" loading="lazy">
+                <div class="gal-overlay"><i class="bi bi-zoom-in ov-icon"></i></div>
+              </a>
+              <div class="gal-caption">
+                <span class="gal-cat-dot"></span>
+                <span class="gal-label">${label}</span>
               </div>
-              <span class="gal-badge">${item.badge}</span>
-            </a>
+            </div>
           </div>
         `;
         $galGrid.append(itemHtml);
       });
 
-      /* ── Isotope init ── */
       var $grid = $galGrid.isotope({
         itemSelector: '.gal-item',
-        layoutMode: 'fitRows',
-        percentPosition: true
+        layoutMode: 'masonry',
+        percentPosition: true,
+        masonry: { columnWidth: '.grid-sizer' }
       });
 
-      /* Set initial count dynamically */
+      $grid.imagesLoaded().progress(function () {
+        $grid.isotope('layout');
+      });
+
+      /* Counts per category, shown on the filter chips + stat */
+      const catCounts = { products: 0, process: 0, banners: 0 };
+      galleryData.forEach(i => catCounts[i.category]++);
+      $('#count-all').text(galleryData.length);
+      $('#count-products').text(catCounts.products);
+      $('#count-process').text(catCounts.process);
+      $('#count-banners').text(catCounts.banners);
       $('#visible-count').text(galleryData.length);
 
-      /* ── Filter buttons ── */
       $('.gf-btn').on('click', function () {
         $('.gf-btn').removeClass('is-active');
         $(this).addClass('is-active');
@@ -1280,14 +2091,17 @@
         var filter = $(this).data('filter');
         $grid.isotope({ filter: filter });
 
-        /* Update count */
         var count = (filter === '*')
           ? $('.gal-item').length
           : $(filter + '.gal-item').length;
         $('#visible-count').text(count);
+
+        $('#galleryIntro').css('opacity', 0);
+        setTimeout(function () {
+          $('#galleryIntro').text(introText[filter] || introText['*']).css('opacity', 1);
+        }, 150);
       });
 
-      /* ── Magnific Popup lightbox ── */
       $galGrid.magnificPopup({
         delegate: '.popup-btn',
         type: 'image',
@@ -1298,7 +2112,7 @@
     });
 
     /* Google Translate bridge */
-    document.getElementById('translate-select').addEventListener('change', function () {
+    document.getElementById('translate-select') && document.getElementById('translate-select').addEventListener('change', function () {
       var combo = document.querySelector('.goog-te-combo');
       if (combo) { combo.value = this.value; combo.dispatchEvent(new Event('change')); }
     });
@@ -1317,6 +2131,7 @@
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
+  <script src="assets/cookie-consent.js"></script>
 </body>
 
 </html>

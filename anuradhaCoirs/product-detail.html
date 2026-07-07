@@ -44,9 +44,9 @@
             --border-lt: #eeecea;
             --red: #e53935;
             --green: #25D366;
-            --fh: 'Playfair Display', Georgia, serif;
-            --fb: 'DM Sans', system-ui, sans-serif;
-            --fa: 'Cormorant Garamond', Georgia, serif;
+            --fh: 'Poppins', system-ui, sans-serif;
+            --fb: 'Inter', system-ui, sans-serif;
+            --fa: 'Poppins', system-ui, sans-serif;
             --tr: all .28s cubic-bezier(.25, .46, .45, .94);
             --nav-h: 88px;
             --shadow-card: 0 4px 24px rgba(59, 42, 28, .08), 0 1px 4px rgba(0, 0, 0, .04);
@@ -79,10 +79,23 @@
             overflow-x: hidden;
         }
 
-        p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--fh);
+      line-height: 1.15;
+    }
+
+    p {
+      font-family: var(--fb);
+      line-height: 1.8;
+      color: var(--text-mid);
+    }
+
+        
 
         a {
             text-decoration: none;
@@ -313,7 +326,7 @@
         }
 
         .page-hero-content p {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: 1.1rem;
             color: #ffffff;
             font-weight: 500;
@@ -699,7 +712,7 @@
         }
 
         .drawer-cta p {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: .9rem;
             font-style: italic;
             color: rgba(255, 255, 255, .7);
@@ -1277,9 +1290,8 @@
         }
 
         .pc-desc {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: .96rem;
-            font-style: italic;
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 12px;
@@ -1715,7 +1727,7 @@
         }
 
         .dm-desc {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: .93rem;
             font-style: italic;
             color: var(--text-mid);
@@ -2650,7 +2662,7 @@
         }
 
         .order-success p {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: .95rem;
             color: var(--text-muted);
             line-height: 1.6;
@@ -2832,7 +2844,7 @@
         }
 
         .cta-band p {
-            font-family: var(--fa);
+            font-family: var(--fb);
             font-size: 1.05rem;
             color: rgba(255, 255, 255, .7);
             margin-bottom: 30px;
@@ -2882,28 +2894,49 @@
    WHATSAPP FLOAT
 ══════════════════════════════════════ */
         .wa-btn {
-            position: fixed;
-            bottom: 26px;
-            right: 26px;
-            z-index: 999;
-            width: 52px;
-            height: 52px;
-            background: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            text-decoration: none;
-            box-shadow: 0 4px 18px #25d36673;
-            transition: var(--tr);
-        }
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: all 0.3s ease;
+    }
 
-        .wa-btn:hover {
-            transform: scale(1.1);
-            color: #fff;
-        }
+    .wa-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: waPulse 2.2s ease-out infinite;
+    }
+
+    @keyframes waPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      color: #fff;
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    }
 
         /* ══════════════════════════════════════
    FOOTER
@@ -3204,12 +3237,12 @@
             }
 
             .wa-btn {
-                width: 46px;
-                height: 46px;
-                font-size: 22px;
-                bottom: 80px;
-                right: 18px;
-            }
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
+        bottom: 16px;
+        right: 16px;
+      }
 
             .prod-grid.gl .prod-card {
                 flex-direction: column;
@@ -4130,6 +4163,99 @@
                 font-size: 1.6rem;
             }
         }
+
+        /* ── Product Reviews Section ── */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+            margin-top: 20px;
+        }
+
+        .review-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: var(--tr);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(3, 47, 47, 0.1);
+            border-color: rgba(3, 47, 47, 0.2);
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .review-comment {
+            font-family: var(--fb);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-mid);
+            font-style: italic;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest), var(--forest2));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--fb);
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(3, 47, 47, 0.2);
+        }
+
+        .review-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .review-name {
+            font-family: var(--fb);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .review-location {
+            font-family: var(--fb);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
     </style>
 </head>
 
@@ -4299,6 +4425,9 @@
 
         <!-- Suitable Crops Section -->
         <div id="productCropsSection" style="display: none;"></div>
+
+        <!-- Product Reviews Section -->
+        <div id="productReviewsSection" style="display: none;"></div>
 
         <!-- Related Products Section -->
         <div class="related-products-section" id="relatedSection" style="display: none;">
@@ -4627,6 +4756,21 @@
         ══════════════════════════════════════ */
         let cart = JSON.parse(localStorage.getItem('ac_cart') || '[]'); // [{id, unit, amount}]
 
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'ac_cart') {
+                cart = JSON.parse(e.newValue || '[]');
+                updateCartBadge();
+                if (document.getElementById('cartDrawer') && document.getElementById('cartDrawer').classList.contains('open')) {
+                    renderCartItems();
+                }
+            }
+        });
+
+        window.addEventListener('pageshow', function() {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
+            updateCartBadge();
+        });
+
         function saveCart() {
             localStorage.setItem('ac_cart', JSON.stringify(cart));
         }
@@ -4647,6 +4791,7 @@
         }
 
         function addToCart(id, amount = 100) {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             const existing = cart.find(i => i.id === id);
             if (existing) {
                 existing.amount += amount;
@@ -4666,6 +4811,7 @@
         }
 
         function removeFromCart(id) {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             cart = cart.filter(i => i.id !== id);
             saveCart();
             updateCartBadge();
@@ -4674,6 +4820,7 @@
         }
 
         function changeCartUnit(id, unit) {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             const item = cart.find(i => i.id === id);
             if (!item) return;
             item.unit = unit;
@@ -4692,6 +4839,7 @@
         }
 
         function updateCartAmount(id, deltaSign) {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             const item = cart.find(i => i.id === id);
             if (!item) return;
             let delta = 1;
@@ -4707,6 +4855,7 @@
         }
 
         function setCartAmount(id, val) {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             const item = cart.find(i => i.id === id);
             if (!item) return;
             const parsed = parseInt(val);
@@ -4768,6 +4917,7 @@
         }
 
         function openCart() {
+            cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
             renderCartItems();
             document.getElementById('cartDrawer').classList.add('open');
             document.getElementById('cartOverlay').classList.add('open');
@@ -5181,6 +5331,40 @@
                 $('#productCropsSection').hide().empty();
             }
 
+            // Render Reviews
+            if (p.reviews && p.reviews.length > 0) {
+                let reviewsHTML = `
+                    <h2 class="info-heading reveal-on-scroll">Customer Reviews</h2>
+                    <p class="info-subheading reveal-on-scroll">Simple & modern feedback from our global buyers</p>
+                    <div class="reviews-grid reveal-on-scroll">
+                `;
+                p.reviews.forEach((rev, idx) => {
+                    const initials = rev.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                    reviewsHTML += `
+                        <div class="review-card reveal-on-scroll delay-${idx + 1}">
+                            <div class="review-stars">
+                                ${'<i class="bi bi-star-fill"></i>'.repeat(rev.rating)}
+                                ${'<i class="bi bi-star"></i>'.repeat(5 - rev.rating)}
+                            </div>
+                            <p class="review-comment">"${esc(rev.comment)}"</p>
+                            <div class="review-author">
+                                <div class="review-avatar">${esc(initials)}</div>
+                                <div class="review-meta">
+                                    <h4 class="review-name">${esc(rev.name)}</h4>
+                                    <p class="review-location"><i class="bi bi-geo-alt-fill"></i> ${esc(rev.location)}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                reviewsHTML += `
+                    </div>
+                `;
+                $('#productReviewsSection').html(reviewsHTML).show();
+            } else {
+                $('#productReviewsSection').hide().empty();
+            }
+
             // Set up scroll animations via IntersectionObserver
             setupScrollAnimations();
         }
@@ -5387,6 +5571,7 @@
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+    <script src="assets/cookie-consent.js"></script>
 </body>
 
 </html>
