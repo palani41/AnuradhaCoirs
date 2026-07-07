@@ -4353,6 +4353,13 @@
             <li class="nav-item language-item">
               <div id="google_translate_element"></div>
             </li>
+            <!-- Cart Button -->
+            <li class="nav-item">
+                <button class="nav-cart-btn" id="navCartBtn" onclick="openCart()">
+                    <i class="bi bi-cart3"></i> Cart
+                    <span class="nav-cart-badge" id="navCartBadge">0</span>
+                </button>
+            </li>
           </ul>
         </div>
       </nav>
@@ -4774,12 +4781,19 @@
 
         function updateCartBadge() {
             const cnt = cartCount();
-            document.getElementById('navCartBadge').textContent = cnt;
-            document.getElementById('cartHeadCount').textContent = cnt;
-            document.getElementById('scbCount').textContent = cnt;
+            
+            const navBadge = document.getElementById('navCartBadge');
+            if (navBadge) navBadge.textContent = cnt;
+            
+            const headCount = document.getElementById('cartHeadCount');
+            if (headCount) headCount.textContent = cnt;
+            
+            const scbCount = document.getElementById('scbCount');
+            if (scbCount) scbCount.textContent = cnt;
+            
             // Sticky bar
             const bar = document.getElementById('stickyCartBar');
-            if (window.innerWidth <= 767) {
+            if (bar && window.innerWidth <= 767) {
                 bar.style.display = cnt > 0 ? 'flex' : 'none';
             }
         }
@@ -4797,9 +4811,11 @@
             saveCart();
             // Badge pop animation
             const badge = document.getElementById('navCartBadge');
-            badge.classList.remove('pop');
-            void badge.offsetWidth;
-            badge.classList.add('pop');
+            if (badge) {
+                badge.classList.remove('pop');
+                void badge.offsetWidth;
+                badge.classList.add('pop');
+            }
             updateCartBadge();
             renderCartItems();
         }
