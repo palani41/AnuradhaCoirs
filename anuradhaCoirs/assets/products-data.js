@@ -411,7 +411,6 @@ const SEED = [
             'assets/images/Products/cocoPeatCoin.jpeg',
             'assets/images/Products/cocoPeatCoin2.jpeg',
             'assets/images/Products/cocoPeatCoin3.jpeg',
-            'assets/images/Products/cocoPeatCoin4.jpeg',
         ],
         description: 'Premium compressed coco peat coins and discs designed for seed germination and nursery propagation. Expand quickly when water is added and provide an excellent growing environment for young plants.',
         pills: ['Fast Water Absorption', 'Seed Germination', 'Lightweight', 'Eco-Friendly', 'Custom Sizes'],
@@ -435,12 +434,6 @@ const SEED = [
                 desc: 'Seedlings can be transplanted directly with the expanded coin, preventing shock to fragile root systems.',
                 image: 'assets/images/Products/cocoPeatCoin3.jpeg',
                 icon: 'bi-recycle'
-            },
-            {
-                title: 'DIY Garden Retail Kits',
-                desc: 'Packed inside compact seed starting kits sold to urban gardeners and kids\' educational programs.',
-                image: 'assets/images/Products/cocoPeatCoin4.jpeg',
-                icon: 'bi-gift-fill'
             }
         ],
         whereUsed: [
