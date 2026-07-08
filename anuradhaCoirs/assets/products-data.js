@@ -344,7 +344,6 @@ const SEED = [
             'assets/images/Products/cocochips.jpeg',
             'assets/images/Products/cocoHuskChips.jpeg',
             'assets/images/Products/cocoHuskChips2.jpeg',
-            'assets/images/Products/cocoHuskChips3.jpeg',
             'assets/images/Products/cocoHuskChips4.jpeg'
         ],
         description: 'Superior quality coco husk chips processed from fresh coconut husks. Widely used in orchid cultivation, hydroponics, landscaping, reptile bedding, and horticulture applications.',
@@ -363,12 +362,6 @@ const SEED = [
                 desc: 'Coarse chips provide orchid roots with the large air voids and high humidity they require to cling and thrive.',
                 image: 'assets/images/Products/cocoHuskChips2.jpeg',
                 icon: 'bi-flower1'
-            },
-            {
-                title: 'Landscaping Mulch',
-                desc: 'Placed on garden soil beds to prevent weed growth, reduce evaporation, and add an aesthetic look.',
-                image: 'assets/images/Products/cocoHuskChips3.jpeg',
-                icon: 'bi-shield-check'
             },
             {
                 title: 'Exotic Reptile Bedding',
