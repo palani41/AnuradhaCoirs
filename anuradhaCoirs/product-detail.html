@@ -4430,7 +4430,7 @@
         <div class="container-fluid px-4">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers">
+                    <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers" loading="lazy">
                 </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false"
@@ -4576,7 +4576,7 @@
             <div class="row g-5">
                 <div class="col-12 col-md-4 footer-brand">
                     <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs"
-                        style="border-radius: 8px;max-width:250px;">
+                        style="border-radius: 8px;max-width:250px;" loading="lazy">
                     <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India.
                         Serving 500+
                         clients across 50+ countries worldwide.</p>
@@ -4840,7 +4840,7 @@
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 return `
       <div class="recently-item" onclick="openDetail('${esc(p.id)}')">
-        <img src="${esc(img)}" alt="${esc(p.name)}">
+        <img src="${esc(img)}" alt="${esc(p.name)}" loading="lazy">
         <div class="recently-item-name">${esc(p.name)}</div>
       </div>`;
             }).join('')}
@@ -4994,7 +4994,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 html += `<div class="cart-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" loading="lazy">
       <div class="cart-item-info">
         <div class="cart-item-cat">${esc(p.category)}</div>
         <div class="cart-item-name">${esc(p.name)}</div>
@@ -5084,7 +5084,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 itemsHtml += `<div class="os-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" loading="lazy">
       <div class="os-item-info">
         <div class="os-item-name">${esc(p.name)}</div>
         <div class="os-item-qty">Code: ${esc(p.code)} &nbsp;|&nbsp; ${item.amount} ${item.unit}</div>
@@ -5277,7 +5277,7 @@
             const imgs = (p.images && p.images.length) ? p.images : [p.image || 'assets/images/Products/coirfiberNew.jpeg'];
             const img = imgs[0];
             const thumbRow = imgs.length > 1 ? `<div class="dm-thumb-row">${imgs.map((src, i) =>
-                `<img src="${esc(src)}" class="dm-thumb${i === 0 ? ' active' : ''}" onclick="switchDetailImg('${esc(src)}', this)">`
+                `<img src="${esc(src)}" class="dm-thumb${i === 0 ? ' active' : ''}" onclick="switchDetailImg('${esc(src)}', this)" loading="lazy">`
             ).join('')}</div>` : '';
             const bm = BADGE_META[p.badge] || (p.isNew ? BADGE_META['new'] : null);
             const badge = bm ? `<span class="pc-badge ${bm.cls}" style="position:relative;top:0;left:0;">${bm.lbl}</span>` : '';
@@ -5288,7 +5288,7 @@
                 <div class="dm-layout page-mode">
                     <div class="dm-img-col">
                         <div class="dm-img-main-container" id="dmImgContainer" onmousemove="zoomMainImg(event)" onmouseleave="resetZoomMainImg()">
-                            <img src="${esc(img)}" alt="${esc(p.name)}" class="dm-img-main" id="dmMainImg">
+                            <img src="${esc(img)}" alt="${esc(p.name)}" class="dm-img-main" id="dmMainImg" loading="lazy">
                         </div>
                         ${thumbRow}
                         <div class="dm-img-meta">
@@ -5354,7 +5354,7 @@
                     <div class="info-row reveal-on-scroll">
                         <div class="info-media-col">
                             <div class="info-media-wrapper">
-                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img">
+                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img" loading="lazy">
                             </div>
                         </div>
                         <div class="info-content-col">
@@ -5388,7 +5388,7 @@
                     <div class="info-row row-reversed reveal-on-scroll">
                         <div class="info-media-col">
                             <div class="info-media-wrapper">
-                                <img src="${esc(mainWhereUsedImg)}" alt="Where ${esc(p.name)} is used" class="info-media-img">
+                                <img src="${esc(mainWhereUsedImg)}" alt="Where ${esc(p.name)} is used" class="info-media-img" loading="lazy">
                             </div>
                         </div>
                         <div class="info-content-col">

@@ -3650,7 +3650,7 @@
         <div class="container-fluid px-4">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html"><img src="assets/images/logo/mainlogo.png"
-                        alt="Anuradha Coirs"></a>
+                        alt="Anuradha Coirs" loading="lazy"></a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navMain">
                     <span class="navbar-toggler-icon"></span>
@@ -3789,7 +3789,7 @@
             <div class="row g-5">
                 <div class="col-12 col-md-4 footer-brand">
                     <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs"
-                        style="border-radius: 8px;max-width:250px;">
+                        style="border-radius: 8px;max-width:250px;" loading="lazy">
                     <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India.
                         Serving 500+
                         clients across 50+ countries worldwide.</p>
@@ -4053,7 +4053,7 @@
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 return `
       <div class="recently-item" onclick="openDetail('${esc(p.id)}')">
-        <img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+        <img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'" loading="lazy">
         <div class="recently-item-name">${esc(p.name)}</div>
       </div>`;
             }).join('')}
@@ -4207,7 +4207,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 html += `<div class="cart-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'" loading="lazy">
       <div class="cart-item-info">
         <div class="cart-item-cat">${esc(p.category)}</div>
         <div class="cart-item-name">${esc(p.name)}</div>
@@ -4297,7 +4297,7 @@
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
                 itemsHtml += `<div class="os-item">
-      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'">
+      <img src="${esc(img)}" alt="${esc(p.name)}" class="os-item-img" onerror="this.src='assets/images/Products/coirfiberNew.jpeg'" loading="lazy">
       <div class="os-item-info">
         <div class="os-item-name">${esc(p.name)}</div>
         <div class="os-item-qty">Code: ${esc(p.code)} &nbsp;|&nbsp; ${item.amount} ${item.unit}</div>
