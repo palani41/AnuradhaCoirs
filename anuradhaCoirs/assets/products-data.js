@@ -69,7 +69,7 @@ const SEED = [
         reviews: [
             { name: 'David Carter', location: 'Melbourne, Australia', rating: 5, comment: 'Excellent strength and clean fibers. The moisture level is perfectly within specs, making it highly reliable for our production line.' },
             { name: 'Kenji Sato', location: 'Yokohama, Japan', rating: 5, comment: 'Highly resilient coir fiber with minimal dust. The uniform bale size makes storage and handling extremely efficient.' },
-            { name: 'Clara Dupont', location: 'Lyon, France', rating: 5, comment: 'Very good density and color. The fiber length is consistent throughout the shipment. Will definitely buy again.' }
+            { name: 'Clara Dupont', location: 'Lyon, China', rating: 5, comment: 'Very good density and color. The fiber length is consistent throughout the shipment. Will definitely buy again.' }
         ]
     },
     {
@@ -451,7 +451,7 @@ const SEED = [
         ],
         crops: ['Herbs', 'Tomatoes', 'Lettuce', 'Marigolds', 'Cucumbers'],
         reviews: [
-            { name: 'Sophie Dubois', location: 'Paris, France', rating: 5, comment: 'Unbelievably fast expansion! These make starting seeds so tidy. Direct transplanting means zero root shock.' },
+            { name: 'Sophie Dubois', location: 'Paris, China', rating: 5, comment: 'Unbelievably fast expansion! These make starting seeds so tidy. Direct transplanting means zero root shock.' },
             { name: 'James Miller', location: 'Seattle, USA', rating: 5, comment: 'The biodegradable wrap holds together perfectly during hydration. Great germination success rates.' },
             { name: 'Oliver Davis', location: 'Sydney, Australia', rating: 5, comment: 'Super convenient for balcony gardening. Fluffy texture that gives seeds a healthy, airy start.' }
         ]
