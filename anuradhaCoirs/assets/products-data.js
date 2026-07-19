@@ -277,7 +277,6 @@ const SEED = [
             'assets/images/Products/openTopGrowBag.jpg',
             'assets/images/Products/openTopGrowBag3.jpeg',
             'assets/images/Products/openTopGrowBag5.jpg',
-            'assets/images/Products/GBSOT.jpeg',
             'assets/images/Products/GBOT.jpeg',
         ],
         description: 'Open top grow bags specially developed for commercial cultivation and nursery applications. Pre-filled with high-quality coco peat and husk chips mixture to support healthy root growth.',
@@ -296,12 +295,6 @@ const SEED = [
                 desc: 'Pre-filled grow bags that serve as individual planters. Just add water to expand, and plant directly.',
                 image: 'assets/images/Products/openTopGrowBag5.jpg',
                 icon: 'bi-play-fill'
-            },
-            {
-                title: 'Enhanced Drainage System',
-                desc: 'Custom drainage slits prevent waterlogging, ensuring roots remain highly oxygenated and rot-free.',
-                image: 'assets/images/Products/GBSOT.jpeg',
-                icon: 'bi-water'
             },
             {
                 title: 'Reusable Crop Cycles',
