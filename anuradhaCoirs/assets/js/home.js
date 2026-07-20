@@ -79,8 +79,7 @@ const productDetailsData = {
       "assets/images/Products/openTopGrowBag.jpg",
       "assets/images/Products/GB.jpeg",
       "assets/images/Products/GBOT.jpeg",
-      "assets/images/Products/GBS.jpeg",
-      "assets/images/Products/GBSOT.jpeg"
+      "assets/images/Products/GBS.jpeg"
     ],
     pills: ['High Air Porosity', 'Superior Drainage', 'Eco-Friendly', 'UV Stabilized Packing', 'Prefilled Ready'],
     specs: [
@@ -180,11 +179,20 @@ window.swapModalProductImage = function (thumb) {
 $(document).ready(function () {
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-  /* ---------- HERO: progress-bar + slide-counter sync ---------- */
+  /* ---------- HERO: progress-bar + slide-counter sync & auto-cycle ---------- */
   var heroEl = document.getElementById('heroCarousel');
   if (heroEl) {
     var heroIntervalMs = 6000;
     var $segs = $('#heroProgressTrack .hero-progress-seg');
+
+    // Explicitly initialize Bootstrap 5 Carousel with auto-cycling enabled
+    var heroCarouselInstance = new bootstrap.Carousel(heroEl, {
+      interval: heroIntervalMs,
+      ride: 'carousel',
+      pause: false,
+      wrap: true
+    });
+    heroCarouselInstance.cycle();
 
     function runHeroProgress(activeIndex) {
       $segs.removeClass('filling done').each(function (i) {
@@ -209,7 +217,8 @@ $(document).ready(function () {
     // clicking a segment jumps to that slide
     $segs.on('click', function () {
       var idx = $(this).index();
-      bootstrap.Carousel.getOrCreateInstance(heroEl).to(idx);
+      heroCarouselInstance.to(idx);
+      heroCarouselInstance.cycle();
     });
   }
 
@@ -348,7 +357,7 @@ $(document).ready(function () {
     }
   });
 
-  // Global Map Tooltip hover event handlers
+  // Global Map Tooltip hover & click redirect handlers
   $('.map-pin').on('mouseenter', function () {
     const name = $(this).data('name');
     const loc = $(this).data('location');
@@ -364,5 +373,12 @@ $(document).ready(function () {
     });
   }).on('mouseleave', function () {
     $('#mapTooltip').hide();
+  }).on('click', function () {
+    const name = $(this).data('name') || '';
+    const loc = $(this).data('location') || '';
+    const mapUrlAttr = $(this).data('map-url');
+
+    const targetUrl = mapUrlAttr || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + loc)}`;
+    window.open(targetUrl, '_blank');
   });
 });

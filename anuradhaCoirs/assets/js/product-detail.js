@@ -565,6 +565,68 @@
             renderUsesAndApplications(p);
         }
 
+        function switchWhereUsedBanner(pid, idx, newSrc, newTitle, newDesc, el) {
+            // Update active tab card
+            const parent = el.closest('.where-used-tabs-col');
+            if (parent) {
+                parent.querySelectorAll('.where-used-tab-card').forEach(item => item.classList.remove('active'));
+            }
+            el.classList.add('active');
+
+            // Animate image switch
+            const img = document.getElementById(`whereUsedBannerImg_${pid}`);
+            if (img && img.src !== newSrc) {
+                img.style.opacity = '0.3';
+                img.style.transform = 'scale(1.04)';
+                setTimeout(() => {
+                    img.src = newSrc;
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                }, 180);
+            }
+
+            // Update title
+            const titleEl = document.getElementById(`whereUsedBannerTitle_${pid}`);
+            if (titleEl && newTitle) {
+                titleEl.style.opacity = '0';
+                setTimeout(() => {
+                    titleEl.textContent = newTitle;
+                    titleEl.style.opacity = '1';
+                }, 180);
+            }
+        }
+
+        function switchInfoMedia(imgId, titleId, newSrc, newTitle, el) {
+            // 1. Update active class among sibling items
+            const parent = el.closest('.info-content-col');
+            if (parent) {
+                parent.querySelectorAll('.info-list-item').forEach(item => item.classList.remove('active'));
+            }
+            el.classList.add('active');
+
+            // 2. Animate main image switch
+            const img = document.getElementById(imgId);
+            if (img && img.src !== newSrc) {
+                img.style.opacity = '0.3';
+                img.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    img.src = newSrc;
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                }, 180);
+            }
+
+            // 3. Update overlay title
+            const titleEl = document.getElementById(titleId);
+            if (titleEl && newTitle) {
+                titleEl.style.opacity = '0';
+                setTimeout(() => {
+                    titleEl.textContent = newTitle;
+                    titleEl.style.opacity = '1';
+                }, 180);
+            }
+        }
+
         function renderUsesAndApplications(p) {
             // Render Uses
             if (p.uses && p.uses.length > 0) {
@@ -575,14 +637,20 @@
                     <div class="info-row reveal-on-scroll">
                         <div class="info-media-col">
                             <div class="info-media-wrapper">
-                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img" loading="lazy">
+                                <img src="${esc(mainUseImg)}" alt="What is the use of ${esc(p.name)}" class="info-media-img" id="usesMainImg_${esc(p.id)}" loading="lazy">
+                                <div class="info-media-overlay" id="usesOverlay_${esc(p.id)}">
+                                    <span class="info-media-badge"><i class="bi bi-stars"></i> Primary Application</span>
+                                    <h4 class="info-media-title" id="usesTitle_${esc(p.id)}">${esc(p.uses[0].title)}</h4>
+                                </div>
                             </div>
                         </div>
                         <div class="info-content-col">
                 `;
                 p.uses.forEach((item, idx) => {
                     usesHTML += `
-                        <div class="info-list-item reveal-on-scroll delay-${idx + 1}">
+                        <div class="info-list-item interactive-info-item ${idx === 0 ? 'active' : ''} reveal-on-scroll delay-${idx + 1}" 
+                             onmouseenter="switchInfoMedia('usesMainImg_${esc(p.id)}', 'usesTitle_${esc(p.id)}', '${esc(item.image)}', '${esc(item.title)}', this)">
+                            <div class="info-active-indicator"></div>
                             <span class="info-list-icon"><i class="bi ${esc(item.icon)}"></i></span>
                             <div class="info-list-text">
                                 <h4 class="info-list-title">${esc(item.title)}</h4>
@@ -600,32 +668,49 @@
                 $('#productUsesSection').hide().empty();
             }
 
-            // Render Where Used (Row-Reversed)
+            // Render Where Used (Dark Forest Glassmorphism Banner with Interactive Tabs)
             if (p.whereUsed && p.whereUsed.length > 0) {
-                const mainWhereUsedImg = p.whereUsed[0].image || 'assets/images/Products/coirfiberNew.jpeg';
+                const firstItem = p.whereUsed[0];
+                const mainWhereUsedImg = firstItem.image || 'assets/images/Products/coirfiberNew.jpeg';
+
                 let whereUsedHTML = `
-                    <h2 class="info-heading reveal-on-scroll">Where is it used?</h2>
-                    <p class="info-subheading reveal-on-scroll">Target industries and professional environments</p>
-                    <div class="info-row row-reversed reveal-on-scroll">
-                        <div class="info-media-col">
-                            <div class="info-media-wrapper">
-                                <img src="${esc(mainWhereUsedImg)}" alt="Where ${esc(p.name)} is used" class="info-media-img" loading="lazy">
-                            </div>
+                    <div class="where-used-banner-container reveal-on-scroll">
+                        <div class="where-used-banner-header text-center">
+                            <span class="where-used-banner-badge"><i class="bi bi-geo-alt-fill"></i> APPLICATION ENVIRONMENTS</span>
+                            <h2 class="where-used-banner-title">Where is it used?</h2>
+                            <p class="where-used-banner-sub">Target industries and professional environments optimized for maximum performance</p>
                         </div>
-                        <div class="info-content-col">
+                        <div class="where-used-banner-content">
+                            <div class="where-used-tabs-col">
                 `;
+
                 p.whereUsed.forEach((item, idx) => {
                     whereUsedHTML += `
-                        <div class="info-list-item reveal-on-scroll delay-${idx + 1}">
-                            <span class="info-list-icon"><i class="bi ${esc(item.icon)}"></i></span>
-                            <div class="info-list-text">
-                                <h4 class="info-list-title">${esc(item.title)}</h4>
-                                <p class="info-list-desc">${esc(item.desc)}</p>
+                        <div class="where-used-tab-card ${idx === 0 ? 'active' : ''}" 
+                             onmouseenter="switchWhereUsedBanner('${esc(p.id)}', ${idx}, '${esc(item.image)}', '${esc(item.title)}', '${esc(item.desc)}', this)">
+                            <div class="tab-card-header">
+                                <span class="tab-card-icon"><i class="bi ${esc(item.icon)}"></i></span>
+                                <div class="tab-card-titles">
+                                    <span class="tab-card-num">0${idx + 1}</span>
+                                    <h4 class="tab-card-name">${esc(item.title)}</h4>
+                                </div>
                             </div>
+                            <p class="tab-card-desc">${esc(item.desc)}</p>
                         </div>
                     `;
                 });
+
                 whereUsedHTML += `
+                            </div>
+                            <div class="where-used-showcase-col">
+                                <div class="where-used-showcase-frame">
+                                    <img src="${esc(mainWhereUsedImg)}" alt="${esc(firstItem.title)}" id="whereUsedBannerImg_${esc(p.id)}" class="where-used-banner-img" loading="lazy">
+                                    <div class="where-used-showcase-overlay">
+                                        <span class="showcase-tag"><i class="bi bi-patch-check-fill"></i> Verified Industry Application</span>
+                                        <h3 class="showcase-title" id="whereUsedBannerTitle_${esc(p.id)}">${esc(firstItem.title)}</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -634,21 +719,173 @@
                 $('#productWhereUsedSection').hide().empty();
             }
 
-            // Render Crops
+            // Master Crop Image & Category Database
+            const CROP_DATABASE = {
+                // VEGETABLES
+                'tomatoes': { name: 'Tomato Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop&q=80' },
+                'tomato': { name: 'Tomato Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop&q=80' },
+                'cucumbers': { name: 'Cucumber Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400&auto=format&fit=crop&q=80' },
+                'cucumber': { name: 'Cucumber Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400&auto=format&fit=crop&q=80' },
+                'capsicum growers': { name: 'Capsicum Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&auto=format&fit=crop&q=80' },
+                'capsicums & peppers': { name: 'Capsicum Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&auto=format&fit=crop&q=80' },
+                'bell peppers': { name: 'Capsicum Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&auto=format&fit=crop&q=80' },
+                'chili peppers': { name: 'Chili Peppers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&auto=format&fit=crop&q=80' },
+                'eggplants': { name: 'Eggplant Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&auto=format&fit=crop&q=80' },
+                'lettuce': { name: 'Lettuce & Greens', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&auto=format&fit=crop&q=80' },
+                'spinach': { name: 'Spinach', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&auto=format&fit=crop&q=80' },
+                'zucchini': { name: 'Zucchini Growers', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=400&auto=format&fit=crop&q=80' },
+                'herbs': { name: 'Culinary Herbs', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=400&auto=format&fit=crop&q=80' },
+                'potted herbs': { name: 'Culinary Herbs', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=400&auto=format&fit=crop&q=80' },
+                'microgreens': { name: 'Microgreens', category: 'VEGETABLES', image: 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=400&auto=format&fit=crop&q=80' },
+
+                // SOFT FRUITS
+                'blueberries': { name: 'Blueberry Growers', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&auto=format&fit=crop&q=80' },
+                'blueberry growers': { name: 'Blueberry Growers', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&auto=format&fit=crop&q=80' },
+                'raspberries': { name: 'Raspberries', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1577069861033-55d04cec4ef5?w=400&auto=format&fit=crop&q=80' },
+                'strawberries': { name: 'Strawberries', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&auto=format&fit=crop&q=80' },
+                'watermelon growers': { name: 'Watermelon Growers', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&auto=format&fit=crop&q=80' },
+                'watermelon': { name: 'Watermelon Growers', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&auto=format&fit=crop&q=80' },
+                'melons': { name: 'Melon Growers', category: 'SOFT FRUITS', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&auto=format&fit=crop&q=80' },
+
+                // FLOWERS & ORNAMENTALS
+                'flowers': { name: 'Floriculture & Flowers', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&auto=format&fit=crop&q=80' },
+                'roses': { name: 'Rose', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&auto=format&fit=crop&q=80' },
+                'rose': { name: 'Rose', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&auto=format&fit=crop&q=80' },
+                'lisianthus': { name: 'Lisianthus', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&auto=format&fit=crop&q=80' },
+                'carnation': { name: 'Carnation', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&auto=format&fit=crop&q=80' },
+                'carnations': { name: 'Carnation', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&auto=format&fit=crop&q=80' },
+                'gerbera': { name: 'Gerbera', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=400&auto=format&fit=crop&q=80' },
+                'gerberas': { name: 'Gerbera', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=400&auto=format&fit=crop&q=80' },
+                'orchids': { name: 'Orchids', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=400&auto=format&fit=crop&q=80' },
+                'anthuriums': { name: 'Anthuriums', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=400&auto=format&fit=crop&q=80' },
+                'anthurium': { name: 'Anthuriums', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?w=400&auto=format&fit=crop&q=80' },
+                'bromeliads': { name: 'Bromeliads', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&auto=format&fit=crop&q=80' },
+                'marigolds': { name: 'Marigolds', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=400&auto=format&fit=crop&q=80' },
+                'pot plants': { name: 'Pot Plants', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&auto=format&fit=crop&q=80' },
+                'epiphytes': { name: 'Epiphytes', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=400&auto=format&fit=crop&q=80' },
+                'tropical foliage': { name: 'Tropical Foliage', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&auto=format&fit=crop&q=80' },
+                'ferns': { name: 'Ferns & Foliage', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&auto=format&fit=crop&q=80' },
+                'succulents': { name: 'Succulents & Cacti', category: 'FLOWERS', image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&auto=format&fit=crop&q=80' },
+
+                // VINES & SPECIALTY
+                'hops': { name: 'Hops', category: 'VINES & SPECIALTY', image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=400&auto=format&fit=crop&q=80' },
+                'grapes': { name: 'Grapes', category: 'VINES & SPECIALTY', image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=400&auto=format&fit=crop&q=80' },
+                'vanilla vines': { name: 'Vanilla Vines', category: 'VINES & SPECIALTY', image: 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=400&auto=format&fit=crop&q=80' },
+                'climbing peppers': { name: 'Climbing Peppers', category: 'VINES & SPECIALTY', image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&auto=format&fit=crop&q=80' },
+                'runner beans': { name: 'Runner Beans', category: 'VINES & SPECIALTY', image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop&q=80' },
+
+                // PALMS & SEEDLINGS
+                'east coast tall': { name: 'East Coast Tall Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/tallCoconut.jpeg' },
+                'west coast tall': { name: 'West Coast Tall Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/tallCoconut.jpeg' },
+                'orange dwarf': { name: 'Orange Dwarf Seedlings', category: 'COCONUT PALMS', image: 'assets/images/Products/NurserySeedlings.jpeg' },
+                'green dwarf': { name: 'Green Dwarf Seedlings', category: 'COCONUT PALMS', image: 'assets/images/Products/greenSemicoconut.jpeg' },
+                'hybrid palms': { name: 'Hybrid Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/ageofSeedlings.jpeg' },
+                'tall coconut palms': { name: 'Tall Coconut Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/tallCoconut.jpeg' },
+                'dwarf green palms': { name: 'Dwarf Green Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/greenSemicoconut.jpeg' },
+                'orange dwarf palms': { name: 'Orange Dwarf Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/NurserySeedlings.jpeg' },
+                'hybrid coconuts': { name: 'Hybrid Coconuts', category: 'COCONUT PALMS', image: 'assets/images/Products/ageofSeedlings.jpeg' },
+                'chowghat orange dwarf': { name: 'Chowghat Orange Dwarf', category: 'COCONUT PALMS', image: 'assets/images/Products/NurserySeedlings.jpeg' },
+                'malayan yellow dwarf': { name: 'Malayan Yellow Dwarf', category: 'COCONUT PALMS', image: 'assets/images/Products/NurserySeedlings.jpeg' },
+                'ganga bondam': { name: 'Ganga Bondam Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/greenSemicoconut.jpeg' },
+                'tall coconut cultivars': { name: 'Tall Coconut Cultivars', category: 'COCONUT PALMS', image: 'assets/images/Products/tallCoconut.jpeg' },
+                'dwarf cultivars': { name: 'Dwarf Cultivars', category: 'COCONUT PALMS', image: 'assets/images/Products/NurserySeedlings.jpeg' },
+                'txd palms': { name: 'TxD Hybrid Palms', category: 'COCONUT PALMS', image: 'assets/images/Products/ageofSeedlings.jpeg' }
+            };
+
+            // Render Crops Section with Categorized Cards & Images
             if (p.crops && p.crops.length > 0) {
-                let cropsHTML = `
-                    <div class="crops-section reveal-on-scroll">
-                        <h3 class="crops-title">Perfect For These Crops</h3>
-                        <p class="crops-subtitle">Proven to maximize growth yield for these varieties</p>
-                        <div class="crops-container">
-                `;
-                p.crops.forEach(crop => {
-                    cropsHTML += `
-                        <span class="crop-badge">
-                            <i class="bi bi-patch-check-fill"></i> ${esc(crop)}
-                        </span>
-                    `;
+                const categoriesMap = {};
+                p.crops.forEach(cropItem => {
+                    let cropName = typeof cropItem === 'string' ? cropItem : (cropItem.name || '');
+                    let lookupKey = cropName.toLowerCase().trim();
+                    let mapped = CROP_DATABASE[lookupKey];
+
+                    if (!mapped) {
+                        // Smart fallback for unmapped crop names
+                        let inferredCategory = 'SPECIALTY CROPS';
+                        let inferredImage = 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop&q=80';
+
+                        if (lookupKey.includes('flower') || lookupKey.includes('rose') || lookupKey.includes('bloom') || lookupKey.includes('plant')) {
+                            inferredCategory = 'FLOWERS';
+                            inferredImage = 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&auto=format&fit=crop&q=80';
+                        } else if (lookupKey.includes('palm') || lookupKey.includes('coconut') || lookupKey.includes('dwarf') || lookupKey.includes('tall')) {
+                            inferredCategory = 'COCONUT PALMS';
+                            inferredImage = 'assets/images/Products/NurserySeedlings.jpeg';
+                        } else if (lookupKey.includes('berry') || lookupKey.includes('fruit') || lookupKey.includes('melon')) {
+                            inferredCategory = 'SOFT FRUITS';
+                            inferredImage = 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&auto=format&fit=crop&q=80';
+                        } else if (lookupKey.includes('herb') || lookupKey.includes('green') || lookupKey.includes('veg')) {
+                            inferredCategory = 'VEGETABLES';
+                            inferredImage = 'https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=400&auto=format&fit=crop&q=80';
+                        }
+
+                        mapped = {
+                            name: cropName,
+                            category: (typeof cropItem === 'object' && cropItem.category) ? cropItem.category : inferredCategory,
+                            image: (typeof cropItem === 'object' && cropItem.image) ? cropItem.image : inferredImage
+                        };
+                    }
+
+                    const catName = mapped.category.toUpperCase();
+                    if (!categoriesMap[catName]) {
+                        categoriesMap[catName] = [];
+                    }
+                    categoriesMap[catName].push(mapped);
                 });
+
+                let cropsHTML = `
+                    <div class="crops-section-wrapper reveal-on-scroll">
+                        <div class="crops-header text-center">
+                            <span class="crops-section-badge"><i class="bi bi-flower1"></i> CROP COMPATIBILITY</span>
+                            <h2 class="crops-main-title">What types of crops can be grown using <span class="highlight-product-name">${esc(p.name)}</span>?</h2>
+                            <p class="crops-main-subtitle">Proven to maximize growth yield, root health, and aeration for these global crop varieties</p>
+                        </div>
+                        <div class="crops-categories-grid">
+                `;
+
+                for (const [catTitle, cropList] of Object.entries(categoriesMap)) {
+                    let catIcon = 'bi-grid-fill';
+                    let catColorClass = 'cat-veg';
+                    if (catTitle.includes('VEGETABLE')) {
+                        catIcon = 'bi-flower2';
+                        catColorClass = 'cat-veg';
+                    } else if (catTitle.includes('FRUIT')) {
+                        catIcon = 'bi-sun-fill';
+                        catColorClass = 'cat-fruits';
+                    } else if (catTitle.includes('FLOWER')) {
+                        catIcon = 'bi-flower1';
+                        catColorClass = 'cat-flowers';
+                    } else {
+                        catIcon = 'bi-tree-fill';
+                        catColorClass = 'cat-vines';
+                    }
+
+                    cropsHTML += `
+                        <div class="crop-category-card ${catColorClass}">
+                            <div class="category-card-header">
+                                <span class="cat-card-icon"><i class="bi ${catIcon}"></i></span>
+                                <h3 class="cat-card-title">${esc(catTitle)}</h3>
+                            </div>
+                            <div class="category-crops-list">
+                    `;
+
+                    cropList.forEach(c => {
+                        cropsHTML += `
+                            <div class="crop-item-card">
+                                <div class="crop-img-wrap">
+                                    <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" class="crop-thumb-img">
+                                </div>
+                                <span class="crop-item-name">${esc(c.name)}</span>
+                            </div>
+                        `;
+                    });
+
+                    cropsHTML += `
+                            </div>
+                        </div>
+                    `;
+                }
+
                 cropsHTML += `
                         </div>
                     </div>

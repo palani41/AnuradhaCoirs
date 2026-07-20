@@ -3328,33 +3328,69 @@ textarea.form-input {
   gap: 10px;
 }
 
-.legend-dot {
-  width: 10px;
-  height: 10px;
+.map-legend {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(3, 47, 47, 0.12);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #032f2f;
+}
+
+.legend-badge {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
-.legend-dot.office {
-  background-color: #28a745;
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.35);
+.legend-badge.office {
+  background: #1b7a42;
+  box-shadow: 0 2px 6px rgba(27, 122, 66, 0.35);
 }
 
-.legend-dot.client {
-  background-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.35);
+.legend-badge.client {
+  background: #0d6efd;
+  box-shadow: 0 2px 6px rgba(13, 110, 253, 0.35);
 }
 
-/* Pins style */
+/* Pins style with icons */
 .map-pin {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 10;
-  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.68rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .map-pin::before {
@@ -3363,49 +3399,54 @@ textarea.form-input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   animation: pinPulse 2s infinite ease-out;
   pointer-events: none;
 }
 
 .map-pin:hover {
-  transform: translate(-50%, -50%) scale(1.4);
-  z-index: 15;
+  transform: translate(-50%, -50%) scale(1.35);
+  z-index: 25 !important;
 }
 
 /* Pin variants */
 .map-pin.office {
-  background-color: #28a745;
-  border: 2.5px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.4);
+  width: 26px;
+  height: 26px;
+  font-size: 0.8rem;
+  background-color: #1b7a42;
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 10px rgba(27, 122, 66, 0.45);
 }
 
 .map-pin.office::before {
-  background-color: rgba(40, 167, 69, 0.35);
+  background-color: rgba(27, 122, 66, 0.4);
 }
 
 .map-pin.client {
-  background-color: #007bff;
-  border: 2.5px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+  width: 20px;
+  height: 20px;
+  font-size: 0.65rem;
+  background-color: #0d6efd;
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 8px rgba(13, 110, 253, 0.4);
 }
 
 .map-pin.client::before {
-  background-color: rgba(0, 123, 255, 0.35);
+  background-color: rgba(13, 110, 253, 0.35);
 }
 
 @keyframes pinPulse {
   0% {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     opacity: 1;
   }
-
   100% {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     opacity: 0;
   }
 }
@@ -3450,6 +3491,17 @@ textarea.form-input {
   font-family: var(--font-body);
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.85);
+}
+
+.mt-action {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--gold-lt);
+  margin-top: 5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 @media (max-width: 767px) {

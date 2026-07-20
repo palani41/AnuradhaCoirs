@@ -36,7 +36,7 @@ const SEED = [
                 title: 'Geotextiles & Erosion Control',
                 desc: 'Spun into heavy nets and mats to hold soil on steep slopes, protecting against run-offs and assisting vegetation.',
                 image: 'assets/images/Products/coirfiberNew3.jpeg',
-                icon: 'bi-bounding-box-on'
+                icon: 'bi-shield-shaded'
             },
             {
                 title: 'Ropes & Cordage Production',
@@ -50,7 +50,7 @@ const SEED = [
                 title: 'Furniture & Upholstery Industries',
                 desc: 'Used as premium, breathable and durable structural cushioning inside luxury sofas, car seats, and chairs.',
                 image: 'assets/images/Products/factory_conveyor_belt.jpeg',
-                icon: 'bi-building-fill-gear'
+                icon: 'bi-gear-wide-connected'
             },
             {
                 title: 'Civil Engineering Sites',
@@ -62,7 +62,7 @@ const SEED = [
                 title: 'Agricultural & Marine Settings',
                 desc: 'Serves as climbing ropes for hops/vines and heavy saltwater-resistant rigging on marine transport ships.',
                 image: 'assets/images/Products/raw_coconut_husks.jpeg',
-                icon: 'bi-anchor'
+                icon: 'bi-water'
             }
         ],
         crops: ['Hops', 'Grapes', 'Vanilla Vines', 'Climbing Peppers', 'Runner Beans'],
@@ -498,7 +498,7 @@ const SEED = [
                 title: 'Food Processing Plants',
                 desc: 'Conveyed in food processing lines to create coconut milk, cream, and confectionery goods.',
                 image: 'assets/images/Products/factory_conveyor_belt.jpeg',
-                icon: 'bi-building-fill-gear'
+                icon: 'bi-gear-wide-connected'
             },
             {
                 title: 'Temples & Religious Festivals',
@@ -558,7 +558,7 @@ const SEED = [
                 title: 'Oil Mills & Refineries',
                 desc: 'Cold-pressed or processed in high-volume mills to extract oils, copra meal, and cosmetic bases.',
                 image: 'assets/images/Products/factory_conveyor_belt.jpeg',
-                icon: 'bi-building-gear'
+                icon: 'bi-gear-wide-connected'
             },
             {
                 title: 'Commercial Food Kitchens',

@@ -1,53 +1,165 @@
 // CUSTOM GOOGLE TRANSLATE WITH SEARCH & FLAGS
 
 (function () {
-  // Mapping of Google Translate language codes to flag codes (for FlagCDN)
+  // Mapping of Google Translate language codes to verified FlagCDN country codes
   const languageFlags = {
+    // English & Indian Languages
     'en': 'us',
-    'ta': 'in',
-    'hi': 'in',
-    'ar': 'sa',
-    'zh-CN': 'cn',
-    'zh-TW': 'tw',
-    'fr': 'fr',
-    'de': 'de',
-    'es': 'es',
-    'it': 'it',
-    'ja': 'jp',
-    'ko': 'kr',
-    'nl': 'nl',
-    'pt': 'pt',
-    'ru': 'ru',
-    'tr': 'tr',
-    'vi': 'vn',
-    'pl': 'pl',
-    'th': 'th',
-    'sv': 'se',
-    'ms': 'my',
-    'bn': 'bd',
-    'id': 'id',
-    'da': 'dk',
-    'fi': 'fi',
-    'el': 'gr',
-    'iw': 'il',
-    'he': 'il',
-    'no': 'no',
-    'uk': 'ua',
-    'cs': 'cz',
-    'ro': 'ro',
-    'hu': 'hu',
-    'fa': 'ir',
-    'sk': 'sk',
-    'bg': 'bg',
-    'hr': 'hr',
-    'lt': 'lt',
-    'lv': 'lv',
-    'sl': 'si',
-    'et': 'ee'
-  };
+    'ta': 'in', // Tamil
+    'hi': 'in', // Hindi
+    'te': 'in', // Telugu
+    'ml': 'in', // Malayalam
+    'kn': 'in', // Kannada
+    'bn': 'bd', // Bengali
+    'gu': 'in', // Gujarati
+    'mr': 'in', // Marathi
+    'pa': 'in', // Punjabi
+    'or': 'in', // Odia
+    'as': 'in', // Assamese
+    'bho': 'in', // Bhojpuri
+    'doi': 'in', // Dogri
+    'gom': 'in', // Konkani
+    'mai': 'in', // Maithili
+    'mni-Mtei': 'in', // Meiteilon (Manipuri)
+    'lus': 'in', // Mizo
+    'sa': 'in', // Sanskrit
 
-  // Fallback flag URL (globe icon)
-  const fallbackFlagUrl = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23032f2f" class="bi bi-globe" viewBox="0 0 16 16"%3E%3Cpath d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.424-1.248 1.05-1.67 1.832H7.5zM6.13 4.1a5 5 0 0 0-.53 1.68h1.39zm-1.8 1.68a6 6 0 0 1 .502-1.832c-.52.562-.9 1.258-1.077 2.015h.575zm-.575 1.06h1.076a5 5 0 0 0 .53 1.68H4.33a6 6 0 0 1-.502-1.832zM7.5 8.5H6.13a5 5 0 0 0 .53 1.68h.84zm0 2.74h-1.67a6 6 0 0 1 1.67-1.832zm.5-9.163v1.832h1.67a6 6 0 0 0-1.67-1.832m1.112 1.832A5 5 0 0 1 9.87 4.1h-1.39zm1.218 0c.177.757.557 1.453 1.077 2.015h-.575a6 6 0 0 0-.502-1.832M11.67 5.78a5 5 0 0 1-.53 1.68h-1.39V5.78zM9.87 8.5a5 5 0 0 1-.53 1.68H7.5V8.5zm1.8-1.68a6 6 0 0 1-.502 1.832c.52-.562.9-1.258 1.077-2.015zm-.502 2.892a5 5 0 0 1 .53-1.68h1.39v1.68zm-1.218 0H8.5V9.72h1.39a5 5 0 0 1 .53 1.68zM8.5 12.603V10.78h1.67a6 6 0 0 1-1.67 1.832M13.67 8c0 .757-.08 1.493-.232 2.202h-.575c.177-.757.257-1.493.257-2.202s-.08-1.445-.257-2.202h.575c.152.709.232 1.445.232 2.202M2.33 8c0-.757.08-1.493.232-2.202h.575c-.177.757-.257 1.493-.257 2.202s.08 1.445.257 2.202h-.575C2.41 9.493 2.33 8.757 2.33 8"/%3E%3C/svg%3E';
+    // Major World Languages
+    'ar': 'sa', // Arabic
+    'zh-CN': 'cn', // Chinese (Simplified)
+    'zh-TW': 'tw', // Chinese (Traditional)
+    'zh': 'cn',
+    'yue': 'hk', // Cantonese
+    'fr': 'fr', // French
+    'de': 'de', // German
+    'es': 'es', // Spanish
+    'it': 'it', // Italian
+    'ja': 'jp', // Japanese
+    'ko': 'kr', // Korean
+    'nl': 'nl', // Dutch
+    'pt': 'pt', // Portuguese
+    'ru': 'ru', // Russian
+    'tr': 'tr', // Turkish
+    'vi': 'vn', // Vietnamese
+    'pl': 'pl', // Polish
+    'th': 'th', // Thai
+    'sv': 'se', // Swedish
+    'ms': 'my', // Malay
+    'id': 'id', // Indonesian
+    'da': 'dk', // Danish
+    'fi': 'fi', // Finnish
+    'el': 'gr', // Greek
+    'iw': 'il', // Hebrew
+    'he': 'il', // Hebrew
+    'no': 'no', // Norwegian
+    'uk': 'ua', // Ukrainian
+    'cs': 'cz', // Czech
+    'ro': 'ro', // Romanian
+    'hu': 'hu', // Hungarian
+    'fa': 'ir', // Persian
+    'sk': 'sk', // Slovak
+    'bg': 'bg', // Bulgarian
+    'hr': 'hr', // Croatian
+    'lt': 'lt', // Lithuanian
+    'lv': 'lv', // Latvian
+    'sl': 'si', // Slovenian
+    'et': 'ee', // Estonian
+
+    // Additional Global & Regional Languages
+    'ab': 'ge',  // Abkhaz
+    'ace': 'id', // Acehnese
+    'ach': 'ug', // Acholi
+    'aa': 'et',  // Afar
+    'af': 'za',  // Afrikaans
+    'sq': 'al',  // Albanian
+    'alz': 'ug', // Alur
+    'am': 'et',  // Amharic
+    'hy': 'am',  // Armenian
+    'ast': 'es', // Asturian
+    'ay': 'bo',  // Aymara
+    'az': 'az',  // Azerbaijani
+    'bm': 'ml',  // Bambara
+    'ba': 'ru',  // Bashkir
+    'eu': 'es',  // Basque
+    'be': 'by',  // Belarusian
+    'bem': 'zm', // Bemba
+    'bs': 'ba',  // Bosnian
+    'br': 'fr',  // Breton
+    'ca': 'es',  // Catalan
+    'ceb': 'ph', // Cebuano
+    'chr': 'us', // Cherokee
+    'ny': 'mw',  // Chichewa
+    'co': 'fr',  // Corsican
+    'dv': 'mv',  // Dhivehi
+    'eo': 'eu',  // Esperanto (European Union Flag)
+    'ee': 'gh',  // Ewe
+    'fo': 'fo',  // Faroese
+    'fj': 'fj',  // Fijian
+    'fil': 'ph', // Filipino
+    'tl': 'ph',  // Tagalog
+    'fy': 'nl',  // Frisian
+    'ff': 'sn',  // Fula
+    'gl': 'es',  // Galician
+    'ka': 'ge',  // Georgian
+    'gn': 'py',  // Guarani
+    'ht': 'ht',  // Haitian Creole
+    'ha': 'ng',  // Hausa
+    'haw': 'us', // Hawaiian
+    'hmn': 'la', // Hmong
+    'is': 'is',  // Icelandic
+    'ig': 'ng',  // Igbo
+    'ilo': 'ph', // Ilocano
+    'ga': 'ie',  // Irish
+    'jw': 'id',  // Javanese
+    'jv': 'id',  // Javanese
+    'kk': 'kz',  // Kazakh
+    'km': 'kh',  // Khmer
+    'rw': 'rw',  // Kinyarwanda
+    'kri': 'sl', // Krio
+    'ku': 'iq',  // Kurdish
+    'ckb': 'iq', // Kurdish (Sorani)
+    'ky': 'kg',  // Kyrgyz
+    'lo': 'la',  // Lao
+    'la': 'va',  // Latin
+    'ln': 'cd',  // Lingala
+    'lg': 'ug',  // Luganda
+    'lb': 'lu',  // Luxembourgish
+    'mk': 'mk',  // Macedonian
+    'mg': 'mg',  // Malagasy
+    'mt': 'mt',  // Maltese
+    'mi': 'nz',  // Maori
+    'mn': 'mn',  // Mongolian
+    'my': 'mm',  // Myanmar (Burmese)
+    'ne': 'np',  // Nepali
+    'nso': 'za', // Northern Sotho
+    'om': 'et',  // Oromo
+    'ps': 'af',  // Pashto
+    'qu': 'pe',  // Quechua
+    'sm': 'ws',  // Samoan
+    'gd': 'gb',  // Scots Gaelic
+    'sr': 'rs',  // Serbian
+    'st': 'ls',  // Sesotho
+    'sn': 'zw',  // Shona
+    'sd': 'pk',  // Sindhi
+    'si': 'lk',  // Sinhala
+    'so': 'so',  // Somali
+    'su': 'id',  // Sundanese
+    'sw': 'ke',  // Swahili
+    'tg': 'tj',  // Tajik
+    'tt': 'ru',  // Tatar
+    'ti': 'er',  // Tigrinya
+    'ts': 'za',  // Tsonga
+    'tk': 'tm',  // Turkmen
+    'ak': 'gh',  // Twi
+    'ur': 'pk',  // Urdu
+    'ug': 'cn',  // Uyghur
+    'uz': 'uz',  // Uzbek
+    'cy': 'gb',  // Welsh
+    'xh': 'za',  // Xhosa
+    'yi': 'il',  // Yiddish
+    'yo': 'ng',  // Yoruba
+    'zu': 'za'   // Zulu
+  };
 
   // Helper to read cookie
   function getCookie(name) {
@@ -57,13 +169,28 @@
     return null;
   }
 
-  // Get flag image URL for a given language code
-  function getFlagUrl(code) {
-    const flag = languageFlags[code];
-    if (flag) {
-      return `https://flagcdn.com/w20/${flag}.png`;
+  // Create flag container for a language (strictly displaying valid flags)
+  function createFlagContainer(langCode, langName, isButton = false) {
+    const container = document.createElement('div');
+    container.className = isButton ? 'flag-container btn-flag-container' : 'flag-container list-flag-container';
+
+    const flagCode = languageFlags[langCode] || 'us';
+
+    const img = document.createElement('img');
+    img.className = 'flag-img';
+    img.src = `https://flagcdn.com/w40/${flagCode}.png`;
+    img.alt = langName;
+    img.loading = 'lazy';
+
+    container.appendChild(img);
+    return container;
+  }
+
+  function updateButtonFlag(btnElement, langCode, langName) {
+    const existingFlag = btnElement.querySelector('.flag-container');
+    if (existingFlag) {
+      existingFlag.replaceWith(createFlagContainer(langCode, langName, true));
     }
-    return fallbackFlagUrl;
   }
 
   // Build the custom dropdown UI
@@ -83,16 +210,13 @@
       activeLangCode = combo.value;
     }
 
-    // Prepare list of languages from the original Google combo options
+    // Prepare list of languages from original Google combo options
     const options = Array.from(combo.options);
     const languagesList = [];
 
     options.forEach(opt => {
-      // Skip placeholder/empty option
       if (!opt.value) return;
-      
       let langName = opt.text;
-      // Clean up language names if necessary
       if (langName.toLowerCase() === 'select language') return;
 
       languagesList.push({
@@ -101,8 +225,6 @@
       });
     });
 
-    // If English is not in the options (sometimes it isn't, as it's the page language)
-    // we make sure English is available as the reset translation option
     if (!languagesList.some(l => l.code === 'en')) {
       languagesList.unshift({ code: 'en', name: 'English' });
     }
@@ -120,13 +242,8 @@
     const btn = document.createElement('button');
     btn.className = 'custom-translate-btn';
     btn.type = 'button';
-    
-    const activeFlagImg = document.createElement('img');
-    activeFlagImg.className = 'btn-flag';
-    activeFlagImg.src = getFlagUrl(activeLang.code);
-    activeFlagImg.alt = activeLang.name;
-    // Handle loading errors for flags
-    activeFlagImg.onerror = () => { activeFlagImg.src = fallbackFlagUrl; };
+
+    const btnFlagContainer = createFlagContainer(activeLang.code, activeLang.name, true);
 
     const btnText = document.createElement('span');
     btnText.className = 'btn-text';
@@ -135,7 +252,7 @@
     const chevron = document.createElement('i');
     chevron.className = 'bi bi-chevron-down chevron-icon';
 
-    btn.appendChild(activeFlagImg);
+    btn.appendChild(btnFlagContainer);
     btn.appendChild(btnText);
     btn.appendChild(chevron);
 
@@ -157,39 +274,53 @@
     listUl.className = 'custom-translate-list';
 
     languagesList.forEach(lang => {
+      const flagCode = languageFlags[lang.code];
+
+      // Remove languages that do not have a mapped flag image
+      if (!flagCode) return;
+
       const li = document.createElement('li');
       li.setAttribute('data-lang', lang.code);
       if (lang.code === activeLang.code) {
         li.className = 'active';
       }
 
-      const flagImg = document.createElement('img');
-      flagImg.className = 'list-flag';
-      flagImg.src = getFlagUrl(lang.code);
-      flagImg.alt = lang.name;
-      flagImg.onerror = () => { flagImg.src = fallbackFlagUrl; };
+      const flagContainer = document.createElement('div');
+      flagContainer.className = 'flag-container list-flag-container';
+
+      const img = document.createElement('img');
+      img.className = 'flag-img';
+      img.src = `https://flagcdn.com/w40/${flagCode}.png`;
+      img.alt = lang.name;
+      img.loading = 'lazy';
+
+      // If flag image fails to load, remove the language option so only languages with valid flags are displayed
+      img.onerror = () => {
+        li.remove();
+      };
+
+      flagContainer.appendChild(img);
 
       const nameSpan = document.createElement('span');
+      nameSpan.className = 'lang-name-text';
       nameSpan.textContent = lang.name;
 
-      li.appendChild(flagImg);
+      li.appendChild(flagContainer);
       li.appendChild(nameSpan);
       listUl.appendChild(li);
 
       // List item click handler
       li.addEventListener('click', () => {
-        // Update combo and trigger change event
         combo.value = lang.code;
-        // Trigger both standard change and jQuery change if available
         combo.dispatchEvent(new Event('change', { bubbles: true }));
         if (window.jQuery) {
           jQuery(combo).change();
         }
 
         // Update UI
-        activeFlagImg.src = getFlagUrl(lang.code);
+        updateButtonFlag(btn, lang.code, lang.name);
         btnText.textContent = lang.name;
-        
+
         // Mark active item
         menu.querySelectorAll('li').forEach(item => item.classList.remove('active'));
         li.className = 'active';
@@ -198,7 +329,6 @@
         menu.classList.remove('show');
         dropdownWrap.classList.remove('open');
         searchInput.value = '';
-        // Reset list visibility
         listUl.querySelectorAll('li').forEach(item => item.style.display = 'flex');
       });
     });
@@ -207,18 +337,17 @@
     dropdownWrap.appendChild(btn);
     dropdownWrap.appendChild(menu);
 
-    // Append dropdown to nav-item (insert it before or in place of google_translate_element)
+    // Append dropdown to container
     container.parentNode.insertBefore(dropdownWrap, container);
 
     // Toggle menu visibility
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = menu.classList.contains('show');
-      
-      // Close any other menus if open, though we only have one
+
       menu.classList.toggle('show');
       dropdownWrap.classList.toggle('open');
-      
+
       if (!isOpen) {
         searchInput.focus();
       }
@@ -253,20 +382,18 @@
     let checkInterval = setInterval(() => {
       const combo = document.querySelector('.goog-te-combo');
       const container = document.getElementById('google_translate_element');
-      
+
       if (combo && container && combo.options && combo.options.length > 1) {
         clearInterval(checkInterval);
         buildCustomDropdown(combo, container);
       }
     }, 150);
 
-    // Clear interval after 15 seconds to prevent memory leak if google translate fails to load
     setTimeout(() => {
       clearInterval(checkInterval);
     }, 15000);
   }
 
-  // Run on DOM Ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
