@@ -115,15 +115,34 @@
             }
         }
 
+        let currentQQProduct = null;
+        let currentQQGrade = 'low_ec';
+
         function addToCart(id, amount = 100) {
+            const p = SEED.find(x => x.id === id);
+            if (!p) return;
+
+            // If product has quality options (Low EC & High EC)
+            if (p.qualities) {
+                openQuickQualityModal(id);
+                return;
+            }
+
+            addToCartWithGrade(id, '', amount);
+        }
+
+        function addToCartWithGrade(id, gradeTag = '', amount = 100, unit = 'Pieces') {
             cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
-            const existing = cart.find(i => i.id === id);
+            const existing = cart.find(i => i.id === id && i.grade === gradeTag);
             if (existing) {
                 existing.amount += amount;
+                existing.unit = unit;
                 showToast('Quantity updated in cart', 'success', 'bi-cart-check-fill');
             } else {
-                cart.push({ id, unit: 'Pieces', amount: amount });
-                showToast('Added to enquiry cart!', 'success', 'bi-cart-plus-fill');
+                cart.push({ id, unit: unit, amount: amount, grade: gradeTag });
+                const p = SEED.find(x => x.id === id);
+                const name = p ? p.name : '';
+                showToast(`Added ${name} ${gradeTag ? '(' + gradeTag + ')' : ''} to cart!`, 'success', 'bi-cart-plus-fill');
             }
             saveCart();
             // Badge pop animation
@@ -135,6 +154,61 @@
             }
             updateCartBadge();
             renderCartItems();
+        }
+
+        function openQuickQualityModal(id) {
+            const p = SEED.find(x => x.id === id);
+            if (!p) return;
+            currentQQProduct = p;
+            currentQQGrade = 'low_ec';
+
+            $('#qqModalName').text(p.name);
+            $('#qqModalCode').text(`Code: ${p.code} • Category: ${p.category}`);
+            const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
+            $('#qqModalImg').attr('src', img);
+
+            selectQQGrade('low_ec');
+            $('#qqQtyInput').val(100);
+            $('#qqUnitSelect').val('Pieces');
+
+            const modalEl = document.getElementById('quickQualityModal');
+            if (modalEl) {
+                let modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (!modalInstance) modalInstance = new bootstrap.Modal(modalEl);
+                modalInstance.show();
+            }
+        }
+
+        function selectQQGrade(grade) {
+            currentQQGrade = grade;
+            if (grade === 'low_ec') {
+                $('#qqBtnLow').addClass('active');
+                $('#qqBtnHigh').removeClass('active');
+                $('#qqCheckLow').attr('class', 'bi bi-check-circle-fill text-success');
+                $('#qqCheckHigh').attr('class', 'bi bi-circle text-muted');
+            } else {
+                $('#qqBtnHigh').addClass('active');
+                $('#qqBtnLow').removeClass('active');
+                $('#qqCheckHigh').attr('class', 'bi bi-check-circle-fill text-warning');
+                $('#qqCheckLow').attr('class', 'bi bi-circle text-muted');
+            }
+        }
+
+        function confirmQQAddToCart() {
+            if (!currentQQProduct) return;
+            const gradeTag = currentQQGrade === 'high_ec' ? 'High EC (2.5 – 3.5 mS/cm)' : 'Low EC (< 0.5 mS/cm)';
+            const qty = parseInt($('#qqQtyInput').val() || 100);
+            const unit = $('#qqUnitSelect').val() || 'Pieces';
+
+            addToCartWithGrade(currentQQProduct.id, gradeTag, qty, unit);
+
+            const modalEl = document.getElementById('quickQualityModal');
+            if (modalEl) {
+                const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (modalInstance) modalInstance.hide();
+            }
+
+            setTimeout(openCart, 400);
         }
 
         function removeFromCart(id) {
@@ -214,11 +288,13 @@
                 const p = SEED.find(x => x.id === item.id);
                 if (!p) return;
                 const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
+                const gradeBadge = item.grade ? `<div style="font-size:0.7rem;font-weight:700;color:var(--gold-deep);background:var(--gold-pale);padding:2px 6px;border-radius:4px;display:inline-block;margin:2px 0;"><i class="bi bi-patch-check-fill me-1"></i>${esc(item.grade)}</div>` : '';
                 html += `<div class="cart-item">
       <img src="${esc(img)}" alt="${esc(p.name)}" class="cart-item-img" loading="lazy">
       <div class="cart-item-info">
         <div class="cart-item-cat">${esc(p.category)}</div>
         <div class="cart-item-name">${esc(p.name)}</div>
+        ${gradeBadge}
         <div class="cart-item-code">${esc(p.code)}</div>
         <div class="cart-item-actions" style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">
           <select class="cart-unit-select" onchange="changeCartUnit('${p.id}', this.value)">
@@ -361,7 +437,8 @@
             let productLines = '';
             cart.forEach((item, idx) => {
                 const p = SEED.find(x => x.id === item.id);
-                if (p) productLines += `\n${idx + 1}. ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
+                const gradeText = item.grade ? ` [Grade: ${item.grade}]` : '';
+                if (p) productLines += `\n${idx + 1}. ${p.name} (${p.code})${gradeText} — ${item.amount} ${item.unit}`;
             });
 
             const msg = `🌿 *NEW PRODUCT ENQUIRY — ANURADHA COIRS & FIBERS*\n\n`
@@ -437,6 +514,48 @@
            PRODUCT DETAIL RENDERER
         ══════════════════════════════════════ */
         let activeProduct = null;
+        let currentDetailGrade = 'low_ec';
+
+        function switchQualityGrade(productId, grade) {
+            currentDetailGrade = grade;
+            const p = SEED.find(x => x.id === productId);
+            if (!p || !p.qualities || !p.qualities[grade]) return;
+
+            const q = p.qualities[grade];
+            $('.qg-switch-btn').removeClass('active');
+            if (grade === 'low_ec') {
+                $('#btnGradeLow').addClass('active');
+            } else {
+                $('#btnGradeHigh').addClass('active');
+            }
+
+            function getSpecIcon(label) {
+                const lbl = label.toLowerCase();
+                if (lbl.includes('size') || lbl.includes('diameter')) return 'bi-arrows-angle-expand';
+                if (lbl.includes('weight')) return 'bi-box-seam';
+                if (lbl.includes('expansion')) return 'bi-droplet-half';
+                if (lbl.includes('ec')) return 'bi-lightning-charge-fill';
+                if (lbl.includes('ph')) return 'bi-water';
+                if (lbl.includes('moisture')) return 'bi-thermometer-half';
+                if (lbl.includes('compression')) return 'bi-align-center';
+                if (lbl.includes('length')) return 'bi-rulers';
+                if (lbl.includes('fiber') || lbl.includes('sand')) return 'bi-filter-circle';
+                if (lbl.includes('packaging')) return 'bi-box-fill';
+                return 'bi-check-circle-fill';
+            }
+
+            const specsHTML = q.specs.map((r, idx) => `
+                <div class="spec-mini-card delay-${idx + 1}">
+                    <span class="spec-mini-card-icon"><i class="bi ${getSpecIcon(r[0])}"></i></span>
+                    <div class="spec-mini-card-label">${esc(r[0])}</div>
+                    <div class="spec-mini-card-value">${esc(r[1])}</div>
+                </div>
+            `).join('');
+
+            $('#detailSpecsGrid').html(specsHTML);
+            $('#detailDescText').text(q.description);
+            showToast(`Switched quality specs to ${q.title}`, 'info', grade === 'low_ec' ? 'bi-droplet-fill' : 'bi-lightning-charge-fill');
+        }
 
         function loadProductDetail() {
             const params = new URLSearchParams(window.location.search);
@@ -467,24 +586,47 @@
             $('.page-hero h1').html(`${esc(p.name)}`);
             $('.page-hero p').html(`Product Code: ${esc(p.code)} &bull; Category: ${esc(p.category)}`);
 
+            // Quality Grade Selection setup
+            currentDetailGrade = 'low_ec';
+            let activeSpecs = (p.qualities && p.qualities.low_ec) ? p.qualities.low_ec.specs : p.specs;
+            let activeDesc = (p.qualities && p.qualities.low_ec) ? p.qualities.low_ec.description : p.description;
+
+            let qualitySwitcherHTML = '';
+            if (p.qualities) {
+                qualitySwitcherHTML = `
+                    <div class="quality-grade-box">
+                        <div class="qg-title-label"><i class="bi bi-sliders text-gold me-1"></i> Choose Quality Grade / EC Level:</div>
+                        <div class="qg-switcher-group">
+                            <button type="button" class="qg-switch-btn active" id="btnGradeLow" onclick="switchQualityGrade('${p.id}', 'low_ec')">
+                                <div class="qg-btn-title"><i class="bi bi-droplet-fill text-success me-1"></i> Low EC (Washed)</div>
+                                <div class="qg-btn-subtitle">&lt; 0.5 mS/cm &bull; Hydroponics &amp; Greenhouses</div>
+                            </button>
+                            <button type="button" class="qg-switch-btn" id="btnGradeHigh" onclick="switchQualityGrade('${p.id}', 'high_ec')">
+                                <div class="qg-btn-title"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> High EC (Unwashed)</div>
+                                <div class="qg-btn-subtitle">2.5 – 3.5 mS/cm &bull; Bedding &amp; Soil Amendment</div>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
             // Populate Specs
             function getSpecIcon(label) {
                 const lbl = label.toLowerCase();
-                if (lbl.includes('size')) return 'bi-arrows-angle-expand';
+                if (lbl.includes('size') || lbl.includes('diameter')) return 'bi-arrows-angle-expand';
                 if (lbl.includes('weight')) return 'bi-box-seam';
                 if (lbl.includes('expansion')) return 'bi-droplet-half';
-                if (lbl.includes('ec value') || lbl.includes('ec')) return 'bi-lightning-charge-fill';
-                if (lbl.includes('ph value') || lbl.includes('ph')) return 'bi-water';
+                if (lbl.includes('ec')) return 'bi-lightning-charge-fill';
+                if (lbl.includes('ph')) return 'bi-water';
                 if (lbl.includes('moisture')) return 'bi-thermometer-half';
                 if (lbl.includes('compression')) return 'bi-align-center';
                 if (lbl.includes('length')) return 'bi-rulers';
-                if (lbl.includes('impurities')) return 'bi-filter-circle';
-                if (lbl.includes('colour') || lbl.includes('color')) return 'bi-palette';
-                if (lbl.includes('loadability')) return 'bi-truck';
+                if (lbl.includes('fiber') || lbl.includes('sand')) return 'bi-filter-circle';
+                if (lbl.includes('packaging')) return 'bi-box-fill';
                 return 'bi-check-circle-fill';
             }
-            const specsHTML = (p.specs || []).map((r, idx) => `
-                <div class="spec-mini-card reveal-on-scroll delay-${idx + 1}">
+            const specsHTML = (activeSpecs || []).map((r, idx) => `
+                <div class="spec-mini-card delay-${idx + 1}">
                     <span class="spec-mini-card-icon"><i class="bi ${getSpecIcon(r[0])}"></i></span>
                     <div class="spec-mini-card-label">${esc(r[0])}</div>
                     <div class="spec-mini-card-value">${esc(r[1])}</div>
@@ -527,11 +669,12 @@
                         </div>
                         <h4 class="dm-name" style="font-size: 2.2rem;">${esc(p.name)}</h4>
                         ${ruleHTML}
-                        <p class="dm-desc">${esc(p.description)}</p>
+                        <p class="dm-desc" id="detailDescText">${esc(activeDesc)}</p>
                         ${highlightsHTML}
                         <div class="dm-pills">${pills}</div>
+                        ${qualitySwitcherHTML}
                         ${specsHTML ? `<div class="dm-spec-title" style="margin-top: 15px;">Technical Specifications</div>
-                        <div class="spec-card-grid">${specsHTML}</div>` : ''}
+                        <div class="spec-card-grid" id="detailSpecsGrid">${specsHTML}</div>` : ''}
                         
                         <div class="dm-qty-row mt-4" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
                             <div style="display:flex;flex-direction:column;gap:4px;">
@@ -996,16 +1139,22 @@
         function addToCartFromDetailPage(id) {
             const qty = parseInt(document.getElementById('detQtyInput')?.value || 100);
             const unit = document.getElementById('detailUnitSelect')?.value || 'Pieces';
+            const p = SEED.find(x => x.id === id);
 
-            // Add to cart with specific unit
-            const existing = cart.find(i => i.id === id);
+            let gradeTag = '';
+            if (p && p.qualities) {
+                gradeTag = currentDetailGrade === 'high_ec' ? 'High EC (2.5 – 3.5 mS/cm)' : 'Low EC (< 0.5 mS/cm)';
+            }
+
+            // Add to cart with specific unit & quality grade
+            const existing = cart.find(i => i.id === id && i.grade === gradeTag);
             if (existing) {
                 existing.amount += qty;
                 existing.unit = unit; // update unit
                 showToast('Quantity updated in cart', 'success', 'bi-cart-check-fill');
             } else {
-                cart.push({ id, unit: unit, amount: qty });
-                showToast('Added to enquiry cart!', 'success', 'bi-cart-plus-fill');
+                cart.push({ id, unit: unit, amount: qty, grade: gradeTag });
+                showToast(`Added ${p.name} ${gradeTag ? '(' + gradeTag + ')' : ''} to enquiry cart!`, 'success', 'bi-cart-plus-fill');
             }
             saveCart();
             updateCartBadge();

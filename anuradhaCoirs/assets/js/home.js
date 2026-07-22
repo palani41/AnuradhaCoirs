@@ -381,4 +381,77 @@ $(document).ready(function () {
     const targetUrl = mapUrlAttr || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + loc)}`;
     window.open(targetUrl, '_blank');
   });
+
+  // ==========================================
+  // FAQ INTERACTIVE ACCORDION & FILTER LOGIC
+  // ==========================================
+  $('.faq-card-header').on('click', function () {
+    const $card = $(this).closest('.faq-card');
+    const isActive = $card.hasClass('active');
+
+    // Close all other open FAQ cards
+    $('.faq-card').not($card).removeClass('active');
+
+    if (isActive) {
+      $card.removeClass('active');
+    } else {
+      $card.addClass('active');
+    }
+  });
+
+  // FAQ Category Filter Pills
+  $('.faq-filter-btn').on('click', function () {
+    $('.faq-filter-btn').removeClass('active');
+    $(this).addClass('active');
+
+    const filterCat = $(this).data('category');
+    const searchQuery = $('#faqSearchInput').val() ? $('#faqSearchInput').val().toLowerCase().trim() : '';
+
+    filterFaqItems(filterCat, searchQuery);
+  });
+
+  // FAQ Search Input
+  $('#faqSearchInput').on('keyup input', function () {
+    const query = $(this).val().toLowerCase().trim();
+    const activeCat = $('.faq-filter-btn.active').data('category') || 'all';
+
+    if (query.length > 0) {
+      $('#faqSearchClear').fadeIn(150);
+    } else {
+      $('#faqSearchClear').fadeOut(150);
+    }
+
+    filterFaqItems(activeCat, query);
+  });
+
+  $('#faqSearchClear').on('click', function () {
+    $('#faqSearchInput').val('').trigger('input').focus();
+  });
+
+  function filterFaqItems(category, query) {
+    let visibleCount = 0;
+
+    $('.faq-card').each(function () {
+      const itemCat = $(this).data('category');
+      const questionText = $(this).find('.faq-question-text').text().toLowerCase();
+      const answerText = $(this).find('.faq-answer-content').text().toLowerCase();
+
+      const matchesCat = (category === 'all' || itemCat === category);
+      const matchesSearch = (!query || questionText.includes(query) || answerText.includes(query));
+
+      if (matchesCat && matchesSearch) {
+        $(this).closest('.faq-card').stop(true, true).fadeIn(250);
+        visibleCount++;
+      } else {
+        $(this).closest('.faq-card').stop(true, true).fadeOut(150);
+      }
+    });
+
+    if (visibleCount === 0) {
+      $('#noFaqResults').stop(true, true).fadeIn(200);
+    } else {
+      $('#noFaqResults').hide();
+    }
+  }
 });
+

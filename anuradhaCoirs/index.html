@@ -116,28 +116,28 @@
                       <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat 5 KG Block">
                       <div>
                         <span class="products-mega-item-title">Coco Peat 5 KG Block</span>
-                        <span class="products-mega-item-code">AC-02 • High Expansion</span>
+                        <span class="products-mega-item-code">AC-02 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                     <a href="product-detail.html?id=p003" class="products-mega-item">
                       <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks 650g">
                       <div>
                         <span class="products-mega-item-title">Coco Peat Bricks 650g</span>
-                        <span class="products-mega-item-code">AC-03 • Retail Ready</span>
+                        <span class="products-mega-item-code">AC-03 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                     <a href="product-detail.html?id=p006" class="products-mega-item">
                       <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips">
                       <div>
                         <span class="products-mega-item-title">Coco Husk Chips</span>
-                        <span class="products-mega-item-code">AC-06 • Orchid Substrate</span>
+                        <span class="products-mega-item-code">AC-06 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                     <a href="product-detail.html?id=p007" class="products-mega-item">
                       <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins & Discs">
                       <div>
                         <span class="products-mega-item-title">Coco Coins &amp; Discs</span>
-                        <span class="products-mega-item-code">AC-07 • Seed Starter</span>
+                        <span class="products-mega-item-code">AC-07 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                   </div>
@@ -149,14 +149,14 @@
                       <img src="assets/images/Products/coirGrowBag.jpeg" alt="Coir Grow Bags">
                       <div>
                         <span class="products-mega-item-title">Coir Grow Bags</span>
-                        <span class="products-mega-item-code">AC-04 • Greenhouse Slab</span>
+                        <span class="products-mega-item-code">AC-04 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                     <a href="product-detail.html?id=p005" class="products-mega-item">
                       <img src="assets/images/Products/openTopGrowBag.jpg" alt="Open Top Grow Bags">
                       <div>
                         <span class="products-mega-item-title">Open Top Grow Bags</span>
-                        <span class="products-mega-item-code">AC-05 • Berry Cultivation</span>
+                        <span class="products-mega-item-code">AC-05 • Low EC &amp; High EC</span>
                       </div>
                     </a>
                     <a href="product-detail.html?id=p001" class="products-mega-item">
@@ -204,8 +204,12 @@
                 </div>
 
                 <!-- Footer Bar -->
-                <div class="products-mega-footer">
-                  <span style="font-size:0.78rem;color:#556b62;"><i class="bi bi-patch-check-fill" style="color:#b8975a;"></i> Export Quality • ISO Certified • Global Shipping</span>
+                <div class="products-mega-footer" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                    <span style="font-size:0.78rem;font-weight:700;color:var(--forest);"><i class="bi bi-sliders text-gold me-1"></i> EC Grades:</span>
+                    <a href="product.html?grade=low_ec" style="font-size:0.74rem;font-weight:700;color:#2e7d32;background:#e8f5e9;padding:3px 10px;border-radius:12px;border:1px solid #c8e6c9;text-decoration:none;"><i class="bi bi-droplet-fill me-1"></i> 🌿 Low EC (Washed)</a>
+                    <a href="product.html?grade=high_ec" style="font-size:0.74rem;font-weight:700;color:#d84315;background:#fbe9e7;padding:3px 10px;border-radius:12px;border:1px solid #ffccbc;text-decoration:none;"><i class="bi bi-lightning-charge-fill me-1"></i> ⚡ High EC (Unwashed)</a>
+                  </div>
                   <a href="product.html">View All Products <i class="bi bi-arrow-right"></i></a>
                 </div>
 
@@ -1443,8 +1447,247 @@
     </div>
   </section>
 
+  <!-- SECTION — FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section id="faq" class="faq-section section">
+    <div class="container">
+      <div class="text-center mb-4 faq-header-wrap">
+        <span class="section-subtitle">Frequently Asked Questions</span>
+        <h2 class="section-title">You've Got Questions?<br>We've Got Answers.</h2>
+        <p class="section-description">
+          Find quick answers to the most common questions about our products,
+          exports, shipping, customization, and international orders.
+        </p>
+      </div>
 
+      <!-- FAQ Search Bar & Filter Controls -->
+      <div class="faq-controls-wrap">
+        <div class="faq-search-box">
+          <i class="bi bi-search faq-search-icon"></i>
+          <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Search questions (e.g., Low EC, MOQ, Grow bags, Shipping…)" aria-label="Search FAQ">
+          <button type="button" id="faqSearchClear" class="faq-search-clear" title="Clear Search"><i class="bi bi-x-lg"></i></button>
+        </div>
 
+        <div class="faq-filter-pills">
+          <button class="faq-filter-btn active" data-category="all">
+            <i class="bi bi-grid-fill"></i> All Questions
+          </button>
+          <button class="faq-filter-btn" data-category="products">
+            <i class="bi bi-box-seam-fill"></i> Products &amp; Specs
+          </button>
+          <button class="faq-filter-btn" data-category="shipping">
+            <i class="bi bi-truck-front-fill"></i> Shipping &amp; Logistics
+          </button>
+          <button class="faq-filter-btn" data-category="customization">
+            <i class="bi bi-sliders"></i> OEM &amp; Custom Branding
+          </button>
+          <button class="faq-filter-btn" data-category="ordering">
+            <i class="bi bi-patch-check-fill"></i> MOQ &amp; Payment Terms
+          </button>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion Cards Container -->
+      <div class="faq-grid-container">
+        <div class="row g-3" id="faqAccordionList">
+          
+          <!-- Column 1 -->
+          <div class="col-12 col-lg-6">
+            
+            <!-- Item 1 -->
+            <div class="faq-card active" data-category="products">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Products &amp; Specs</span>
+                  <h3 class="faq-question-text">What types of Coco Peat &amp; Coir products do you export globally?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>We manufacture and export a wide spectrum of 100% natural, eco-friendly coconut coir products processed to international standards:</p>
+                  <div class="faq-highlights">
+                    <div class="faq-hl-item"><i class="bi bi-check-circle-fill"></i> Coco Peat 5 KG Blocks &amp; 650g Bricks</div>
+                    <div class="faq-hl-item"><i class="bi bi-check-circle-fill"></i> Coir Fibre Hydraulic Bales (Golden &amp; Brown)</div>
+                    <div class="faq-hl-item"><i class="bi bi-check-circle-fill"></i> Coir Grow Bags &amp; Open Top Prefill Bags</div>
+                    <div class="faq-hl-item"><i class="bi bi-check-circle-fill"></i> Sieve Coco Husk Chips &amp; Coco Disks</div>
+                    <div class="faq-hl-item"><i class="bi bi-check-circle-fill"></i> Fresh Semi-Husked &amp; Fully Husked Coconuts</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-card" data-category="products">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Products &amp; Quality</span>
+                  <h3 class="faq-question-text">What is the difference between Low EC (Washed) and High EC Coco Peat?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p><strong>Low EC (Washed) Coco Peat</strong> (&lt; 0.5 mS/cm) is thoroughly washed with fresh water to remove naturally occurring sodium and potassium salts. It is ideal for direct seedling germination, commercial greenhouses, and sensitive crops.</p>
+                  <p><strong>High EC (Unwashed) Coco Peat</strong> (&gt; 1.5 mS/cm) contains natural minerals and is primarily utilized for animal bedding, oil absorbents, or soil amendment in salt-tolerant plants.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-card" data-category="ordering">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">MOQ &amp; Payment</span>
+                  <h3 class="faq-question-text">What is your Minimum Order Quantity (MOQ) for international shipments?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>Our standard export minimum order quantity is <strong>1 × 20ft FCL (Full Container Load)</strong> containing approximately 11 to 13 Metric Tons depending on product compression. For <strong>40ft High Cube containers</strong>, the capacity ranges between 24 to 26 Metric Tons.</p>
+                  <p>We also accommodate <strong>mixed-product containers</strong> (e.g., combining 5kg blocks, grow bags, and husk chips in a single shipment) to optimize buyer inventory.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="faq-card" data-category="customization">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">OEM &amp; Custom Branding</span>
+                  <h3 class="faq-question-text">Do you offer OEM private labeling, custom branding, and packaging?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>Yes, absolutely! We specialize in OEM and customized contract manufacturing for overseas distributors, retail chains, and commercial growers. Our custom options include:</p>
+                  <div class="faq-highlights">
+                    <div class="faq-hl-item"><i class="bi bi-tags-fill"></i> Custom printed shrink wrap &amp; retail color labels</div>
+                    <div class="faq-hl-item"><i class="bi bi-box-fill"></i> Custom grow bag slab dimensions &amp; drainage holes</div>
+                    <div class="faq-hl-item"><i class="bi bi-layers-fill"></i> Tailored Peat-to-Husk ratio blends (e.g. 70/30, 50/50)</div>
+                    <div class="faq-hl-item"><i class="bi bi-palette-fill"></i> Private label barcoding &amp; multi-language instruction sheets</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col-12 col-lg-6">
+            
+            <!-- Item 5 -->
+            <div class="faq-card" data-category="shipping">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Shipping &amp; Logistics</span>
+                  <h3 class="faq-question-text">Which ports do you export from and what are typical transit lead times?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>We export directly from prime South Indian sea ports including <strong>Tuticorin (VOC Port), Chennai Port, and Cochin Port</strong>.</p>
+                  <p>Average transit lead times after container loading:</p>
+                  <div class="faq-highlights">
+                    <div class="faq-hl-item"><i class="bi bi-geo-alt-fill"></i> Middle East &amp; Gulf: 7 – 12 Days</div>
+                    <div class="faq-hl-item"><i class="bi bi-geo-alt-fill"></i> Europe &amp; UK: 18 – 25 Days</div>
+                    <div class="faq-hl-item"><i class="bi bi-geo-alt-fill"></i> North America (East/West Coast): 25 – 35 Days</div>
+                    <div class="faq-hl-item"><i class="bi bi-geo-alt-fill"></i> Australia &amp; Far East Asia: 14 – 22 Days</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="faq-card" data-category="ordering">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Certifications &amp; Quality</span>
+                  <h3 class="faq-question-text">What export certifications and phytosanitary documents are provided?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>Every export shipment from Anuradha Coirs is strictly inspected and accompanied by full official documentation:</p>
+                  <div class="faq-highlights">
+                    <div class="faq-hl-item"><i class="bi bi-file-earmark-check-fill"></i> Government Phytosanitary Certificate</div>
+                    <div class="faq-hl-item"><i class="bi bi-shield-check"></i> Fumigation Certificate (Methyl Bromide / Heat Treated)</div>
+                    <div class="faq-hl-item"><i class="bi bi-award-fill"></i> Certificate of Origin (COO / Coir Board)</div>
+                    <div class="faq-hl-item"><i class="bi bi-card-checklist"></i> Laboratory Test Report (EC, pH, Moisture &amp; Sand %)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="faq-card" data-category="products">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Products &amp; Yield</span>
+                  <h3 class="faq-question-text">What is the expansion volume and water retention of your 5kg blocks?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>Our premium compressed 5 KG Coco Peat blocks yield an extraordinary expansion volume of <strong>75 to 80 Liters of hydrated growing medium per block</strong> when rehydrated with water (approx. 15 Liters per kilogram).</p>
+                  <p>It maintains a water-holding capacity exceeding <strong>800% of dry weight</strong> while preserving optimal air-filled porosity (10–15%) for robust root oxygenation.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="faq-card" data-category="ordering">
+              <div class="faq-card-header">
+                <div class="faq-question-wrap">
+                  <span class="faq-category-tag">Payment Terms</span>
+                  <h3 class="faq-question-text">What are your accepted international payment methods?</h3>
+                </div>
+                <div class="faq-toggle-icon"><i class="bi bi-chevron-down"></i></div>
+              </div>
+              <div class="faq-card-body">
+                <div class="faq-answer-content">
+                  <p>We offer flexible and secure payment modes tailored for international B2B transactions:</p>
+                  <p>1. <strong>T/T (Telegraphic Transfer / Wire)</strong>: 30% advance deposit upon order confirmation, balance 70% payable against scanned copy of Shipping Bill of Lading (B/L).</p>
+                  <p>2. <strong>L/C (Letter of Credit)</strong>: 100% Irrevocable Letter of Credit at sight from reputed prime international banks.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- No Results Fallback Message -->
+        <div id="noFaqResults" class="no-faq-results">
+          <i class="bi bi-search"></i>
+          <h4 style="font-family:var(--font-head);color:var(--forest);margin-bottom:6px;">No Matching Questions Found</h4>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Try adjusting your search terms or filter selection. Or contact our export team directly!</p>
+        </div>
+
+      </div>
+
+      <!-- FAQ Interactive CTA Footer Banner -->
+      <div class="faq-cta-box">
+        <div class="faq-cta-info">
+          <h4>Have More Questions or Need a Custom Quote?</h4>
+          <p>Our export specialists are available to answer technical specifications, pricing, and freight estimates.</p>
+        </div>
+        <div class="faq-cta-btns">
+          <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20question%20about%20your%20coir%20products." target="_blank" class="faq-btn-wa">
+            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="#contact" class="faq-btn-contact">
+            <i class="bi bi-envelope-paper-fill"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- SECTION 8 — CONTACT -->
   <section id="contact" class="contact-section section">
@@ -1628,6 +1871,92 @@
 
 
   <!-- SECTION 9 — FOOTER -->
+  <!-- ════════════════════════════════════
+     QUICK QUALITY GRADE SELECTION MODAL
+════════════════════════════════════ -->
+  <div class="modal fade qq-modal-wrap" id="quickQualityModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content qq-modal-content">
+        <div class="qq-modal-header">
+          <div class="qq-hdr-title-wrap">
+            <span class="qq-hdr-icon"><i class="bi bi-sliders text-gold"></i></span>
+            <div>
+              <h5 class="qq-modal-title">Select Quality Grade</h5>
+              <p class="qq-modal-sub">Choose Electrical Conductivity (EC) washing grade</p>
+            </div>
+          </div>
+          <button type="button" class="qq-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        
+        <div class="qq-modal-body">
+          <!-- Product Preview Card -->
+          <div class="qq-prod-preview">
+            <img id="qqModalImg" src="" alt="" class="qq-prod-img">
+            <div class="qq-prod-info">
+              <h6 id="qqModalName" class="qq-prod-name"></h6>
+              <div class="qq-prod-meta">
+                <span id="qqModalCode" class="qq-code-pill"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Label -->
+          <div class="qq-section-label">
+            <i class="bi bi-patch-check-fill text-gold me-1"></i> Available Quality Grades:
+          </div>
+
+          <!-- Grade Selection Cards -->
+          <div class="qq-cards-grid">
+            <!-- Low EC Card -->
+            <div class="qq-grade-card low active" id="qqBtnLow" onclick="selectQQGrade('low_ec')">
+              <div class="qq-card-header">
+                <span class="qq-badge low"><i class="bi bi-droplet-fill me-1"></i> Washed</span>
+                <div class="qq-radio"><i class="bi bi-check-circle-fill text-success" id="qqCheckLow"></i></div>
+              </div>
+              <div class="qq-card-title">🌿 Low EC</div>
+              <div class="qq-card-val">&lt; 0.5 mS/cm</div>
+              <div class="qq-card-use"><i class="bi bi-flower1 me-1"></i> Hydroponics &amp; Greenhouses</div>
+            </div>
+
+            <!-- High EC Card -->
+            <div class="qq-grade-card high" id="qqBtnHigh" onclick="selectQQGrade('high_ec')">
+              <div class="qq-card-header">
+                <span class="qq-badge high"><i class="bi bi-lightning-charge-fill me-1"></i> Unwashed</span>
+                <div class="qq-radio"><i class="bi bi-circle text-muted" id="qqCheckHigh"></i></div>
+              </div>
+              <div class="qq-card-title">⚡ High EC</div>
+              <div class="qq-card-val">2.5 – 3.5 mS/cm</div>
+              <div class="qq-card-use"><i class="bi bi-box-seam me-1"></i> Bedding &amp; Amendment</div>
+            </div>
+          </div>
+
+          <!-- Quantity & Unit Bar -->
+          <div class="qq-qty-bar">
+            <div class="qq-qty-col">
+              <label class="qq-qty-label"><i class="bi bi-box me-1"></i> Unit</label>
+              <select class="form-select qq-select" id="qqUnitSelect">
+                <option value="Pieces">Pieces (Blocks/Bricks)</option>
+                <option value="Kg">Kg (Kilograms)</option>
+                <option value="Ton">Ton (Metric Tons)</option>
+              </select>
+            </div>
+            <div class="qq-qty-col">
+              <label class="qq-qty-label"><i class="bi bi-hash me-1"></i> Quantity</label>
+              <input type="number" class="form-control qq-input" id="qqQtyInput" value="100" min="1">
+            </div>
+          </div>
+        </div>
+
+        <div class="qq-modal-footer">
+          <button type="button" class="qq-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="qq-btn-confirm" onclick="confirmQQAddToCart()">
+            <i class="bi bi-cart-plus-fill me-1 text-gold"></i> Add to Enquiry Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <div class="row g-5">

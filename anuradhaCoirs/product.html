@@ -174,28 +174,28 @@
                                             <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat 5 KG Block">
                                             <div>
                                                 <span class="products-mega-item-title">Coco Peat 5 KG Block</span>
-                                                <span class="products-mega-item-code">AC-02 • High Expansion</span>
+                                                <span class="products-mega-item-code">AC-02 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                         <a href="product-detail.html?id=p003" class="products-mega-item">
                                             <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks 650g">
                                             <div>
                                                 <span class="products-mega-item-title">Coco Peat Bricks 650g</span>
-                                                <span class="products-mega-item-code">AC-03 • Retail Ready</span>
+                                                <span class="products-mega-item-code">AC-03 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                         <a href="product-detail.html?id=p006" class="products-mega-item">
                                             <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips">
                                             <div>
                                                 <span class="products-mega-item-title">Coco Husk Chips</span>
-                                                <span class="products-mega-item-code">AC-06 • Orchid Substrate</span>
+                                                <span class="products-mega-item-code">AC-06 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                         <a href="product-detail.html?id=p007" class="products-mega-item">
                                             <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins & Discs">
                                             <div>
                                                 <span class="products-mega-item-title">Coco Coins &amp; Discs</span>
-                                                <span class="products-mega-item-code">AC-07 • Seed Starter</span>
+                                                <span class="products-mega-item-code">AC-07 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                     </div>
@@ -207,14 +207,14 @@
                                             <img src="assets/images/Products/coirGrowBag.jpeg" alt="Coir Grow Bags">
                                             <div>
                                                 <span class="products-mega-item-title">Coir Grow Bags</span>
-                                                <span class="products-mega-item-code">AC-04 • Greenhouse Slab</span>
+                                                <span class="products-mega-item-code">AC-04 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                         <a href="product-detail.html?id=p005" class="products-mega-item">
                                             <img src="assets/images/Products/openTopGrowBag.jpg" alt="Open Top Grow Bags">
                                             <div>
                                                 <span class="products-mega-item-title">Open Top Grow Bags</span>
-                                                <span class="products-mega-item-code">AC-05 • Berry Cultivation</span>
+                                                <span class="products-mega-item-code">AC-05 • Low EC &amp; High EC</span>
                                             </div>
                                         </a>
                                         <a href="product-detail.html?id=p001" class="products-mega-item">
@@ -262,8 +262,12 @@
                                 </div>
 
                                 <!-- Footer Bar -->
-                                <div class="products-mega-footer">
-                                    <span style="font-size:0.78rem;color:#556b62;"><i class="bi bi-patch-check-fill" style="color:#b8975a;"></i> Export Quality • ISO Certified • Global Shipping</span>
+                                <div class="products-mega-footer" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                                        <span style="font-size:0.78rem;font-weight:700;color:var(--forest);"><i class="bi bi-sliders text-gold me-1"></i> EC Grades:</span>
+                                        <a href="product.html?grade=low_ec" style="font-size:0.74rem;font-weight:700;color:#2e7d32;background:#e8f5e9;padding:3px 10px;border-radius:12px;border:1px solid #c8e6c9;text-decoration:none;"><i class="bi bi-droplet-fill me-1"></i> 🌿 Low EC (Washed)</a>
+                                        <a href="product.html?grade=high_ec" style="font-size:0.74rem;font-weight:700;color:#d84315;background:#fbe9e7;padding:3px 10px;border-radius:12px;border:1px solid #ffccbc;text-decoration:none;"><i class="bi bi-lightning-charge-fill me-1"></i> ⚡ High EC (Unwashed)</a>
+                                    </div>
                                     <a href="product.html">View All Products <i class="bi bi-arrow-right"></i></a>
                                 </div>
 
@@ -320,6 +324,20 @@
 ════════════════════════════════════ -->
     <div class="shop-wrap" id="shopWrap">
         <div class="shop-main">
+
+            <!-- QUALITY GRADE FILTER STRIP -->
+            <div class="quality-filter-strip">
+                <span class="qfs-label"><i class="bi bi-sliders text-gold me-1"></i> Quality Grade / EC Level:</span>
+                <button class="qfs-btn active" id="btnECAll" onclick="filterByECGrade('all', this)">
+                    <i class="bi bi-grid-fill me-1"></i> All Products
+                </button>
+                <button class="qfs-btn" id="btnECLow" onclick="filterByECGrade('low_ec', this)">
+                    <i class="bi bi-droplet-fill text-success me-1"></i> 🌿 Low EC (Washed) (&lt; 0.5 mS/cm)
+                </button>
+                <button class="qfs-btn" id="btnECHigh" onclick="filterByECGrade('high_ec', this)">
+                    <i class="bi bi-lightning-charge-fill text-warning me-1"></i> ⚡ High EC (Unwashed) (2.5 – 3.5 mS/cm)
+                </button>
+            </div>
 
             <!-- FILTER BAR -->
             <div class="filter-bar">
@@ -472,6 +490,92 @@
     </footer>
 
 
+
+    <!-- ════════════════════════════════════
+     QUICK QUALITY GRADE SELECTION MODAL
+════════════════════════════════════ -->
+    <div class="modal fade qq-modal-wrap" id="quickQualityModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content qq-modal-content">
+                <div class="qq-modal-header">
+                    <div class="qq-hdr-title-wrap">
+                        <span class="qq-hdr-icon"><i class="bi bi-sliders text-gold"></i></span>
+                        <div>
+                            <h5 class="qq-modal-title">Select Quality Grade</h5>
+                            <p class="qq-modal-sub">Choose Electrical Conductivity (EC) washing grade</p>
+                        </div>
+                    </div>
+                    <button type="button" class="qq-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                
+                <div class="qq-modal-body">
+                    <!-- Product Preview Card -->
+                    <div class="qq-prod-preview">
+                        <img id="qqModalImg" src="" alt="" class="qq-prod-img">
+                        <div class="qq-prod-info">
+                            <h6 id="qqModalName" class="qq-prod-name"></h6>
+                            <div class="qq-prod-meta">
+                                <span id="qqModalCode" class="qq-code-pill"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Label -->
+                    <div class="qq-section-label">
+                        <i class="bi bi-patch-check-fill text-gold me-1"></i> Available Quality Grades:
+                    </div>
+
+                    <!-- Grade Selection Cards -->
+                    <div class="qq-cards-grid">
+                        <!-- Low EC Card -->
+                        <div class="qq-grade-card low active" id="qqBtnLow" onclick="selectQQGrade('low_ec')">
+                            <div class="qq-card-header">
+                                <span class="qq-badge low"><i class="bi bi-droplet-fill me-1"></i> Washed</span>
+                                <div class="qq-radio"><i class="bi bi-check-circle-fill text-success" id="qqCheckLow"></i></div>
+                            </div>
+                            <div class="qq-card-title">🌿 Low EC</div>
+                            <div class="qq-card-val">&lt; 0.5 mS/cm</div>
+                            <div class="qq-card-use"><i class="bi bi-flower1 me-1"></i> Hydroponics &amp; Greenhouses</div>
+                        </div>
+
+                        <!-- High EC Card -->
+                        <div class="qq-grade-card high" id="qqBtnHigh" onclick="selectQQGrade('high_ec')">
+                            <div class="qq-card-header">
+                                <span class="qq-badge high"><i class="bi bi-lightning-charge-fill me-1"></i> Unwashed</span>
+                                <div class="qq-radio"><i class="bi bi-circle text-muted" id="qqCheckHigh"></i></div>
+                            </div>
+                            <div class="qq-card-title">⚡ High EC</div>
+                            <div class="qq-card-val">2.5 – 3.5 mS/cm</div>
+                            <div class="qq-card-use"><i class="bi bi-box-seam me-1"></i> Bedding &amp; Amendment</div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Unit Bar -->
+                    <div class="qq-qty-bar">
+                        <div class="qq-qty-col">
+                            <label class="qq-qty-label"><i class="bi bi-box me-1"></i> Unit</label>
+                            <select class="form-select qq-select" id="qqUnitSelect">
+                                <option value="Pieces">Pieces (Blocks/Bricks)</option>
+                                <option value="Kg">Kg (Kilograms)</option>
+                                <option value="Ton">Ton (Metric Tons)</option>
+                            </select>
+                        </div>
+                        <div class="qq-qty-col">
+                            <label class="qq-qty-label"><i class="bi bi-hash me-1"></i> Quantity</label>
+                            <input type="number" class="form-control qq-input" id="qqQtyInput" value="100" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qq-modal-footer">
+                    <button type="button" class="qq-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="qq-btn-confirm" onclick="confirmQQAddToCart()">
+                        <i class="bi bi-cart-plus-fill me-1 text-gold"></i> Add to Enquiry Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ════════════════════════════════════
      ORDER ENQUIRY MODAL

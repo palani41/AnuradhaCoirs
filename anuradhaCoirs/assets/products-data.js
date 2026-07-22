@@ -29,19 +29,19 @@ const SEED = [
             {
                 title: 'Mattress Manufacturing',
                 desc: 'High-resiliency natural brown coir fibre sheets are rubberized to create breathable, eco-friendly luxury mattresses.',
-                image: 'assets/images/Products/brownCoir.jpeg',
+                image: 'assets/images/ProductDetails/mattress.webp',
                 icon: 'bi-moon-stars-fill'
             },
             {
                 title: 'Geotextiles & Erosion Control',
                 desc: 'Spun into heavy nets and mats to hold soil on steep slopes, protecting against run-offs and assisting vegetation.',
-                image: 'assets/images/Products/coirfiberNew3.jpeg',
+                image: 'assets/images/ProductDetails/geotextiles.webp',
                 icon: 'bi-shield-shaded'
             },
             {
                 title: 'Ropes & Cordage Production',
                 desc: 'Traditional hand-spun coir ropes are naturally saltwater-resistant, making them ideal for maritime and agricultural uses.',
-                image: 'assets/images/Products/whiteCoirFibre.jpeg',
+                image: 'assets/images/ProductDetails/ropes.jpeg',
                 icon: 'bi-activity'
             }
         ],
@@ -49,19 +49,19 @@ const SEED = [
             {
                 title: 'Furniture & Upholstery Industries',
                 desc: 'Used as premium, breathable and durable structural cushioning inside luxury sofas, car seats, and chairs.',
-                image: 'assets/images/Products/factory_conveyor_belt.jpeg',
+                image: 'assets/images/ProductDetails/furniture.jpeg',
                 icon: 'bi-gear-wide-connected'
             },
             {
                 title: 'Civil Engineering Sites',
                 desc: 'Laid along riverbanks, hillsides, and highway slopes to prevent land sliding and support topsoil stability.',
-                image: 'assets/images/Products/infrastructure.jpeg',
+                image: 'assets/images/ProductDetails/civilSites.jpeg',
                 icon: 'bi-cone-striped'
             },
             {
                 title: 'Agricultural & Marine Settings',
                 desc: 'Serves as climbing ropes for hops/vines and heavy saltwater-resistant rigging on marine transport ships.',
-                image: 'assets/images/Products/raw_coconut_husks.jpeg',
+                image: 'assets/images/ProductDetails/agricultural.jpeg',
                 icon: 'bi-water'
             }
         ],
@@ -91,24 +91,66 @@ const SEED = [
             'Yields approximately 75 liters of expanded volume per block'
         ],
         specs: [['Block Size', '30 × 30 × 12 cm'], ['Weight', '4.8 – 5 kg'], ['Expansion', '70 – 75 Litres'], ['EC Value', 'Below 0.5 mS/cm'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%'], ['Compression', '5:1']],
+        qualities: {
+            low_ec: {
+                title: 'Low EC (Washed)',
+                badge: 'Low EC (< 0.5 mS/cm)',
+                ecTag: '< 0.5 mS/cm (Washed)',
+                description: 'Thoroughly washed with fresh water to lower Electrical Conductivity below 0.5 mS/cm. Premium export quality ideal for hydroponics, seed germination, greenhouse crops, and sensitive plants.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Peat Block'],
+                    ['Weight', '4.8 – 5 kg'],
+                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
+                    ['pH Level', '5.8 – 6.8'],
+                    ['Expansion Volume', '75 – 80 Litres'],
+                    ['Moisture Content', 'Below 15%'],
+                    ['Water Holding Capacity', '> 800% of dry weight'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Particle Size', '0 – 6 mm'],
+                    ['Packaging', 'Shrink Wrapped / Palletized']
+                ]
+            },
+            high_ec: {
+                title: 'High EC (Unwashed)',
+                badge: 'High EC (2.5 – 3.5 mS/cm)',
+                ecTag: '2.5 – 3.5 mS/cm (High EC)',
+                description: 'Unwashed natural coir peat containing natural sodium and potassium salts (EC 2.5 - 3.5 mS/cm). Economical grade ideal for animal bedding, oil absorbents, soil amendment, and salt-tolerant vegetation.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Peat Block (High EC)'],
+                    ['Weight', '5 kg ± 5%'],
+                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Expansion Volume', '70 – 75 Litres'],
+                    ['Moisture Content', '< 20%'],
+                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Particle Size', '0 – 6 mm'],
+                    ['Packaging', 'Shrink Wrapped / Palletized']
+                ]
+            }
+        },
         isNew: false,
         uses: [
             {
                 title: 'High-Yield Soil Amendment',
                 desc: 'Mixed with soil to enhance aeration, fluffiness, and moisture retention, allowing plants to grow faster with less water.',
-                image: 'assets/images/Products/cocopeatblock632.jpeg',
+                image: 'assets/images/ProductDetails/soil_amendment_mix.jpeg',
                 icon: 'bi-plus-circle-fill'
             },
             {
                 title: 'Professional Potting Mixes',
                 desc: 'Used as a premium peat-moss alternative substrate in commercial potting soils for home gardens and large growers.',
-                image: 'assets/images/Products/loose_cocopeat.jpeg',
+                image: 'assets/images/ProductDetails/potting_mix_gardening.jpeg',
                 icon: 'bi-flower1'
             },
             {
                 title: 'Bulk Substrate Hydroponics',
                 desc: 'Hydrates and expands into an inert, sterile growth medium that is highly optimized for hydroponic root systems.',
-                image: 'assets/images/Products/cocopeat_drying_yard.jpeg',
+                image: 'assets/images/Products/GBOT.jpeg',
                 icon: 'bi-droplet-fill'
             }
         ],
@@ -116,7 +158,7 @@ const SEED = [
             {
                 title: 'Commercial Greenhouses',
                 desc: 'Serves as the primary growing medium for hydroponic greenhouse crops, promoting clean and disease-free cultivation.',
-                image: 'assets/images/Products/openTopGrowBag4.jpeg',
+                image: 'assets/images/Products/GBOT.jpeg',
                 icon: 'bi-house-heart-fill'
             },
             {
@@ -128,7 +170,7 @@ const SEED = [
             {
                 title: 'Home Gardens & Landscaping',
                 desc: 'Perfect for rooftop gardens, raised beds, indoor potted plants, and landscape soil enrichment.',
-                image: 'assets/images/Products/infrastructure3.jpeg',
+                image: 'assets/images/ProductDetails/balcony_gardening.jpeg',
                 icon: 'bi-house-fill'
             }
         ],
@@ -156,24 +198,64 @@ const SEED = [
             'Maintains structural integrity for multiple seasons'
         ],
         specs: [['Brick Size', '20 × 10 × 5 cm'], ['Weight', '650 grams'], ['Expansion', '8 – 9 Litres'], ['EC Value', 'Below 0.5 mS/cm'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%']],
+        qualities: {
+            low_ec: {
+                title: 'Low EC (Washed)',
+                badge: 'Low EC (< 0.5 mS/cm)',
+                ecTag: '< 0.5 mS/cm (Washed)',
+                description: 'Lightweight washed coco peat briquette (< 0.5 mS/cm) designed for home gardening, seed germination, indoor potted plants, and urban balcony gardening.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Peat Brick'],
+                    ['Weight', '650 g ± 5%'],
+                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
+                    ['pH Level', '5.8 – 6.8'],
+                    ['Expansion Volume', '8 – 9 Litres'],
+                    ['Moisture Content', 'Below 15%'],
+                    ['Water Holding Capacity', '700 – 800%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', 'Individual Shrink Wrap / Cartons']
+                ]
+            },
+            high_ec: {
+                title: 'High EC (Unwashed)',
+                badge: 'High EC (2.5 – 3.5 mS/cm)',
+                ecTag: '2.5 – 3.5 mS/cm (High EC)',
+                description: 'Natural unwashed coco peat brick (EC 2.5 - 3.5 mS/cm) suitable for soil amendment, pet bedding, and general landscaping applications.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Peat Brick (High EC)'],
+                    ['Weight', '650 g ± 5%'],
+                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Expansion Volume', '8 – 9 Litres'],
+                    ['Moisture Content', '< 20%'],
+                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', 'Individual Shrink Wrap / Cartons']
+                ]
+            }
+        },
         isNew: false,
         uses: [
             {
                 title: 'Seed Starting & Germination',
                 desc: 'Provides a sterile, lightweight growth medium that encourages rapid root propagation and high germination rates.',
-                image: 'assets/images/Products/bricks2.jpeg',
+                image: 'assets/images/Products/cocopeat_seedling.jpeg',
                 icon: 'bi-egg-fried'
             },
             {
                 title: 'Indoor Potted Soil Conditioner',
                 desc: 'Expands quickly in water to create a soft, non-clumping soil mix that keeps houseplant roots well-aerated.',
-                image: 'assets/images/Products/bricks3.jpeg',
+                image: 'assets/images/ProductDetails/potting_mix_gardening.jpeg',
                 icon: 'bi-bounding-box'
             },
             {
                 title: 'Urban Balcony Gardening',
                 desc: 'Offers a space-saving, lightweight alternative to heavy soil bags, perfect for apartment balconies.',
-                image: 'assets/images/Products/bricks.jpeg',
+                image: 'assets/images/ProductDetails/balcony_gardening.jpeg',
                 icon: 'bi-building'
             }
         ],
@@ -181,13 +263,13 @@ const SEED = [
             {
                 title: 'Urban Rooftops & Balconies',
                 desc: 'Ideal for space-constrained home gardening setups, green balconies, and vertical flower planters.',
-                image: 'assets/images/Products/openTopGrowBag4.jpeg',
+                image: 'assets/images/ProductDetails/balcony_gardening.jpeg',
                 icon: 'bi-building-fill'
             },
             {
                 title: 'Domestic Flower Gardens',
                 desc: 'Mixed into backyard flower beds and window boxes to sustain hydration and keep flowers blooming.',
-                image: 'assets/images/Products/cocopeat_seedling.jpeg',
+                image: 'assets/images/ProductDetails/potting_mix_gardening.jpeg',
                 icon: 'bi-flower3'
             },
             {
@@ -222,12 +304,54 @@ const SEED = [
             'Saves up to 50% in irrigation water and fertilizer run-off'
         ],
         specs: [['Sizes', '100×20×18 / 100×20×15 / 100×20×12 cm'], ['Volumes', '36 L / 30 L / 24 L'], ['EC', 'Below 0.5 mS/cm'], ['pH', '5.8 – 6.8'], ['UV Packing', '3 Year Stabilized'], ['Compression', '5:1']],
+        qualities: {
+            low_ec: {
+                title: 'Low EC (Washed)',
+                badge: 'Low EC (< 0.5 mS/cm)',
+                ecTag: '< 0.5 mS/cm (Washed)',
+                description: 'Premium washed coir grow bag (< 0.5 mS/cm) engineered for soilless hydroponics, greenhouse tomatoes, cucumbers, strawberries, and capsicum.',
+                specs: [
+                    ['Product Type', 'Compressed Coir Grow Bag'],
+                    ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
+                    ['Weight', '4.5 – 5 kg'],
+                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
+                    ['pH Level', '5.8 – 6.8'],
+                    ['Expansion Volume', 'Approx. 65 – 70 Litres'],
+                    ['Moisture Content', 'Below 15%'],
+                    ['Water Holding Capacity', '700 – 800%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Material Composition', '100% Natural Coconut Coir'],
+                    ['Drainage Holes', 'Pre-cut / Customizable'],
+                    ['Packaging', 'UV-Stabilized Polyethylene Bag']
+                ]
+            },
+            high_ec: {
+                title: 'High EC (Unwashed)',
+                badge: 'High EC (2.5 – 3.5 mS/cm)',
+                ecTag: '2.5 – 3.5 mS/cm (High EC)',
+                description: 'Unwashed coir grow bag (EC 2.5 - 3.5 mS/cm) ideal for salt-tolerant crops, outdoor container nursery stock, and heavy soil remediation.',
+                specs: [
+                    ['Product Type', 'Compressed Coir Grow Bag (High EC)'],
+                    ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
+                    ['Weight', '4.5 – 5 kg'],
+                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Expansion Volume', 'Approx. 65 – 70 Litres'],
+                    ['Moisture Content', '< 20%'],
+                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Material Composition', '100% Natural Coconut Coir'],
+                    ['Drainage Holes', 'Pre-cut / Customizable'],
+                    ['Packaging', 'UV-Stabilized Polyethylene Bag']
+                ]
+            }
+        },
         isNew: false,
         uses: [
             {
                 title: 'Hydroponic Vegetable Farming',
                 desc: 'Specifically designed for greenhouse grow systems with custom pre-cut holes for plants and drip lines.',
-                image: 'assets/images/Products/coirGrowBag2.jpeg',
+                image: 'assets/images/Products/GBOT.jpeg',
                 icon: 'bi-droplet-fill'
             },
             {
@@ -247,19 +371,19 @@ const SEED = [
             {
                 title: 'Soilless Modern Greenhouses',
                 desc: 'Positioned in long rows with automated drip systems to cultivate large volumes of export-quality vegetables.',
-                image: 'assets/images/Products/openTopGrowBag4.jpeg',
+                image: 'assets/images/Products/GBOT.jpeg',
                 icon: 'bi-house-heart-fill'
             },
             {
                 title: 'Hydroponic Research Facilities',
                 desc: 'Used by agricultural labs to run controlled nutrient and watering experiments with high precision.',
-                image: 'assets/images/Products/infrastructure3.jpeg',
+                image: 'assets/images/Products/openTopGrowBag4.jpeg',
                 icon: 'bi-mortarboard-fill'
             },
             {
                 title: 'Commercial Berry Farms',
                 desc: 'Placed in fields or elevated gutters to grow blueberries, strawberries, and other soft fruits.',
-                image: 'assets/images/Products/NurserySeedlings.jpeg',
+                image: 'assets/images/Products/GB.jpeg',
                 icon: 'bi-flower2'
             }
         ],
@@ -307,7 +431,7 @@ const SEED = [
             {
                 title: 'Commercial Berry Farms',
                 desc: 'Perfect for growing bush berries like blueberries and raspberries in rows inside high tunnels.',
-                image: 'assets/images/Products/openTopGrowBag4.jpeg',
+                image: 'assets/images/Products/GB.jpeg',
                 icon: 'bi-brightness-high-fill'
             },
             {
@@ -319,7 +443,7 @@ const SEED = [
             {
                 title: 'Backyard Home Orchards',
                 desc: 'Ideal for home gardeners looking to grow small fruit trees, chili plants, or tomatoes on patios.',
-                image: 'assets/images/Products/openTopGrowBag3.jpeg',
+                image: 'assets/images/ProductDetails/balcony_gardening.jpeg',
                 icon: 'bi-house-fill'
             }
         ],
@@ -348,12 +472,50 @@ const SEED = [
             'Clean, dust-free mulch that prevents soil-borne pathogens'
         ],
         specs: [['Chip Size', '1 – 3 cm'], ['Moisture', '15% – 18%'], ['EC Value', 'Below 0.5 mS/cm'], ['Packing', '5 kg Blocks / 25 kg Loose Bags'], ['Material', '100% Natural Coconut Husk']],
+        qualities: {
+            low_ec: {
+                title: 'Low EC (Washed)',
+                badge: 'Low EC (< 0.5 mS/cm)',
+                ecTag: '< 0.5 mS/cm (Washed)',
+                description: 'Washed coco husk chips (< 0.5 mS/cm) providing superior aeration and drainage for epiphytic orchids, anthuriums, bromeliads, and hydroponic mixes.',
+                specs: [
+                    ['Product Type', 'Coco Peat Chips'],
+                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
+                    ['pH Level', '5.8 – 6.8'],
+                    ['Chip Size', '6 – 18 mm'],
+                    ['Moisture Content', 'Below 18%'],
+                    ['Water Holding Capacity', '500 – 600%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 10%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', '5 kg Blocks / Grow Bags / Bulk Bales']
+                ]
+            },
+            high_ec: {
+                title: 'High EC (Unwashed)',
+                badge: 'High EC (2.5 – 3.5 mS/cm)',
+                ecTag: '2.5 – 3.5 mS/cm (High EC)',
+                description: 'Unwashed coco husk chips (EC 2.5 - 3.5 mS/cm) widely utilized as long-lasting landscape mulch, pathway ground cover, and reptile terrarium bedding.',
+                specs: [
+                    ['Product Type', 'Coco Peat Chips (High EC)'],
+                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Chip Size', '6 – 18 mm'],
+                    ['Moisture Content', '< 20%'],
+                    ['Water Holding Capacity', '500 – 600%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 10%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', '5 kg Blocks / Grow Bags / Bulk Bales']
+                ]
+            }
+        },
         isNew: false,
         uses: [
             {
                 title: 'Orchid Growing Media',
                 desc: 'Coarse chips provide orchid roots with the large air voids and high humidity they require to cling and thrive.',
-                image: 'assets/images/Products/cocoHuskChips2.jpeg',
+                image: 'assets/images/ProductDetails/orchid_husk_chips.jpeg',
                 icon: 'bi-flower1'
             },
             {
@@ -367,19 +529,19 @@ const SEED = [
             {
                 title: 'Orchid Nurseries & Florists',
                 desc: 'The primary planting substrate for high-value epiphytic plants, orchids, and bromeliads.',
-                image: 'assets/images/Products/NurserySeedlings.jpeg',
+                image: 'assets/images/ProductDetails/orchid_husk_chips.jpeg',
                 icon: 'bi-shop'
             },
             {
                 title: 'Botanical & Public Gardens',
                 desc: 'Applied in garden pathways and flower beds as an eco-friendly mulch to control soil temperature.',
-                image: 'assets/images/Products/infrastructure3.jpeg',
+                image: 'assets/images/ProductDetails/potting_mix_gardening.jpeg',
                 icon: 'bi-tree-fill'
             },
             {
                 title: 'Pet Supply Manufacturing',
                 desc: 'Packed and distributed as high-grade natural bedding for snakes, lizards, and other terrarium pets.',
-                image: 'assets/images/Products/cocoHuskChips.jpeg',
+                image: 'assets/images/Products/cocoHuskChips2.jpeg',
                 icon: 'bi-box-seam'
             }
         ],
@@ -407,6 +569,48 @@ const SEED = [
             'Highly recommended for home herb kits and urban gardens'
         ],
         specs: [['Diameter', '30 – 100 mm'], ['Thickness', '8 – 20 mm'], ['pH Value', '5.8 – 6.8'], ['EC Value', 'Below 0.5 mS/cm'], ['Material', '100% Natural Coco Peat']],
+        qualities: {
+            low_ec: {
+                title: 'Low EC (Washed)',
+                badge: 'Low EC (< 0.5 mS/cm)',
+                ecTag: '< 0.5 mS/cm (Washed)',
+                description: 'Washed compressed coir discs (< 0.5 mS/cm) wrapped in non-woven net for seed propagation trays and gerbera flower pot cultivation.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Coir Coin / Disc'],
+                    ['Diameter', '30 mm / 40 mm / 50 mm (Customizable)'],
+                    ['Thickness', '5 – 10 mm'],
+                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
+                    ['pH Level', '5.8 – 6.5'],
+                    ['Expansion Volume', 'Approx. 50 – 80 ml per disc'],
+                    ['Moisture Content', 'Below 15%'],
+                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', 'Bulk Packs / Cartons']
+                ]
+            },
+            high_ec: {
+                title: 'High EC (Unwashed)',
+                badge: 'High EC (2.5 – 3.5 mS/cm)',
+                ecTag: '2.5 – 3.5 mS/cm (High EC)',
+                description: 'Unwashed coir coins / discs (EC 2.5 - 3.5 mS/cm) suitable for general nursery stock propagation and soil conditioning.',
+                specs: [
+                    ['Product Type', 'Compressed Coco Coir Coin / Disc (High EC)'],
+                    ['Diameter', '30 mm / 40 mm / 50 mm (Customizable)'],
+                    ['Thickness', '5 – 10 mm'],
+                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Expansion Volume', 'Approx. 50 – 80 ml per disc'],
+                    ['Moisture Content', '< 20%'],
+                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Compression Ratio', '5:1'],
+                    ['Fiber Content', '< 5%'],
+                    ['Sand Content', '< 3%'],
+                    ['Packaging', 'Bulk Packs / Cartons']
+                ]
+            }
+        },
         isNew: true,
         uses: [
             {
@@ -418,7 +622,7 @@ const SEED = [
             {
                 title: 'Biodegradable Growing Coins',
                 desc: 'Seedlings can be transplanted directly with the expanded coin, preventing shock to fragile root systems.',
-                image: 'assets/images/Products/cocoPeatCoin3.jpeg',
+                image: 'assets/images/ProductDetails/microgreens_coir.jpeg',
                 icon: 'bi-recycle'
             }
         ],
@@ -432,13 +636,13 @@ const SEED = [
             {
                 title: 'Commercial Greenhouse Farms',
                 desc: 'Used for starting tomatoes and peppers before transplanting them into grow bags.',
-                image: 'assets/images/Products/openTopGrowBag4.jpeg',
+                image: 'assets/images/Products/GBOT.jpeg',
                 icon: 'bi-house-heart'
             },
             {
                 title: 'Urban Horticulture Kits',
                 desc: 'Included in retail gardening boxes, mini herb gardens, and DIY green gifting packs.',
-                image: 'assets/images/Products/cocoPeatCoin.jpeg',
+                image: 'assets/images/ProductDetails/microgreens_coir.jpeg',
                 icon: 'bi-box'
             }
         ],

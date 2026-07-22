@@ -24,70 +24,70 @@ $(document).ready(function () {
       crops: ['Mattresses', 'Geotextiles', 'Ropes', 'Hops & Vines']
     },
     {
-      id: 'p002', code: 'AC-02', name: 'Coco Peat 5 KG Block', category: 'Coco Peat', badge: 'Bestseller',
+      id: 'p002', code: 'AC-02', name: 'Coco Peat 5 KG Block', category: 'Coco Peat', badge: 'Low EC & High EC',
       image: 'assets/images/Products/cocopeatblock631.jpeg',
-      description: 'Top grade 5kg coco peat blocks for horticulture, hydroponics, nurseries, and greenhouses. Retains moisture up to 8x its weight.',
+      description: 'Top grade 5kg coco peat blocks for horticulture & bedding. Available in both Low EC (< 0.5 mS/cm) and High EC (2.5 – 3.5 mS/cm) grades per buyer selection.',
       specs: [
         ['Block Size', '30 × 30 × 12 cm'],
         ['Weight', '4.8 – 5 kg'],
         ['Expansion', '70 – 75 Litres'],
-        ['EC Value', 'Low EC (< 0.5 mS/cm)'],
-        ['pH Value', '5.8 – 6.8']
+        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
+        ['pH Value', '5.5 – 6.8']
       ],
-      crops: ['Tomatoes', 'Strawberries', 'Bell Peppers', 'Roses', 'Cucumbers']
+      crops: ['Tomatoes', 'Strawberries', 'Animal Bedding', 'Soil Amendment']
     },
     {
-      id: 'p003', code: 'AC-03', name: 'Coco Peat Bricks 650 Gms', category: 'Coco Peat', badge: 'Retail Pack',
+      id: 'p003', code: 'AC-03', name: 'Coco Peat Bricks 650 Gms', category: 'Coco Peat', badge: 'Low EC & High EC',
       image: 'assets/images/Products/bricks.jpeg',
-      description: 'Lightweight, easy-to-handle briquettes designed for home gardening, seed germination, and balcony pots. Expands rapidly with water.',
+      description: 'Lightweight briquettes for gardening & soil conditioning. Available in Low EC (< 0.5 mS/cm) washed and High EC (2.5 – 3.5 mS/cm) unwashed.',
       specs: [
         ['Brick Size', '20 × 10 × 5 cm'],
         ['Weight', '650 grams'],
         ['Expansion', '8 – 9 Litres per brick'],
-        ['EC Value', 'Low EC (< 0.5 mS/cm)'],
-        ['pH Value', '5.6 – 6.5']
+        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
+        ['pH Value', '5.5 – 6.8']
       ],
-      crops: ['Indoor Herbs', 'Seedlings', 'Microgreens', 'Potted Flowers']
+      crops: ['Indoor Herbs', 'Seedlings', 'Potting Soil', 'Landscaping']
     },
     {
-      id: 'p004', code: 'AC-04', name: 'Coir Grow Bags', category: 'Grow Bags', badge: 'Hydroponics',
+      id: 'p004', code: 'AC-04', name: 'Coir Grow Bags', category: 'Grow Bags', badge: 'Low EC & High EC',
       image: 'assets/images/Products/coirGrowBag.jpeg',
-      description: 'UV-treated polythene grow bags pre-filled with compressed coir substrate. Ideal for commercial greenhouse hydroponics.',
+      description: 'UV-treated polythene grow bags pre-filled with coir substrate. Available in Low EC for hydroponics and High EC for nursery stock.',
       specs: [
-        ['Standard Size', '100 × 15 × 12 cm / 100 × 18 × 16 cm'],
-        ['Weight', '1.8 – 2.5 kg'],
-        ['UV Stability', '3 to 5 Years Warranty'],
-        ['Slits', 'Pre-cut drainage & drip holes'],
-        ['Substrate', 'Custom Peat/Chip mix (70:30 / 50:50)']
+        ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
+        ['Weight', '4.5 – 5 kg'],
+        ['Expansion Volume', '65 – 70 Litres'],
+        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
+        ['Substrate', 'Custom Peat/Chip mix']
       ],
       crops: ['Hydroponic Tomatoes', 'Cucumbers', 'Capsicum', 'Strawberries']
     },
     {
-      id: 'p005', code: 'AC-05', name: 'Open Top Grow Bags', category: 'Grow Bags', badge: 'Popular',
+      id: 'p005', code: 'AC-05', name: 'Open Top Grow Bags', category: 'Grow Bags', badge: 'Low EC & High EC',
       image: 'assets/images/Products/openTopGrowBag4.jpeg',
-      description: 'Ready-to-use open top planter bags with custom coir pith & husk chip blend. Simply hydrate in place and plant directly.',
+      description: 'Ready-to-use open top planter bags with custom coir pith & husk chip blend. Available in Low EC washed and High EC unwashed.',
       specs: [
         ['Capacity', '5L, 10L, 15L & 20L'],
+        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
         ['Bag Material', 'Dual Color UV Polybag (Black/White)'],
-        ['EC Level', 'Washed Low EC (< 0.5 mS/cm)'],
-        ['pH', '5.8 – 6.5']
+        ['pH', '5.5 – 6.8']
       ],
-      crops: ['Blueberries', 'Potted Tomatoes', 'Soft Fruits', 'Cannabis/Hemp']
+      crops: ['Blueberries', 'Potted Tomatoes', 'Soft Fruits', 'Nurseries']
     },
     {
-      id: 'p006', code: 'AC-06', name: 'Coco Husk Chips', category: 'Coco Peat', badge: 'High Aeration',
+      id: 'p006', code: 'AC-06', name: 'Coco Husk Chips', category: 'Coco Peat', badge: 'Low EC & High EC',
       image: 'assets/images/Products/cocoHuskChips.jpeg',
-      description: 'Uniform cut coconut husk chips (10–12mm). Provides superior aeration and drainage for orchids and potting soil mixes.',
+      description: 'Uniform cut coconut husk chips (6-18mm). Available in Low EC for orchids and High EC for mulch and reptile bedding.',
       specs: [
-        ['Chip Size', '6mm – 12mm / 12mm – 18mm'],
+        ['Chip Size', '6mm – 18mm'],
+        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
         ['Packaging', '5kg Blocks / 25kg Loose Bags'],
-        ['EC Level', 'Low EC / Unwashed Options'],
-        ['Moisture', 'Below 18%']
+        ['Water Holding', '500 – 600%']
       ],
-      crops: ['Orchids', 'Anthuriums', 'Landscaping Mulch', 'Bromeliads']
+      crops: ['Orchids', 'Anthuriums', 'Landscaping Mulch', 'Terrarium Bedding']
     },
     {
-      id: 'p007', code: 'AC-07', name: 'Coco Coins & Discs', category: 'Coco Peat', badge: 'Propagation',
+      id: 'p007', code: 'AC-07', name: 'Coco Coins & Discs', category: 'Coco Peat', badge: 'Low EC & High EC',
       image: 'assets/images/Products/cocoPeatCoin.jpeg',
       description: 'Compressed coir discs wrapped in non-woven net for seed propagation trays and gerbera flower pots.',
       specs: [
@@ -187,6 +187,90 @@ $(document).ready(function () {
     }
   ];
 
+  // 1c. FREQUENTLY ASKED QUESTIONS (FAQ) DATASET
+  const FAQ_CATALOG = [
+    {
+      id: 'faq1',
+      question: "What types of Coco Peat & Coir products do you export globally?",
+      keywords: ['types', 'products export', 'what do you export', 'range'],
+      answer: "We manufacture and export a wide spectrum of 100% natural, eco-friendly coconut coir products processed to international standards:\n\n" +
+        "• **Coco Peat 5 KG Blocks & 650g Bricks** (Low EC washed & High EC)\n" +
+        "• **Coir Fibre Hydraulic Bales** (Golden & Brown)\n" +
+        "• **Coir Grow Bags & Open Top Prefill Bags** (UV-stabilized)\n" +
+        "• **Sieve Coco Husk Chips & Coco Disks/Coins**\n" +
+        "• **Fresh Semi-Husked & Fully Husked Coconuts**",
+      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq2',
+      question: "What is the difference between Low EC (Washed) and High EC Coco Peat?",
+      keywords: ['difference', 'low ec', 'high ec', 'washed', 'unwashed', 'ec value'],
+      answer: "• **Low EC (Washed) Coco Peat** (< 0.5 mS/cm): Thoroughly washed with fresh water to remove natural sodium and potassium salts. Ideal for direct seedling germination, commercial greenhouses, and hydroponic crops.\n\n" +
+        "• **High EC (Unwashed) Coco Peat** (> 1.5 mS/cm): Contains natural salts, primarily used for animal bedding, oil absorbents, or soil amendment for salt-tolerant plants.",
+      chips: ['🌱 Select Products', '📝 Request Low EC Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq3',
+      question: "What is your Minimum Order Quantity (MOQ) for international shipments?",
+      keywords: ['moq', 'minimum order', 'quantity', 'container', 'fcl', '20ft', '40ft'],
+      answer: "Our standard export Minimum Order Quantity is **1 × 20ft FCL (Full Container Load)** containing approx. 11–13 Metric Tons.\n\n" +
+        "For **40ft High Cube containers**, the loading capacity is 24–26 Metric Tons.\n\n" +
+        "We also accept **mixed-product containers** (combining 5kg blocks, grow bags, and husk chips in a single container) to optimize buyer inventory.",
+      chips: ['📝 Get Instant Quote', '🚢 Export Ports', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq4',
+      question: "Do you offer OEM private labeling, custom branding, and packaging?",
+      keywords: ['oem', 'private label', 'custom branding', 'packaging', 'custom size', 'label'],
+      answer: "Yes! We specialize in OEM contract manufacturing for overseas distributors, retail chains, and commercial growers:\n\n" +
+        "• Custom printed shrink wrap & retail color labels\n" +
+        "• Custom grow bag slab dimensions & pre-cut drainage holes\n" +
+        "• Tailored Peat-to-Husk ratio blends (e.g. 70/30, 50/50)\n" +
+        "• Private label barcoding & multi-language instruction sheets",
+      chips: ['📝 Request OEM Quote', '🌱 Select Products', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq5',
+      question: "Which ports do you export from and what are typical transit lead times?",
+      keywords: ['ports', 'shipping ports', 'lead time', 'transit', 'tuticorin', 'chennai', 'cochin'],
+      answer: "We export directly from prime South Indian sea ports: **Tuticorin (VOC Port), Chennai Port, and Cochin Port**.\n\n" +
+        "Average transit lead times after container loading:\n" +
+        "• **Middle East & Gulf**: 7 – 12 Days\n" +
+        "• **Europe & UK**: 18 – 25 Days\n" +
+        "• **North America**: 25 – 35 Days\n" +
+        "• **Australia & Far East Asia**: 14 – 22 Days",
+      chips: ['📦 MOQ & Export', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq6',
+      question: "What export certifications and phytosanitary documents are provided?",
+      keywords: ['certification', 'certificate', 'phytosanitary', 'fumigation', 'coo', 'origin'],
+      answer: "Every export shipment from Anuradha Coirs is strictly inspected and accompanied by full official documentation:\n\n" +
+        "✔ Government Phytosanitary Certificate\n" +
+        "✔ Fumigation Certificate (Methyl Bromide / Heat Treated)\n" +
+        "✔ Certificate of Origin (COO / Coir Board)\n" +
+        "✔ Laboratory Test Report (EC, pH, Moisture & Sand %)",
+      chips: ['📜 Certifications', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq7',
+      question: "What is the expansion volume and water retention of your 5kg blocks?",
+      keywords: ['expansion', 'volume', 'water retention', 'yield', '5kg block yield', 'litres'],
+      answer: "Our compressed 5 KG Coco Peat blocks yield an extraordinary expansion volume of **75 to 80 Liters of hydrated growing medium per block** when rehydrated with water (approx. 15 Liters per kg).\n\n" +
+        "It maintains a water-holding capacity exceeding **800% of dry weight** while preserving 10–15% air porosity for ideal root oxygenation.",
+      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      id: 'faq8',
+      question: "What are your accepted international payment methods?",
+      keywords: ['payment', 'payment terms', 'payment method', 'lc', 'letter of credit', 'tt', 'wire transfer'],
+      answer: "We offer flexible and secure B2B payment terms:\n\n" +
+        "1. **T/T (Telegraphic Transfer / Wire)**: 30% advance deposit upon order confirmation, balance 70% payable against scanned copy of Shipping Bill of Lading (B/L).\n\n" +
+        "2. **L/C (Letter of Credit)**: 100% Irrevocable Letter of Credit at sight from prime international banks.",
+      chips: ['📦 MOQ & Export', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    }
+  ];
+
   // 2. INJECT CHATBOT HTML WIDGET IF NOT PRESENT
   if ($('#coir-chatbot-widget').length === 0) {
     const chatbotHtml = `
@@ -227,7 +311,7 @@ $(document).ready(function () {
 
           <!-- Footer Input -->
           <form class="chatbot-footer" id="cbForm" onsubmit="return false;">
-            <input type="text" class="chatbot-input" id="cbInput" placeholder="Ask about products, specs ...." autocomplete="off">
+            <input type="text" class="chatbot-input" id="cbInput" placeholder="Ask about products, specs, FAQ...." autocomplete="off">
             <button type="submit" class="chatbot-send-btn" id="cbSendBtn" aria-label="Send Message">
               <i class="bi bi-send-fill"></i>
             </button>
@@ -248,7 +332,12 @@ $(document).ready(function () {
     {
       keywords: ['hello', 'hi', 'hey', 'greetings', 'namaste', 'start', 'help'],
       response: "Hello! Welcome to **Anuradha Coirs & Fibres** 🌱. We are a leading manufacturer and exporter of premium coco peat, coir fibre, grow bags & husk chips from South India. How can I assist you today?",
-      chips: ['🌱 Select Products', '📦 MOQ & Export', '📜 Certifications', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+      chips: ['❓ FAQ', '🌱 Select Products', '📦 MOQ & Export', '📜 Certifications', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+    },
+    {
+      keywords: ['faq', 'frequently asked', 'question', 'questions', 'answers', 'got questions'],
+      response: "SHOW_FAQ_MENU",
+      chips: ['🌱 Select Products', '📦 MOQ & Export', '📝 Get Instant Quote']
     },
     {
       keywords: ['product', 'products', 'catalog', 'list', 'items', 'select product', 'select products', 'all products', 'range'],
@@ -386,6 +475,12 @@ $(document).ready(function () {
   $(document).on('click', '.cb-chip', function () {
     const chipText = $(this).text().trim();
 
+    if (chipText.includes('FAQ') || chipText.includes('Frequently Asked Questions') || chipText.includes('Questions')) {
+      appendUserMessage(chipText);
+      renderFaqMenu();
+      return;
+    }
+
     if (chipText.includes('Chat on WhatsApp') || chipText.includes('WhatsApp Sales') || chipText.includes('Open WhatsApp')) {
       window.open('https://api.whatsapp.com/send?phone=919944859177&text=' + encodeURIComponent('Hi! I am interested in Anuradha Coirs products and would like to make an inquiry.'), '_blank');
       return;
@@ -415,6 +510,20 @@ $(document).ready(function () {
     }
 
     sendMessage(chipText);
+  });
+
+  // Delegate click for FAQ Question Buttons
+  $(document).on('click', '.cb-faq-btn', function () {
+    const faqId = $(this).data('faq-id');
+    const faqItem = FAQ_CATALOG.find(f => f.id === faqId);
+    if (faqItem) {
+      appendUserMessage(faqItem.question);
+      showTypingIndicator();
+      setTimeout(function () {
+        removeTypingIndicator();
+        appendBotMessage(faqItem.answer, faqItem.chips);
+      }, 500);
+    }
   });
 
   // Delegate click for Product Selection Items
@@ -463,11 +572,12 @@ $(document).ready(function () {
         <div class="cb-msg-bubble">
           <strong>Welcome to Anuradha Coirs &amp; Fibres!</strong> 🌱<br><br>
           We manufacture &amp; export premium <strong>Coco Peat, Coir Fibre, Grow Bags, Coconut Husk Chips &amp; Fresh Coconuts</strong> worldwide.<br><br>
-          Select an option below to explore products, specs, or our manufacturing process!
+          Select an option below to explore FAQs, products, specs, or our manufacturing process!
         </div>
         <div class="cb-msg-time">${getCurrentTime()}</div>
       </div>
       <div class="chatbot-chips">
+        <button class="cb-chip">❓ FAQ</button>
         <button class="cb-chip">🌱 Select Products</button>
         <button class="cb-chip">⚙️ Manufacturing Process</button>
         <button class="cb-chip">📦 MOQ &amp; Export</button>
@@ -497,10 +607,22 @@ $(document).ready(function () {
         return;
       }
 
+      // Check if user specifically matched a question in FAQ catalog
+      const matchedFaq = FAQ_CATALOG.find(f =>
+        f.keywords.some(kw => text.toLowerCase().includes(kw))
+      );
+
+      if (matchedFaq && (text.toLowerCase().includes('faq') || text.toLowerCase().includes('question') || text.length > 8)) {
+        appendBotMessage(matchedFaq.answer, matchedFaq.chips);
+        return;
+      }
+
       const botResponse = matchResponse(text);
 
       if (botResponse.response === "BROWSE_PRODUCTS_MENU") {
         renderProductSelectionMenu();
+      } else if (botResponse.response === "SHOW_FAQ_MENU") {
+        renderFaqMenu();
       } else if (botResponse.response === "SHOW_MANUFACTURING_PROCESS") {
         renderManufacturingProcessMenu();
       } else if (botResponse.response.startsWith("SHOW_PRODUCT_DETAIL_")) {
@@ -552,6 +674,46 @@ $(document).ready(function () {
     $body.append(html);
     scrollToBottom();
     saveChatState();
+  }
+
+  // RENDER INTERACTIVE FAQ MENU
+  function renderFaqMenu() {
+    showTypingIndicator();
+    setTimeout(function () {
+      removeTypingIndicator();
+
+      let faqButtonsHtml = '';
+      FAQ_CATALOG.forEach((f, idx) => {
+        faqButtonsHtml += `
+          <button class="cb-faq-btn" data-faq-id="${f.id}">
+            <span style="color:#b8975a;font-weight:700;">Q${idx + 1}.</span>
+            <span>${escapeHtml(f.question)}</span>
+          </button>
+        `;
+      });
+
+      const html = `
+        <div class="cb-msg bot">
+          <div class="cb-msg-bubble">
+            <strong>❓ Frequently Asked Questions (FAQ)</strong>
+            <p style="margin:4px 0 8px 0;font-size:0.8rem;color:#475569;">Click on any question below to view quick detailed answers regarding products, exports, shipping &amp; customization:</p>
+            <div class="cb-faq-menu">
+              ${faqButtonsHtml}
+            </div>
+          </div>
+          <div class="cb-msg-time">${getCurrentTime()}</div>
+        </div>
+        <div class="chatbot-chips">
+          <button class="cb-chip">🌱 Select Products</button>
+          <button class="cb-chip">📝 Get Instant Quote</button>
+          <button class="cb-chip">💬 Chat on WhatsApp</button>
+        </div>
+      `;
+
+      $body.append(html);
+      scrollToBottom();
+      saveChatState();
+    }, 500);
   }
 
   // RENDER PRODUCT CATALOG SELECTION MENU

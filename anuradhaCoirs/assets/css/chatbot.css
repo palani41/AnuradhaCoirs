@@ -848,4 +848,39 @@
   }
 }
 
+/* FAQ Chatbot Menu & Buttons */
+.cb-faq-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.cb-faq-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f2e2e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.cb-faq-btn:hover {
+  background: #f8fafc;
+  border-color: #b8975a;
+  color: #032f2f;
+  transform: translateX(3px);
+  box-shadow: 0 3px 10px rgba(184, 151, 90, 0.15);
+}
+
+
 

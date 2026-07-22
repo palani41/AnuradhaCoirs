@@ -115,15 +115,43 @@
             }
         }
 
+        let currentQQProduct = null;
+        let currentQQGrade = 'low_ec';
+
         function addToCart(id, amount = 100) {
+            const p = SEED.find(x => x.id === id);
+            if (!p) return;
+
+            // If product has quality options (Low EC & High EC)
+            if (p.qualities) {
+                // If user currently has an active EC filter on product.html
+                if (typeof activeECFilter !== 'undefined' && activeECFilter === 'low_ec') {
+                    addToCartWithGrade(id, 'Low EC (< 0.5 mS/cm)', amount);
+                    return;
+                } else if (typeof activeECFilter !== 'undefined' && activeECFilter === 'high_ec') {
+                    addToCartWithGrade(id, 'High EC (2.5 – 3.5 mS/cm)', amount);
+                    return;
+                }
+                // Otherwise open Quick Quality Selection Modal
+                openQuickQualityModal(id);
+                return;
+            }
+
+            addToCartWithGrade(id, '', amount);
+        }
+
+        function addToCartWithGrade(id, gradeTag = '', amount = 100, unit = 'Pieces') {
             cart = JSON.parse(localStorage.getItem('ac_cart') || '[]');
-            const existing = cart.find(i => i.id === id);
+            const existing = cart.find(i => i.id === id && i.grade === gradeTag);
             if (existing) {
                 existing.amount += amount;
+                existing.unit = unit;
                 showToast('Quantity updated in cart', 'success', 'bi-cart-check-fill');
             } else {
-                cart.push({ id, unit: 'Pieces', amount: amount });
-                showToast('Added to enquiry cart!', 'success', 'bi-cart-plus-fill');
+                cart.push({ id, unit: unit, amount: amount, grade: gradeTag });
+                const p = SEED.find(x => x.id === id);
+                const name = p ? p.name : '';
+                showToast(`Added ${name} ${gradeTag ? '(' + gradeTag + ')' : ''} to cart!`, 'success', 'bi-cart-plus-fill');
             }
             saveCart();
             // Badge pop animation
@@ -135,6 +163,61 @@
             }
             updateCartBadge();
             renderCartItems();
+        }
+
+        function openQuickQualityModal(id) {
+            const p = SEED.find(x => x.id === id);
+            if (!p) return;
+            currentQQProduct = p;
+            currentQQGrade = 'low_ec';
+
+            $('#qqModalName').text(p.name);
+            $('#qqModalCode').text(`Code: ${p.code} • Category: ${p.category}`);
+            const img = (p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg');
+            $('#qqModalImg').attr('src', img);
+
+            selectQQGrade('low_ec');
+            $('#qqQtyInput').val(100);
+            $('#qqUnitSelect').val('Pieces');
+
+            const modalEl = document.getElementById('quickQualityModal');
+            if (modalEl) {
+                let modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (!modalInstance) modalInstance = new bootstrap.Modal(modalEl);
+                modalInstance.show();
+            }
+        }
+
+        function selectQQGrade(grade) {
+            currentQQGrade = grade;
+            if (grade === 'low_ec') {
+                $('#qqBtnLow').addClass('active');
+                $('#qqBtnHigh').removeClass('active');
+                $('#qqCheckLow').attr('class', 'bi bi-check-circle-fill text-success');
+                $('#qqCheckHigh').attr('class', 'bi bi-circle text-muted');
+            } else {
+                $('#qqBtnHigh').addClass('active');
+                $('#qqBtnLow').removeClass('active');
+                $('#qqCheckHigh').attr('class', 'bi bi-check-circle-fill text-warning');
+                $('#qqCheckLow').attr('class', 'bi bi-circle text-muted');
+            }
+        }
+
+        function confirmQQAddToCart() {
+            if (!currentQQProduct) return;
+            const gradeTag = currentQQGrade === 'high_ec' ? 'High EC (2.5 – 3.5 mS/cm)' : 'Low EC (< 0.5 mS/cm)';
+            const qty = parseInt($('#qqQtyInput').val() || 100);
+            const unit = $('#qqUnitSelect').val() || 'Pieces';
+
+            addToCartWithGrade(currentQQProduct.id, gradeTag, qty, unit);
+
+            const modalEl = document.getElementById('quickQualityModal');
+            if (modalEl) {
+                const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (modalInstance) modalInstance.hide();
+            }
+
+            setTimeout(openCart, 400);
         }
 
         function removeFromCart(id) {
@@ -497,6 +580,19 @@
         /* ══════════════════════════════════════
            CARD HTML BUILDER
         ══════════════════════════════════════ */
+        let activeECFilter = 'all';
+
+        function filterByECGrade(grade, btnEl) {
+            activeECFilter = grade;
+            $('.qfs-btn').removeClass('active low high');
+            if (btnEl) {
+                $(btnEl).addClass('active');
+                if (grade === 'low_ec') $(btnEl).addClass('low');
+                if (grade === 'high_ec') $(btnEl).addClass('high');
+            }
+            render();
+        }
+
         function cardHTML(p) {
             const isList = viewMode === 'gl';
             const imgs = (p.images && p.images.length) ? p.images : [p.image || 'assets/images/Products/coirfiberNew.jpeg'];
@@ -508,6 +604,7 @@
 
             const bm = BADGE_META[p.badge] || (p.isNew ? BADGE_META['new'] : null);
             const badge = bm ? `<span class="pc-badge ${bm.cls}">${bm.lbl}</span>` : '';
+            const ecBadge = p.qualities ? `<span class="pc-quality-tag-pill"><i class="bi bi-patch-check-fill text-gold me-1"></i> Low EC &amp; High EC Available</span>` : '';
 
             const galleryNav = imgs.length > 1 ? `
       <button class="pc-img-nav prev" onclick="event.stopPropagation();cycleCardImg('${esc(p.id)}',-1)"><i class="bi bi-chevron-left"></i></button>
@@ -529,7 +626,10 @@
       </button>
     </div>
     <div class="pc-body">
-      <span class="pc-cat-tag">${esc(p.category)}</span>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px;">
+        <span class="pc-cat-tag">${esc(p.category)}</span>
+        ${ecBadge}
+      </div>
       <div class="pc-name">${esc(p.name)}</div>
       ${ornament}
       <div class="pc-desc">${esc(p.description)}</div>
@@ -574,13 +674,22 @@
             const cats = [...new Set(all.map(p => p.category))];
             let list = all;
             if (activeCat) list = list.filter(p => p.category === activeCat);
+            if (activeECFilter === 'low_ec') {
+                list = list.filter(p => p.qualities && p.qualities.low_ec);
+            } else if (activeECFilter === 'high_ec') {
+                list = list.filter(p => p.qualities && p.qualities.high_ec);
+            }
             if (searchQ) {
                 const q = searchQ.toLowerCase();
                 list = list.filter(p => (p.name || '').toLowerCase().includes(q) || (p.category || '').toLowerCase().includes(q) || (p.description || '').toLowerCase().includes(q));
             }
             list = sortList(list);
 
-            $('#fbTitle').text(activeCat || (searchQ ? `"${searchQ}"` : 'All Products'));
+            let titleText = activeCat || (searchQ ? `"${searchQ}"` : 'All Products');
+            if (activeECFilter === 'low_ec') titleText += ' • 🌿 Low EC (Washed)';
+            if (activeECFilter === 'high_ec') titleText += ' • ⚡ High EC (Unwashed)';
+
+            $('#fbTitle').text(titleText);
             $('#fbCount').html(`<strong>${list.length}</strong> product${list.length !== 1 ? 's' : ''} found`);
 
             if (!list.length) {
@@ -623,7 +732,7 @@
             renderRecently();
         }
 
-        function clearAll() { activeCat = null; searchQ = ''; render(); }
+        function clearAll() { activeCat = null; activeECFilter = 'all'; searchQ = ''; filterByECGrade('all', '#btnECAll'); }
 
         /* View Toggle */
         function setView(mode, btn) {
@@ -661,6 +770,17 @@
         const catParam = urlParams.get('category');
         if (catParam) {
             activeCat = catParam;
+        }
+        const gradeParam = urlParams.get('grade');
+        if (gradeParam) {
+            activeECFilter = gradeParam;
+            if (gradeParam === 'low_ec') {
+                $('.qfs-btn').removeClass('active low high');
+                $('#btnECLow').addClass('active low');
+            } else if (gradeParam === 'high_ec') {
+                $('.qfs-btn').removeClass('active low high');
+                $('#btnECHigh').addClass('active high');
+            }
         }
         $('#footer-year').text(new Date().getFullYear());
         updateCartBadge();

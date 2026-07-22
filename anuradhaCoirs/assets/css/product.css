@@ -3525,3 +3525,402 @@ body {
     opacity: 1;
     box-shadow: 0 2px 10px rgba(184, 151, 90, .35);
 }
+
+/* ==========================================
+   QUALITY GRADE / EC FILTER STRIP & CARD BADGES
+   ========================================== */
+.quality-filter-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(3, 47, 47, 0.04);
+  flex-wrap: wrap;
+}
+
+.qfs-label {
+  font-family: var(--fh);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin-right: 4px;
+}
+
+.qfs-btn {
+  font-family: var(--fb);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--cream2);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.qfs-btn:hover {
+  border-color: var(--gold);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.qfs-btn.active {
+  background: var(--forest);
+  color: #ffffff;
+  border-color: var(--forest);
+  box-shadow: 0 4px 12px rgba(3, 47, 47, 0.15);
+}
+
+.qfs-btn.active.low {
+  background: #2e7d32;
+  border-color: #2e7d32;
+}
+
+.qfs-btn.active.high {
+  background: #d84315;
+  border-color: #d84315;
+}
+
+.pc-quality-tag-pill {
+  font-family: var(--fb);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  background: var(--gold-pale);
+  border: 1px solid rgba(184, 151, 90, 0.3);
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   QUICK QUALITY SELECTION MODAL SYSTEM (.qq-*)
+   ════════════════════════════════════════════════════════════ */
+.qq-modal-wrap .modal-dialog {
+  max-width: 520px;
+}
+
+.qq-modal-content {
+  border-radius: 22px !important;
+  border: 1px solid rgba(184, 151, 90, 0.25) !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 70px rgba(3, 47, 47, 0.3) !important;
+  background: #ffffff !important;
+}
+
+.qq-modal-header {
+  background: linear-gradient(135deg, #032f2f 0%, #084c4c 100%) !important;
+  padding: 20px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 2px solid var(--gold) !important;
+}
+
+.qq-hdr-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qq-hdr-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(212, 184, 122, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.qq-modal-title {
+  font-family: var(--fh, 'Poppins', sans-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.qq-modal-sub {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 2px 0 0 0;
+}
+
+.qq-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qq-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.qq-modal-body {
+  padding: 24px !important;
+  background: #ffffff !important;
+}
+
+.qq-prod-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #faf8f4 0%, #f4eee2 100%);
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 151, 90, 0.25);
+  margin-bottom: 20px;
+}
+
+.qq-prod-img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(3, 47, 47, 0.1);
+}
+
+.qq-prod-info {
+  flex: 1;
+}
+
+.qq-prod-name {
+  font-family: var(--fh, 'Poppins', sans-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--forest, #032f2f);
+  margin: 0 0 4px 0;
+}
+
+.qq-prod-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qq-code-pill {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  background: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border, #e3e1dc);
+}
+
+.qq-section-label {
+  font-family: var(--fh, 'Poppins', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--forest, #032f2f);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.qq-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.qq-grade-card {
+  background: #ffffff;
+  border: 2px solid var(--border, #e3e1dc);
+  border-radius: 16px;
+  padding: 16px 14px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.qq-grade-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(3, 47, 47, 0.08);
+}
+
+.qq-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.qq-badge {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.qq-badge.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.qq-badge.high {
+  background: #fbe9e7;
+  color: #d84315;
+  border: 1px solid #ffccbc;
+}
+
+.qq-radio {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.qq-card-title {
+  font-family: var(--fh, 'Poppins', sans-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--forest, #032f2f);
+  margin-bottom: 2px;
+}
+
+.qq-card-val {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.qq-card-use {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.72rem;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* ACTIVE STATES */
+.qq-grade-card.low.active {
+  background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+  border-color: #2e7d32;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.18);
+}
+
+.qq-grade-card.high.active {
+  background: linear-gradient(135deg, #fff3e0 0%, #fbe9e7 100%);
+  border-color: #d84315;
+  box-shadow: 0 8px 24px rgba(216, 67, 21, 0.18);
+}
+
+.qq-qty-bar {
+  display: flex;
+  gap: 14px;
+  background: #f8f6f0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border, #e3e1dc);
+}
+
+.qq-qty-col {
+  flex: 1;
+}
+
+.qq-qty-label {
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--forest, #032f2f);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.qq-select, .qq-input {
+  border-radius: 10px !important;
+  border: 1.5px solid var(--border, #e3e1dc) !important;
+  font-family: var(--fb, 'Inter', sans-serif) !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 8px 12px !important;
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+.qq-select:focus, .qq-input:focus {
+  border-color: var(--gold, #b8975a) !important;
+  box-shadow: 0 0 0 3px rgba(184, 151, 90, 0.2) !important;
+}
+
+.qq-modal-footer {
+  background: #faf8f4 !important;
+  padding: 16px 24px !important;
+  border-top: 1px solid var(--border, #e3e1dc) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.qq-btn-cancel {
+  background: #ffffff;
+  border: 1.5px solid var(--border, #e3e1dc);
+  color: #555555;
+  font-family: var(--fb, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qq-btn-cancel:hover {
+  background: #f0eee8;
+  color: #1a1a1a;
+}
+
+.qq-btn-confirm {
+  background: linear-gradient(135deg, #032f2f 0%, #054a4a 100%);
+  border: 1px solid var(--gold);
+  color: #ffffff;
+  font-family: var(--fh, 'Poppins', sans-serif);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(3, 47, 47, 0.25);
+  transition: all 0.25s ease;
+}
+
+.qq-btn-confirm:hover {
+  background: linear-gradient(135deg, #054a4a 0%, #0a6060 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(3, 47, 47, 0.35);
+}
