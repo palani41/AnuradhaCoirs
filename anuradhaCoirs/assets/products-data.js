@@ -8,12 +8,10 @@ const SEED = [
         badge: 'export', // 'new' | 'bestseller' | 'premium' | 'export'
         images: [
             'assets/images/Products/coirfiberNew.jpeg',
-            'assets/images/Products/brownCoir.jpeg',
             'assets/images/Products/whiteCoirFibre.jpeg',
             'assets/images/Products/coirfiberNew2.jpeg',
-            'assets/images/Products/coirfiberNew3.jpeg',
             'assets/images/Products/coirfiberNew4.jpeg',
-            'assets/images/Products/coirfiberNew5.jpeg',
+            'assets/images/Products/fibreExport.jpeg'
         ],
         description: 'Premium natural coir fibre extracted from matured coconut husks. Processed using advanced cleaning and drying methods for superior quality. Widely used in mattresses, geo textiles, ropes, brushes, and erosion control products.',
         pills: ['High Tensile Strength', 'Eco-Friendly', 'Hydraulic Baled', 'Low Moisture', 'Export Certified'],
@@ -82,15 +80,15 @@ const SEED = [
             'assets/images/Products/cocopeatblock635.jpeg',
             'assets/images/Process/blockMaking4.jpeg'
         ],
-        description: 'Premium quality coco peat blocks suitable for horticulture, hydroponics, nurseries, and greenhouse cultivation. Available in low EC, washed, unwashed, buffered, and customized grades per buyer requirements.',
-        pills: ['Excellent Water Retention', 'High Air Porosity', 'Organic', 'Low EC', 'pH Balanced'],
+        description: 'Premium quality coco peat blocks suitable for horticulture, hydroponics, nurseries, and greenhouse cultivation. Available in Low EC (Washed) and High EC (Unwashed) grades. Expands to 80–85 litres per block.',
+        pills: ['Excellent Water Retention', '80–85 L Expansion', 'Low EC & High EC', 'pH Balanced', 'Organic'],
         highlights: [
             'Retains moisture up to 8 times its own dry weight',
             'Provides high aeration to prevent root compaction and rot',
-            'Low EC (Electrical Conductivity) and optimized pH (5.8 - 6.8)',
-            'Yields approximately 75 liters of expanded volume per block'
+            'Available in Low EC (< 0.5 mS/cm) and High EC (2.5 - 3.5 mS/cm)',
+            'Yields approximately 80 to 85 liters of expanded volume per block'
         ],
-        specs: [['Block Size', '30 × 30 × 12 cm'], ['Weight', '4.8 – 5 kg'], ['Expansion', '70 – 75 Litres'], ['EC Value', 'Below 0.5 mS/cm'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%'], ['Compression', '5:1']],
+        specs: [['Block Size', '30 × 30 × 12 cm'], ['Weight', '4.8 – 5 kg'], ['Expansion', '80 – 85 Litres'], ['EC Value', 'Low EC (< 0.5 mS/cm) & High EC Available'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%'], ['Compression', '5:1']],
         qualities: {
             low_ec: {
                 title: 'Low EC (Washed)',
@@ -102,7 +100,7 @@ const SEED = [
                     ['Weight', '4.8 – 5 kg'],
                     ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
                     ['pH Level', '5.8 – 6.8'],
-                    ['Expansion Volume', '75 – 80 Litres'],
+                    ['Expansion Volume', '80 – 85 Litres'],
                     ['Moisture Content', 'Below 15%'],
                     ['Water Holding Capacity', '> 800% of dry weight'],
                     ['Compression Ratio', '5:1'],
@@ -122,7 +120,7 @@ const SEED = [
                     ['Weight', '5 kg ± 5%'],
                     ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
                     ['pH Level', '5.5 – 6.8'],
-                    ['Expansion Volume', '70 – 75 Litres'],
+                    ['Expansion Volume', '80 – 85 Litres'],
                     ['Moisture Content', '< 20%'],
                     ['Water Holding Capacity', '600 – 700%'],
                     ['Compression Ratio', '5:1'],
@@ -190,14 +188,14 @@ const SEED = [
             'assets/images/Products/bricks3.jpeg',
         ],
         description: 'Lightweight coco peat briquettes specially designed for home gardening, seed germination, nurseries, and horticulture. Easy to use and expand quickly after adding water.',
-        pills: ['Lightweight', '8–9 L Expansion', 'Root Penetration', 'Moisture Retention', 'Indoor & Outdoor'],
+        pills: ['Lightweight', '9–10 L Expansion', 'Root Penetration', 'Moisture Retention', 'Indoor & Outdoor'],
         highlights: [
             'Compact, lightweight, and easy to carry and store',
-            'Expands rapidly into 8-9 liters of fluffy growing medium',
+            'Expands rapidly into 9-10 liters of fluffy growing medium',
             'Perfect sterile starter substrate for seeds and cuttings',
             'Maintains structural integrity for multiple seasons'
         ],
-        specs: [['Brick Size', '20 × 10 × 5 cm'], ['Weight', '650 grams'], ['Expansion', '8 – 9 Litres'], ['EC Value', 'Below 0.5 mS/cm'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%']],
+        specs: [['Brick Size', '20 × 10 × 5 cm'], ['Weight', '650 grams'], ['Expansion', '9 – 10 Litres'], ['EC Value', 'Below 0.5 mS/cm'], ['pH Value', '5.8 – 6.8'], ['Moisture', 'Below 15%']],
         qualities: {
             low_ec: {
                 title: 'Low EC (Washed)',
@@ -209,7 +207,7 @@ const SEED = [
                     ['Weight', '650 g ± 5%'],
                     ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
                     ['pH Level', '5.8 – 6.8'],
-                    ['Expansion Volume', '8 – 9 Litres'],
+                    ['Expansion Volume', '9 – 10 Litres'],
                     ['Moisture Content', 'Below 15%'],
                     ['Water Holding Capacity', '700 – 800%'],
                     ['Compression Ratio', '5:1'],
@@ -228,7 +226,7 @@ const SEED = [
                     ['Weight', '650 g ± 5%'],
                     ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
                     ['pH Level', '5.5 – 6.8'],
-                    ['Expansion Volume', '8 – 9 Litres'],
+                    ['Expansion Volume', '9 – 10 Litres'],
                     ['Moisture Content', '< 20%'],
                     ['Water Holding Capacity', '600 – 700%'],
                     ['Compression Ratio', '5:1'],
@@ -287,7 +285,7 @@ const SEED = [
         ]
     },
     {
-        id: 'p004', code: 'AC-04', name: 'Coir Grow Bags', category: 'Grow Bags',
+        id: 'p004', code: 'AC-04 / AC-3A', name: 'Cocopeat Grow Bag Slab', category: 'Grow Bags',
         badge: 'premium',
         images: [
             'assets/images/Products/coirGrowBag.jpeg',
@@ -295,54 +293,64 @@ const SEED = [
             'assets/images/Products/GBS.jpeg',
             'assets/images/Products/GB.jpeg'
         ],
-        description: 'Premium coco peat grow bags made from 100% coco peat and husk chips mixture. Widely used in greenhouse farming and hydroponic cultivation for vegetables, fruits, and flowers.',
-        pills: ['High Water Retention', 'Superior Drainage', 'Eco-Friendly', 'Customizable Sizes', 'UV Stabilized'],
+        description: 'Premium washed 100% cocopeat grow bag slabs specially processed for hydroponics, greenhouses, and commercial crop cultivation. High water retention, optimal aeration, and sun dried.',
+        pills: ['12–30 L Volume', 'Washed Cocopeat 100%', 'Low & Standard EC', 'Sun Dried', 'Eco-Friendly'],
         highlights: [
-            'Pre-cut planting holes and drainage slits for quick setup',
-            'Blend of peat and husk chips for balanced water/air ratio',
-            'UV-stabilized thick white sleeves designed for a 3-year lifespan',
-            'Saves up to 50% in irrigation water and fertilizer run-off'
+            '100% washed cocopeat composition for optimum root development',
+            'Available lengths: 50 cm, 90 cm, 100 cm, and 120 cm slabs',
+            'Sun dried with moisture content maintained under 18%',
+            'Compression ratio 5:1 yielding 12 to 30 Litres volume'
         ],
-        specs: [['Sizes', '100×20×18 / 100×20×15 / 100×20×12 cm'], ['Volumes', '36 L / 30 L / 24 L'], ['EC', 'Below 0.5 mS/cm'], ['pH', '5.8 – 6.8'], ['UV Packing', '3 Year Stabilized'], ['Compression', '5:1']],
+        specs: [
+            ['Grade', 'AC-3A - Almighty Coco Grow Bag'],
+            ['Length', '50 cm / 90 cm / 100 cm / 120 cm'],
+            ['Width', '15 cm / 18 cm / 20 cm'],
+            ['Height', '8 cm / 12 cm / 15 cm'],
+            ['Volume', '12 – 30 Litres'],
+            ['EC Options', 'Low EC / Standard EC (as required)'],
+            ['pH Range', '5.5 – 6.8'],
+            ['Composition', 'Washed Cocopeat (100%)'],
+            ['Compression Ratio', '5:1'],
+            ['Moisture Content', 'Less than 18%'],
+            ['Drying Method', 'Sun Drying']
+        ],
         qualities: {
             low_ec: {
                 title: 'Low EC (Washed)',
-                badge: 'Low EC (< 0.5 mS/cm)',
-                ecTag: '< 0.5 mS/cm (Washed)',
-                description: 'Premium washed coir grow bag (< 0.5 mS/cm) engineered for soilless hydroponics, greenhouse tomatoes, cucumbers, strawberries, and capsicum.',
+                badge: 'Low EC (Washed 100%)',
+                ecTag: 'Low EC (Washed)',
+                description: 'Premium washed 100% cocopeat grow bag slab (Grade AC-3A) engineered for soilless hydroponics, greenhouse crops, strawberries, tomatoes, and capsicum.',
                 specs: [
-                    ['Product Type', 'Compressed Coir Grow Bag'],
-                    ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
-                    ['Weight', '4.5 – 5 kg'],
-                    ['Electrical Conductivity (EC)', '< 0.5 mS/cm (Low EC Washed)'],
-                    ['pH Level', '5.8 – 6.8'],
-                    ['Expansion Volume', 'Approx. 65 – 70 Litres'],
-                    ['Moisture Content', 'Below 15%'],
-                    ['Water Holding Capacity', '700 – 800%'],
+                    ['Grade', 'AC-3A - Almighty Coco Grow Bag'],
+                    ['Length', '50 cm / 90 cm / 100 cm / 120 cm'],
+                    ['Width', '15 cm / 18 cm / 20 cm'],
+                    ['Height', '8 cm / 12 cm / 15 cm'],
+                    ['Volume', '12 – 30 Litres'],
+                    ['Electrical Conductivity (EC)', 'Low EC (Washed)'],
+                    ['pH Level', '5.5 – 6.8'],
+                    ['Composition', 'Washed Cocopeat (100%)'],
                     ['Compression Ratio', '5:1'],
-                    ['Material Composition', '100% Natural Coconut Coir'],
-                    ['Drainage Holes', 'Pre-cut / Customizable'],
-                    ['Packaging', 'UV-Stabilized Polyethylene Bag']
+                    ['Moisture Content', '< 18%'],
+                    ['Drying Method', 'Sun Drying']
                 ]
             },
             high_ec: {
-                title: 'High EC (Unwashed)',
-                badge: 'High EC (2.5 – 3.5 mS/cm)',
-                ecTag: '2.5 – 3.5 mS/cm (High EC)',
-                description: 'Unwashed coir grow bag (EC 2.5 - 3.5 mS/cm) ideal for salt-tolerant crops, outdoor container nursery stock, and heavy soil remediation.',
+                title: 'Standard EC',
+                badge: 'Standard EC',
+                ecTag: 'Standard EC',
+                description: 'Standard EC cocopeat grow bag slab (Grade AC-3A) ideal for general agricultural applications, outdoor nursery stock, and commercial cultivation.',
                 specs: [
-                    ['Product Type', 'Compressed Coir Grow Bag (High EC)'],
-                    ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
-                    ['Weight', '4.5 – 5 kg'],
-                    ['Electrical Conductivity (EC)', '2.5 – 3.5 mS/cm (High EC)'],
+                    ['Grade', 'AC-3A - Almighty Coco Grow Bag'],
+                    ['Length', '50 cm / 90 cm / 100 cm / 120 cm'],
+                    ['Width', '15 cm / 18 cm / 20 cm'],
+                    ['Height', '8 cm / 12 cm / 15 cm'],
+                    ['Volume', '12 – 30 Litres'],
+                    ['Electrical Conductivity (EC)', 'Standard EC (as required)'],
                     ['pH Level', '5.5 – 6.8'],
-                    ['Expansion Volume', 'Approx. 65 – 70 Litres'],
-                    ['Moisture Content', '< 20%'],
-                    ['Water Holding Capacity', '600 – 700%'],
+                    ['Composition', '100% Natural Cocopeat'],
                     ['Compression Ratio', '5:1'],
-                    ['Material Composition', '100% Natural Coconut Coir'],
-                    ['Drainage Holes', 'Pre-cut / Customizable'],
-                    ['Packaging', 'UV-Stabilized Polyethylene Bag']
+                    ['Moisture Content', '< 18%'],
+                    ['Drying Method', 'Sun Drying']
                 ]
             }
         },
@@ -395,7 +403,7 @@ const SEED = [
         ]
     },
     {
-        id: 'p005', code: 'AC-05', name: 'Open Top Grow Bags', category: 'Grow Bags',
+        id: 'p005', code: 'AC-05', name: 'Cocopeat Open Top Grow Bags', category: 'Grow Bags',
         badge: 'export',
         images: [
             'assets/images/Products/openTopGrowBag.jpg',
@@ -403,15 +411,21 @@ const SEED = [
             'assets/images/Products/openTopGrowBag5.jpg',
             'assets/images/Products/GBOT.jpeg',
         ],
-        description: 'Open top grow bags specially developed for commercial cultivation and nursery applications. Pre-filled with high-quality coco peat and husk chips mixture to support healthy root growth.',
-        pills: ['High Air Porosity', 'Root Development', 'Weed-Free', 'Greenhouse Ready', 'Prefilled'],
+        description: 'Cocopeat open top grow bags specially developed for commercial cultivation, nursery trays, terrace containers, and greenhouse channels. Available in customizable length, width, height, and volume options from 5 to 36 Litres.',
+        pills: ['Volume 5 to 36 L', 'Custom Dimensions', 'Nursery & Terrace Ready', 'High Air Porosity', 'Eco-Friendly'],
         highlights: [
-            'Ready-to-use plant sleeves; just expand and plant directly',
-            'UV-resistant double-layered plastic wrapper keeps root zone cool',
-            'Optimized air-pruning bag design ensures dense root branching',
-            'Perfect for commercial greenhouse berry and tomato production'
+            'Length options: 10 cm / 15 cm / 18 cm / 20 cm / 30 cm',
+            'Width options: 10 cm / 15 cm / 18 cm / 20 cm / 30 cm',
+            'Height options: 8 cm / 12 cm / 15 cm / 20 cm / 25 cm / 30 cm / 40 cm',
+            'Volume options: 5 L / 10 L / 20 L / 36 L (Custom volume range: 5 to 36 Litres)'
         ],
-        specs: [['Sizes', '25×25×20 / 25×18×16 / 20×20×18 cm'], ['Volumes', '12.5 L / 7.2 L / 7.2 L'], ['Filling', 'Coco Peat + Husk Chips'], ['EC', 'Below 0.5 mS/cm'], ['pH', '5.8 – 6.8']],
+        specs: [
+            ['Length Options', '10 cm / 15 cm / 18 cm / 20 cm / 30 cm'],
+            ['Width Options', '10 cm / 15 cm / 18 cm / 20 cm / 30 cm'],
+            ['Height Options', '8 cm / 12 cm / 15 cm / 20 cm / 25 cm / 30 cm / 40 cm'],
+            ['Volume Options', '5 L / 10 L / 20 L / 36 L (Volume range: 5 to 36 Litres)'],
+            ['Customization', 'Custom size matching for nursery trays, terrace containers & greenhouse channels']
+        ],
         isNew: false,
         uses: [
             {

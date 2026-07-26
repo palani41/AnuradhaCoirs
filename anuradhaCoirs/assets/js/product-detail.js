@@ -345,7 +345,7 @@
                 return `• ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
             }).join('%0A');
             const msg = `Hello! I'm interested in the following products from Anuradha Coirs & Fibers:%0A%0A${lines}%0A%0APlease send me pricing and availability.`;
-            window.open(`https://wa.me/919361315289?text=${msg}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?phone=919944859177&text=${msg}`, '_blank');
         });
 
         /* Place Order button */
@@ -457,7 +457,7 @@
                 + `Please confirm availability and share pricing. Thank you!`;
 
             const encoded = encodeURIComponent(msg);
-            const waURL = `https://wa.me/919361315289?text=${encoded}`;
+            const waURL = `https://api.whatsapp.com/send?phone=919944859177&text=${encoded}`;
 
             // Show success state inside modal by toggling visibility
             const formView = document.getElementById('orderModalFormView');
@@ -582,7 +582,14 @@
                 <li class="breadcrumb-item active" aria-current="page">${esc(p.name)}</li>
             `);
 
-            // Update Page Hero text
+            // Update Page Hero text and dynamic high-quality hero image per product
+            const heroBgImg = p.heroImage || ((p.images && p.images.length) ? p.images[0] : (p.image || 'assets/images/Products/coirfiberNew.jpeg'));
+            $('.page-hero').css({
+                'background-image': `url('${heroBgImg}')`,
+                'background-position': 'center center',
+                'background-size': 'cover',
+                'background-repeat': 'no-repeat'
+            });
             $('.page-hero h1').html(`${esc(p.name)}`);
             $('.page-hero p').html(`Product Code: ${esc(p.code)} &bull; Category: ${esc(p.category)}`);
 
@@ -658,7 +665,7 @@
                             <span class="dm-code">${esc(p.code)}</span>
                             <div class="dm-share-row">
                                 <button class="dm-share-btn" onclick="shareProduct('${esc(p.name)}','${esc(p.code)}')" title="Share"><i class="bi bi-share-fill"></i></button>
-                                <button class="dm-share-btn" onclick="window.open('https://wa.me/919361315289?text=${encodeURIComponent('Hi! I am interested in ' + p.name + ' (' + p.code + '). Please send me more details.')}','_blank')" title="WhatsApp"><i class="bi bi-whatsapp"></i></button>
+                                <button class="dm-share-btn" onclick="window.open('https://api.whatsapp.com/send?phone=919944859177&text=${encodeURIComponent('Hi! I am interested in ' + p.name + ' (' + p.code + '). Please send me more details.')}','_blank')" title="WhatsApp"><i class="bi bi-whatsapp"></i></button>
                                 <button class="dm-share-btn pc-wish${isWishlisted ? ' active' : ''}" data-id="${esc(p.id)}" onclick="toggleWishDetail('${esc(p.id)}',this)" title="Wishlist"><i class="bi bi-heart${isWishlisted ? '-fill' : ''}"></i></button>
                             </div>
                         </div>

@@ -1317,7 +1317,7 @@
        CTA
     ══════════════════════════════════════════ */
     .cta-section {
-      padding: 40px 0 110px;
+      padding: 20px 0 40px;
     }
 
     .cta-card {
@@ -2752,7 +2752,7 @@
        TESTIMONIALS CAROUSEL
     ══════════════════════════════════════════ */
     .testimonial-section {
-      padding: 100px 0;
+      padding: 80px 0 30px;
       background: var(--light-bg);
       position: relative;
       overflow: hidden;

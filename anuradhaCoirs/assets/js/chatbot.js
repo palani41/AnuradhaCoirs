@@ -50,29 +50,36 @@ $(document).ready(function () {
       crops: ['Indoor Herbs', 'Seedlings', 'Potting Soil', 'Landscaping']
     },
     {
-      id: 'p004', code: 'AC-04', name: 'Coir Grow Bags', category: 'Grow Bags', badge: 'Low EC & High EC',
+      id: 'p004', code: 'AC-04 / AC-3A', name: 'Cocopeat Grow Bag Slab', category: 'Grow Bags', badge: 'AC-3A Grade',
       image: 'assets/images/Products/coirGrowBag.jpeg',
-      description: 'UV-treated polythene grow bags pre-filled with coir substrate. Available in Low EC for hydroponics and High EC for nursery stock.',
+      description: 'Premium 100% washed cocopeat grow bag slabs (Grade AC-3A - Almighty Coco Grow Bag) for greenhouse & hydroponic farming.',
       specs: [
-        ['Standard Size', '100 × 15 × 12 cm (Customizable)'],
-        ['Weight', '4.5 – 5 kg'],
-        ['Expansion Volume', '65 – 70 Litres'],
-        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
-        ['Substrate', 'Custom Peat/Chip mix']
+        ['Grade', 'AC-3A - Almighty Coco Grow Bag'],
+        ['Length', '50 cm / 90 cm / 100 cm / 120 cm'],
+        ['Width', '15 cm / 18 cm / 20 cm'],
+        ['Height', '8 cm / 12 cm / 15 cm'],
+        ['Volume', '12 – 30 Litres'],
+        ['EC Options', 'Low EC / Standard EC (as required)'],
+        ['pH Range', '5.5 – 6.8'],
+        ['Composition', 'Washed Cocopeat (100%)'],
+        ['Compression Ratio', '5:1'],
+        ['Moisture Content', 'Less than 18%'],
+        ['Drying Method', 'Sun Drying']
       ],
-      crops: ['Hydroponic Tomatoes', 'Cucumbers', 'Capsicum', 'Strawberries']
+      crops: ['Hydroponic Tomatoes', 'Capsicum', 'Strawberries', 'Roses & Flowers']
     },
     {
-      id: 'p005', code: 'AC-05', name: 'Open Top Grow Bags', category: 'Grow Bags', badge: 'Low EC & High EC',
+      id: 'p005', code: 'AC-05', name: 'Cocopeat Open Top Grow Bags', category: 'Grow Bags', badge: 'Available Sizes',
       image: 'assets/images/Products/openTopGrowBag4.jpeg',
-      description: 'Ready-to-use open top planter bags with custom coir pith & husk chip blend. Available in Low EC washed and High EC unwashed.',
+      description: 'Cocopeat open top grow bags with customizable length, width, height, and volume options from 5 to 36 Litres for nursery trays & containers.',
       specs: [
-        ['Capacity', '5L, 10L, 15L & 20L'],
-        ['Quality Choice', 'Low EC (<0.5 mS/cm) or High EC (2.5-3.5 mS/cm)'],
-        ['Bag Material', 'Dual Color UV Polybag (Black/White)'],
-        ['pH', '5.5 – 6.8']
+        ['Length Options', '10 cm / 15 cm / 18 cm / 20 cm / 30 cm'],
+        ['Width Options', '10 cm / 15 cm / 18 cm / 20 cm / 30 cm'],
+        ['Height Options', '8 cm / 12 cm / 15 cm / 20 cm / 25 cm / 30 cm / 40 cm'],
+        ['Volume Options', '5 L / 10 L / 20 L / 36 L (Volume range: 5 to 36 Litres)'],
+        ['Customization', 'Custom size matching for nursery trays & greenhouse channels']
       ],
-      crops: ['Blueberries', 'Potted Tomatoes', 'Soft Fruits', 'Nurseries']
+      crops: ['Blueberries', 'Raspberries', 'Roses', 'Tomatoes', 'Nursery Saplings']
     },
     {
       id: 'p006', code: 'AC-06', name: 'Coco Husk Chips', category: 'Coco Peat', badge: 'Low EC & High EC',
@@ -178,7 +185,7 @@ $(document).ready(function () {
     {
       step: 6, title: 'Laboratory Quality Inspection',
       image: 'assets/images/Process/inspection.jpeg',
-      description: 'Every batch undergoes lab testing for expansion ratio (75L+ per 5kg block), EC value, pH balance, and moisture content.'
+      description: 'Every batch undergoes lab testing for expansion ratio (80–85L per 5kg block), EC value, pH balance, and moisture content.'
     },
     {
       step: 7, title: 'Palletization & Export Loading',
@@ -189,26 +196,6 @@ $(document).ready(function () {
 
   // 1c. FREQUENTLY ASKED QUESTIONS (FAQ) DATASET
   const FAQ_CATALOG = [
-    {
-      id: 'faq1',
-      question: "What types of Coco Peat & Coir products do you export globally?",
-      keywords: ['types', 'products export', 'what do you export', 'range'],
-      answer: "We manufacture and export a wide spectrum of 100% natural, eco-friendly coconut coir products processed to international standards:\n\n" +
-        "• **Coco Peat 5 KG Blocks & 650g Bricks** (Low EC washed & High EC)\n" +
-        "• **Coir Fibre Hydraulic Bales** (Golden & Brown)\n" +
-        "• **Coir Grow Bags & Open Top Prefill Bags** (UV-stabilized)\n" +
-        "• **Sieve Coco Husk Chips & Coco Disks/Coins**\n" +
-        "• **Fresh Semi-Husked & Fully Husked Coconuts**",
-      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
-    },
-    {
-      id: 'faq2',
-      question: "What is the difference between Low EC (Washed) and High EC Coco Peat?",
-      keywords: ['difference', 'low ec', 'high ec', 'washed', 'unwashed', 'ec value'],
-      answer: "• **Low EC (Washed) Coco Peat** (< 0.5 mS/cm): Thoroughly washed with fresh water to remove natural sodium and potassium salts. Ideal for direct seedling germination, commercial greenhouses, and hydroponic crops.\n\n" +
-        "• **High EC (Unwashed) Coco Peat** (> 1.5 mS/cm): Contains natural salts, primarily used for animal bedding, oil absorbents, or soil amendment for salt-tolerant plants.",
-      chips: ['🌱 Select Products', '📝 Request Low EC Quote', '💬 Chat on WhatsApp']
-    },
     {
       id: 'faq3',
       question: "What is your Minimum Order Quantity (MOQ) for international shipments?",
@@ -253,20 +240,21 @@ $(document).ready(function () {
       chips: ['📜 Certifications', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
     },
     {
-      id: 'faq7',
-      question: "What is the expansion volume and water retention of your 5kg blocks?",
-      keywords: ['expansion', 'volume', 'water retention', 'yield', '5kg block yield', 'litres'],
-      answer: "Our compressed 5 KG Coco Peat blocks yield an extraordinary expansion volume of **75 to 80 Liters of hydrated growing medium per block** when rehydrated with water (approx. 15 Liters per kg).\n\n" +
-        "It maintains a water-holding capacity exceeding **800% of dry weight** while preserving 10–15% air porosity for ideal root oxygenation.",
-      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
+      id: 'faq_sampling',
+      question: "Is sampling available?",
+      keywords: ['sample', 'sampling', 'samples', 'test sample', 'product sample', 'sample available'],
+      answer: "Yes, product samples are available! You can discuss directly with our export team to request specific product samples tailored to your required specifications before placing bulk container orders.",
+      chips: ['📝 Get Instant Quote', '💬 Chat on WhatsApp']
     },
     {
-      id: 'faq8',
-      question: "What are your accepted international payment methods?",
-      keywords: ['payment', 'payment terms', 'payment method', 'lc', 'letter of credit', 'tt', 'wire transfer'],
-      answer: "We offer flexible and secure B2B payment terms:\n\n" +
-        "1. **T/T (Telegraphic Transfer / Wire)**: 30% advance deposit upon order confirmation, balance 70% payable against scanned copy of Shipping Bill of Lading (B/L).\n\n" +
-        "2. **L/C (Letter of Credit)**: 100% Irrevocable Letter of Credit at sight from prime international banks.",
+      id: 'faq_import',
+      question: "How do I import Coco Peat and Coir products in bulk?",
+      keywords: ['import', 'bulk import', 'how to import', 'importing', 'bulk order', 'import process'],
+      answer: "Importing Coco Peat in bulk with Anuradha Coirs is simple and supported step-by-step:\n\n" +
+        "1. **Specify Requirements**: Share your required specs (5kg blocks, grow bags, Low/High EC, and quantity).\n" +
+        "2. **Quotation & Samples**: Receive FOB/CIF pricing and quality samples.\n" +
+        "3. **Order Processing**: Upon deposit or L/C confirmation, we compress, inspect, and package your order.\n" +
+        "4. **Documentation & Dispatch**: We provide full phytosanitary clearance, fumigation, COO, and container shipping.",
       chips: ['📦 MOQ & Export', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
     }
   ];
@@ -355,9 +343,18 @@ $(document).ready(function () {
         "• **5kg Blocks**: Low EC (<0.5 mS/cm) & High EC, washed/unwashed.\n" +
         "• **650g Briquettes**: Ideal for home gardening & retail.\n" +
         "• **Coco Peat Grow Bags**: Customized sizes for greenhouse horticulture.\n" +
-        "• **Expansion**: High volume (75–80 Litres per 5kg block).\n\n" +
+        "• **Expansion**: High volume (80–85 Litres per 5kg block).\n\n" +
         "Select a product below to view detailed specifications and images:",
       chips: ['🌱 Select Products', '📝 Request Coco Peat Quote', '📦 Minimum Order Quantity', '💬 WhatsApp Sales']
+    },
+    {
+      keywords: ['about', 'history', 'founder', 'director', 'established', 'founded', 'company story', 'who are you', 'background'],
+      response: "🏛️ **About Anuradha Coir and Fibres**:\n\n" +
+        "Founded in 2016, **Anuradha Coir and Fibres** has completed nearly a decade of manufacturing excellence in premium coco peat products.\n\n" +
+        "• **Leadership**: Founder **A. Aathi Ganesan**, Director **M. Karthikeyan**, and Co-Director **A. Anu Radha**.\n" +
+        "• **Specialization**: 5kg coco peat blocks, 650g briquettes, husk chips, coir coins/discs, and grow bags.\n" +
+        "• **Mission**: Providing sustainable, high-performance coir solutions for global agriculture & horticulture.",
+      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
     },
     {
       keywords: ['fibre', 'fiber', 'coir fibre', 'coir fiber', 'bales', 'mattress fibre'],
@@ -397,7 +394,9 @@ $(document).ready(function () {
       response: "📍 **Anuradha Coirs & Fibres**\n\n" +
         "• **Location**: South India (Tamil Nadu)\n" +
         "• **Email**: anuradhaexporters@gmail.com\n" +
-        "• **Phone / WhatsApp**: +91 99448 59177 / +91 93613 15289\n" +
+        "• **India Phone / WhatsApp**: +91 99448 59177 / +91 89407 87924\n" +
+        "• **UK Support**: +44 7466 435508\n" +
+        "• **US Support**: +1 (206) 391-9622\n" +
         "• **Working Hours**: Monday – Saturday (9:00 AM – 7:00 PM IST)",
       chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Open WhatsApp', '📧 Email Us']
     }

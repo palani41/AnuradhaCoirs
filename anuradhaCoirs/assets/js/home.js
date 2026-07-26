@@ -7,12 +7,10 @@ const productDetailsData = {
     desc: "Premium natural coir fibre extracted from matured coconut husks. Processed using advanced cleaning and drying methods for superior quality. Widely used in mattresses, upholstery, geo textiles, ropes, brushes, and erosion control products.",
     images: [
       "assets/images/Products/coirfiberNew.jpeg",
-      "assets/images/Products/brownCoir.jpeg",
       "assets/images/Products/whiteCoirFibre.jpeg",
       "assets/images/Products/coirfiberNew2.jpeg",
-      "assets/images/Products/coirfiberNew3.jpeg",
       "assets/images/Products/coirfiberNew4.jpeg",
-      "assets/images/Products/coirfiberNew5.jpeg"
+      "assets/images/Products/fibreExport.jpeg"
     ],
     pills: ['High Tensile Strength', 'Eco-Friendly', 'Hydraulic Baled', 'Low Moisture', 'Export Certified'],
     specs: [
@@ -37,12 +35,12 @@ const productDetailsData = {
       "assets/images/Products/cocopeatblock635.jpeg",
       "assets/images/Products/cocopeat_block.jpeg"
     ],
-    pills: ['Excellent Water Retention', 'High Air Porosity', 'Organic', 'Low EC', 'pH Balanced'],
+    pills: ['Excellent Water Retention', '80–85 L Expansion', 'Low EC & High EC', 'Organic', 'pH Balanced'],
     specs: [
       ["Block Size", "30 × 30 × 12 cm"],
       ["Weight", "4.8 – 5 kg"],
-      ["Expansion", "70 – 75 Litres"],
-      ["EC Value", "Below 0.5 mS/cm"],
+      ["Expansion", "80 – 85 Litres"],
+      ["EC Value", "Low EC (< 0.5 mS/cm) & High EC Available"],
       ["pH Value", "5.8 – 6.8"],
       ["Moisture", "Below 15%"],
       ["Compression", "5:1"]
@@ -58,21 +56,21 @@ const productDetailsData = {
       "assets/images/Products/bricks2.jpeg",
       "assets/images/Products/bricks3.jpeg"
     ],
-    pills: ['Lightweight', '8–9 L Expansion', 'Root Penetration', 'Moisture Retention', 'Indoor & Outdoor'],
+    pills: ['Lightweight', '9–10 L Expansion', 'Root Penetration', 'Moisture Retention', 'Indoor & Outdoor'],
     specs: [
       ["Brick Size", "20 × 10 × 5 cm"],
       ["Weight", "650 grams"],
-      ["Expansion", "8 – 9 Litres"],
+      ["Expansion", "9 – 10 Litres"],
       ["EC Value", "Below 0.5 mS/cm"],
       ["pH Value", "5.8 – 6.8"],
       ["Moisture", "Below 15%"]
     ]
   },
   growbag: {
-    name: "Coir Grow Bags & Open Tops",
-    code: "AC-04 / AC-05",
-    tag: "Grow Bags",
-    desc: "Premium grow bags and open-top prefill bags made from 100% coco peat and husk chips mixture, ideal for greenhouse cultivation of tomatoes, roses, capsicum, strawberries, and nursery applications. Drip irrigation compatible and reusable.",
+    name: "Cocopeat Grow Bag Slab",
+    code: "AC-04 / AC-3A",
+    tag: "Grow Bag Slab",
+    desc: "Premium washed 100% cocopeat grow bag slabs specially processed for hydroponics, greenhouses, and commercial crop cultivation. High water retention, optimal aeration, and sun dried.",
     images: [
       "assets/images/Products/coirGrowBag.jpeg",
       "assets/images/Products/coirGrowBag2.jpeg",
@@ -81,15 +79,19 @@ const productDetailsData = {
       "assets/images/Products/GBOT.jpeg",
       "assets/images/Products/GBS.jpeg"
     ],
-    pills: ['High Air Porosity', 'Superior Drainage', 'Eco-Friendly', 'UV Stabilized Packing', 'Prefilled Ready'],
+    pills: ['12–30 L Volume', 'Washed Cocopeat 100%', 'Low & Standard EC', 'Sun Dried', 'Eco-Friendly'],
     specs: [
-      ["Grow Bag Sizes", "100×20×18 / 100×20×15 cm"],
-      ["Open Top Sizes", "25×25×20 / 25×18×16 cm"],
-      ["Volumes", "36 L / 30 L / 12.5 L"],
-      ["Filling Mixture", "Coco Peat + Husk Chips"],
-      ["EC Value", "Below 0.5 mS/cm"],
-      ["pH Value", "5.8 – 6.8"],
-      ["UV Stabilizer", "3 Year Approved"]
+      ["Grade", "AC-3A - Almighty Coco Grow Bag"],
+      ["Length", "50 cm / 90 cm / 100 cm / 120 cm"],
+      ["Width", "15 cm / 18 cm / 20 cm"],
+      ["Height", "8 cm / 12 cm / 15 cm"],
+      ["Volume", "12 – 30 Litres"],
+      ["EC Options", "Low EC / Standard EC (as required)"],
+      ["pH Range", "5.5 – 6.8"],
+      ["Composition", "Washed Cocopeat (100%)"],
+      ["Compression Ratio", "5:1"],
+      ["Moisture Content", "Less than 18%"],
+      ["Drying Method", "Sun Drying"]
     ]
   },
   chips: {

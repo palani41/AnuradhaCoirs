@@ -352,7 +352,7 @@
                 return `• ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
             }).join('%0A');
             const msg = `Hello! I'm interested in the following products from Anuradha Coirs & Fibers:%0A%0A${lines}%0A%0APlease send me pricing and availability.`;
-            window.open(`https://wa.me/919361315289?text=${msg}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?phone=919944859177&text=${msg}`, '_blank');
         });
 
         /* Place Order button */
@@ -463,7 +463,7 @@
                 + `Please confirm availability and share pricing. Thank you!`;
 
             const encoded = encodeURIComponent(msg);
-            const waURL = `https://wa.me/919361315289?text=${encoded}`;
+            const waURL = `https://api.whatsapp.com/send?phone=919944859177&text=${encoded}`;
 
             // Show success state inside modal by toggling visibility
             const formView = document.getElementById('orderModalFormView');
